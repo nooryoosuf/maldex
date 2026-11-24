@@ -1,0 +1,3570 @@
+{
+  "meta": {
+    "source": "World Bank Open Data",
+    "sourceUrl": "https://data.worldbank.org/country/maldives",
+    "apiUrl": "https://api.worldbank.org/v2/country/MDV/indicator",
+    "retrievedAt": "2026-11-24T09:51:36.243Z",
+    "verification": "official-reported",
+    "note": "Annual indicators published by the World Bank. Values may lag current conditions; the latest available period is shown. Not a live or monthly series."
+  },
+  "indicators": [
+    {
+      "id": "NY.GDP.MKTP.KD.ZG",
+      "key": "gdpGrowth",
+      "name": "GDP growth",
+      "unit": "% annual",
+      "category": "national",
+      "description": "Annual growth in gross domestic product at constant prices.",
+      "observations": [
+        {
+          "period": "1971",
+          "value": 5.20722636743771
+        },
+        {
+          "period": "1972",
+          "value": 2.42424241756413
+        },
+        {
+          "period": "1973",
+          "value": 1.57790928646529
+        },
+        {
+          "period": "1974",
+          "value": 5.7281553146566
+        },
+        {
+          "period": "1975",
+          "value": -7.98898069181037
+        },
+        {
+          "period": "1976",
+          "value": 0.598802385709703
+        },
+        {
+          "period": "1977",
+          "value": 11.2523540290923
+        },
+        {
+          "period": "1978",
+          "value": 14.6847228465679
+        },
+        {
+          "period": "1979",
+          "value": 10.6642066212294
+        },
+        {
+          "period": "1980",
+          "value": 18.5728576106625
+        },
+        {
+          "period": "1981",
+          "value": 11.7647058888716
+        },
+        {
+          "period": "1982",
+          "value": -3.01221166353322
+        },
+        {
+          "period": "1983",
+          "value": 16.2562954556645
+        },
+        {
+          "period": "1984",
+          "value": 26.9554753293923
+        },
+        {
+          "period": "1985",
+          "value": 15.4160435875059
+        },
+        {
+          "period": "1986",
+          "value": 9.36058909491051
+        },
+        {
+          "period": "1987",
+          "value": 8.8291556967326
+        },
+        {
+          "period": "1988",
+          "value": 8.73034178146668
+        },
+        {
+          "period": "1989",
+          "value": 9.32680833295309
+        },
+        {
+          "period": "1990",
+          "value": 16.9522974545621
+        },
+        {
+          "period": "1991",
+          "value": 1.44269605394094
+        },
+        {
+          "period": "1992",
+          "value": 6.67082544437399
+        },
+        {
+          "period": "1993",
+          "value": 5.55676907924001
+        },
+        {
+          "period": "1994",
+          "value": 7.74948623307952
+        },
+        {
+          "period": "1995",
+          "value": 12.9857843069314
+        },
+        {
+          "period": "1996",
+          "value": 7.85864699857959
+        },
+        {
+          "period": "1997",
+          "value": 8.39794100450224
+        },
+        {
+          "period": "1998",
+          "value": 7.4946829140504
+        },
+        {
+          "period": "1999",
+          "value": 6.17565592929535
+        },
+        {
+          "period": "2000",
+          "value": 3.84581040832157
+        },
+        {
+          "period": "2001",
+          "value": -3.94363452271253
+        },
+        {
+          "period": "2002",
+          "value": 7.26838656139654
+        },
+        {
+          "period": "2003",
+          "value": 13.7500496410836
+        },
+        {
+          "period": "2004",
+          "value": 5.92489251113133
+        },
+        {
+          "period": "2005",
+          "value": -11.1773097061784
+        },
+        {
+          "period": "2006",
+          "value": 23.6302719852686
+        },
+        {
+          "period": "2007",
+          "value": 7.13338024717898
+        },
+        {
+          "period": "2008",
+          "value": 8.97645459033633
+        },
+        {
+          "period": "2009",
+          "value": -8.34069861571051
+        },
+        {
+          "period": "2010",
+          "value": 6.7854678229144
+        },
+        {
+          "period": "2011",
+          "value": 8.84342600490342
+        },
+        {
+          "period": "2012",
+          "value": 2.38928797963442
+        },
+        {
+          "period": "2013",
+          "value": 6.97496226412528
+        },
+        {
+          "period": "2014",
+          "value": 7.86068643108074
+        },
+        {
+          "period": "2015",
+          "value": 3.86813536494475
+        },
+        {
+          "period": "2016",
+          "value": 6.37528306716864
+        },
+        {
+          "period": "2017",
+          "value": 7.07442863215275
+        },
+        {
+          "period": "2018",
+          "value": 8.5689555834747
+        },
+        {
+          "period": "2019",
+          "value": 6.92305989050099
+        },
+        {
+          "period": "2020",
+          "value": -32.9088287752921
+        },
+        {
+          "period": "2021",
+          "value": 37.507870124321
+        },
+        {
+          "period": "2022",
+          "value": 13.8260895184139
+        },
+        {
+          "period": "2023",
+          "value": 4.94286301229583
+        },
+        {
+          "period": "2024",
+          "value": 3.49440422654285
+        },
+        {
+          "period": "2025",
+          "value": 6.31092335003081
+        }
+      ],
+      "latest": {
+        "period": "2025",
+        "value": 6.31092335003081
+      }
+    },
+    {
+      "id": "NY.GDP.MKTP.CD",
+      "key": "gdpUsd",
+      "name": "GDP",
+      "unit": "US$",
+      "category": "national",
+      "description": "Gross domestic product at current market prices.",
+      "observations": [
+        {
+          "period": "1970",
+          "value": 19328038.3157895
+        },
+        {
+          "period": "1971",
+          "value": 21566404.0169133
+        },
+        {
+          "period": "1972",
+          "value": 25177137.5286041
+        },
+        {
+          "period": "1973",
+          "value": 30862041.60401
+        },
+        {
+          "period": "1974",
+          "value": 39120171.2468193
+        },
+        {
+          "period": "1975",
+          "value": 24540877.6041667
+        },
+        {
+          "period": "1976",
+          "value": 22399467.1052632
+        },
+        {
+          "period": "1977",
+          "value": 20853788.7115165
+        },
+        {
+          "period": "1978",
+          "value": 24369109.1415831
+        },
+        {
+          "period": "1979",
+          "value": 38523364.4859813
+        },
+        {
+          "period": "1980",
+          "value": 42463576.1589404
+        },
+        {
+          "period": "1981",
+          "value": 44781456.9536424
+        },
+        {
+          "period": "1982",
+          "value": 47911340.1834794
+        },
+        {
+          "period": "1983",
+          "value": 57829787.2340426
+        },
+        {
+          "period": "1984",
+          "value": 109503546.099291
+        },
+        {
+          "period": "1985",
+          "value": 127190757.959989
+        },
+        {
+          "period": "1986",
+          "value": 141882254.230178
+        },
+        {
+          "period": "1987",
+          "value": 141223029.383064
+        },
+        {
+          "period": "1988",
+          "value": 168514513.375071
+        },
+        {
+          "period": "1989",
+          "value": 189514434.244
+        },
+        {
+          "period": "1990",
+          "value": 215043969.849246
+        },
+        {
+          "period": "1991",
+          "value": 244396761.92334
+        },
+        {
+          "period": "1992",
+          "value": 284875809.039634
+        },
+        {
+          "period": "1993",
+          "value": 322417837.161971
+        },
+        {
+          "period": "1994",
+          "value": 356014932.136461
+        },
+        {
+          "period": "1995",
+          "value": 398988954.970263
+        },
+        {
+          "period": "1996",
+          "value": 450382327.952421
+        },
+        {
+          "period": "1997",
+          "value": 508223602.378929
+        },
+        {
+          "period": "1998",
+          "value": 540096397.621071
+        },
+        {
+          "period": "1999",
+          "value": 589239753.610875
+        },
+        {
+          "period": "2000",
+          "value": 624337145.284622
+        },
+        {
+          "period": "2001",
+          "value": 870031676.798793
+        },
+        {
+          "period": "2002",
+          "value": 897031250
+        },
+        {
+          "period": "2003",
+          "value": 1052121054.6875
+        },
+        {
+          "period": "2004",
+          "value": 1226829562.5
+        },
+        {
+          "period": "2005",
+          "value": 1163362437.5
+        },
+        {
+          "period": "2006",
+          "value": 1575200390.625
+        },
+        {
+          "period": "2007",
+          "value": 1868383460.9375
+        },
+        {
+          "period": "2008",
+          "value": 2271646187.5
+        },
+        {
+          "period": "2009",
+          "value": 2345294875
+        },
+        {
+          "period": "2010",
+          "value": 2588176054.6875
+        },
+        {
+          "period": "2011",
+          "value": 2774350240.04918
+        },
+        {
+          "period": "2012",
+          "value": 2886163997.20531
+        },
+        {
+          "period": "2013",
+          "value": 3295009237.50107
+        },
+        {
+          "period": "2014",
+          "value": 3697353039.20043
+        },
+        {
+          "period": "2015",
+          "value": 4129505319.12921
+        },
+        {
+          "period": "2016",
+          "value": 4409942623.85538
+        },
+        {
+          "period": "2017",
+          "value": 4816426256.52914
+        },
+        {
+          "period": "2018",
+          "value": 5404344162.69888
+        },
+        {
+          "period": "2019",
+          "value": 5726094799.37709
+        },
+        {
+          "period": "2020",
+          "value": 3712604583.36665
+        },
+        {
+          "period": "2021",
+          "value": 5252457369.55218
+        },
+        {
+          "period": "2022",
+          "value": 6177123352.26211
+        },
+        {
+          "period": "2023",
+          "value": 6621008703.95743
+        },
+        {
+          "period": "2024",
+          "value": 7061608267.25451
+        },
+        {
+          "period": "2025",
+          "value": 7741066860.6337
+        }
+      ],
+      "latest": {
+        "period": "2025",
+        "value": 7741066860.6337
+      }
+    },
+    {
+      "id": "NY.GDP.PCAP.CD",
+      "key": "gdpPerCapita",
+      "name": "GDP per person",
+      "unit": "US$",
+      "category": "national",
+      "description": "Gross domestic product divided by midyear population.",
+      "observations": [
+        {
+          "period": "1970",
+          "value": 156.859236934154
+        },
+        {
+          "period": "1971",
+          "value": 169.767418561131
+        },
+        {
+          "period": "1972",
+          "value": 192.238848639394
+        },
+        {
+          "period": "1973",
+          "value": 228.689027239389
+        },
+        {
+          "period": "1974",
+          "value": 281.484632436928
+        },
+        {
+          "period": "1975",
+          "value": 171.425121922398
+        },
+        {
+          "period": "1976",
+          "value": 151.835059178195
+        },
+        {
+          "period": "1977",
+          "value": 137.259189834243
+        },
+        {
+          "period": "1978",
+          "value": 156.053183880423
+        },
+        {
+          "period": "1979",
+          "value": 240.230509391253
+        },
+        {
+          "period": "1980",
+          "value": 257.612619643525
+        },
+        {
+          "period": "1981",
+          "value": 264.147517599287
+        },
+        {
+          "period": "1982",
+          "value": 274.826568598483
+        },
+        {
+          "period": "1983",
+          "value": 322.84057899403
+        },
+        {
+          "period": "1984",
+          "value": 594.488246882652
+        },
+        {
+          "period": "1985",
+          "value": 668.830135090308
+        },
+        {
+          "period": "1986",
+          "value": 720.452201133255
+        },
+        {
+          "period": "1987",
+          "value": 692.459838892363
+        },
+        {
+          "period": "1988",
+          "value": 799.082501719284
+        },
+        {
+          "period": "1989",
+          "value": 870.378318180563
+        },
+        {
+          "period": "1990",
+          "value": 956.763019768672
+        },
+        {
+          "period": "1991",
+          "value": 1054.33413828759
+        },
+        {
+          "period": "1992",
+          "value": 1194.2325242813
+        },
+        {
+          "period": "1993",
+          "value": 1316.614548774
+        },
+        {
+          "period": "1994",
+          "value": 1419.39276513408
+        },
+        {
+          "period": "1995",
+          "value": 1554.60942754604
+        },
+        {
+          "period": "1996",
+          "value": 1716.74281753716
+        },
+        {
+          "period": "1997",
+          "value": 1898.43225010526
+        },
+        {
+          "period": "1998",
+          "value": 1980.38448396751
+        },
+        {
+          "period": "1999",
+          "value": 2124.06007530631
+        },
+        {
+          "period": "2000",
+          "value": 2213.81235053178
+        },
+        {
+          "period": "2001",
+          "value": 3033.93234507036
+        },
+        {
+          "period": "2002",
+          "value": 3076.07007160101
+        },
+        {
+          "period": "2003",
+          "value": 3548.5767011056
+        },
+        {
+          "period": "2004",
+          "value": 4070.2609459446
+        },
+        {
+          "period": "2005",
+          "value": 3796.51546524644
+        },
+        {
+          "period": "2006",
+          "value": 5018.94335409159
+        },
+        {
+          "period": "2007",
+          "value": 5758.10286933053
+        },
+        {
+          "period": "2008",
+          "value": 6757.43280929292
+        },
+        {
+          "period": "2009",
+          "value": 6734.03165601895
+        },
+        {
+          "period": "2010",
+          "value": 7173.59601844692
+        },
+        {
+          "period": "2011",
+          "value": 7424.520410971
+        },
+        {
+          "period": "2012",
+          "value": 7461.29703686309
+        },
+        {
+          "period": "2013",
+          "value": 8236.08177944126
+        },
+        {
+          "period": "2014",
+          "value": 8939.07416571472
+        },
+        {
+          "period": "2015",
+          "value": 9644.90655028145
+        },
+        {
+          "period": "2016",
+          "value": 9947.80744731739
+        },
+        {
+          "period": "2017",
+          "value": 10509.628805812
+        },
+        {
+          "period": "2018",
+          "value": 11423.2838427029
+        },
+        {
+          "period": "2019",
+          "value": 11740.2724029785
+        },
+        {
+          "period": "2020",
+          "value": 7393.8886543933
+        },
+        {
+          "period": "2021",
+          "value": 10176.143882547
+        },
+        {
+          "period": "2022",
+          "value": 11786.0191492983
+        },
+        {
+          "period": "2023",
+          "value": 12587.6126038651
+        },
+        {
+          "period": "2024",
+          "value": 13379.3513577224
+        },
+        {
+          "period": "2025",
+          "value": 14614.7208116541
+        }
+      ],
+      "latest": {
+        "period": "2025",
+        "value": 14614.7208116541
+      }
+    },
+    {
+      "id": "SP.POP.TOTL",
+      "key": "population",
+      "name": "Population",
+      "unit": "people",
+      "category": "national",
+      "description": "Total population, midyear estimate.",
+      "observations": [
+        {
+          "period": "1960",
+          "value": 91189
+        },
+        {
+          "period": "1961",
+          "value": 93450
+        },
+        {
+          "period": "1962",
+          "value": 95802
+        },
+        {
+          "period": "1963",
+          "value": 98222
+        },
+        {
+          "period": "1964",
+          "value": 100662
+        },
+        {
+          "period": "1965",
+          "value": 104102
+        },
+        {
+          "period": "1966",
+          "value": 108507
+        },
+        {
+          "period": "1967",
+          "value": 112528
+        },
+        {
+          "period": "1968",
+          "value": 116075
+        },
+        {
+          "period": "1969",
+          "value": 119564
+        },
+        {
+          "period": "1970",
+          "value": 123219
+        },
+        {
+          "period": "1971",
+          "value": 127035
+        },
+        {
+          "period": "1972",
+          "value": 130968
+        },
+        {
+          "period": "1973",
+          "value": 134952
+        },
+        {
+          "period": "1974",
+          "value": 138978
+        },
+        {
+          "period": "1975",
+          "value": 143158
+        },
+        {
+          "period": "1976",
+          "value": 147525
+        },
+        {
+          "period": "1977",
+          "value": 151930
+        },
+        {
+          "period": "1978",
+          "value": 156159
+        },
+        {
+          "period": "1979",
+          "value": 160360
+        },
+        {
+          "period": "1980",
+          "value": 164835
+        },
+        {
+          "period": "1981",
+          "value": 169532
+        },
+        {
+          "period": "1982",
+          "value": 174333
+        },
+        {
+          "period": "1983",
+          "value": 179128
+        },
+        {
+          "period": "1984",
+          "value": 184198
+        },
+        {
+          "period": "1985",
+          "value": 190169
+        },
+        {
+          "period": "1986",
+          "value": 196935
+        },
+        {
+          "period": "1987",
+          "value": 203944
+        },
+        {
+          "period": "1988",
+          "value": 210885
+        },
+        {
+          "period": "1989",
+          "value": 217738
+        },
+        {
+          "period": "1990",
+          "value": 224762
+        },
+        {
+          "period": "1991",
+          "value": 231802
+        },
+        {
+          "period": "1992",
+          "value": 238543
+        },
+        {
+          "period": "1993",
+          "value": 244884
+        },
+        {
+          "period": "1994",
+          "value": 250822
+        },
+        {
+          "period": "1995",
+          "value": 256649
+        },
+        {
+          "period": "1996",
+          "value": 262347
+        },
+        {
+          "period": "1997",
+          "value": 267707
+        },
+        {
+          "period": "1998",
+          "value": 272723
+        },
+        {
+          "period": "1999",
+          "value": 277412
+        },
+        {
+          "period": "2000",
+          "value": 282019
+        },
+        {
+          "period": "2001",
+          "value": 286767
+        },
+        {
+          "period": "2002",
+          "value": 291616
+        },
+        {
+          "period": "2003",
+          "value": 296491
+        },
+        {
+          "period": "2004",
+          "value": 301413
+        },
+        {
+          "period": "2005",
+          "value": 306429
+        },
+        {
+          "period": "2006",
+          "value": 313851
+        },
+        {
+          "period": "2007",
+          "value": 324479
+        },
+        {
+          "period": "2008",
+          "value": 336170
+        },
+        {
+          "period": "2009",
+          "value": 348275
+        },
+        {
+          "period": "2010",
+          "value": 360792
+        },
+        {
+          "period": "2011",
+          "value": 373674
+        },
+        {
+          "period": "2012",
+          "value": 386818
+        },
+        {
+          "period": "2013",
+          "value": 400070
+        },
+        {
+          "period": "2014",
+          "value": 413617
+        },
+        {
+          "period": "2015",
+          "value": 428154
+        },
+        {
+          "period": "2016",
+          "value": 443308
+        },
+        {
+          "period": "2017",
+          "value": 458287
+        },
+        {
+          "period": "2018",
+          "value": 473099
+        },
+        {
+          "period": "2019",
+          "value": 487731
+        },
+        {
+          "period": "2020",
+          "value": 502118
+        },
+        {
+          "period": "2021",
+          "value": 516154
+        },
+        {
+          "period": "2022",
+          "value": 524106
+        },
+        {
+          "period": "2023",
+          "value": 525994
+        },
+        {
+          "period": "2024",
+          "value": 527799
+        },
+        {
+          "period": "2025",
+          "value": 529676
+        }
+      ],
+      "latest": {
+        "period": "2025",
+        "value": 529676
+      }
+    },
+    {
+      "id": "FP.CPI.TOTL.ZG",
+      "key": "inflation",
+      "name": "Inflation",
+      "unit": "% annual",
+      "category": "prices",
+      "description": "Annual percentage change in the consumer price index.",
+      "observations": [
+        {
+          "period": "1986",
+          "value": 9.72219327678562
+        },
+        {
+          "period": "1987",
+          "value": 9.7040723294332
+        },
+        {
+          "period": "1988",
+          "value": 6.45636026801941
+        },
+        {
+          "period": "1989",
+          "value": 7.16585889470777
+        },
+        {
+          "period": "1990",
+          "value": 3.64991197717476
+        },
+        {
+          "period": "1991",
+          "value": 14.7136770282734
+        },
+        {
+          "period": "1992",
+          "value": 16.8559977535548
+        },
+        {
+          "period": "1993",
+          "value": 20.1273593149248
+        },
+        {
+          "period": "1994",
+          "value": 3.38610098291492
+        },
+        {
+          "period": "1995",
+          "value": 5.48886133171504
+        },
+        {
+          "period": "1996",
+          "value": 6.24124591476025
+        },
+        {
+          "period": "1997",
+          "value": 7.57283467072592
+        },
+        {
+          "period": "1998",
+          "value": -1.40425233816792
+        },
+        {
+          "period": "1999",
+          "value": 2.95370836069128
+        },
+        {
+          "period": "2000",
+          "value": -1.17475681175945
+        },
+        {
+          "period": "2001",
+          "value": 0.67257737006247
+        },
+        {
+          "period": "2002",
+          "value": 4.17867239904789
+        },
+        {
+          "period": "2003",
+          "value": -1.26065113450354
+        },
+        {
+          "period": "2004",
+          "value": -1.68541212459466
+        },
+        {
+          "period": "2005",
+          "value": 1.30027500930997
+        },
+        {
+          "period": "2006",
+          "value": 2.73842131602098
+        },
+        {
+          "period": "2007",
+          "value": 6.79477353930168
+        },
+        {
+          "period": "2008",
+          "value": 12.0414583505108
+        },
+        {
+          "period": "2009",
+          "value": 4.530176591328
+        },
+        {
+          "period": "2010",
+          "value": 6.14988536750173
+        },
+        {
+          "period": "2011",
+          "value": 11.2734146055937
+        },
+        {
+          "period": "2012",
+          "value": 10.884695658563
+        },
+        {
+          "period": "2013",
+          "value": 3.80563000919429
+        },
+        {
+          "period": "2014",
+          "value": 2.12000175718134
+        },
+        {
+          "period": "2015",
+          "value": 0.953206658777606
+        },
+        {
+          "period": "2016",
+          "value": 0.502509413611612
+        },
+        {
+          "period": "2017",
+          "value": 2.81747338234508
+        },
+        {
+          "period": "2018",
+          "value": -0.133373386117594
+        },
+        {
+          "period": "2019",
+          "value": 0.220029731065383
+        },
+        {
+          "period": "2020",
+          "value": -1.3697742556981
+        },
+        {
+          "period": "2021",
+          "value": 0.543149688737012
+        },
+        {
+          "period": "2022",
+          "value": 2.33054046477249
+        },
+        {
+          "period": "2023",
+          "value": 2.90372427754586
+        },
+        {
+          "period": "2024",
+          "value": 1.41093527910134
+        },
+        {
+          "period": "2025",
+          "value": 4.00578494118751
+        }
+      ],
+      "latest": {
+        "period": "2025",
+        "value": 4.00578494118751
+      }
+    },
+    {
+      "id": "ST.INT.ARVL",
+      "key": "touristArrivals",
+      "name": "International tourist arrivals",
+      "unit": "arrivals",
+      "category": "tourism",
+      "description": "Overnight international visitor arrivals.",
+      "observations": [
+        {
+          "period": "1995",
+          "value": 315000
+        },
+        {
+          "period": "1996",
+          "value": 339000
+        },
+        {
+          "period": "1997",
+          "value": 366000
+        },
+        {
+          "period": "1998",
+          "value": 396000
+        },
+        {
+          "period": "1999",
+          "value": 430000
+        },
+        {
+          "period": "2000",
+          "value": 467000
+        },
+        {
+          "period": "2001",
+          "value": 461000
+        },
+        {
+          "period": "2002",
+          "value": 485000
+        },
+        {
+          "period": "2003",
+          "value": 564000
+        },
+        {
+          "period": "2004",
+          "value": 617000
+        },
+        {
+          "period": "2005",
+          "value": 395000
+        },
+        {
+          "period": "2006",
+          "value": 602000
+        },
+        {
+          "period": "2007",
+          "value": 676000
+        },
+        {
+          "period": "2008",
+          "value": 683000
+        },
+        {
+          "period": "2009",
+          "value": 656000
+        },
+        {
+          "period": "2010",
+          "value": 792000
+        },
+        {
+          "period": "2011",
+          "value": 931000
+        },
+        {
+          "period": "2012",
+          "value": 958000
+        },
+        {
+          "period": "2013",
+          "value": 1125000
+        },
+        {
+          "period": "2014",
+          "value": 1205000
+        },
+        {
+          "period": "2015",
+          "value": 1234000
+        },
+        {
+          "period": "2016",
+          "value": 1286000
+        },
+        {
+          "period": "2017",
+          "value": 1390000
+        },
+        {
+          "period": "2018",
+          "value": 1484000
+        },
+        {
+          "period": "2019",
+          "value": 1703000
+        },
+        {
+          "period": "2020",
+          "value": 555000
+        }
+      ],
+      "latest": {
+        "period": "2020",
+        "value": 555000
+      }
+    },
+    {
+      "id": "ST.INT.RCPT.CD",
+      "key": "tourismReceipts",
+      "name": "International tourism receipts",
+      "unit": "US$",
+      "category": "tourism",
+      "description": "Expenditure by international inbound visitors, including payments to carriers.",
+      "observations": [
+        {
+          "period": "2011",
+          "value": 1966000000
+        },
+        {
+          "period": "2012",
+          "value": 2032000000
+        },
+        {
+          "period": "2013",
+          "value": 2422000000
+        },
+        {
+          "period": "2014",
+          "value": 2811000000
+        },
+        {
+          "period": "2015",
+          "value": 2691000000
+        },
+        {
+          "period": "2016",
+          "value": 2640000000
+        },
+        {
+          "period": "2017",
+          "value": 2771000000
+        },
+        {
+          "period": "2018",
+          "value": 3054000000
+        },
+        {
+          "period": "2019",
+          "value": 3171000000
+        },
+        {
+          "period": "2020",
+          "value": 1409000000
+        }
+      ],
+      "latest": {
+        "period": "2020",
+        "value": 1409000000
+      }
+    },
+    {
+      "id": "GC.XPN.TOTL.GD.ZS",
+      "key": "govExpense",
+      "name": "Government expense",
+      "unit": "% of GDP",
+      "category": "fiscal",
+      "description": "Cash payments for operating activities of the government.",
+      "observations": [
+        {
+          "period": "1990",
+          "value": 16.5912078282459
+        },
+        {
+          "period": "1991",
+          "value": 17.1641791044776
+        },
+        {
+          "period": "1992",
+          "value": 17.9713706865057
+        },
+        {
+          "period": "1993",
+          "value": 17.3861352506581
+        },
+        {
+          "period": "1994",
+          "value": 16.7745533008461
+        },
+        {
+          "period": "1995",
+          "value": 18.6984944954324
+        },
+        {
+          "period": "1996",
+          "value": 18.0230145255612
+        },
+        {
+          "period": "1997",
+          "value": 19.7599655675077
+        },
+        {
+          "period": "1998",
+          "value": 20.4170733485287
+        },
+        {
+          "period": "1999",
+          "value": 22.2843775237995
+        },
+        {
+          "period": "2000",
+          "value": 25.5278386530642
+        },
+        {
+          "period": "2001",
+          "value": 18.5090601821425
+        },
+        {
+          "period": "2002",
+          "value": 18.3713638738896
+        },
+        {
+          "period": "2003",
+          "value": 17.4179398543099
+        },
+        {
+          "period": "2004",
+          "value": 17.7547329440066
+        },
+        {
+          "period": "2005",
+          "value": 31.1818398812623
+        },
+        {
+          "period": "2006",
+          "value": 27.8129295553418
+        },
+        {
+          "period": "2007",
+          "value": 27.4305474874434
+        },
+        {
+          "period": "2008",
+          "value": 25.6669591949825
+        },
+        {
+          "period": "2009",
+          "value": 29.1970881699897
+        },
+        {
+          "period": "2010",
+          "value": 25.4405148099364
+        },
+        {
+          "period": "2011",
+          "value": 22.4031116061657
+        },
+        {
+          "period": "2014",
+          "value": 24.6529190782701
+        },
+        {
+          "period": "2015",
+          "value": 26.5275502814218
+        },
+        {
+          "period": "2016",
+          "value": 24.2042777622576
+        },
+        {
+          "period": "2017",
+          "value": 20.3517479915771
+        },
+        {
+          "period": "2018",
+          "value": 21.9717105537807
+        },
+        {
+          "period": "2019",
+          "value": 25.4133270384298
+        },
+        {
+          "period": "2020",
+          "value": 35.3461280144751
+        },
+        {
+          "period": "2021",
+          "value": 29.475529855381
+        }
+      ],
+      "latest": {
+        "period": "2021",
+        "value": 29.475529855381
+      }
+    },
+    {
+      "id": "GC.TAX.TOTL.GD.ZS",
+      "key": "taxRevenue",
+      "name": "Tax revenue",
+      "unit": "% of GDP",
+      "category": "fiscal",
+      "description": "Compulsory transfers to the central government for public purposes.",
+      "observations": [
+        {
+          "period": "1979",
+          "value": 2.49532127261385
+        },
+        {
+          "period": "1980",
+          "value": 5.11540860885839
+        },
+        {
+          "period": "1981",
+          "value": 6.89145223306714
+        },
+        {
+          "period": "1982",
+          "value": 12.2199592668024
+        },
+        {
+          "period": "1983",
+          "value": 12.6318371351484
+        },
+        {
+          "period": "1984",
+          "value": 9.26165803108808
+        },
+        {
+          "period": "1985",
+          "value": 9.99113867966327
+        },
+        {
+          "period": "1986",
+          "value": 10.2897693672383
+        },
+        {
+          "period": "1987",
+          "value": 12.2840690978887
+        },
+        {
+          "period": "1988",
+          "value": 13.5706565793029
+        },
+        {
+          "period": "1990",
+          "value": 13.9623192639112
+        },
+        {
+          "period": "1991",
+          "value": 14.6140952989065
+        },
+        {
+          "period": "1992",
+          "value": 14.9589823640772
+        },
+        {
+          "period": "1993",
+          "value": 13.7345373227277
+        },
+        {
+          "period": "1994",
+          "value": 13.0045821514292
+        },
+        {
+          "period": "1995",
+          "value": 13.5963884925789
+        },
+        {
+          "period": "1996",
+          "value": 13.4521788341822
+        },
+        {
+          "period": "1997",
+          "value": 14.4455044389877
+        },
+        {
+          "period": "1998",
+          "value": 14.2002404743947
+        },
+        {
+          "period": "1999",
+          "value": 14.0915704652276
+        },
+        {
+          "period": "2000",
+          "value": 13.796110041301
+        },
+        {
+          "period": "2001",
+          "value": 9.82630738897756
+        },
+        {
+          "period": "2002",
+          "value": 9.50792544852813
+        },
+        {
+          "period": "2003",
+          "value": 9.42070183448992
+        },
+        {
+          "period": "2004",
+          "value": 10.4894358542978
+        },
+        {
+          "period": "2005",
+          "value": 11.5693738822473
+        },
+        {
+          "period": "2006",
+          "value": 11.7564407107925
+        },
+        {
+          "period": "2007",
+          "value": 12.1474495062228
+        },
+        {
+          "period": "2008",
+          "value": 11.5788828140298
+        },
+        {
+          "period": "2009",
+          "value": 9.1006679916955
+        },
+        {
+          "period": "2010",
+          "value": 8.84762793030511
+        },
+        {
+          "period": "2011",
+          "value": 12.0781339785612
+        },
+        {
+          "period": "2014",
+          "value": 19.3230032785505
+        },
+        {
+          "period": "2015",
+          "value": 19.6501550926862
+        },
+        {
+          "period": "2016",
+          "value": 19.9758256426903
+        },
+        {
+          "period": "2017",
+          "value": 20.6915788854656
+        },
+        {
+          "period": "2018",
+          "value": 20.1449360379289
+        },
+        {
+          "period": "2019",
+          "value": 19.9413849005153
+        },
+        {
+          "period": "2020",
+          "value": 20.1121885867863
+        },
+        {
+          "period": "2021",
+          "value": 19.4532482767244
+        }
+      ],
+      "latest": {
+        "period": "2021",
+        "value": 19.4532482767244
+      }
+    },
+    {
+      "id": "GC.DOD.TOTL.GD.ZS",
+      "key": "govDebt",
+      "name": "Central government debt",
+      "unit": "% of GDP",
+      "category": "debt",
+      "description": "Total central government debt as a share of GDP.",
+      "observations": [
+        {
+          "period": "1990",
+          "value": 30.7823377634974
+        },
+        {
+          "period": "1991",
+          "value": 35.5734695506425
+        },
+        {
+          "period": "1992",
+          "value": 41.6154638148062
+        },
+        {
+          "period": "1993",
+          "value": 45.5515611288816
+        },
+        {
+          "period": "1994",
+          "value": 44.2117002448663
+        },
+        {
+          "period": "1995",
+          "value": 47.3520580907562
+        },
+        {
+          "period": "1996",
+          "value": 43.0352763629504
+        },
+        {
+          "period": "1997",
+          "value": 39.670387725631
+        },
+        {
+          "period": "1998",
+          "value": 40.9867359654762
+        },
+        {
+          "period": "1999",
+          "value": 40.126298421858
+        },
+        {
+          "period": "2000",
+          "value": 40.8644099852265
+        },
+        {
+          "period": "2001",
+          "value": 31.2308703408131
+        },
+        {
+          "period": "2002",
+          "value": 33.5908378331301
+        },
+        {
+          "period": "2003",
+          "value": 30.3523770936084
+        },
+        {
+          "period": "2004",
+          "value": 27.2730426643921
+        },
+        {
+          "period": "2005",
+          "value": 33.9271150397616
+        },
+        {
+          "period": "2006",
+          "value": 29.5408843071306
+        },
+        {
+          "period": "2007",
+          "value": 29.1842777540108
+        },
+        {
+          "period": "2008",
+          "value": 30.3431523048305
+        },
+        {
+          "period": "2009",
+          "value": 46.1935516743923
+        },
+        {
+          "period": "2010",
+          "value": 54.8854181471638
+        },
+        {
+          "period": "2011",
+          "value": 57.2981206101706
+        }
+      ],
+      "latest": {
+        "period": "2011",
+        "value": 57.2981206101706
+      }
+    },
+    {
+      "id": "NE.EXP.GNFS.ZS",
+      "key": "exports",
+      "name": "Exports of goods & services",
+      "unit": "% of GDP",
+      "category": "trade",
+      "description": "Value of all goods and services exported as a share of GDP.",
+      "observations": [
+        {
+          "period": "2014",
+          "value": 91.2941274036136
+        },
+        {
+          "period": "2015",
+          "value": 76.4277887724561
+        },
+        {
+          "period": "2016",
+          "value": 71.6136331301194
+        },
+        {
+          "period": "2017",
+          "value": 69.0594484485378
+        },
+        {
+          "period": "2018",
+          "value": 66.4483006480268
+        },
+        {
+          "period": "2019",
+          "value": 65.5134179400092
+        },
+        {
+          "period": "2020",
+          "value": 48.2411996300086
+        },
+        {
+          "period": "2021",
+          "value": 76.0989851624572
+        },
+        {
+          "period": "2022",
+          "value": 82.6708555603035
+        },
+        {
+          "period": "2023",
+          "value": 74.0437692661116
+        },
+        {
+          "period": "2024",
+          "value": 78.214216540835
+        }
+      ],
+      "latest": {
+        "period": "2024",
+        "value": 78.214216540835
+      }
+    },
+    {
+      "id": "NE.IMP.GNFS.ZS",
+      "key": "imports",
+      "name": "Imports of goods & services",
+      "unit": "% of GDP",
+      "category": "trade",
+      "description": "Value of all goods and services imported as a share of GDP.",
+      "observations": [
+        {
+          "period": "2014",
+          "value": 74.6851237568163
+        },
+        {
+          "period": "2015",
+          "value": 67.2927178888456
+        },
+        {
+          "period": "2016",
+          "value": 72.7665791488222
+        },
+        {
+          "period": "2017",
+          "value": 72.8526621264145
+        },
+        {
+          "period": "2018",
+          "value": 76.0428278985911
+        },
+        {
+          "period": "2019",
+          "value": 71.6118129351757
+        },
+        {
+          "period": "2020",
+          "value": 66.1207032743183
+        },
+        {
+          "period": "2021",
+          "value": 66.5083115338037
+        },
+        {
+          "period": "2022",
+          "value": 79.5725773733522
+        },
+        {
+          "period": "2023",
+          "value": 75.3062069113229
+        },
+        {
+          "period": "2024",
+          "value": 78.2597392001761
+        }
+      ],
+      "latest": {
+        "period": "2024",
+        "value": 78.2597392001761
+      }
+    },
+    {
+      "id": "NE.TRD.GNFS.ZS",
+      "key": "trade",
+      "name": "Trade openness",
+      "unit": "% of GDP",
+      "category": "trade",
+      "description": "Sum of exports and imports of goods and services as a share of GDP.",
+      "observations": [
+        {
+          "period": "2014",
+          "value": 165.97925116043
+        },
+        {
+          "period": "2015",
+          "value": 143.720506661302
+        },
+        {
+          "period": "2016",
+          "value": 144.380212278942
+        },
+        {
+          "period": "2017",
+          "value": 141.912110574952
+        },
+        {
+          "period": "2018",
+          "value": 142.491128546618
+        },
+        {
+          "period": "2019",
+          "value": 137.125230875185
+        },
+        {
+          "period": "2020",
+          "value": 114.361902904327
+        },
+        {
+          "period": "2021",
+          "value": 142.607296696261
+        },
+        {
+          "period": "2022",
+          "value": 162.243432933656
+        },
+        {
+          "period": "2023",
+          "value": 149.349976177434
+        },
+        {
+          "period": "2024",
+          "value": 156.473955741011
+        }
+      ],
+      "latest": {
+        "period": "2024",
+        "value": 156.473955741011
+      }
+    },
+    {
+      "id": "BN.CAB.XOKA.GD.ZS",
+      "key": "currentAccount",
+      "name": "Current account balance",
+      "unit": "% of GDP",
+      "category": "trade",
+      "description": "Current account balance as a share of GDP.",
+      "observations": [
+        {
+          "period": "1978",
+          "value": 6.56568933523214
+        },
+        {
+          "period": "1979",
+          "value": -12.4599708879185
+        },
+        {
+          "period": "1980",
+          "value": -52.2800998128509
+        },
+        {
+          "period": "1981",
+          "value": -45.1079562259686
+        },
+        {
+          "period": "1982",
+          "value": -39.8653010474251
+        },
+        {
+          "period": "1983",
+          "value": -41.8469462840324
+        },
+        {
+          "period": "1984",
+          "value": -14.8853626943005
+        },
+        {
+          "period": "1985",
+          "value": -4.32421355782012
+        },
+        {
+          "period": "1986",
+          "value": -0.208041146185758
+        },
+        {
+          "period": "1987",
+          "value": 5.70441069831851
+        },
+        {
+          "period": "1988",
+          "value": 5.36592222505338
+        },
+        {
+          "period": "1989",
+          "value": 5.60359364579896
+        },
+        {
+          "period": "1990",
+          "value": 4.58227775785015
+        },
+        {
+          "period": "1991",
+          "value": -3.67599589121679
+        },
+        {
+          "period": "1992",
+          "value": -6.89375110912518
+        },
+        {
+          "period": "1993",
+          "value": -16.688220023314
+        },
+        {
+          "period": "1994",
+          "value": -3.12051376186332
+        },
+        {
+          "period": "1995",
+          "value": -4.55205734073564
+        },
+        {
+          "period": "1996",
+          "value": -1.65325346284258
+        },
+        {
+          "period": "1997",
+          "value": -6.8289803723186
+        },
+        {
+          "period": "1998",
+          "value": -4.04791854699075
+        },
+        {
+          "period": "1999",
+          "value": -13.3953146587577
+        },
+        {
+          "period": "2000",
+          "value": -8.24543127431548
+        },
+        {
+          "period": "2001",
+          "value": -6.74959538197381
+        },
+        {
+          "period": "2002",
+          "value": -3.96704001433817
+        },
+        {
+          "period": "2003",
+          "value": -2.97459860769224
+        },
+        {
+          "period": "2004",
+          "value": -9.9708472282721
+        },
+        {
+          "period": "2005",
+          "value": -23.4672692200603
+        },
+        {
+          "period": "2006",
+          "value": -19.1705839350464
+        },
+        {
+          "period": "2007",
+          "value": -14.3948746476646
+        },
+        {
+          "period": "2008",
+          "value": -26.9277527694823
+        },
+        {
+          "period": "2009",
+          "value": -9.41593217957294
+        },
+        {
+          "period": "2010",
+          "value": -7.57604640472633
+        },
+        {
+          "period": "2011",
+          "value": -13.8208553363039
+        },
+        {
+          "period": "2012",
+          "value": -6.3922910977274
+        },
+        {
+          "period": "2013",
+          "value": -3.86626742586717
+        },
+        {
+          "period": "2014",
+          "value": -3.18665825232612
+        },
+        {
+          "period": "2015",
+          "value": -7.30588031911147
+        },
+        {
+          "period": "2016",
+          "value": -23.4109557277276
+        },
+        {
+          "period": "2017",
+          "value": -21.267761433937
+        },
+        {
+          "period": "2018",
+          "value": -27.8019976962882
+        },
+        {
+          "period": "2019",
+          "value": -25.8168822522057
+        },
+        {
+          "period": "2020",
+          "value": -35.7483018974442
+        },
+        {
+          "period": "2021",
+          "value": -8.63308174559145
+        },
+        {
+          "period": "2022",
+          "value": -16.868196658323
+        },
+        {
+          "period": "2023",
+          "value": -21.1388087335441
+        },
+        {
+          "period": "2024",
+          "value": -18.5306914932865
+        },
+        {
+          "period": "2025",
+          "value": -6.15203695001533
+        }
+      ],
+      "latest": {
+        "period": "2025",
+        "value": -6.15203695001533
+      }
+    },
+    {
+      "id": "BX.KLT.DINV.WD.GD.ZS",
+      "key": "fdi",
+      "name": "Foreign direct investment",
+      "unit": "% of GDP",
+      "category": "trade",
+      "description": "Net inflows of investment to acquire a lasting management interest.",
+      "observations": [
+        {
+          "period": "1973",
+          "value": -0.6480452672775
+        },
+        {
+          "period": "1974",
+          "value": 0.178935822029898
+        },
+        {
+          "period": "1975",
+          "value": 8.02742278322404
+        },
+        {
+          "period": "1976",
+          "value": 0.803590545945201
+        },
+        {
+          "period": "1977",
+          "value": 5.75435004449478
+        },
+        {
+          "period": "1978",
+          "value": 3.98044915948449
+        },
+        {
+          "period": "1979",
+          "value": 2.07666181465308
+        },
+        {
+          "period": "1980",
+          "value": -0.306144728633812
+        },
+        {
+          "period": "1981",
+          "value": -0.0669920141969831
+        },
+        {
+          "period": "1982",
+          "value": -6.01110277644262
+        },
+        {
+          "period": "1983",
+          "value": 0.415011037527594
+        },
+        {
+          "period": "1984",
+          "value": -0.127849740932642
+        },
+        {
+          "period": "1985",
+          "value": 0.951326982720425
+        },
+        {
+          "period": "1986",
+          "value": 3.80597279716144
+        },
+        {
+          "period": "1987",
+          "value": 3.61130902111324
+        },
+        {
+          "period": "1988",
+          "value": 0.712104836530667
+        },
+        {
+          "period": "1989",
+          "value": 2.32172289015992
+        },
+        {
+          "period": "1990",
+          "value": 2.60411859208412
+        },
+        {
+          "period": "1991",
+          "value": 2.65960970548328
+        },
+        {
+          "period": "1992",
+          "value": 2.31679903683284
+        },
+        {
+          "period": "1993",
+          "value": 2.14008010869873
+        },
+        {
+          "period": "1994",
+          "value": 2.45575828762777
+        },
+        {
+          "period": "1995",
+          "value": 1.81225837757684
+        },
+        {
+          "period": "1996",
+          "value": 2.06829872568168
+        },
+        {
+          "period": "1997",
+          "value": 2.24485508850185
+        },
+        {
+          "period": "1998",
+          "value": 2.13257608728799
+        },
+        {
+          "period": "1999",
+          "value": 2.09121158653824
+        },
+        {
+          "period": "2000",
+          "value": 3.57378188906309
+        },
+        {
+          "period": "2001",
+          "value": 2.36095464157791
+        },
+        {
+          "period": "2002",
+          "value": 2.75560074067064
+        },
+        {
+          "period": "2003",
+          "value": 3.02003609060425
+        },
+        {
+          "period": "2004",
+          "value": 4.31467445406402
+        },
+        {
+          "period": "2005",
+          "value": 4.55499673617996
+        },
+        {
+          "period": "2006",
+          "value": 4.05198051459747
+        },
+        {
+          "period": "2007",
+          "value": 7.08805679103643
+        },
+        {
+          "period": "2008",
+          "value": 7.97903444514319
+        },
+        {
+          "period": "2009",
+          "value": 6.73534012537353
+        },
+        {
+          "period": "2010",
+          "value": 8.36376433060736
+        },
+        {
+          "period": "2011",
+          "value": 15.2659407539778
+        },
+        {
+          "period": "2012",
+          "value": 7.89895747225905
+        },
+        {
+          "period": "2013",
+          "value": 10.9503892160384
+        },
+        {
+          "period": "2014",
+          "value": 9.01659145068896
+        },
+        {
+          "period": "2015",
+          "value": 7.21577938190819
+        },
+        {
+          "period": "2016",
+          "value": 10.3547618700189
+        },
+        {
+          "period": "2017",
+          "value": 9.50514529202919
+        },
+        {
+          "period": "2018",
+          "value": 10.6517647807373
+        },
+        {
+          "period": "2019",
+          "value": 16.7834728448357
+        },
+        {
+          "period": "2020",
+          "value": 11.8706880719155
+        },
+        {
+          "period": "2021",
+          "value": 12.238665987932
+        },
+        {
+          "period": "2022",
+          "value": 11.8454662775286
+        },
+        {
+          "period": "2023",
+          "value": 11.5818458756845
+        },
+        {
+          "period": "2024",
+          "value": 11.416720004027
+        },
+        {
+          "period": "2025",
+          "value": 11.071897165053
+        }
+      ],
+      "latest": {
+        "period": "2025",
+        "value": 11.071897165053
+      }
+    },
+    {
+      "id": "BX.TRF.PWKR.DT.GD.ZS",
+      "key": "remittances",
+      "name": "Personal remittances",
+      "unit": "% of GDP",
+      "category": "external",
+      "description": "Personal transfers and compensation of employees received from abroad.",
+      "observations": [
+        {
+          "period": "1983",
+          "value": 4.32303164091244
+        },
+        {
+          "period": "1984",
+          "value": 2.2830310880829
+        },
+        {
+          "period": "1985",
+          "value": 1.37588613203367
+        },
+        {
+          "period": "1986",
+          "value": 0.704809777252119
+        },
+        {
+          "period": "1987",
+          "value": 0.70809980806142
+        },
+        {
+          "period": "1988",
+          "value": 0.712104865014861
+        },
+        {
+          "period": "1989",
+          "value": 0.738729997841485
+        },
+        {
+          "period": "1990",
+          "value": 0.790536023489411
+        },
+        {
+          "period": "1991",
+          "value": 0.736507283416713
+        },
+        {
+          "period": "1992",
+          "value": 0.56164825977814
+        },
+        {
+          "period": "1993",
+          "value": 0.403203483852826
+        },
+        {
+          "period": "1994",
+          "value": 0.610531088108087
+        },
+        {
+          "period": "1995",
+          "value": 0.592943486412129
+        },
+        {
+          "period": "1996",
+          "value": 0.601212778998302
+        },
+        {
+          "period": "1997",
+          "value": 0.482479847162183
+        },
+        {
+          "period": "1998",
+          "value": 0.453622725645156
+        },
+        {
+          "period": "1999",
+          "value": 0.372828692656533
+        },
+        {
+          "period": "2000",
+          "value": 0.351869961060622
+        },
+        {
+          "period": "2001",
+          "value": 0.209546249707598
+        },
+        {
+          "period": "2002",
+          "value": 0.224316836230622
+        },
+        {
+          "period": "2003",
+          "value": 0.191251007765229
+        },
+        {
+          "period": "2004",
+          "value": 0.236389174881821
+        },
+        {
+          "period": "2005",
+          "value": 0.194028097112255
+        },
+        {
+          "period": "2006",
+          "value": 0.177755161607662
+        },
+        {
+          "period": "2007",
+          "value": 0.424653767624496
+        },
+        {
+          "period": "2008",
+          "value": 0.275819859938262
+        },
+        {
+          "period": "2009",
+          "value": 0.192329390866837
+        },
+        {
+          "period": "2010",
+          "value": 0.122062735053023
+        },
+        {
+          "period": "2011",
+          "value": 0.108044719668789
+        },
+        {
+          "period": "2012",
+          "value": 0.10905187264181
+        },
+        {
+          "period": "2013",
+          "value": 0.100296734927995
+        },
+        {
+          "period": "2014",
+          "value": 0.0938516278548094
+        },
+        {
+          "period": "2015",
+          "value": 0.0882315685293421
+        },
+        {
+          "period": "2016",
+          "value": 0.0867517790515882
+        },
+        {
+          "period": "2017",
+          "value": 0.0834018554726306
+        },
+        {
+          "period": "2018",
+          "value": 0.0780453313428643
+        },
+        {
+          "period": "2019",
+          "value": 0.0773429427784398
+        },
+        {
+          "period": "2020",
+          "value": 0.125253487973412
+        },
+        {
+          "period": "2021",
+          "value": 0.0929598229658775
+        },
+        {
+          "period": "2022",
+          "value": 0.0829967046687048
+        },
+        {
+          "period": "2023",
+          "value": 0.0813040657047612
+        },
+        {
+          "period": "2024",
+          "value": 0.0800427681119482
+        },
+        {
+          "period": "2025",
+          "value": 0.0766680119639669
+        }
+      ],
+      "latest": {
+        "period": "2025",
+        "value": 0.0766680119639669
+      }
+    },
+    {
+      "id": "FI.RES.TOTL.CD",
+      "key": "reserves",
+      "name": "Total reserves",
+      "unit": "US$",
+      "category": "monetary",
+      "description": "Official holdings of monetary gold, SDRs and foreign exchange.",
+      "observations": [
+        {
+          "period": "1976",
+          "value": 10000
+        },
+        {
+          "period": "1977",
+          "value": 80000
+        },
+        {
+          "period": "1978",
+          "value": 571475.286252215
+        },
+        {
+          "period": "1979",
+          "value": 712506.356578765
+        },
+        {
+          "period": "1980",
+          "value": 949148.535136532
+        },
+        {
+          "period": "1981",
+          "value": 1145419.1406935
+        },
+        {
+          "period": "1982",
+          "value": 8406398.35471126
+        },
+        {
+          "period": "1983",
+          "value": 4541130.1894688
+        },
+        {
+          "period": "1984",
+          "value": 5129802.09569766
+        },
+        {
+          "period": "1985",
+          "value": 4591968.3655536
+        },
+        {
+          "period": "1986",
+          "value": 6914463.93404523
+        },
+        {
+          "period": "1987",
+          "value": 8194186.61067684
+        },
+        {
+          "period": "1988",
+          "value": 21586913.9158401
+        },
+        {
+          "period": "1989",
+          "value": 24766283.2812048
+        },
+        {
+          "period": "1990",
+          "value": 24378453.1447838
+        },
+        {
+          "period": "1991",
+          "value": 23468608.6197771
+        },
+        {
+          "period": "1992",
+          "value": 28193754.5890797
+        },
+        {
+          "period": "1993",
+          "value": 26149829.0638763
+        },
+        {
+          "period": "1994",
+          "value": 31220395.6245447
+        },
+        {
+          "period": "1995",
+          "value": 47951938.1027696
+        },
+        {
+          "period": "1996",
+          "value": 76166932.7152043
+        },
+        {
+          "period": "1997",
+          "value": 98305132.2373818
+        },
+        {
+          "period": "1998",
+          "value": 118535050.808558
+        },
+        {
+          "period": "1999",
+          "value": 127116487.326909
+        },
+        {
+          "period": "2000",
+          "value": 122801161.555359
+        },
+        {
+          "period": "2001",
+          "value": 93075478.3340346
+        },
+        {
+          "period": "2002",
+          "value": 133146756.138827
+        },
+        {
+          "period": "2003",
+          "value": 159492039.076648
+        },
+        {
+          "period": "2004",
+          "value": 203594899.341915
+        },
+        {
+          "period": "2005",
+          "value": 186354315.295943
+        },
+        {
+          "period": "2006",
+          "value": 231550005.623125
+        },
+        {
+          "period": "2007",
+          "value": 308403900.253518
+        },
+        {
+          "period": "2008",
+          "value": 240580313.574775
+        },
+        {
+          "period": "2009",
+          "value": 260981130.107897
+        },
+        {
+          "period": "2010",
+          "value": 350103579.326899
+        },
+        {
+          "period": "2011",
+          "value": 334913163.216004
+        },
+        {
+          "period": "2012",
+          "value": 304506181.012497
+        },
+        {
+          "period": "2013",
+          "value": 368315038.589918
+        },
+        {
+          "period": "2014",
+          "value": 614684246.485375
+        },
+        {
+          "period": "2015",
+          "value": 563873734.60286
+        },
+        {
+          "period": "2016",
+          "value": 467323386.04819
+        },
+        {
+          "period": "2017",
+          "value": 587346816.807915
+        },
+        {
+          "period": "2018",
+          "value": 712157733.781107
+        },
+        {
+          "period": "2019",
+          "value": 753496279.806938
+        },
+        {
+          "period": "2020",
+          "value": 984930745.339245
+        },
+        {
+          "period": "2021",
+          "value": 805808189.424559
+        },
+        {
+          "period": "2022",
+          "value": 832094352.898168
+        },
+        {
+          "period": "2023",
+          "value": 590522550.56534
+        },
+        {
+          "period": "2024",
+          "value": 673885912.694607
+        },
+        {
+          "period": "2025",
+          "value": 984573591.713979
+        }
+      ],
+      "latest": {
+        "period": "2025",
+        "value": 984573591.713979
+      }
+    },
+    {
+      "id": "FS.AST.PRVT.GD.ZS",
+      "key": "privateCredit",
+      "name": "Domestic credit to private sector",
+      "unit": "% of GDP",
+      "category": "monetary",
+      "description": "Financial resources provided to the private sector by financial corporations.",
+      "observations": [
+        {
+          "period": "2004",
+          "value": 23.0814489921507
+        },
+        {
+          "period": "2005",
+          "value": 38.8425780859539
+        },
+        {
+          "period": "2006",
+          "value": 42.6367076619964
+        },
+        {
+          "period": "2007",
+          "value": 54.630228766986
+        },
+        {
+          "period": "2008",
+          "value": 57.7343406855571
+        },
+        {
+          "period": "2009",
+          "value": 53.7810073138324
+        },
+        {
+          "period": "2010",
+          "value": 47.6844927907076
+        },
+        {
+          "period": "2011",
+          "value": 42.428163613364
+        },
+        {
+          "period": "2012",
+          "value": 35.11874636142
+        },
+        {
+          "period": "2013",
+          "value": 31.2161620904851
+        },
+        {
+          "period": "2014",
+          "value": 28.954899775636
+        },
+        {
+          "period": "2015",
+          "value": 29.1014786368811
+        },
+        {
+          "period": "2016",
+          "value": 30.3476225372342
+        },
+        {
+          "period": "2017",
+          "value": 31.1989633144231
+        },
+        {
+          "period": "2018",
+          "value": 31.0378663786161
+        },
+        {
+          "period": "2019",
+          "value": 31.5393340084709
+        },
+        {
+          "period": "2020",
+          "value": 53.3551626912335
+        },
+        {
+          "period": "2021",
+          "value": 39.3089828252313
+        },
+        {
+          "period": "2022",
+          "value": 35.2169697593796
+        },
+        {
+          "period": "2023",
+          "value": 35.8362090976748
+        },
+        {
+          "period": "2024",
+          "value": 35.7299049882318
+        },
+        {
+          "period": "2025",
+          "value": 36.4396053701304
+        }
+      ],
+      "latest": {
+        "period": "2025",
+        "value": 36.4396053701304
+      }
+    },
+    {
+      "id": "PA.NUS.FCRF",
+      "key": "exchangeRate",
+      "name": "Official exchange rate",
+      "unit": "MVR per US$",
+      "category": "monetary",
+      "description": "Official exchange rate, annual period average.",
+      "observations": [
+        {
+          "period": "1960",
+          "value": 4.7619000037619
+        },
+        {
+          "period": "1961",
+          "value": 4.7619000037619
+        },
+        {
+          "period": "1962",
+          "value": 4.7619000037619
+        },
+        {
+          "period": "1963",
+          "value": 4.7619000037619
+        },
+        {
+          "period": "1964",
+          "value": 4.7619000037619
+        },
+        {
+          "period": "1965",
+          "value": 4.7619000037619
+        },
+        {
+          "period": "1966",
+          "value": 4.7619000037619
+        },
+        {
+          "period": "1967",
+          "value": 4.76090833630158
+        },
+        {
+          "period": "1968",
+          "value": 4.749999999
+        },
+        {
+          "period": "1969",
+          "value": 4.749999999
+        },
+        {
+          "period": "1970",
+          "value": 4.749999999
+        },
+        {
+          "period": "1971",
+          "value": 4.73441666566666
+        },
+        {
+          "period": "1972",
+          "value": 4.374999999
+        },
+        {
+          "period": "1973",
+          "value": 3.98566666566666
+        },
+        {
+          "period": "1974",
+          "value": 3.929999999
+        },
+        {
+          "period": "1975",
+          "value": 5.76483333233333
+        },
+        {
+          "period": "1976",
+          "value": 8.36466666633333
+        },
+        {
+          "period": "1977",
+          "value": 8.7667499995
+        },
+        {
+          "period": "1978",
+          "value": 8.96874999941666
+        },
+        {
+          "period": "1979",
+          "value": 7.48858333233333
+        },
+        {
+          "period": "1980",
+          "value": 7.549999999
+        },
+        {
+          "period": "1981",
+          "value": 7.549999999
+        },
+        {
+          "period": "1982",
+          "value": 7.17366666566666
+        },
+        {
+          "period": "1983",
+          "value": 7.049999999
+        },
+        {
+          "period": "1984",
+          "value": 7.04999999958333
+        },
+        {
+          "period": "1985",
+          "value": 7.09808333333333
+        },
+        {
+          "period": "1986",
+          "value": 7.15073333333333
+        },
+        {
+          "period": "1987",
+          "value": 9.223
+        },
+        {
+          "period": "1988",
+          "value": 8.78458333333333
+        },
+        {
+          "period": "1989",
+          "value": 9.04083333333333
+        },
+        {
+          "period": "1990",
+          "value": 9.55174166666666
+        },
+        {
+          "period": "1991",
+          "value": 10.2526666666666
+        },
+        {
+          "period": "1992",
+          "value": 10.5691666666666
+        },
+        {
+          "period": "1993",
+          "value": 10.9569916666666
+        },
+        {
+          "period": "1994",
+          "value": 11.58575
+        },
+        {
+          "period": "1995",
+          "value": 11.77
+        },
+        {
+          "period": "1996",
+          "value": 11.77
+        },
+        {
+          "period": "1997",
+          "value": 11.77
+        },
+        {
+          "period": "1998",
+          "value": 11.77
+        },
+        {
+          "period": "1999",
+          "value": 11.77
+        },
+        {
+          "period": "2000",
+          "value": 11.77
+        },
+        {
+          "period": "2001",
+          "value": 12.2420833333333
+        },
+        {
+          "period": "2002",
+          "value": 12.8
+        },
+        {
+          "period": "2003",
+          "value": 12.8
+        },
+        {
+          "period": "2004",
+          "value": 12.8
+        },
+        {
+          "period": "2005",
+          "value": 12.8
+        },
+        {
+          "period": "2006",
+          "value": 12.8
+        },
+        {
+          "period": "2007",
+          "value": 12.8
+        },
+        {
+          "period": "2008",
+          "value": 12.8
+        },
+        {
+          "period": "2009",
+          "value": 12.8
+        },
+        {
+          "period": "2010",
+          "value": 12.8
+        },
+        {
+          "period": "2011",
+          "value": 14.6020084036964
+        },
+        {
+          "period": "2012",
+          "value": 15.3648353163596
+        },
+        {
+          "period": "2013",
+          "value": 15.366710030284
+        },
+        {
+          "period": "2014",
+          "value": 15.3803935180893
+        },
+        {
+          "period": "2015",
+          "value": 15.3663312211981
+        },
+        {
+          "period": "2016",
+          "value": 15.3684076818157
+        },
+        {
+          "period": "2017",
+          "value": 15.3869685099846
+        },
+        {
+          "period": "2018",
+          "value": 15.3908372695852
+        },
+        {
+          "period": "2019",
+          "value": 15.382041922683
+        },
+        {
+          "period": "2020",
+          "value": 15.3812695278704
+        },
+        {
+          "period": "2021",
+          "value": 15.3726984126984
+        },
+        {
+          "period": "2022",
+          "value": 15.3866249999999
+        },
+        {
+          "period": "2023",
+          "value": 15.3867943548386
+        },
+        {
+          "period": "2024",
+          "value": 15.3891963292547
+        },
+        {
+          "period": "2025",
+          "value": 15.415677547363
+        }
+      ],
+      "latest": {
+        "period": "2025",
+        "value": 15.415677547363
+      }
+    },
+    {
+      "id": "SL.UEM.TOTL.ZS",
+      "key": "unemployment",
+      "name": "Unemployment",
+      "unit": "% of labour force",
+      "category": "labour",
+      "description": "Share of the labour force that is without work but available for work.",
+      "observations": [
+        {
+          "period": "1991",
+          "value": 0.788
+        },
+        {
+          "period": "1992",
+          "value": 0.789
+        },
+        {
+          "period": "1993",
+          "value": 0.796
+        },
+        {
+          "period": "1994",
+          "value": 0.793
+        },
+        {
+          "period": "1995",
+          "value": 0.79
+        },
+        {
+          "period": "1996",
+          "value": 1.019
+        },
+        {
+          "period": "1997",
+          "value": 1.25
+        },
+        {
+          "period": "1998",
+          "value": 1.489
+        },
+        {
+          "period": "1999",
+          "value": 1.726
+        },
+        {
+          "period": "2000",
+          "value": 1.97
+        },
+        {
+          "period": "2001",
+          "value": 3.038
+        },
+        {
+          "period": "2002",
+          "value": 4.094
+        },
+        {
+          "period": "2003",
+          "value": 5.126
+        },
+        {
+          "period": "2004",
+          "value": 6.151
+        },
+        {
+          "period": "2005",
+          "value": 7.313
+        },
+        {
+          "period": "2006",
+          "value": 8.345
+        },
+        {
+          "period": "2007",
+          "value": 9.421
+        },
+        {
+          "period": "2008",
+          "value": 10.361
+        },
+        {
+          "period": "2009",
+          "value": 11.697
+        },
+        {
+          "period": "2010",
+          "value": 10.875
+        },
+        {
+          "period": "2011",
+          "value": 10.043
+        },
+        {
+          "period": "2012",
+          "value": 9.134
+        },
+        {
+          "period": "2013",
+          "value": 8.295
+        },
+        {
+          "period": "2014",
+          "value": 7.461
+        },
+        {
+          "period": "2015",
+          "value": 6.611
+        },
+        {
+          "period": "2016",
+          "value": 5.771
+        },
+        {
+          "period": "2017",
+          "value": 5.377
+        },
+        {
+          "period": "2018",
+          "value": 4.962
+        },
+        {
+          "period": "2019",
+          "value": 4.562
+        },
+        {
+          "period": "2020",
+          "value": 5.42
+        },
+        {
+          "period": "2021",
+          "value": 5.016
+        },
+        {
+          "period": "2022",
+          "value": 4.303
+        },
+        {
+          "period": "2023",
+          "value": 4.019
+        },
+        {
+          "period": "2024",
+          "value": 4.278
+        },
+        {
+          "period": "2025",
+          "value": 4.514
+        }
+      ],
+      "latest": {
+        "period": "2025",
+        "value": 4.514
+      }
+    },
+    {
+      "id": "SP.DYN.LE00.IN",
+      "key": "lifeExpectancy",
+      "name": "Life expectancy at birth",
+      "unit": "years",
+      "category": "social",
+      "description": "Number of years a newborn would live if prevailing patterns stayed constant.",
+      "observations": [
+        {
+          "period": "1960",
+          "value": 38.244
+        },
+        {
+          "period": "1961",
+          "value": 38.645
+        },
+        {
+          "period": "1962",
+          "value": 39.09
+        },
+        {
+          "period": "1963",
+          "value": 39.593
+        },
+        {
+          "period": "1964",
+          "value": 40.152
+        },
+        {
+          "period": "1965",
+          "value": 40.759
+        },
+        {
+          "period": "1966",
+          "value": 41.406
+        },
+        {
+          "period": "1967",
+          "value": 42.106
+        },
+        {
+          "period": "1968",
+          "value": 42.852
+        },
+        {
+          "period": "1969",
+          "value": 43.654
+        },
+        {
+          "period": "1970",
+          "value": 44.522
+        },
+        {
+          "period": "1971",
+          "value": 45.454
+        },
+        {
+          "period": "1972",
+          "value": 46.431
+        },
+        {
+          "period": "1973",
+          "value": 47.459
+        },
+        {
+          "period": "1974",
+          "value": 48.535
+        },
+        {
+          "period": "1975",
+          "value": 49.645
+        },
+        {
+          "period": "1976",
+          "value": 50.753
+        },
+        {
+          "period": "1977",
+          "value": 51.835
+        },
+        {
+          "period": "1978",
+          "value": 50.448
+        },
+        {
+          "period": "1979",
+          "value": 53.871
+        },
+        {
+          "period": "1980",
+          "value": 54.819
+        },
+        {
+          "period": "1981",
+          "value": 55.729
+        },
+        {
+          "period": "1982",
+          "value": 56.614
+        },
+        {
+          "period": "1983",
+          "value": 57.484
+        },
+        {
+          "period": "1984",
+          "value": 58.341
+        },
+        {
+          "period": "1985",
+          "value": 59.18
+        },
+        {
+          "period": "1986",
+          "value": 59.993
+        },
+        {
+          "period": "1987",
+          "value": 60.789
+        },
+        {
+          "period": "1988",
+          "value": 61.59
+        },
+        {
+          "period": "1989",
+          "value": 62.375
+        },
+        {
+          "period": "1990",
+          "value": 63.148
+        },
+        {
+          "period": "1991",
+          "value": 63.911
+        },
+        {
+          "period": "1992",
+          "value": 64.664
+        },
+        {
+          "period": "1993",
+          "value": 65.434
+        },
+        {
+          "period": "1994",
+          "value": 66.197
+        },
+        {
+          "period": "1995",
+          "value": 66.962
+        },
+        {
+          "period": "1996",
+          "value": 67.734
+        },
+        {
+          "period": "1997",
+          "value": 68.517
+        },
+        {
+          "period": "1998",
+          "value": 69.303
+        },
+        {
+          "period": "1999",
+          "value": 70.157
+        },
+        {
+          "period": "2000",
+          "value": 70.892
+        },
+        {
+          "period": "2001",
+          "value": 71.659
+        },
+        {
+          "period": "2002",
+          "value": 72.36
+        },
+        {
+          "period": "2003",
+          "value": 73.263
+        },
+        {
+          "period": "2004",
+          "value": 73.008
+        },
+        {
+          "period": "2005",
+          "value": 74.785
+        },
+        {
+          "period": "2006",
+          "value": 75.256
+        },
+        {
+          "period": "2007",
+          "value": 75.711
+        },
+        {
+          "period": "2008",
+          "value": 75.999
+        },
+        {
+          "period": "2009",
+          "value": 76.371
+        },
+        {
+          "period": "2010",
+          "value": 76.756
+        },
+        {
+          "period": "2011",
+          "value": 77.141
+        },
+        {
+          "period": "2012",
+          "value": 77.512
+        },
+        {
+          "period": "2013",
+          "value": 77.847
+        },
+        {
+          "period": "2014",
+          "value": 78.187
+        },
+        {
+          "period": "2015",
+          "value": 78.607
+        },
+        {
+          "period": "2016",
+          "value": 78.913
+        },
+        {
+          "period": "2017",
+          "value": 79.228
+        },
+        {
+          "period": "2018",
+          "value": 79.433
+        },
+        {
+          "period": "2019",
+          "value": 79.707
+        },
+        {
+          "period": "2020",
+          "value": 78.713
+        },
+        {
+          "period": "2021",
+          "value": 78.052
+        },
+        {
+          "period": "2022",
+          "value": 80.76
+        },
+        {
+          "period": "2023",
+          "value": 81.041
+        },
+        {
+          "period": "2024",
+          "value": 81.285
+        }
+      ],
+      "latest": {
+        "period": "2024",
+        "value": 81.285
+      }
+    }
+  ]
+}

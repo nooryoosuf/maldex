@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "source": "Maldives Stock Exchange — Insights",
+    "sourceUrl": "https://stockexchange.mv/insights",
+    "retrievedAt": "2026-11-24T09:46:11.766Z",
+    "verification": "official-reported",
+    "note": "Published by MSE. Historical series are official exchange data retrieved via the public CSV export. Re-verify against the source before use in decisions.",
+    "dataset": "Latest daily trade summary"
+  },
+  "summary": [
+    {
+      "code": "MIB",
+      "lastDate": "2026-11-24",
+      "lastPrice": 134,
+      "previousClose": 134,
+      "changePct": 0,
+      "volume": 110,
+      "value": 14548,
+      "trades": 4
+    },
+    {
+      "code": "BML",
+      "lastDate": "2026-11-24",
+      "lastPrice": 69,
+      "previousClose": 69.1,
+      "changePct": -0.1447178002894274,
+      "volume": 934,
+      "value": 63872.219999999994,
+      "trades": 25
+    },
+    {
+      "code": "MTDC",
+      "lastDate": "2026-11-24",
+      "lastPrice": 13,
+      "previousClose": 13.05,
+      "changePct": -0.38314176245211273,
+      "volume": 2,
+      "value": 26,
+      "trades": 1
+    },
+    {
+      "code": "DHR",
+      "lastDate": "2026-11-24",
+      "lastPrice": 124,
+      "previousClose": 123,
+      "changePct": 0.8130081300813009,
+      "volume": 250,
+      "value": 31284.71,
+      "trades": 8
+    },
+    {
+      "code": "OMPL",
+      "lastDate": "2026-11-23",
+      "lastPrice": 78.5,
+      "previousClose": 78.5,
+      "changePct": 0,
+      "volume": 1,
+      "value": 78.5,
+      "trades": 1
+    },
+    {
+      "code": "MTCC",
+      "lastDate": "2026-11-19",
+      "lastPrice": 65.07,
+      "previousClose": 65.06,
+      "changePct": 0.015370427297864902,
+      "volume": 53,
+      "value": 3449.65,
+      "trades": 2
+    },
+    {
+      "code": "ATM",
+      "lastDate": "2026-11-23",
+      "lastPrice": 75,
+      "previousClose": 84.14,
+      "changePct": -10.862847634894225,
+      "volume": 20,
+      "value": 1500,
+      "trades": 2
+    },
+    {
+      "code": "CPLC",
+      "lastDate": "2026-11-24",
+      "lastPrice": 84.57,
+      "previousClose": 93.97,
+      "changePct": -10.003192508247318,
+      "volume": 10,
+      "value": 845.7,
+      "trades": 1
+    },
+    {
+      "code": "STO",
+      "lastDate": "2026-11-24",
+      "lastPrice": 2575,
+      "previousClose": 2575,
+      "changePct": 0,
+      "volume": 1,
+      "value": 2575,
+      "trades": 1
+    },
+    {
+      "code": "EURMB1",
+      "lastDate": "2026-03-31",
+      "lastPrice": 1000,
+      "previousClose": 1000,
+      "changePct": 0,
+      "volume": 1,
+      "value": 1000,
+      "trades": 1
+    },
+    {
+      "code": "REEFS1",
+      "lastDate": "2026-11-18",
+      "lastPrice": 880,
+      "previousClose": 900,
+      "changePct": -2.2222222222222223,
+      "volume": 1,
+      "value": 880,
+      "trades": 1
+    },
+    {
+      "code": "HDFCS2",
+      "lastDate": "2026-10-01",
+      "lastPrice": 1020,
+      "previousClose": 1000,
+      "changePct": 2,
+      "volume": 1,
+      "value": 1020,
+      "trades": 1
+    },
+    {
+      "code": "GOVTB1",
+      "lastDate": "2026-07-23",
+      "lastPrice": 1000,
+      "changePct": null,
+      "volume": 50000,
+      "value": 50000000,
+      "trades": 1
+    },
+    {
+      "code": "GOVTB2",
+      "lastDate": "2026-07-23",
+      "lastPrice": 1000,
+      "changePct": null,
+      "volume": 250000,
+      "value": 250000000,
+      "trades": 1
+    },
+    {
+      "code": "GOVTB3",
+      "lastDate": "2026-07-23",
+      "lastPrice": 1000,
+      "changePct": null,
+      "volume": 459000,
+      "value": 459000000,
+      "trades": 1
+    },
+    {
+      "code": "GOVTB4",
+      "lastDate": "2026-07-23",
+      "lastPrice": 1000,
+      "changePct": null,
+      "volume": 550000,
+      "value": 550000000,
+      "trades": 1
+    },
+    {
+      "code": "GOVTB5",
+      "lastDate": "2026-07-23",
+      "lastPrice": 1000,
+      "changePct": null,
+      "volume": 503000,
+      "value": 503000000,
+      "trades": 1
+    },
+    {
+      "code": "GOVTB6",
+      "lastDate": "2026-07-23",
+      "lastPrice": 1000,
+      "changePct": null,
+      "volume": 309000,
+      "value": 309000000,
+      "trades": 1
+    },
+    {
+      "code": "GOVTB7",
+      "lastDate": "2026-07-23",
+      "lastPrice": 1000,
+      "changePct": null,
+      "volume": 300000,
+      "value": 300000000,
+      "trades": 1
+    }
+  ]
+}
