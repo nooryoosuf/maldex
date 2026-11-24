@@ -6,7 +6,7 @@ import { PreferencesProvider } from "@/components/providers/preferences-provider
 import { Header } from "@/components/shell/header";
 import { DataStatusBar } from "@/components/shell/data-status-bar";
 import { Footer } from "@/components/shell/footer";
-import { getPreferences } from "@/lib/preferences";
+
 
 export const metadata: Metadata = {
   title: {
@@ -38,11 +38,9 @@ export const viewport: Viewport = {
   ],
 };
 
-export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const { mode, theme } = await getPreferences();
-
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={theme === "dark" ? "dark" : undefined} data-viewing-mode={mode} suppressHydrationWarning>
+    <html lang="en" data-viewing-mode="simple" suppressHydrationWarning>
       <body className="flex min-h-screen flex-col">
         <a
           href="#main"
@@ -50,7 +48,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         >
           Skip to content
         </a>
-        <PreferencesProvider initialMode={mode} initialTheme={theme}>
+        <PreferencesProvider initialMode="simple" initialTheme="light">
           <Header />
           <DataStatusBar />
           <main id="main" className="flex-1">

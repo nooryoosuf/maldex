@@ -12,7 +12,7 @@ import { MarketActivity } from "@/components/home/market-activity";
 import { LatestDevelopments } from "@/components/home/developments";
 import { CompanyRail } from "@/components/home/company-rail";
 import { DataIntegrityPanel } from "@/components/home/data-integrity";
-import { getViewingMode } from "@/lib/preferences";
+
 import {
   TIME_RANGES,
   getEquityTurnoverSeries,
@@ -32,7 +32,6 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  const mode = await getViewingMode();
   const snapshot = getMarketSnapshot();
   const active = getMostActiveEquity();
 
@@ -87,8 +86,8 @@ export default async function HomePage() {
             <span className="font-mono">MSE · CMDA · World Bank</span>
             <span className="h-3 w-px bg-line-strong" />
             <span className="inline-flex items-center gap-1.5">
-              <Badge variant={mode === "simple" ? "accent" : "default"}>{mode}</Badge>
-              <span>viewing mode</span>
+              <Badge variant="accent">simple</Badge>
+              <span>default viewing mode</span>
             </span>
           </div>
         </div>
@@ -99,7 +98,7 @@ export default async function HomePage() {
       <MarketSnapshot />
 
       <div className="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)]">
-        <EconomicPulse mode={mode} />
+        <EconomicPulse mode="simple" />
         <div className="space-y-5">
           <InsightsPanel />
           <DataIntegrityPanel />
@@ -115,7 +114,7 @@ export default async function HomePage() {
       </div>
 
       <div className="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)]">
-        <LatestDevelopments mode={mode} />
+        <LatestDevelopments mode="simple" />
         <div className="space-y-5">
           <CompanyRail />
           <section className="rounded-md border border-line bg-surface p-4">

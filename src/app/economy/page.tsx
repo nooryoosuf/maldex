@@ -23,7 +23,7 @@ import {
   getPulseSeries,
   buildObservation,
 } from "@/lib/data/economy";
-import { getViewingMode } from "@/lib/preferences";
+
 import { formatDate, formatNumber, formatUnitValue, formatPercent } from "@/lib/format";
 
 export const metadata: Metadata = {
@@ -35,7 +35,6 @@ export const metadata: Metadata = {
 const FOCUS = ["gdpGrowth", "inflation", "reserves", "currentAccount"];
 
 export default async function EconomyPage() {
-  const mode = await getViewingMode();
   const stats = getEconomyStats();
 
   return (
@@ -119,9 +118,10 @@ export default async function EconomyPage() {
                 eyebrow={indicator.category}
                 title={indicator.name}
                 description={
-                  mode === "simple"
-                    ? buildObservation(indicator).simple
-                    : `${indicator.id} · ${indicator.unit}`
+                  <>
+                    <span className="simple-only">{buildObservation(indicator).simple}</span>
+                    <span className="advanced-only">{indicator.id} · {indicator.unit}</span>
+                  </>
                 }
                 footer={
                   <div className="flex flex-wrap items-center justify-between gap-2">
@@ -222,11 +222,11 @@ export default async function EconomyPage() {
                       <Sparkline data={getPulseSeries(key, 12)} width={72} height={26} className="shrink-0" />
                     </div>
 
-                    <p className="mt-3 text-[11.5px] leading-5 text-muted">
-                      {mode === "simple" ? observation.simple : observation.advanced}
-                    </p>
+                    <p className="simple-only mt-3 text-[11.5px] leading-5 text-muted">{observation.simple}</p>
+                    <p className="advanced-only mt-3 text-[11.5px] leading-5 text-muted">{observation.advanced}</p>
 
-                    {mode === "advanced" && indicator.observations.length > 1 ? (
+                    <div className="advanced-only">
+                      {indicator.observations.length > 1 ? (
                       <details className="mt-3 border-t border-line pt-2">
                         <summary className="cursor-pointer font-mono text-[9.5px] uppercase tracking-[0.08em] text-faint hover:text-ink">
                           {indicator.observations.length} observations
@@ -253,6 +253,7 @@ export default async function EconomyPage() {
                         </div>
                       </details>
                     ) : null}
+                    </div>
                   </Link>
                 );
               })}

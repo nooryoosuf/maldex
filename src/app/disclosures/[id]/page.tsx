@@ -12,16 +12,16 @@ import { CompanyMark } from "@/components/ui/company-mark";
 import { getCompanyByCode } from "@/lib/data/companies";
 import {
   getDisclosureById,
+  getDisclosures,
   getDisclosuresForCompany,
   plainLanguageDisclosure,
   disclosureTypeTone,
 } from "@/lib/data/disclosures";
-import { getViewingMode } from "@/lib/preferences";
+
 import { formatDate } from "@/lib/format";
 
 export function generateStaticParams() {
-  // Avoid generating thousands; static generation on demand is fine.
-  return [];
+  return getDisclosures().map((item) => ({ id: item.id }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
@@ -39,7 +39,6 @@ export default async function DisclosureDetailPage({ params }: { params: Promise
   const item = getDisclosureById(id);
   if (!item) notFound();
 
-  const mode = await getViewingMode();
   const company = item.code ? getCompanyByCode(item.code) : undefined;
   const related = item.code ? getDisclosuresForCompany(item.code, 6).filter((entry) => entry.id !== item.id) : [];
 
@@ -55,9 +54,13 @@ export default async function DisclosureDetailPage({ params }: { params: Promise
         eyebrow={`${item.type} · ${item.company}`}
         title={item.title}
         description={
-          mode === "simple"
-            ? plainLanguageDisclosure(item)
-            : `Published ${formatDate(item.publishedAt, "long")} by ${item.company}${item.code ? ` (${item.code})` : ""}. Official document metadata only.`
+          <>
+            <span className="simple-only">{plainLanguageDisclosure(item)}</span>
+            <span className="advanced-only">
+              Published {formatDate(item.publishedAt, "long")} by {item.company}
+              {item.code ? ` (${item.code})` : ""}. Official document metadata only.
+            </span>
+          </>
         }
         actions={
           <a
@@ -114,12 +117,11 @@ export default async function DisclosureDetailPage({ params }: { params: Promise
             </a>
           </section>
 
-          {mode === "advanced" ? (
-            <section className="overflow-hidden rounded-md border border-line bg-surface">
-              <div className="border-b border-line px-4 py-3">
-                <p className="mono-label mb-1">Metadata</p>
-                <h2 className="text-sm font-semibold tracking-[-0.01em] text-ink">Indexed fields</h2>
-              </div>
+          <section className="advanced-only overflow-hidden rounded-md border border-line bg-surface">
+            <div className="border-b border-line px-4 py-3">
+              <p className="mono-label mb-1">Metadata</p>
+              <h2 className="text-sm font-semibold tracking-[-0.01em] text-ink">Indexed fields</h2>
+            </div>
               <dl className="divide-y divide-line text-xs">
                 {[
                   ["Disclosure id", `#${item.id}`],
@@ -137,7 +139,6 @@ export default async function DisclosureDetailPage({ params }: { params: Promise
                 ))}
               </dl>
             </section>
-          ) : null}
 
           {related.length ? (
             <section className="overflow-hidden rounded-md border border-line bg-surface">

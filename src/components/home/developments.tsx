@@ -48,17 +48,16 @@ export function LatestDevelopments({ mode }: { mode: ViewingMode }) {
                   <CompanyMark monogram={monogram} size="xs" />
                   <span className="text-[11px] font-medium text-ink">{item.company}</span>
                   <Badge variant={disclosureTypeTone(item.type)}>{item.type}</Badge>
-                  {mode === "advanced" ? (
-                    <span className="font-mono text-[9px] text-faint">#{item.id}</span>
-                  ) : null}
+                  <span className="advanced-only font-mono text-[9px] text-faint">#{item.id}</span>
                 </div>
                 <h3 className="mt-1.5 text-[12.5px] font-medium leading-[18px] text-ink">
                   <Link href={`/disclosures/${item.id}`} className="hover:text-accent">
                     {item.title}
                   </Link>
                 </h3>
-                <p className="mt-1 text-[11px] leading-[17px] text-muted">
-                  {mode === "simple" ? plainLanguageDisclosure(item) : `${item.type} published on ${formatDate(item.publishedAt, "long")}. Official document metadata only; figures have not been extracted by Maldex.`}
+                <p className="simple-only mt-1 text-[11px] leading-[17px] text-muted">{plainLanguageDisclosure(item)}</p>
+                <p className="advanced-only mt-1 text-[11px] leading-[17px] text-muted">
+                  {item.type} published on {formatDate(item.publishedAt, "long")}. Official document metadata only; figures have not been extracted by Maldex.
                 </p>
                 <div className="mt-1.5 flex flex-wrap items-center gap-3">
                   <a

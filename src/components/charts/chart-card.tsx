@@ -12,7 +12,7 @@ export function ChartCard({
 }: {
   eyebrow?: string;
   title: string;
-  description?: string;
+  description?: React.ReactNode;
   actions?: React.ReactNode;
   children: React.ReactNode;
   footer?: React.ReactNode;

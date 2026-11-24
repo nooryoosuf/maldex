@@ -36,7 +36,7 @@ import {
   TIME_RANGES,
 } from "@/lib/data/market";
 import { getDisclosuresForCompany, plainLanguageDisclosure, disclosureTypeTone } from "@/lib/data/disclosures";
-import { getViewingMode } from "@/lib/preferences";
+
 import { formatDate, formatMvr, formatNumber, formatPercent } from "@/lib/format";
 import { cn } from "@/lib/cn";
 
@@ -59,7 +59,6 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
   const company = getCompanyBySlug(slug);
   if (!company) notFound();
 
-  const mode = await getViewingMode();
   const metrics = getCompanyMetrics(company);
   const financials = getCompanyFinancials(company);
   const trade = getLatestTrade(company.code);
@@ -117,7 +116,12 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
       <PageHeader
         eyebrow={`${company.sector} · ${company.code}`}
         title={company.name}
-        description={mode === "simple" ? company.simpleSummary : company.summary}
+        description={
+          <>
+            <span className="simple-only">{company.simpleSummary}</span>
+            <span className="advanced-only">{company.summary}</span>
+          </>
+        }
         actions={
           <>
             <Link
@@ -146,7 +150,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
             <DataBadge status="official-reported" label="Market data" />
             <DataBadge status="illustrative" label="Financials" />
             <span className="h-3 w-px bg-line-strong" />
-            <span className="font-mono text-[10px]">{mode} mode</span>
+            <span className="font-mono text-[10px]">Simple / Advanced</span>
           </>
         }
       />
@@ -244,14 +248,12 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
             </div>
           </section>
 
-          {mode === "simple" ? (
-            <Notice variant="info" title="In plain language">
-              This is the last price at which {company.shortName} shares changed hands on the exchange. The percentage
-              shows how it compares with the previous close. A company’s share price is not the same as its profit or the
-              size of the business.
-            </Notice>
-          ) : (
-            <section className="rounded-md border border-line bg-surface p-4">
+          <Notice variant="info" title="In plain language" className="simple-only">
+            This is the last price at which {company.shortName} shares changed hands on the exchange. The percentage
+            shows how it compares with the previous close. A company’s share price is not the same as its profit or the
+            size of the business.
+          </Notice>
+          <section className="advanced-only rounded-md border border-line bg-surface p-4">
               <p className="mono-label mb-2">Capital structure</p>
               <dl className="space-y-2 text-xs">
                 <div className="flex justify-between gap-3">
@@ -276,7 +278,6 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
                 published values.
               </p>
             </section>
-          )}
         </div>
       </div>
 
@@ -340,9 +341,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
                                 <span className="font-mono text-[9px] text-faint">{formatDate(item.publishedAt)}</span>
                               </div>
                               <p className="mt-1 text-[12px] font-medium leading-[18px] text-ink">{item.title}</p>
-                              {mode === "simple" ? (
-                                <p className="mt-0.5 text-[10.5px] leading-4 text-muted">{plainLanguageDisclosure(item)}</p>
-                              ) : null}
+                              <p className="simple-only mt-0.5 text-[10.5px] leading-4 text-muted">{plainLanguageDisclosure(item)}</p>
                             </Link>
                           ))}
                         </div>

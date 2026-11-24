@@ -1,7 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useMemo, useState, useTransition } from "react";
-import { useRouter } from "next/navigation";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import type { Theme, ViewingMode } from "@/lib/types";
 import { MODE_COOKIE, PREFERENCE_MAX_AGE, THEME_COOKIE } from "@/lib/preferences-constants";
 
@@ -14,6 +13,12 @@ interface PreferencesContextValue {
 }
 
 const PreferencesContext = createContext<PreferencesContextValue | null>(null);
+
+function readCookie(name: string): string | null {
+  if (typeof document === "undefined") return null;
+  const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
+  return match ? decodeURIComponent(match[1]) : null;
+}
 
 function writeCookie(name: string, value: string) {
   document.cookie = `${name}=${value}; path=/; max-age=${PREFERENCE_MAX_AGE}; samesite=lax`;
@@ -30,21 +35,31 @@ export function PreferencesProvider({
 }) {
   const [mode, setModeState] = useState<ViewingMode>(initialMode);
   const [theme, setThemeState] = useState<Theme>(initialTheme);
-  const [isPending, startTransition] = useTransition();
-  const router = useRouter();
+  const [isPending, setIsPending] = useState(false);
 
-  const setMode = useCallback(
-    (next: ViewingMode) => {
-      if (next === mode) return;
-      setModeState(next);
-      writeCookie(MODE_COOKIE, next);
-      document.documentElement.dataset.viewingMode = next;
-      startTransition(() => {
-        router.refresh();
-      });
-    },
-    [mode, router, startTransition],
-  );
+  useEffect(() => {
+    const cookieMode = readCookie(MODE_COOKIE);
+    if (cookieMode === "advanced" || cookieMode === "simple") {
+      setModeState(cookieMode);
+      document.documentElement.dataset.viewingMode = cookieMode;
+    } else {
+      document.documentElement.dataset.viewingMode = initialMode;
+    }
+    const cookieTheme = readCookie(THEME_COOKIE);
+    const nextTheme: Theme = cookieTheme === "dark" ? "dark" : cookieTheme === "light" ? "light" : initialTheme;
+    setThemeState(nextTheme);
+    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+    document.documentElement.style.colorScheme = nextTheme;
+  }, [initialMode, initialTheme]);
+
+  const setMode = useCallback((next: ViewingMode) => {
+    if (next === mode) return;
+    setIsPending(true);
+    setModeState(next);
+    writeCookie(MODE_COOKIE, next);
+    document.documentElement.dataset.viewingMode = next;
+    window.setTimeout(() => setIsPending(false), 120);
+  }, [mode]);
 
   const toggleTheme = useCallback(() => {
     const next: Theme = theme === "dark" ? "light" : "dark";
@@ -56,10 +71,7 @@ export function PreferencesProvider({
     if (meta) meta.setAttribute("content", next === "dark" ? "#090e13" : "#fafaf8");
   }, [theme]);
 
-  const value = useMemo(
-    () => ({ mode, theme, setMode, toggleTheme, isPending }),
-    [mode, theme, setMode, toggleTheme, isPending],
-  );
+  const value = useMemo(() => ({ mode, theme, setMode, toggleTheme, isPending }), [mode, theme, setMode, toggleTheme, isPending]);
 
   return <PreferencesContext.Provider value={value}>{children}</PreferencesContext.Provider>;
 }

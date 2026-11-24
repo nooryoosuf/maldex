@@ -88,15 +88,12 @@ export function EconomicPulse({ mode }: { mode: ViewingMode }) {
               </div>
 
               <div className="min-w-0">
-                <p className="text-xs leading-5 text-muted">
-                  {mode === "simple" ? observation.simple : observation.advanced}
+                <p className="simple-only text-xs leading-5 text-muted">{observation.simple}</p>
+                <p className="advanced-only text-xs leading-5 text-muted">{observation.advanced}</p>
+                <p className="advanced-only mt-1 font-mono text-[9px] leading-4 text-faint">
+                  {indicator.id} · {indicator.unit}
+                  {previous ? ` · prior ${formatUnitValue(previous.value, indicator.unit)} (${previous.period})` : ""}
                 </p>
-                {mode === "advanced" ? (
-                  <p className="mt-1 font-mono text-[9px] leading-4 text-faint">
-                    {indicator.id} · {indicator.unit}
-                    {previous ? ` · prior ${formatUnitValue(previous.value, indicator.unit)} (${previous.period})` : ""}
-                  </p>
-                ) : null}
               </div>
 
               <div className="flex items-center justify-between gap-3 md:justify-end">

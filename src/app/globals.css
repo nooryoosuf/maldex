@@ -158,6 +158,12 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+  [data-viewing-mode="advanced"] .simple-only {
+    display: none;
+  }
+  [data-viewing-mode="simple"] .advanced-only {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
