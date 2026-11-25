@@ -7,7 +7,7 @@ import {
   Building2,
   ExternalLink,
   FileText,
-  Info,
+  Landmark,
 } from "lucide-react";
 import { PageContainer } from "@/components/ui/page-container";
 import { PageHeader } from "@/components/ui/page-header";
@@ -20,11 +20,11 @@ import { Trend } from "@/components/ui/trend";
 import { Tabs } from "@/components/ui/tabs";
 import { DataTable } from "@/components/ui/data-table";
 import { CompanyMark } from "@/components/ui/company-mark";
-import { CompanyPriceChart, QuarterlyChart } from "@/components/companies/price-chart";
+import { CompanyPriceChart } from "@/components/companies/price-chart";
 import { COMPANIES, getCompanyBySlug } from "@/lib/data/companies";
 import {
   getCompanyComparison,
-  getCompanyFinancials,
+  getCompanyFilings,
   getCompanyMetrics,
 } from "@/lib/data/financials";
 import {
@@ -49,8 +49,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const company = getCompanyBySlug(slug);
   if (!company) return { title: "Company not found" };
   return {
-    title: company.shortName,
-    description: `${company.name} (${company.code}) on the Maldives Stock Exchange: market data, illustrative financials and official disclosures.`,
+    title: `${company.shortName} (${company.code})`,
+    description: `${company.name} (${company.code}) on the Maldives Stock Exchange: market price, trading history, and official CMDA corporate filings.`,
   };
 }
 
@@ -60,12 +60,11 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
   if (!company) notFound();
 
   const metrics = getCompanyMetrics(company);
-  const financials = getCompanyFinancials(company);
   const trade = getLatestTrade(company.code);
   const marketCap = getCompanyMarketCap(company.code);
   const shares = getSharesOutstanding(company.code);
-  const disclosures = getDisclosuresForCompany(company.code, 8);
-  const comparison = getCompanyComparison().find((row) => row.code === company.code);
+  const disclosures = getDisclosuresForCompany(company.code, 12);
+  const filings = getCompanyFilings(company.code);
 
   const bars = getCompanyBars(company.code, "1Y");
   const yearHigh = bars.length ? Math.max(...bars.map((bar) => bar.high)) : null;
@@ -80,30 +79,14 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
     ]),
   );
 
-  const annualRows = financials.annual.map((annual) => ({
-    year: annual.year,
-    revenue: annual.revenue,
-    netProfit: annual.netProfit,
-    totalAssets: annual.totalAssets,
-    equity: annual.equity,
-    eps: annual.eps,
-    dps: annual.dps,
-    netMargin: (annual.netProfit / annual.revenue) * 100,
-    roe: (annual.netProfit / annual.equity) * 100,
-  }));
-
-  const dividendRows = financials.annual.map((annual) => ({
-    year: annual.year,
-    eps: annual.eps,
-    dps: annual.dps,
-    payout: annual.eps > 0 ? (annual.dps / annual.eps) * 100 : null,
-    yieldOnCost: metrics.price && annual.dps > 0 ? (annual.dps / metrics.price) * 100 : null,
-  }));
-
   const peers = getCompanyComparison()
     .filter((row) => row.code !== company.code)
     .filter((row) => COMPANIES.find((entry) => entry.code === row.code)?.sectorGroup === company.sectorGroup)
     .slice(0, 3);
+
+  const annualFilingsCount = filings.filter((f) => f.type === "Annual report").length;
+  const quarterlyFilingsCount = filings.filter((f) => f.type === "Financial report").length;
+  const dividendFilingsCount = filings.filter((f) => f.type === "Dividend").length;
 
   return (
     <PageContainer>
@@ -128,7 +111,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
               href={`/disclosures?company=${encodeURIComponent(company.name)}`}
               className="inline-flex h-9 items-center gap-2 rounded border border-line bg-surface px-3 text-xs font-medium text-ink transition-colors hover:bg-surface-2"
             >
-              <FileText className="h-3.5 w-3.5" /> Disclosures
+              <FileText className="h-3.5 w-3.5" /> All Disclosures ({disclosures.length})
             </Link>
             <Link
               href="/companies/compare"
@@ -141,16 +124,15 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
         meta={
           <>
             <span className="inline-flex items-center gap-2">
-              <CompanyMark monogram={company.monogram} size="xs" />
+              <CompanyMark code={company.code} size="xs" />
               <span className="font-mono text-[10px] uppercase tracking-[0.08em]">{company.code}</span>
             </span>
             <span className="h-3 w-px bg-line-strong" />
             <span>{company.sectorGroup}</span>
             <span className="h-3 w-px bg-line-strong" />
             <DataBadge status="official-reported" label="Market data" />
-            <DataBadge status="illustrative" label="Financials" />
             <span className="h-3 w-px bg-line-strong" />
-            <span className="font-mono text-[10px]">Simple / Advanced</span>
+            <DataBadge status="official-reported" label="CMDA Filings" />
           </>
         }
       />
@@ -187,16 +169,16 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
             valueClassName={(yearChange ?? 0) < 0 ? "text-negative" : "text-positive"}
           />
           <Stat
-            label="P/E (illustrative)"
-            value={formatNumber(metrics.pe, 1)}
-            sub="Price ÷ illustrative EPS"
-            badge={<DataBadge status="illustrative" label="Sample" />}
+            label="Official Filings"
+            value={formatNumber(filings.length)}
+            sub="CMDA audited & quarterly"
+            badge={<DataBadge status="official-reported" label="Verified" />}
           />
         </StatGrid>
         <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
           <SourceLabel sourceId="mse-market" />
           <span className="text-[10px] text-faint">
-            52-week range is derived from official price bars. P/E and yield use illustrative financial statements.
+            Official trade snapshot from Maldives Stock Exchange. Filings indexed from CMDA InformInvestor.
           </span>
         </div>
       </div>
@@ -217,7 +199,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
             <CompanyPriceChart seriesByRange={seriesByRange} code={company.code} />
           </div>
           <div className="flex flex-wrap items-center justify-between gap-2 border-t border-line px-4 py-2.5">
-            <span className="text-[10px] text-faint">Snapshot, not a live feed</span>
+            <span className="text-[10px] text-faint">Official trade records</span>
             <SourceLabel sourceId="mse-market" />
           </div>
         </section>
@@ -226,7 +208,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
           <section className="overflow-hidden rounded-md border border-line bg-surface">
             <div className="border-b border-line px-4 py-3">
               <p className="mono-label mb-1">Latest trade</p>
-              <h2 className="text-sm font-semibold tracking-[-0.01em] text-ink">What changed</h2>
+              <h2 className="text-sm font-semibold tracking-[-0.01em] text-ink">Market Activity</h2>
             </div>
             <dl className="divide-y divide-line text-xs">
               {[
@@ -244,40 +226,39 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
               ))}
             </dl>
             <div className="border-t border-line bg-surface-2/40 px-4 py-2.5 text-[9.5px] leading-4 text-faint">
-              A security with no recent trade may show a stale last price. Check the trade date.
+              A security with no recent trade displays its last established official trade price.
             </div>
           </section>
 
           <Notice variant="info" title="In plain language" className="simple-only">
-            This is the last price at which {company.shortName} shares changed hands on the exchange. The percentage
-            shows how it compares with the previous close. A company’s share price is not the same as its profit or the
-            size of the business.
+            This is the last price at which {company.shortName} shares changed hands on the Maldives Stock Exchange.
+            Official corporate disclosure documents and audited annual reports are available in the Financials & Filings tab below.
           </Notice>
+
           <section className="advanced-only rounded-md border border-line bg-surface p-4">
-              <p className="mono-label mb-2">Capital structure</p>
-              <dl className="space-y-2 text-xs">
-                <div className="flex justify-between gap-3">
-                  <dt className="text-muted">Shares outstanding (derived)</dt>
-                  <dd className="num font-mono text-ink">{shares ? formatNumber(shares) : "—"}</dd>
-                </div>
-                <div className="flex justify-between gap-3">
-                  <dt className="text-muted">Market cap to revenue</dt>
-                  <dd className="num font-mono text-ink">{metrics.marketCapToRevenue ? `${formatNumber(metrics.marketCapToRevenue, 2)}×` : "—"}</dd>
-                </div>
-                <div className="flex justify-between gap-3">
-                  <dt className="text-muted">NAV per share (illustrative)</dt>
-                  <dd className="num font-mono text-ink">{formatMvr(metrics.navPerShare, { digits: 2 })}</dd>
-                </div>
-                <div className="flex justify-between gap-3">
-                  <dt className="text-muted">Dividend yield (illustrative)</dt>
-                  <dd className="num font-mono text-ink">{formatPercent(metrics.dividendYield, 1)}</dd>
-                </div>
-              </dl>
-              <p className="mt-3 border-t border-line pt-2 font-mono text-[9px] leading-4 text-faint">
-                Shares outstanding is derived from published market cap ÷ last price and rounded by the exchange’s own
-                published values.
-              </p>
-            </section>
+            <p className="mono-label mb-2">Capital structure</p>
+            <dl className="space-y-2 text-xs">
+              <div className="flex justify-between gap-3">
+                <dt className="text-muted">Shares outstanding (derived)</dt>
+                <dd className="num font-mono text-ink">{shares ? formatNumber(shares) : "—"}</dd>
+              </div>
+              <div className="flex justify-between gap-3">
+                <dt className="text-muted">Market capitalisation</dt>
+                <dd className="num font-mono text-ink">{marketCap ? formatMvr(marketCap, { compact: true }) : "—"}</dd>
+              </div>
+              <div className="flex justify-between gap-3">
+                <dt className="text-muted">Security code</dt>
+                <dd className="num font-mono text-ink">{company.code}</dd>
+              </div>
+              <div className="flex justify-between gap-3">
+                <dt className="text-muted">Regulator filings indexed</dt>
+                <dd className="num font-mono text-ink">{filings.length} filings</dd>
+              </div>
+            </dl>
+            <p className="mt-3 border-t border-line pt-2 font-mono text-[9px] leading-4 text-faint">
+              Shares outstanding is derived from published market cap ÷ last price as published by the Maldives Stock Exchange.
+            </p>
+          </section>
         </div>
       </div>
 
@@ -292,11 +273,11 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
                 <div className="grid gap-5 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
                   <div className="space-y-5">
                     <section className="rounded-md border border-line bg-surface p-5">
-                      <div className="flex items-start gap-3">
-                        <CompanyMark monogram={company.monogram} size="lg" />
+                      <div className="flex items-start gap-4">
+                        <CompanyMark code={company.code} size="lg" />
                         <div>
-                          <p className="mono-label mb-1">Business</p>
-                          <h3 className="text-base font-semibold tracking-[-0.01em] text-ink">About {company.shortName}</h3>
+                          <p className="mono-label mb-1">Company Profile</p>
+                          <h3 className="text-base font-semibold tracking-[-0.01em] text-ink">{company.name}</h3>
                           <p className="mt-1.5 text-xs leading-6 text-muted">{company.summary}</p>
                         </div>
                       </div>
@@ -305,7 +286,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
                           ["Security code", company.code],
                           ["Sector", company.sector],
                           ["Sector group", company.sectorGroup],
-                          ["Data status", "Prices official · financials illustrative"],
+                          ["Verification", "Official exchange trade data & CMDA filings"],
                         ].map(([label, value]) => (
                           <div key={label} className="bg-surface px-3 py-2.5">
                             <dt className="mono-label">{label}</dt>
@@ -319,13 +300,13 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
                       <div className="flex items-center justify-between border-b border-line px-4 py-3">
                         <div>
                           <p className="mono-label mb-1">Official disclosures</p>
-                          <h3 className="text-sm font-semibold tracking-[-0.01em] text-ink">Recent CMDA filings</h3>
+                          <h3 className="text-sm font-semibold tracking-[-0.01em] text-ink">Recent CMDA Filings</h3>
                         </div>
                         <Link
                           href={`/disclosures?company=${encodeURIComponent(company.name)}`}
                           className="inline-flex items-center gap-1 text-[10.5px] font-medium text-accent hover:underline"
                         >
-                          All <ArrowUpRight className="h-3 w-3" />
+                          All ({disclosures.length}) <ArrowUpRight className="h-3 w-3" />
                         </Link>
                       </div>
                       {disclosures.length ? (
@@ -361,21 +342,20 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
                     <section className="overflow-hidden rounded-md border border-line bg-surface">
                       <div className="border-b border-line px-4 py-3">
                         <div className="flex items-center justify-between gap-2">
-                          <p className="mono-label">Key ratios</p>
-                          <DataBadge status="illustrative" />
+                          <p className="mono-label">Market Metrics</p>
+                          <DataBadge status="official-reported" />
                         </div>
-                        <h3 className="mt-1 text-sm font-semibold tracking-[-0.01em] text-ink">Financial performance</h3>
+                        <h3 className="mt-1 text-sm font-semibold tracking-[-0.01em] text-ink">Trading Parameters</h3>
                       </div>
                       <dl className="divide-y divide-line text-xs">
                         {[
-                          ["Revenue (illustrative)", `${formatNumber(metrics.latestAnnual.revenue, 1)}m`],
-                          ["Net profit (illustrative)", `${formatNumber(metrics.latestAnnual.netProfit, 1)}m`],
-                          ["Net margin", formatPercent(metrics.netMargin, 1)],
-                          ["Return on equity", formatPercent(metrics.roe, 1)],
-                          ["Return on assets", formatPercent(metrics.roa, 1)],
-                          ["Liabilities / assets", formatPercent(metrics.liabilityRatio, 1)],
-                          ["EPS (illustrative)", formatMvr(metrics.eps, { digits: 2 })],
-                          ["DPS (illustrative)", formatMvr(metrics.dps, { digits: 2 })],
+                          ["Last trade price", trade?.lastPrice ? formatMvr(trade.lastPrice, { digits: 2 }) : "—"],
+                          ["Market capitalisation", marketCap ? formatMvr(marketCap, { compact: true }) : "—"],
+                          ["Traded volume", formatNumber(trade?.volume ?? 0)],
+                          ["Turnover value", formatMvr(trade?.value ?? 0, { compact: true })],
+                          ["Total trades", formatNumber(trade?.trades ?? 0)],
+                          ["Shares outstanding", shares ? formatNumber(shares) : "—"],
+                          ["Last traded", trade?.lastDate ? formatDate(trade.lastDate) : "—"],
                         ].map(([label, value]) => (
                           <div key={label} className="flex items-center justify-between gap-3 px-4 py-2">
                             <dt className="text-muted">{label}</dt>
@@ -383,8 +363,8 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
                           </div>
                         ))}
                       </dl>
-                      <div className="border-t border-line bg-surface-2/40 px-4 py-2.5 text-[9.5px] leading-4 text-warning">
-                        Sample values — not official filings. Revenue and profit in MVR millions.
+                      <div className="border-t border-line bg-surface-2/40 px-4 py-2.5 text-[9.5px] leading-4 text-faint">
+                        Official MSE market metrics.
                       </div>
                     </section>
 
@@ -397,11 +377,14 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
                         <div className="divide-y divide-line">
                           {peers.map((peer) => (
                             <Link key={peer.code} href={`/companies/${peer.slug}`} className="flex items-center justify-between gap-3 px-4 py-2.5 hover:bg-surface-2/40">
-                              <span>
-                                <span className="block text-[12px] font-medium text-ink">{peer.name}</span>
-                                <span className="block font-mono text-[9px] text-faint">{peer.code} · P/E {formatNumber(peer.pe, 1)}</span>
+                              <span className="flex items-center gap-2">
+                                <CompanyMark code={peer.code} size="xs" />
+                                <span>
+                                  <span className="block text-[12px] font-medium text-ink">{peer.name}</span>
+                                  <span className="block font-mono text-[9px] text-faint">{peer.code} · {peer.price ? formatMvr(peer.price, { digits: 2 }) : "—"}</span>
+                                </span>
                               </span>
-                              <Trend value={peer.revenueGrowth} size="sm" />
+                              <span className="font-mono text-xs text-muted">{peer.marketCap ? formatMvr(peer.marketCap, { compact: true }) : "—"}</span>
                             </Link>
                           ))}
                         </div>
@@ -413,76 +396,85 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
             },
             {
               id: "financials",
-              label: "Financials",
+              label: "Financials & Filings",
               content: (
                 <div className="space-y-5">
-                  <Notice variant="demo" compact title="Illustrative financial statements">
-                    The annual and quarterly figures below are sample data for interface development. They are not
-                    extracted from the company’s official reports. Use the official disclosures to verify any figure.
-                  </Notice>
-
-                  <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-                    <section className="overflow-hidden rounded-md border border-line bg-surface">
-                      <div className="border-b border-line px-4 py-3">
-                        <p className="mono-label mb-1">Annual, 2021–2025</p>
-                        <h3 className="text-sm font-semibold tracking-[-0.01em] text-ink">Income and balance sheet</h3>
-                        <p className="mt-0.5 text-[10px] text-faint">MVR millions unless stated</p>
-                      </div>
-                      <DataTable
-                        data={annualRows as unknown as Record<string, unknown>[]}
-                        idKey="year"
-                        hideSearch
-                        pageSize={6}
-                        csvFilename={`maldex-${company.code}-annual-illustrative.csv`}
-                        columns={[
-                          { key: "year", header: "Year", type: "mono" },
-                          { key: "revenue", header: "Revenue", type: "number", align: "right", digits: 1 },
-                          { key: "netProfit", header: "Net profit", type: "number", align: "right", digits: 1 },
-                          { key: "totalAssets", header: "Assets", type: "number", align: "right", digits: 1, hideBelow: "md" },
-                          { key: "eps", header: "EPS", type: "number", align: "right", digits: 2 },
-                          { key: "dps", header: "DPS", type: "number", align: "right", digits: 2, hideBelow: "sm" },
-                          { key: "netMargin", header: "Margin", type: "percent", align: "right", digits: 1 },
-                          { key: "roe", header: "ROE", type: "percent", align: "right", digits: 1, hideBelow: "md" },
-                        ]}
-                        footerNote="Illustrative sample data"
-                      />
-                    </section>
-
-                    <section className="overflow-hidden rounded-md border border-line bg-surface">
-                      <div className="border-b border-line px-4 py-3">
-                        <p className="mono-label mb-1">Quarterly, 2025–2026</p>
-                        <h3 className="text-sm font-semibold tracking-[-0.01em] text-ink">Revenue and net profit</h3>
-                        <p className="mt-0.5 text-[10px] text-faint">MVR millions, illustrative</p>
-                      </div>
-                      <div className="px-2 pb-3 pt-4">
-                        <QuarterlyChart data={financials.quarterly} />
-                      </div>
-                    </section>
+                  <div className="grid gap-4 sm:grid-cols-3">
+                    <div className="rounded-md border border-line bg-surface p-4">
+                      <p className="mono-label text-[10px]">Audited Annual Reports</p>
+                      <p className="num mt-1 font-mono text-2xl font-semibold text-ink">{annualFilingsCount}</p>
+                      <p className="mt-1 text-[11px] text-muted">Comprehensive yearly audited financial statements</p>
+                    </div>
+                    <div className="rounded-md border border-line bg-surface p-4">
+                      <p className="mono-label text-[10px]">Quarterly Financial Reports</p>
+                      <p className="num mt-1 font-mono text-2xl font-semibold text-ink">{quarterlyFilingsCount}</p>
+                      <p className="mt-1 text-[11px] text-muted">Unaudited quarterly income & balance sheet filings</p>
+                    </div>
+                    <div className="rounded-md border border-line bg-surface p-4">
+                      <p className="mono-label text-[10px]">Dividend Declarations</p>
+                      <p className="num mt-1 font-mono text-2xl font-semibold text-ink">{dividendFilingsCount}</p>
+                      <p className="mt-1 text-[11px] text-muted">Declared dividends and book closure notices</p>
+                    </div>
                   </div>
 
                   <section className="overflow-hidden rounded-md border border-line bg-surface">
                     <div className="flex flex-wrap items-center justify-between gap-2 border-b border-line px-4 py-3">
                       <div>
-                        <p className="mono-label mb-1">Dividends</p>
-                        <h3 className="text-sm font-semibold tracking-[-0.01em] text-ink">Dividend per share history</h3>
+                        <p className="mono-label mb-1">Official Registry</p>
+                        <h3 className="text-sm font-semibold tracking-[-0.01em] text-ink">
+                          Official CMDA Corporate Financial Filings
+                        </h3>
+                        <p className="mt-0.5 text-[11px] text-muted">
+                          Official financial reports and audited disclosures submitted to the Capital Market Development Authority (CMDA). Click any filing to open the official document.
+                        </p>
                       </div>
-                      <DataBadge status="illustrative" />
+                      <Badge variant="outline">
+                        <FileText className="h-3 w-3 mr-1" /> {filings.length} Filings
+                      </Badge>
                     </div>
-                    <DataTable
-                      data={dividendRows as unknown as Record<string, unknown>[]}
-                      idKey="year"
-                      hideSearch
-                      pageSize={6}
-                      columns={[
-                        { key: "year", header: "Year", type: "mono" },
-                        { key: "eps", header: "EPS (MVR)", type: "number", align: "right", digits: 2 },
-                        { key: "dps", header: "DPS (MVR)", type: "number", align: "right", digits: 2 },
-                        { key: "payout", header: "Payout ratio", type: "percent", align: "right", digits: 1 },
-                        { key: "yieldOnCost", header: "Yield at latest price", type: "percent", align: "right", digits: 2 },
-                      ]}
-                      csvFilename={`maldex-${company.code}-dividends-illustrative.csv`}
-                      footerNote="Illustrative · not an official dividend record"
-                    />
+
+                    {filings.length ? (
+                      <div className="divide-y divide-line">
+                        {filings.map((filing) => (
+                          <div
+                            key={filing.id}
+                            className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 hover:bg-surface-2/40 transition-colors"
+                          >
+                            <div className="min-w-0 flex-1">
+                              <div className="flex items-center gap-2">
+                                <Badge variant={disclosureTypeTone(filing.type)}>{filing.type}</Badge>
+                                <span className="font-mono text-[10px] text-faint">{formatDate(filing.publishedAt, "long")}</span>
+                              </div>
+                              <p className="mt-1 text-[13px] font-medium text-ink leading-snug">{filing.title}</p>
+                            </div>
+                            <div>
+                              <a
+                                href={filing.sourceUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-1.5 rounded border border-line bg-surface-2/60 px-3 py-1.5 text-xs font-medium text-ink hover:border-accent hover:text-accent transition-colors"
+                              >
+                                <span>Official Document</span>
+                                <ExternalLink className="h-3 w-3" />
+                              </a>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="p-8 text-center text-xs text-muted">
+                        No financial statements currently indexed for this issuer. View all corporate disclosures on{" "}
+                        <Link href="/disclosures" className="text-accent underline">
+                          the disclosures page
+                        </Link>
+                        .
+                      </div>
+                    )}
+
+                    <div className="flex items-center justify-between border-t border-line bg-surface-2/40 px-4 py-2.5 text-[10px] text-faint">
+                      <span>Source: CMDA InformInvestor Official Disclosure Index</span>
+                      <SourceLabel sourceId="cmda-disclosures" showDate={false} />
+                    </div>
                   </section>
                 </div>
               ),
@@ -531,12 +523,11 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
 
       <div className="mt-8 flex flex-wrap items-center justify-between gap-3 rounded-md border border-line bg-surface px-4 py-3">
         <p className="text-[10px] leading-4 text-faint">
-          Market data © Maldives Stock Exchange, retrieved {formatDate(financials.annual.at(-1)?.year ? "2026-11-24" : "2026-11-24", "long")}. Illustrative
-          financials © Maldex sample model.
+          Market data © Maldives Stock Exchange. Regulatory filings © Capital Market Development Authority (CMDA).
         </p>
         <div className="flex flex-wrap gap-2">
           <SourceLabel sourceId="mse-market" />
-          <SourceLabel sourceId="maldex-financial-model" showDate={false} />
+          <SourceLabel sourceId="cmda-disclosures" showDate={false} />
         </div>
       </div>
     </PageContainer>

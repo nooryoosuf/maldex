@@ -221,7 +221,7 @@ export default function MarketPage() {
                     const company = getCompanyByCode(row.code);
                     return (
                       <Link key={row.code} href={`/companies/${row.slug}`} className="flex items-center gap-2.5 py-2 first:pt-0 last:pb-0 group">
-                        <CompanyMark monogram={company?.monogram ?? row.code.slice(0, 2)} size="xs" />
+                        <CompanyMark code={row.code} monogram={company?.monogram ?? row.code.slice(0, 2)} size="xs" />
                         <span className="min-w-0 flex-1">
                           <span className="block truncate text-[12px] font-medium text-ink group-hover:text-accent">{company?.shortName ?? row.code}</span>
                           <span className="block font-mono text-[9px] text-faint">{row.code} · {formatDate(row.lastDate)}</span>
@@ -246,7 +246,7 @@ export default function MarketPage() {
                     const company = getCompanyByCode(row.code);
                     return (
                       <Link key={row.code} href={`/companies/${row.slug}`} className="flex items-center gap-2.5 py-2 first:pt-0 last:pb-0 group">
-                        <CompanyMark monogram={company?.monogram ?? row.code.slice(0, 2)} size="xs" />
+                        <CompanyMark code={row.code} monogram={company?.monogram ?? row.code.slice(0, 2)} size="xs" />
                         <span className="min-w-0 flex-1">
                           <span className="block truncate text-[12px] font-medium text-ink group-hover:text-accent">{company?.shortName ?? row.code}</span>
                           <span className="block font-mono text-[9px] text-faint">{row.code} · {formatDate(row.lastDate)}</span>

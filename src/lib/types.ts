@@ -5,7 +5,6 @@ export type VerificationStatus =
   | "official-reported"
   | "derived"
   | "calculated"
-  | "illustrative"
   | "unavailable";
 
 export type DataCategory = "market" | "company" | "economy" | "debt" | "disclosure";
@@ -103,11 +102,21 @@ export interface QuarterlyFinancial {
   netProfit: number;
 }
 
-export interface CompanyFinancials {
-  annual: AnnualFinancial[];
-  quarterly: QuarterlyFinancial[];
-  sharesOutstanding: number;
-  source: "illustrative";
+export interface CorporateFiling {
+  id: string;
+  title: string;
+  type: string;
+  publishedAt: string;
+  sourceUrl: string;
+}
+
+export interface CompanyFinancialProfile {
+  code: string;
+  sharesOutstanding: number | null;
+  marketCap: number | null;
+  lastPrice: number | null;
+  filings: CorporateFiling[];
+  verification: VerificationStatus;
 }
 
 export interface BondInstrument {

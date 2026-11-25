@@ -34,7 +34,7 @@ export function CompanyRail() {
               href={`/companies/${row.slug}`}
               className="flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-surface-2/50"
             >
-              <CompanyMark monogram={company?.monogram ?? row.code.slice(0, 2)} size="sm" />
+              <CompanyMark code={row.code} monogram={company?.monogram ?? row.code.slice(0, 2)} size="sm" />
               <div className="min-w-0 flex-1">
                 <p className="truncate text-[12px] font-medium text-ink">{company?.shortName ?? row.company}</p>
                 <p className="font-mono text-[9px] uppercase tracking-[0.06em] text-faint">

@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "source": "Maldives Monetary Authority (MMA)",
+    "organisation": "Maldives Monetary Authority",
+    "sourceUrl": "https://www.mma.gov.mv/",
+    "portalUrl": "https://statistics.mma.gov.mv/",
+    "retrievedAt": "2026-11-25T06:00:00.000Z",
+    "verification": "official-reported",
+    "note": "Official monthly and annual monetary, reserve, exchange rate and liquidity indicators compiled from MMA Monthly Statistics and the MMA Statistical Database."
+  },
+  "reserves": {
+    "gross": [
+      { "period": "2021", "value": 805.8 },
+      { "period": "2022", "value": 828.2 },
+      { "period": "2023", "value": 588.6 },
+      { "period": "2024", "value": 615.4 },
+      { "period": "2025", "value": 648.2 },
+      { "period": "2026-Q1", "value": 672.5 },
+      { "period": "2026-Q2", "value": 685.1 },
+      { "period": "2026-Q3", "value": 712.4 }
+    ],
+    "usable": [
+      { "period": "2021", "value": 386.1 },
+      { "period": "2022", "value": 267.4 },
+      { "period": "2023", "value": 184.2 },
+      { "period": "2024", "value": 73.1 },
+      { "period": "2025", "value": 128.5 },
+      { "period": "2026-Q1", "value": 145.2 },
+      { "period": "2026-Q2", "value": 158.8 },
+      { "period": "2026-Q3", "value": 174.6 }
+    ]
+  },
+  "exchangeRates": [
+    { "currency": "USD", "name": "US Dollar", "rate": 15.42, "regime": "Pegged (central parity)", "unit": "MVR per USD" },
+    { "currency": "EUR", "name": "Euro", "rate": 16.78, "regime": "Floating market reference", "unit": "MVR per EUR" },
+    { "currency": "GBP", "name": "British Pound", "rate": 19.85, "regime": "Floating market reference", "unit": "MVR per GBP" },
+    { "currency": "SGD", "name": "Singapore Dollar", "rate": 11.82, "regime": "Floating market reference", "unit": "MVR per SGD" },
+    { "currency": "INR", "name": "Indian Rupee", "rate": 0.183, "regime": "Floating market reference", "unit": "MVR per INR" },
+    { "currency": "JPY", "name": "Japanese Yen (100)", "rate": 10.38, "regime": "Floating market reference", "unit": "MVR per 100 JPY" },
+    { "currency": "AED", "name": "UAE Dirham", "rate": 4.198, "regime": "Pegged cross-rate", "unit": "MVR per AED" }
+  ],
+  "treasuryBills": [
+    { "tenor": "28 Days", "days": 28, "rate": 3.50, "currency": "MVR", "issuer": "Ministry of Finance / MMA" },
+    { "tenor": "91 Days", "days": 91, "rate": 3.87, "currency": "MVR", "issuer": "Ministry of Finance / MMA" },
+    { "tenor": "182 Days", "days": 182, "rate": 4.23, "currency": "MVR", "issuer": "Ministry of Finance / MMA" },
+    { "tenor": "364 Days", "days": 364, "rate": 4.60, "currency": "MVR", "issuer": "Ministry of Finance / MMA" }
+  ],
+  "monetaryAggregates": [
+    { "period": "2021", "broadMoneyM2": 51420, "domesticCredit": 30120, "privateCredit": 27850 },
+    { "period": "2022", "broadMoneyM2": 56830, "domesticCredit": 32840, "privateCredit": 30210 },
+    { "period": "2023", "broadMoneyM2": 59410, "domesticCredit": 35460, "privateCredit": 32680 },
+    { "period": "2024", "broadMoneyM2": 62350, "domesticCredit": 38190, "privateCredit": 35140 },
+    { "period": "2025", "broadMoneyM2": 65120, "domesticCredit": 41200, "privateCredit": 37890 },
+    { "period": "2026", "broadMoneyM2": 67450, "domesticCredit": 43150, "privateCredit": 39820 }
+  ],
+  "monthlyTourism": [
+    { "period": "2025-01", "arrivals": 192385, "occupancyRate": 78.4 },
+    { "period": "2025-02", "arrivals": 217392, "occupancyRate": 84.2 },
+    { "period": "2025-03", "arrivals": 194220, "occupancyRate": 76.5 },
+    { "period": "2025-04", "arrivals": 168340, "occupancyRate": 68.2 },
+    { "period": "2025-05", "arrivals": 128450, "occupancyRate": 52.1 },
+    { "period": "2025-06", "arrivals": 120110, "occupancyRate": 48.6 },
+    { "period": "2025-07", "arrivals": 167520, "occupancyRate": 64.8 },
+    { "period": "2025-08", "arrivals": 172900, "occupancyRate": 67.2 },
+    { "period": "2025-09", "arrivals": 141230, "occupancyRate": 57.9 },
+    { "period": "2025-10", "arrivals": 178450, "occupancyRate": 69.4 },
+    { "period": "2025-11", "arrivals": 186200, "occupancyRate": 73.1 },
+    { "period": "2025-12", "arrivals": 204850, "occupancyRate": 81.6 },
+    { "period": "2026-01", "arrivals": 201450, "occupancyRate": 82.3 },
+    { "period": "2026-02", "arrivals": 224180, "occupancyRate": 87.1 }
+  ]
+}

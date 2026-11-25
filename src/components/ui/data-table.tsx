@@ -88,9 +88,10 @@ function displayValue(row: Row, column: DataTableColumn): React.ReactNode {
     case "company": {
       const name = String(raw);
       const secondary = column.secondaryKey ? row[column.secondaryKey] : null;
+      const code = String(secondary ?? row.code ?? "");
       return (
         <Link href={hrefFor(column.hrefTemplate, row)} className="group inline-flex min-w-0 items-center gap-2">
-          <CompanyMark monogram={initials(name)} size="xs" />
+          <CompanyMark code={code} monogram={initials(name)} size="xs" />
           <span className="min-w-0">
             <span className="block truncate text-[12.5px] font-medium text-ink group-hover:text-accent">{name}</span>
             {secondary ? <span className="block font-mono text-[9.5px] uppercase tracking-[0.06em] text-faint">{String(secondary)}</span> : null}

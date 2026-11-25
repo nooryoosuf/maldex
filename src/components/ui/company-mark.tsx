@@ -1,14 +1,31 @@
+import { COMPANY_LOGOS } from "@/components/icons/company-logos";
 import { cn } from "@/lib/cn";
 
 export function CompanyMark({
+  code,
   monogram,
   size = "md",
   className,
 }: {
-  monogram: string;
+  code?: string;
+  monogram?: string;
   size?: "xs" | "sm" | "md" | "lg";
   className?: string;
 }) {
+  const normalizedCode = (code || monogram || "").trim().toUpperCase();
+  const LogoComponent = COMPANY_LOGOS[normalizedCode];
+
+  if (LogoComponent) {
+    return (
+      <span
+        aria-hidden="true"
+        className={cn("inline-flex shrink-0 items-center justify-center overflow-hidden rounded", className)}
+      >
+        <LogoComponent size={size} />
+      </span>
+    );
+  }
+
   return (
     <span
       aria-hidden="true"
@@ -21,7 +38,7 @@ export function CompanyMark({
         className,
       )}
     >
-      {monogram}
+      {monogram || code?.slice(0, 2) || "MV"}
     </span>
   );
 }

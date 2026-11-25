@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Building2, GitCompareArrows } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Building2, GitCompareArrows, FileText } from "lucide-react";
 import { PageContainer } from "@/components/ui/page-container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Stat, StatGrid } from "@/components/ui/stat";
 import { SourceLabel } from "@/components/ui/source-label";
-import { Notice } from "@/components/ui/notice";
-import { CompanyMark } from "@/components/ui/company-mark";
 import { CompanyDirectory } from "@/components/companies/company-directory";
 import { COMPANIES } from "@/lib/data/companies";
-import { getCompanyComparison, getCompanyMetrics } from "@/lib/data/financials";
-import { getCompanyMarketRows, getMarketSnapshot } from "@/lib/data/market";
-import { formatMvr, formatNumber, formatPercent } from "@/lib/format";
+import { getCompanyComparison } from "@/lib/data/financials";
+import { getCompanyMarketRows, getMarketSnapshot, getSharesOutstanding } from "@/lib/data/market";
+import { formatMvr, formatNumber } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Companies",
   description:
-    "Tracked companies listed on the Maldives Stock Exchange: market prices, sector context, illustrative financial ratios and links to official disclosures.",
+    "Tracked companies listed on the Maldives Stock Exchange: market prices, market capitalisation, sector context, and links to official CMDA corporate filings.",
 };
 
 export default function CompaniesPage() {
@@ -26,14 +24,14 @@ export default function CompaniesPage() {
   const comparisonByCode = Object.fromEntries(comparison.map((row) => [row.code, row]));
 
   const rows = marketRows.map((row) => {
-    const ratio = comparisonByCode[row.code];
+    const comp = comparisonByCode[row.code];
     return {
       ...row,
       sectorGroup: COMPANIES.find((company) => company.code === row.code)?.sectorGroup ?? "",
-      pe: ratio?.pe ?? null,
-      dividendYield: ratio?.dividendYield ?? null,
-      revenueGrowth: ratio?.revenueGrowth ?? null,
-      roe: ratio?.roe ?? null,
+      shares: comp?.shares ?? getSharesOutstanding(row.code),
+      volume: comp?.volume ?? 0,
+      value: comp?.value ?? 0,
+      filingsCount: comp?.filingsCount ?? 0,
     };
   });
 
@@ -41,6 +39,8 @@ export default function CompaniesPage() {
   const totalCap = withCap.reduce((sum, row) => sum + (row.marketCap ?? 0), 0);
   const largest = [...withCap].sort((a, b) => (b.marketCap ?? 0) - (a.marketCap ?? 0))[0];
   const largestShare = largest && totalCap ? ((largest.marketCap ?? 0) / totalCap) * 100 : null;
+
+  const totalFilings = rows.reduce((acc, row) => acc + row.filingsCount, 0);
 
   const sectorTotals = COMPANIES.reduce<Record<string, number>>((acc, company) => {
     const row = rows.find((entry) => entry.code === company.code);
@@ -52,21 +52,15 @@ export default function CompaniesPage() {
     .sort((a, b) => b[1] - a[1]);
   const maxSector = sectorRanked[0]?.[1] ?? 1;
 
-  const bmlMetrics = (() => {
-    const bml = COMPANIES.find((company) => company.code === "BML");
-    return bml ? getCompanyMetrics(bml) : null;
-  })();
-
   return (
     <PageContainer>
       <PageHeader
         eyebrow="Companies"
-        title="The companies behind the exchange"
+        title="Listed issuers on the Maldives Stock Exchange"
         description={
           <>
-            Nine tracked issuers, spanning banking, telecoms, trade, transport, tourism and insurance. Market prices and
-            capitalisation are official exchange data; financial statements in this preview are clearly labelled
-            illustrative sample data.
+            Nine official listed issuers spanning banking, telecommunications, trading, transport, tourism, and insurance.
+            Market prices, volume, and market capitalisation are sourced directly from official MSE trade records, paired with official CMDA corporate filings.
           </>
         }
         actions={
@@ -81,9 +75,9 @@ export default function CompaniesPage() {
           <>
             <SourceLabel sourceId="mse-market" />
             <span className="h-3 w-px bg-line-strong" />
-            <span>Financial ratios illustrative</span>
+            <SourceLabel sourceId="cmda-disclosures" />
             <span className="h-3 w-px bg-line-strong" />
-            <span>{formatNumber(snapshot.indexDate ? marketRows.filter((row) => row.price !== null).length : 0)} with a published price</span>
+            <span>{formatNumber(snapshot.indexDate ? marketRows.filter((row) => row.price !== null).length : 0)} with published prices</span>
           </>
         }
       />
@@ -103,37 +97,25 @@ export default function CompaniesPage() {
             trendLabel="Official MSE market capitalisation"
           />
           <Stat
-            label="Largest company"
+            label="Largest issuer"
             value={largest?.code ?? "—"}
             sub={largest ? largest.company : "—"}
             trend={largestShare}
             trendLabel="Share of combined market cap"
           />
           <Stat
-            label="Banking ratio reference"
-            value={bmlMetrics?.pe ? formatNumber(bmlMetrics.pe, 1) : "—"}
-            sub={bmlMetrics ? "Bank of Maldives P/E, illustrative EPS" : "—"}
-            trendLabel="Not an official valuation"
+            label="Official CMDA Filings"
+            value={formatNumber(totalFilings)}
+            sub="Audited statements, reports & notices"
+            badge={<FileText className="h-3 w-3 text-faint" />}
           />
         </StatGrid>
         <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
           <SourceLabel sourceId="mse-market" />
           <span className="text-[10px] text-faint">
-            Market values are a snapshot. “Largest” refers to published market capitalisation, not revenue or profit.
+            Market values are a snapshot from official exchange exports. “Largest” refers to published market capitalisation.
           </span>
         </div>
-      </div>
-
-      <div className="mt-8">
-        <Notice variant="demo" title="Company financial statements are illustrative in this preview">
-          Revenue, profit, assets, EPS, dividends and every ratio derived from them are sample values created to
-          demonstrate the interface. They are not official company figures and must not be used for investment decisions.
-          Official documents are linked from each company page and from{" "}
-          <Link href="/disclosures" className="font-medium text-accent hover:underline">
-            Disclosures
-          </Link>
-          .
-        </Notice>
       </div>
 
       <section className="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1fr)_280px]">
@@ -174,23 +156,23 @@ export default function CompaniesPage() {
           </div>
 
           <div className="rounded-md border border-line bg-surface p-4">
-            <p className="mono-label mb-1">What a company page shows</p>
+            <p className="mono-label mb-1">Verified Information</p>
             <ul className="mt-2 space-y-2 text-[11px] leading-5 text-muted">
               <li className="flex gap-2">
-                <span className="font-mono text-[9px] text-accent">01</span> Official last price, change and turnover.
+                <span className="font-mono text-[9px] text-accent">01</span> Official last trade price, change and turnover from MSE.
               </li>
               <li className="flex gap-2">
-                <span className="font-mono text-[9px] text-accent">02</span> Price history, clearly separated from financials.
+                <span className="font-mono text-[9px] text-accent">02</span> Verifiable trading history and capitalisation trend.
               </li>
               <li className="flex gap-2">
-                <span className="font-mono text-[9px] text-accent">03</span> Illustrative financial statements, ratios and dividends.
+                <span className="font-mono text-[9px] text-accent">03</span> Direct access to official CMDA audited financial filings.
               </li>
               <li className="flex gap-2">
-                <span className="font-mono text-[9px] text-accent">04</span> Official disclosures and source links.
+                <span className="font-mono text-[9px] text-accent">04</span> Corporate governance disclosures and dividend notices.
               </li>
             </ul>
             <Link href="/sources" className="mt-3 inline-flex items-center gap-1 text-[11px] font-medium text-accent hover:underline">
-              Data principles <ArrowUpRight className="h-3 w-3" />
+              Data sources & verification <ArrowUpRight className="h-3 w-3" />
             </Link>
           </div>
         </aside>
@@ -199,10 +181,9 @@ export default function CompaniesPage() {
       <section className="mt-8 grid gap-4 rounded-md border border-line bg-surface p-5 md:grid-cols-[1fr_auto] md:items-center">
         <div>
           <p className="mono-label mb-1">Compare</p>
-          <h2 className="text-sm font-semibold tracking-[-0.01em] text-ink">Put two or three companies side by side</h2>
+          <h2 className="text-sm font-semibold tracking-[-0.01em] text-ink">Put companies side by side</h2>
           <p className="mt-1 max-w-2xl text-xs leading-5 text-muted">
-            Compare official market values with illustrative revenue, margins, returns, EPS and dividends. The comparison
-            flags which layer each figure comes from.
+            Compare official market capitalisation, trading volume, turnover, share price performance, and corporate disclosures side by side.
           </p>
         </div>
         <Link href="/companies/compare" className="inline-flex items-center gap-1 text-xs font-medium text-accent hover:underline">

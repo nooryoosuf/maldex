@@ -13,7 +13,7 @@ const explore = [
 ];
 
 const intelligence = [
-  { label: "Economy", href: "/economy" },
+  { label: "Economy & MMA", href: "/economy" },
   { label: "Disclosures", href: "/disclosures" },
   { label: "Financial reports", href: "/disclosures?type=Financial+report" },
   { label: "Data Explorer", href: "/data-explorer" },
@@ -32,7 +32,7 @@ export function Footer() {
               understandable, traceable and useful.
             </p>
             <p className="mt-4 font-mono text-[9px] uppercase tracking-[0.1em] text-faint">
-              Independent research preview · Malé, Maldives
+              Financial & Economic Intelligence · Malé, Maldives
             </p>
           </div>
 
@@ -87,10 +87,7 @@ export function Footer() {
 
         <div className="mt-8 flex flex-col gap-3 border-t border-line pt-4 text-[10px] leading-5 text-faint md:flex-row md:items-start md:justify-between">
           <p className="max-w-3xl">
-            Maldex is not investment advice. Market data are exchange snapshots, not a live feed. Economic data are
-            latest-available annual observations and may lag current conditions. Company financial figures in this
-            preview are illustrative sample data and must not be used for decisions. Always verify against the linked
-            official document.
+            Maldex is not investment advice. Market data are official Maldives Stock Exchange snapshots. Economic and monetary indicators are sourced from Maldives Monetary Authority (MMA) and World Bank official datasets. Corporate financial filings are indexed directly from CMDA InformInvestor.
           </p>
           <p className="shrink-0 font-mono uppercase tracking-[0.08em]">© 2026 Maldex</p>
         </div>

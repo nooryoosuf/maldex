@@ -14,6 +14,7 @@ import {
   X,
 } from "lucide-react";
 import { SEARCH_INDEX, type SearchItem } from "@/lib/search-index";
+import { CompanyMark } from "@/components/ui/company-mark";
 import { cn } from "@/lib/cn";
 
 const CATEGORY_ICON: Record<SearchItem["category"], React.ElementType> = {
@@ -173,14 +174,18 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
                           selected ? "bg-surface-2" : "hover:bg-surface-2/60",
                         )}
                       >
-                        <span
-                          className={cn(
-                            "flex h-7 w-7 shrink-0 items-center justify-center rounded-sm border border-line",
-                            selected ? "bg-surface text-accent" : "bg-surface text-muted",
-                          )}
-                        >
-                          <Icon className="h-3.5 w-3.5" strokeWidth={1.8} />
-                        </span>
+                        {item.category === "Company" ? (
+                          <CompanyMark code={item.id.replace("company-", "")} size="sm" className="shrink-0" />
+                        ) : (
+                          <span
+                            className={cn(
+                              "flex h-7 w-7 shrink-0 items-center justify-center rounded-sm border border-line",
+                              selected ? "bg-surface text-accent" : "bg-surface text-muted",
+                            )}
+                          >
+                            <Icon className="h-3.5 w-3.5" strokeWidth={1.8} />
+                          </span>
+                        )}
                         <span className="min-w-0 flex-1">
                           <span className="block truncate text-[13px] font-medium text-ink">{item.title}</span>
                           <span className="block truncate text-[10.5px] text-muted">{item.subtitle}</span>

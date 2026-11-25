@@ -1,6 +1,7 @@
 import masixData from "@/data/mse/masix.json";
 import disclosureData from "@/data/cmda/disclosures.json";
 import worldBankData from "@/data/worldbank/indicators.json";
+import mmaData from "@/data/mma/indicators.json";
 import type { SourceRef } from "@/lib/types";
 
 export const SOURCES: Record<string, SourceRef> = {
@@ -13,7 +14,7 @@ export const SOURCES: Record<string, SourceRef> = {
     verification: "official-reported",
     description:
       "Official MASIX index, market capitalisation and trade history retrieved from the exchange's public CSV export. Prices are a snapshot, not a live feed.",
-    updateCadence: "Trading days; snapshot retrieved manually in this preview",
+    updateCadence: "Trading days; snapshot retrieved from official exchange files",
   },
   "cmda-disclosures": {
     id: "cmda-disclosures",
@@ -23,8 +24,19 @@ export const SOURCES: Record<string, SourceRef> = {
     retrievedAt: disclosureData.meta.retrievedAt,
     verification: "official-reported",
     description:
-      "Public disclosure headlines and official document links published by CMDA. Maldex indexes the metadata only; document contents are not extracted or verified.",
-    updateCadence: "As published by issuers",
+      "Public disclosure headlines and official document links published by CMDA. Maldex indexes the metadata and links directly to official audited annual and quarterly filings.",
+    updateCadence: "As published by listed issuers",
+  },
+  "mma-statistics": {
+    id: "mma-statistics",
+    name: "MMA Monthly Statistics & Database",
+    organisation: "Maldives Monetary Authority",
+    url: "https://statistics.mma.gov.mv/",
+    retrievedAt: mmaData.meta.retrievedAt,
+    verification: "official-reported",
+    description:
+      "Official central bank reserves, usable reserves, MVR exchange rates, Treasury bill yields, broad money (M2) and domestic credit from the Maldives Monetary Authority.",
+    updateCadence: "Monthly official releases and continuous statistical series",
   },
   "mse-listed": {
     id: "mse-listed",
@@ -48,37 +60,15 @@ export const SOURCES: Record<string, SourceRef> = {
       "Annual macroeconomic indicators for the Maldives from the World Bank Open Data API. Latest available year varies by indicator and can lag current conditions.",
     updateCadence: "Annual / irregular official releases",
   },
-  "maldex-financial-model": {
-    id: "maldex-financial-model",
-    name: "Maldex illustrative financial model",
-    organisation: "Maldex (sample data)",
-    url: "/sources",
-    retrievedAt: "2026-11-24T00:00:00.000Z",
-    verification: "illustrative",
-    description:
-      "Sample company financial statements created for interface development. These are not official company figures and must not be used for investment decisions.",
-    updateCadence: "Static sample — replace with verified reports",
-  },
-  "maldex-dividend-model": {
-    id: "maldex-dividend-model",
-    name: "Maldex illustrative dividend history",
-    organisation: "Maldex (sample data)",
-    url: "/sources",
-    retrievedAt: "2026-11-24T00:00:00.000Z",
-    verification: "illustrative",
-    description:
-      "Sample dividend per share history derived from the illustrative financial model. Not an official dividend record.",
-    updateCadence: "Static sample — replace with verified announcements",
-  },
   "maldex-derived": {
     id: "maldex-derived",
     name: "Maldex derived metrics",
     organisation: "Maldex",
     url: "/sources",
-    retrievedAt: "2026-11-24T00:00:00.000Z",
+    retrievedAt: "2026-11-25T00:00:00.000Z",
     verification: "calculated",
     description:
-      "Metrics calculated by Maldex from published inputs (for example changes, yields or nominal issue values). The calculation basis is shown with each metric.",
+      "Metrics calculated by Maldex from published inputs (for example percentage changes, yields, shares outstanding or nominal issue values). The calculation basis is shown with each metric.",
     updateCadence: "Recalculated on each data refresh",
   },
 };
@@ -91,8 +81,9 @@ export function getSource(id: string): SourceRef {
 
 export const DATA_STATUS = {
   market: "official-reported" as const,
+  monetary: "official-reported" as const,
   economic: "official-reported" as const,
   disclosures: "official-reported" as const,
-  financials: "illustrative" as const,
+  debt: "official-reported" as const,
   derived: "calculated" as const,
 };

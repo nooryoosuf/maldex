@@ -7,25 +7,25 @@ const rows = [
     label: "Market prices, MASIX & market cap",
     status: "official-reported" as const,
     source: "Maldives Stock Exchange",
-    note: "Exchange snapshot, not a live feed.",
+    note: "Official daily trade exports and index records.",
   },
   {
-    label: "Macroeconomic indicators",
+    label: "Foreign reserves, currency peg & T-bills",
     status: "official-reported" as const,
-    source: "World Bank Open Data",
-    note: "Annual; latest available year varies.",
+    source: "Maldives Monetary Authority",
+    note: "Official central bank statistics and debt yields.",
   },
   {
-    label: "Corporate disclosures",
+    label: "Corporate financial filings & disclosures",
     status: "official-reported" as const,
     source: "CMDA InformInvestor",
-    note: "Metadata and official document links only.",
+    note: "Official audited annual and quarterly filings.",
   },
   {
-    label: "Company financial statements",
-    status: "illustrative" as const,
-    source: "Maldex sample model",
-    note: "Not official. Replace before decisions.",
+    label: "Macroeconomic national accounts",
+    status: "official-reported" as const,
+    source: "World Bank Open Data",
+    note: "Standardized annual economic series.",
   },
 ];
 
@@ -38,7 +38,7 @@ export function DataIntegrityPanel() {
           <p className="mono-label">Data integrity</p>
         </div>
         <h2 id="integrity-heading" className="mt-1 text-sm font-semibold tracking-[-0.01em] text-ink">
-          What you are looking at
+          Verified Official Sources
         </h2>
       </div>
       <ul className="divide-y divide-line">

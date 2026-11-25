@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Building2, SlidersHorizontal } from "lucide-react";
+import { Building2, SlidersHorizontal, FileText } from "lucide-react";
 import { DataTable } from "@/components/ui/data-table";
 import { SegmentedControl } from "@/components/ui/segmented";
 import { Badge } from "@/components/ui/badge";
@@ -16,10 +16,10 @@ export interface DirectoryRow {
   price: number | null;
   changePct: number | null;
   marketCap: number | null;
-  pe: number | null;
-  dividendYield: number | null;
-  revenueGrowth: number | null;
-  roe: number | null;
+  shares: number | null;
+  volume: number;
+  value: number;
+  filingsCount: number;
   sparkline: number[];
   lastDate: string | null;
 }
@@ -70,17 +70,15 @@ export function CompanyDirectory({ rows }: { rows: DirectoryRow[] }) {
             { key: "price", header: "Last price", type: "currency", align: "right", digits: 2 },
             { key: "changePct", header: "Change", type: "change", align: "right" },
             { key: "marketCap", header: "Market cap", type: "currency", align: "right", compact: true },
-            { key: "pe", header: "P/E*", type: "number", align: "right", digits: 1, hideBelow: "md" },
-            { key: "dividendYield", header: "Yield*", type: "percent", align: "right", digits: 1, hideBelow: "lg" },
-            { key: "roe", header: "ROE*", type: "percent", align: "right", digits: 1, hideBelow: "lg" },
+            { key: "shares", header: "Shares", type: "number", align: "right", compact: true, hideBelow: "md" },
+            { key: "filingsCount", header: "CMDA Filings", type: "number", align: "right", hideBelow: "md" },
             { key: "sparkline", header: "30d", type: "sparkline", align: "right", hideBelow: "sm", sortable: false },
             { key: "lastDate", header: "Last trade", type: "date", align: "right", hideBelow: "lg" },
           ]}
           searchKeys={["company", "code", "sector"]}
           searchPlaceholder="Search by name, code or sector"
           csvFilename="maldex-companies.csv"
-          caption="Tracked listed companies with official market prices and illustrative financial ratios."
-          footerNote="* Ratios use illustrative financial statements, not official filings."
+          caption="Official MSE listed equity issuers with trading prices, capitalisation, and CMDA filing links."
           pageSize={12}
         />
       )}

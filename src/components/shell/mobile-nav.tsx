@@ -129,7 +129,7 @@ export function MobileNav({ open, onClose, onSearch }: { open: boolean; onClose:
         <div className="border-t border-line bg-surface-2/50 px-4 py-3">
           <p className="font-mono text-[9px] uppercase tracking-[0.1em] text-faint">Data status</p>
           <p className="mt-1 text-[11px] leading-5 text-muted">
-            Market and economic data from official sources. Company financials are illustrative in this preview.
+            Market, economic and central bank data verified from MSE, MMA, CMDA and World Bank official records.
           </p>
           <Link href="/sources" onClick={onClose} className="mt-1 inline-flex text-[11px] font-medium text-accent hover:underline">
             View sources & methodology

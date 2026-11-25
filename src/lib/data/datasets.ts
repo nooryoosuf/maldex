@@ -2,13 +2,21 @@ import { BONDS, nominalIssueValue } from "@/lib/data/bonds";
 import { COMPANIES } from "@/lib/data/companies";
 import { DISCLOSURES } from "@/lib/data/disclosures";
 import { ECONOMIC_INDICATORS, getIndicatorRows } from "@/lib/data/economy";
-import { getAnnualFinancialRows, getCompanyComparison, getDividendHistory } from "@/lib/data/financials";
+import { getCompanyComparison } from "@/lib/data/financials";
 import {
   DAILY_TURNOVER,
   MARKET_CAP_SERIES,
   MASIX_SERIES,
   TRADES,
 } from "@/lib/data/market";
+import {
+  MMA_EXCHANGE_RATES,
+  MMA_GROSS_RESERVES,
+  MMA_MONETARY_AGGREGATES,
+  MMA_MONTHLY_TOURISM,
+  MMA_TREASURY_BILLS,
+  MMA_USABLE_RESERVES,
+} from "@/lib/data/mma";
 import { getSource } from "@/lib/data/sources";
 import type { Dataset } from "@/lib/types";
 
@@ -16,7 +24,7 @@ const marketSource = getSource("mse-market");
 const worldBankSource = getSource("worldbank");
 const cmdaSource = getSource("cmda-disclosures");
 const mseListedSource = getSource("mse-listed");
-const modelSource = getSource("maldex-financial-model");
+const mmaSource = getSource("mma-statistics");
 
 const MARKET_CUTOFF = "2021-11-24";
 const TRADE_CUTOFF = "2026-08-26";
@@ -90,20 +98,54 @@ const bondRows = BONDS.map((bond) => ({
 }));
 
 const comparisonRows = getCompanyComparison();
-const annualRows = getAnnualFinancialRows();
-const dividendRows = getDividendHistory();
 
-const latestFinancialRows = comparisonRows.map((row) => ({
+const companyRows = comparisonRows.map((row) => ({
   code: row.code,
   company: row.name,
-  revenue: row.revenue,
-  netProfit: row.netProfit,
-  totalAssets: row.totalAssets,
-  netMargin: row.netMargin,
-  roe: row.roe,
-  eps: row.eps,
-  pe: row.pe,
-  dividendYield: row.dividendYield,
+  sector: row.sector,
+  price: row.price,
+  marketCap: row.marketCap,
+  shares: row.shares,
+  changePct: row.changePct,
+  volume: row.volume,
+  turnover: row.value,
+  lastTrade: row.lastDate,
+  filingsCount: row.filingsCount,
+}));
+
+const reserveRows = MMA_GROSS_RESERVES.map((item, idx) => ({
+  period: item.period,
+  gross: item.value,
+  usable: MMA_USABLE_RESERVES[idx]?.value ?? null,
+}));
+
+const exchangeRows = MMA_EXCHANGE_RATES.map((row) => ({
+  currency: row.currency,
+  name: row.name,
+  rate: row.rate,
+  regime: row.regime,
+  unit: row.unit,
+}));
+
+const tbillRows = MMA_TREASURY_BILLS.map((row) => ({
+  tenor: row.tenor,
+  days: row.days,
+  rate: row.rate,
+  currency: row.currency,
+  issuer: row.issuer,
+}));
+
+const monetaryRows = MMA_MONETARY_AGGREGATES.map((row) => ({
+  period: row.period,
+  broadMoneyM2: row.broadMoneyM2,
+  domesticCredit: row.domesticCredit,
+  privateCredit: row.privateCredit,
+}));
+
+const tourismRows = MMA_MONTHLY_TOURISM.map((row) => ({
+  period: row.period,
+  arrivals: row.arrivals,
+  occupancy: row.occupancyRate,
 }));
 
 export const DATASETS: Dataset[] = [
@@ -177,47 +219,118 @@ export const DATASETS: Dataset[] = [
     ],
   },
   {
-    id: "gdp-growth",
-    name: "GDP growth",
+    id: "mse-companies",
+    name: "Listed equities snapshot",
     description:
-      "Annual real GDP growth for the Maldives, from the World Bank Open Data API. The latest available year may lag current conditions.",
-    category: "Economy",
-    sourceId: "worldbank",
+      "Official MSE listed equity issuer metrics including current trading prices, market capitalisation, shares outstanding, and filing counts.",
+    category: "Companies",
+    sourceId: "mse-market",
     verification: "official-reported",
-    updatedAt: worldBankSource.retrievedAt,
-    rows: indicatorDataset("gdpGrowth", "gdp-growth", "GDP growth", "", "Economy").rows,
+    updatedAt: marketSource.retrievedAt,
+    rows: companyRows,
     columns: [
-      { key: "period", label: "Year", type: "date" },
-      { key: "value", label: "GDP growth (% annual)", type: "number", align: "right" },
+      { key: "code", label: "Code", type: "mono" },
+      { key: "company", label: "Company", type: "text" },
+      { key: "sector", label: "Sector", type: "text" },
+      { key: "price", label: "Price (MVR)", type: "currency", align: "right" },
+      { key: "marketCap", label: "Market Cap (MVR)", type: "currency", align: "right" },
+      { key: "shares", label: "Shares", type: "number", align: "right" },
+      { key: "filingsCount", label: "Disclosures", type: "number", align: "right" },
     ],
-    chart: { x: "period", y: "value", kind: "line" },
+    chart: { x: "code", y: "marketCap", kind: "bar" },
   },
-  indicatorDataset("inflation", "inflation", "Inflation", "Annual percentage change in the Maldives consumer price index, from the World Bank Open Data API.", "Economy"),
-  indicatorDataset("reserves", "reserves", "Official reserves", "Total official reserves in US dollars, from the World Bank Open Data API.", "Economy"),
-  indicatorDataset("current-account", "current-account", "Current account balance", "Current account balance as a share of GDP, from the World Bank Open Data API.", "Economy"),
   {
-    id: "economic-observations",
-    name: "Economic indicator observations",
+    id: "mma-reserves",
+    name: "MMA Official Foreign Reserves",
     description:
-      "A long-format view of all connected World Bank indicators for the Maldives. Units differ by indicator, so compare within a series rather than across rows.",
-    category: "Economy",
-    sourceId: "worldbank",
+      "Official Gross Reserves and Usable Reserves published by the Maldives Monetary Authority in USD millions.",
+    category: "Monetary",
+    sourceId: "mma-statistics",
     verification: "official-reported",
-    updatedAt: worldBankSource.retrievedAt,
-    rows: getIndicatorRows(),
+    updatedAt: mmaSource.retrievedAt,
+    rows: reserveRows,
     columns: [
       { key: "period", label: "Period", type: "date" },
-      { key: "indicator", label: "Indicator", type: "text" },
-      { key: "value", label: "Value", type: "number", align: "right" },
-      { key: "unit", label: "Unit", type: "text" },
-      { key: "category", label: "Category", type: "text" },
+      { key: "gross", label: "Gross Reserves (USD m)", type: "number", align: "right" },
+      { key: "usable", label: "Usable Reserves (USD m)", type: "number", align: "right" },
     ],
+    chart: { x: "period", y: "gross", kind: "line" },
+  },
+  {
+    id: "mma-exchange-rates",
+    name: "MMA Foreign Exchange Rates",
+    description:
+      "Official central bank exchange rates against the Maldivian Rufiyaa (MVR), highlighting the USD 15.42 peg regime.",
+    category: "Monetary",
+    sourceId: "mma-statistics",
+    verification: "official-reported",
+    updatedAt: mmaSource.retrievedAt,
+    rows: exchangeRows,
+    columns: [
+      { key: "currency", label: "Currency", type: "mono" },
+      { key: "name", label: "Name", type: "text" },
+      { key: "rate", label: "Rate (MVR)", type: "number", align: "right" },
+      { key: "regime", label: "Regime", type: "text" },
+    ],
+  },
+  {
+    id: "mma-treasury-bills",
+    name: "MMA Treasury Bill Yields",
+    description:
+      "Government of Maldives Treasury Bill auction interest rates across standard maturities issued via the Maldives Monetary Authority.",
+    category: "Monetary",
+    sourceId: "mma-statistics",
+    verification: "official-reported",
+    updatedAt: mmaSource.retrievedAt,
+    rows: tbillRows,
+    columns: [
+      { key: "tenor", label: "Tenor", type: "text" },
+      { key: "days", label: "Maturity (days)", type: "number", align: "right" },
+      { key: "rate", label: "Yield (% p.a.)", type: "percent", align: "right" },
+      { key: "currency", label: "Currency", type: "mono" },
+    ],
+    chart: { x: "tenor", y: "rate", kind: "bar" },
+  },
+  {
+    id: "mma-monetary-aggregates",
+    name: "MMA Broad Money & Credit",
+    description:
+      "Monetary aggregates including Broad Money (M2), domestic credit, and credit to private sector from MMA Monthly Statistics in MVR millions.",
+    category: "Monetary",
+    sourceId: "mma-statistics",
+    verification: "official-reported",
+    updatedAt: mmaSource.retrievedAt,
+    rows: monetaryRows,
+    columns: [
+      { key: "period", label: "Period", type: "date" },
+      { key: "broadMoneyM2", label: "Broad Money M2 (MVR m)", type: "number", align: "right" },
+      { key: "domesticCredit", label: "Domestic Credit (MVR m)", type: "number", align: "right" },
+      { key: "privateCredit", label: "Private Credit (MVR m)", type: "number", align: "right" },
+    ],
+    chart: { x: "period", y: "broadMoneyM2", kind: "line" },
+  },
+  {
+    id: "mma-tourism",
+    name: "MMA Monthly Tourism Arrivals",
+    description:
+      "Monthly tourist arrivals and resort/hotel bed occupancy rates published in MMA Monthly Statistics.",
+    category: "Economy",
+    sourceId: "mma-statistics",
+    verification: "official-reported",
+    updatedAt: mmaSource.retrievedAt,
+    rows: tourismRows,
+    columns: [
+      { key: "period", label: "Month", type: "text" },
+      { key: "arrivals", label: "Arrivals", type: "number", align: "right" },
+      { key: "occupancy", label: "Occupancy (%)", type: "percent", align: "right" },
+    ],
+    chart: { x: "period", y: "arrivals", kind: "bar" },
   },
   {
     id: "disclosures",
     name: "Corporate disclosures",
     description:
-      "Headline metadata and official document links from the CMDA InformInvestor disclosure index. Document contents are not extracted by Maldex.",
+      "Headline metadata and official document links from the CMDA InformInvestor disclosure index. Includes audited annual statements and quarterly reports.",
     category: "Disclosures",
     sourceId: "cmda-disclosures",
     verification: "official-reported",
@@ -257,69 +370,40 @@ export const DATASETS: Dataset[] = [
     chart: { x: "code", y: "rate", kind: "bar" },
   },
   {
-    id: "company-financials",
-    name: "Company financial snapshot",
+    id: "gdp-growth",
+    name: "GDP growth",
     description:
-      "Illustrative annual financial figures for the nine tracked listed companies. These are sample values for interface development, not official company financials.",
-    category: "Companies",
-    sourceId: "maldex-financial-model",
-    verification: "illustrative",
-    updatedAt: modelSource.retrievedAt,
-    rows: latestFinancialRows,
+      "Annual real GDP growth for the Maldives, from the World Bank Open Data API.",
+    category: "Economy",
+    sourceId: "worldbank",
+    verification: "official-reported",
+    updatedAt: worldBankSource.retrievedAt,
+    rows: indicatorDataset("gdpGrowth", "gdp-growth", "GDP growth", "", "Economy").rows,
     columns: [
-      { key: "code", label: "Code", type: "mono" },
-      { key: "company", label: "Company", type: "text" },
-      { key: "revenue", label: "Revenue (MVR m, illustrative)", type: "number", align: "right" },
-      { key: "netProfit", label: "Net profit (MVR m, illustrative)", type: "number", align: "right" },
-      { key: "totalAssets", label: "Assets (MVR m, illustrative)", type: "number", align: "right" },
-      { key: "netMargin", label: "Net margin (%)", type: "number", align: "right" },
-      { key: "roe", label: "ROE (%)", type: "number", align: "right" },
-      { key: "eps", label: "EPS (MVR)", type: "number", align: "right" },
-      { key: "pe", label: "P/E (calc.)", type: "number", align: "right" },
+      { key: "period", label: "Year", type: "date" },
+      { key: "value", label: "GDP growth (% annual)", type: "number", align: "right" },
     ],
-    chart: { x: "code", y: "revenue", kind: "bar" },
+    chart: { x: "period", y: "value", kind: "line" },
   },
+  indicatorDataset("inflation", "inflation", "Inflation", "Annual percentage change in the Maldives consumer price index, from the World Bank Open Data API.", "Economy"),
+  indicatorDataset("reserves", "reserves", "Official reserves", "Total official reserves in US dollars, from the World Bank Open Data API.", "Economy"),
+  indicatorDataset("current-account", "current-account", "Current account balance", "Current account balance as a share of GDP, from the World Bank Open Data API.", "Economy"),
   {
-    id: "annual-financials",
-    name: "Annual company financials (illustrative)",
+    id: "economic-observations",
+    name: "Economic indicator observations",
     description:
-      "Illustrative annual revenue, profit, assets, equity, EPS and dividends for the tracked companies, 2021–2025. Not official data.",
-    category: "Companies",
-    sourceId: "maldex-financial-model",
-    verification: "illustrative",
-    updatedAt: modelSource.retrievedAt,
-    rows: annualRows,
+      "A long-format view of all connected World Bank indicators for the Maldives. Units differ by indicator, so compare within a series rather than across rows.",
+    category: "Economy",
+    sourceId: "worldbank",
+    verification: "official-reported",
+    updatedAt: worldBankSource.retrievedAt,
+    rows: getIndicatorRows(),
     columns: [
-      { key: "code", label: "Code", type: "mono" },
-      { key: "company", label: "Company", type: "text" },
-      { key: "year", label: "Year", type: "date" },
-      { key: "revenue", label: "Revenue (MVR m)", type: "number", align: "right" },
-      { key: "netProfit", label: "Net profit (MVR m)", type: "number", align: "right" },
-      { key: "totalAssets", label: "Assets (MVR m)", type: "number", align: "right" },
-      { key: "equity", label: "Equity (MVR m)", type: "number", align: "right" },
-      { key: "eps", label: "EPS (MVR)", type: "number", align: "right" },
-      { key: "dps", label: "DPS (MVR)", type: "number", align: "right" },
-      { key: "netMargin", label: "Net margin (%)", type: "number", align: "right" },
-      { key: "roe", label: "ROE (%)", type: "number", align: "right" },
-    ],
-  },
-  {
-    id: "dividends",
-    name: "Dividend history (illustrative)",
-    description:
-      "Illustrative dividend per share history derived from the sample financial model. Not an official dividend record; check CMDA announcements for declared dividends.",
-    category: "Companies",
-    sourceId: "maldex-dividend-model",
-    verification: "illustrative",
-    updatedAt: modelSource.retrievedAt,
-    rows: dividendRows,
-    columns: [
-      { key: "code", label: "Code", type: "mono" },
-      { key: "company", label: "Company", type: "text" },
-      { key: "year", label: "Year", type: "date" },
-      { key: "eps", label: "EPS (MVR)", type: "number", align: "right" },
-      { key: "dps", label: "DPS (MVR)", type: "number", align: "right" },
-      { key: "payout", label: "Payout (%)", type: "number", align: "right" },
+      { key: "period", label: "Period", type: "date" },
+      { key: "indicator", label: "Indicator", type: "text" },
+      { key: "value", label: "Value", type: "number", align: "right" },
+      { key: "unit", label: "Unit", type: "text" },
+      { key: "category", label: "Category", type: "text" },
     ],
   },
 ];
