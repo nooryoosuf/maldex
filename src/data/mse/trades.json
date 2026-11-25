@@ -2,34 +2,13 @@
   "meta": {
     "source": "Maldives Stock Exchange — Insights",
     "sourceUrl": "https://stockexchange.mv/insights",
-    "retrievedAt": "2026-11-24T09:46:11.766Z",
+    "retrievedAt": "2026-11-25T09:44:41.114Z",
     "verification": "official-reported",
     "note": "Published by MSE. Historical series are official exchange data retrieved via the public CSV export. Re-verify against the source before use in decisions.",
     "dataset": "Trade history",
-    "period": "2024-11-24 to 2026-11-24"
+    "period": "2024-11-25 to 2026-11-25"
   },
   "trades": [
-    {
-      "date": "2024-11-24",
-      "code": "MIB",
-      "quantity": 10,
-      "price": 100,
-      "value": 1000
-    },
-    {
-      "date": "2024-11-24",
-      "code": "BML",
-      "quantity": 24,
-      "price": 710,
-      "value": 17040
-    },
-    {
-      "date": "2024-11-24",
-      "code": "MTDC",
-      "quantity": 150,
-      "price": 16,
-      "value": 2400
-    },
     {
       "date": "2024-11-25",
       "code": "DHR",
@@ -76343,6 +76322,300 @@
       "quantity": 1,
       "price": 69,
       "value": 69
+    },
+    {
+      "date": "2026-11-25",
+      "code": "DHR",
+      "quantity": 8,
+      "price": 134.99,
+      "value": 1079.92
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 50,
+      "price": 69,
+      "value": 3450
+    },
+    {
+      "date": "2026-11-25",
+      "code": "MTCC",
+      "quantity": 35,
+      "price": 71.5,
+      "value": 2502.5
+    },
+    {
+      "date": "2026-11-25",
+      "code": "MTDC",
+      "quantity": 25,
+      "price": 13,
+      "value": 325
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 6,
+      "price": 69,
+      "value": 414
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 50,
+      "price": 68.99,
+      "value": 3449.5
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 186,
+      "price": 68.99,
+      "value": 12832.14
+    },
+    {
+      "date": "2026-11-25",
+      "code": "MTCC",
+      "quantity": 65,
+      "price": 71.5,
+      "value": 4647.5
+    },
+    {
+      "date": "2026-11-25",
+      "code": "DHR",
+      "quantity": 1,
+      "price": 134.99,
+      "value": 134.99
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 14,
+      "price": 68.99,
+      "value": 965.86
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 36,
+      "price": 68.99,
+      "value": 2483.64
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 50,
+      "price": 68.99,
+      "value": 3449.5
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 14,
+      "price": 68.99,
+      "value": 965.86
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 1,
+      "price": 69,
+      "value": 69
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 1,
+      "price": 69,
+      "value": 69
+    },
+    {
+      "date": "2026-11-25",
+      "code": "MTCC",
+      "quantity": 1,
+      "price": 78.35,
+      "value": 78.35
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 50,
+      "price": 68.98,
+      "value": 3449
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 50,
+      "price": 68.98,
+      "value": 3449
+    },
+    {
+      "date": "2026-11-25",
+      "code": "DHR",
+      "quantity": 10,
+      "price": 127.01,
+      "value": 1270.1
+    },
+    {
+      "date": "2026-11-25",
+      "code": "DHR",
+      "quantity": 50,
+      "price": 127,
+      "value": 6350
+    },
+    {
+      "date": "2026-11-25",
+      "code": "DHR",
+      "quantity": 10,
+      "price": 125.05,
+      "value": 1250.5
+    },
+    {
+      "date": "2026-11-25",
+      "code": "DHR",
+      "quantity": 1,
+      "price": 124.1,
+      "value": 124.1
+    },
+    {
+      "date": "2026-11-25",
+      "code": "DHR",
+      "quantity": 29,
+      "price": 124.01,
+      "value": 3596.29
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 2,
+      "price": 68.5,
+      "value": 137
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 25,
+      "price": 65.09,
+      "value": 1627.25
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 25,
+      "price": 65.09,
+      "value": 1627.25
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 2,
+      "price": 65,
+      "value": 130
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 50,
+      "price": 65,
+      "value": 3250
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 2,
+      "price": 65,
+      "value": 130
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 2,
+      "price": 65,
+      "value": 130
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 10,
+      "price": 65,
+      "value": 650
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 17,
+      "price": 65,
+      "value": 1105
+    },
+    {
+      "date": "2026-11-25",
+      "code": "DHR",
+      "quantity": 20,
+      "price": 124.01,
+      "value": 2480.2
+    },
+    {
+      "date": "2026-11-25",
+      "code": "DHR",
+      "quantity": 115,
+      "price": 124,
+      "value": 14260
+    },
+    {
+      "date": "2026-11-25",
+      "code": "MTCC",
+      "quantity": 15,
+      "price": 66.01,
+      "value": 990.15
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 71,
+      "price": 67.2,
+      "value": 4771.2
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 100,
+      "price": 68,
+      "value": 6800
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 328,
+      "price": 68.99,
+      "value": 22628.72
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 2,
+      "price": 68.5,
+      "value": 137
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 50,
+      "price": 68.5,
+      "value": 3425
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 48,
+      "price": 68.5,
+      "value": 3288
+    },
+    {
+      "date": "2026-11-25",
+      "code": "BML",
+      "quantity": 50,
+      "price": 68.5,
+      "value": 3425
     }
   ]
 }

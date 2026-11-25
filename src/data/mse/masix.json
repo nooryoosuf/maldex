@@ -2,7 +2,7 @@
   "meta": {
     "source": "Maldives Stock Exchange — Insights",
     "sourceUrl": "https://stockexchange.mv/insights",
-    "retrievedAt": "2026-11-24T09:46:11.766Z",
+    "retrievedAt": "2026-11-25T09:44:41.114Z",
     "verification": "official-reported",
     "note": "Published by MSE. Historical series are official exchange data retrieved via the public CSV export. Re-verify against the source before use in decisions.",
     "dataset": "MASIX index",
@@ -29260,6 +29260,10 @@
     {
       "date": "2026-11-24",
       "value": 476.33
+    },
+    {
+      "date": "2026-11-25",
+      "value": 475.49
     },
     {
       "date": "This is an automatically generated file. For more information please email us at info@stockexchange.mv",

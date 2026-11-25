@@ -2,7 +2,7 @@
   "meta": {
     "source": "Maldives Stock Exchange — Insights",
     "sourceUrl": "https://stockexchange.mv/insights",
-    "retrievedAt": "2026-11-24T09:46:11.766Z",
+    "retrievedAt": "2026-11-25T09:44:41.114Z",
     "verification": "official-reported",
     "note": "Published by MSE. Historical series are official exchange data retrieved via the public CSV export. Re-verify against the source before use in decisions.",
     "dataset": "Equity order book snapshot"
@@ -35,55 +35,55 @@
     {
       "code": "BML",
       "side": "BUY",
-      "quantity": 25,
-      "price": 65.09
+      "quantity": 69,
+      "price": 65.02
     },
     {
       "code": "BML",
       "side": "BUY",
-      "quantity": 75,
-      "price": 65.1
+      "quantity": 9,
+      "price": 66
     },
     {
       "code": "BML",
       "side": "SELL",
-      "quantity": 186,
-      "price": 69
+      "quantity": 100,
+      "price": 68.75
     },
     {
       "code": "BML",
       "side": "SELL",
-      "quantity": 50,
-      "price": 69.1
+      "quantity": 100,
+      "price": 68.98
     },
     {
       "code": "CPLC",
       "side": "SELL",
-      "quantity": 150,
+      "quantity": 21,
+      "price": 76.11
+    },
+    {
+      "code": "CPLC",
+      "side": "SELL",
+      "quantity": 99,
       "price": 85.97
     },
     {
-      "code": "CPLC",
-      "side": "SELL",
-      "quantity": 15,
-      "price": 85.98
+      "code": "DHR",
+      "side": "BUY",
+      "quantity": 100,
+      "price": 125
     },
     {
       "code": "DHR",
       "side": "BUY",
-      "quantity": 1,
-      "price": 124.1
-    },
-    {
-      "code": "DHR",
-      "side": "BUY",
-      "quantity": 10,
-      "price": 125.05
+      "quantity": 59,
+      "price": 125.01
     },
     {
       "code": "DHR",
       "side": "SELL",
-      "quantity": 41,
+      "quantity": 32,
       "price": 134.99
     },
     {
@@ -107,7 +107,7 @@
     {
       "code": "MIB",
       "side": "SELL",
-      "quantity": 433,
+      "quantity": 434,
       "price": 134
     },
     {
@@ -119,25 +119,31 @@
     {
       "code": "MTCC",
       "side": "BUY",
-      "quantity": 69,
-      "price": 66.02
+      "quantity": 45,
+      "price": 66
     },
     {
       "code": "MTCC",
       "side": "BUY",
-      "quantity": 49,
-      "price": 66.03
+      "quantity": 84,
+      "price": 66.01
     },
     {
       "code": "MTCC",
       "side": "SELL",
-      "quantity": 100,
-      "price": 71.5
+      "quantity": 198,
+      "price": 86.17
+    },
+    {
+      "code": "MTCC",
+      "side": "SELL",
+      "quantity": 99,
+      "price": 86.18
     },
     {
       "code": "MTDC",
       "side": "SELL",
-      "quantity": 498,
+      "quantity": 973,
       "price": 13
     },
     {
@@ -161,14 +167,14 @@
     {
       "code": "OMPL",
       "side": "SELL",
-      "quantity": 21,
-      "price": 84.45
+      "quantity": 99,
+      "price": 84.43
     },
     {
       "code": "OMPL",
       "side": "SELL",
-      "quantity": 96,
-      "price": 84.48
+      "quantity": 21,
+      "price": 84.45
     },
     {
       "code": "STO",

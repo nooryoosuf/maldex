@@ -2,12 +2,42 @@
   "meta": {
     "source": "Maldives Stock Exchange — Insights",
     "sourceUrl": "https://stockexchange.mv/insights",
-    "retrievedAt": "2026-11-24T09:46:11.766Z",
+    "retrievedAt": "2026-11-25T09:44:41.114Z",
     "verification": "official-reported",
     "note": "Published by MSE. Historical series are official exchange data retrieved via the public CSV export. Re-verify against the source before use in decisions.",
     "dataset": "Latest daily trade summary"
   },
   "summary": [
+    {
+      "code": "DHR",
+      "lastDate": "2026-11-25",
+      "lastPrice": 124,
+      "previousClose": 124,
+      "changePct": 0,
+      "volume": 244,
+      "value": 30546.100000000002,
+      "trades": 9
+    },
+    {
+      "code": "BML",
+      "lastDate": "2026-11-25",
+      "lastPrice": 68.5,
+      "previousClose": 69,
+      "changePct": -0.7246376811594203,
+      "volume": 1292,
+      "value": 88307.92,
+      "trades": 28
+    },
+    {
+      "code": "MTDC",
+      "lastDate": "2026-11-25",
+      "lastPrice": 13,
+      "previousClose": 13,
+      "changePct": 0,
+      "volume": 25,
+      "value": 325,
+      "trades": 1
+    },
     {
       "code": "MIB",
       "lastDate": "2026-11-24",
@@ -17,36 +47,6 @@
       "volume": 110,
       "value": 14548,
       "trades": 4
-    },
-    {
-      "code": "BML",
-      "lastDate": "2026-11-24",
-      "lastPrice": 69,
-      "previousClose": 69.1,
-      "changePct": -0.1447178002894274,
-      "volume": 934,
-      "value": 63872.219999999994,
-      "trades": 25
-    },
-    {
-      "code": "MTDC",
-      "lastDate": "2026-11-24",
-      "lastPrice": 13,
-      "previousClose": 13.05,
-      "changePct": -0.38314176245211273,
-      "volume": 2,
-      "value": 26,
-      "trades": 1
-    },
-    {
-      "code": "DHR",
-      "lastDate": "2026-11-24",
-      "lastPrice": 124,
-      "previousClose": 123,
-      "changePct": 0.8130081300813009,
-      "volume": 250,
-      "value": 31284.71,
-      "trades": 8
     },
     {
       "code": "OMPL",
@@ -60,13 +60,13 @@
     },
     {
       "code": "MTCC",
-      "lastDate": "2026-11-19",
-      "lastPrice": 65.07,
-      "previousClose": 65.06,
-      "changePct": 0.015370427297864902,
-      "volume": 53,
-      "value": 3449.65,
-      "trades": 2
+      "lastDate": "2026-11-25",
+      "lastPrice": 66.01,
+      "previousClose": 65.07,
+      "changePct": 1.4445981250960689,
+      "volume": 116,
+      "value": 8218.5,
+      "trades": 4
     },
     {
       "code": "ATM",
@@ -132,6 +132,7 @@
       "code": "GOVTB1",
       "lastDate": "2026-07-23",
       "lastPrice": 1000,
+      "previousClose": null,
       "changePct": null,
       "volume": 50000,
       "value": 50000000,
@@ -141,6 +142,7 @@
       "code": "GOVTB2",
       "lastDate": "2026-07-23",
       "lastPrice": 1000,
+      "previousClose": null,
       "changePct": null,
       "volume": 250000,
       "value": 250000000,
@@ -150,6 +152,7 @@
       "code": "GOVTB3",
       "lastDate": "2026-07-23",
       "lastPrice": 1000,
+      "previousClose": null,
       "changePct": null,
       "volume": 459000,
       "value": 459000000,
@@ -159,6 +162,7 @@
       "code": "GOVTB4",
       "lastDate": "2026-07-23",
       "lastPrice": 1000,
+      "previousClose": null,
       "changePct": null,
       "volume": 550000,
       "value": 550000000,
@@ -168,6 +172,7 @@
       "code": "GOVTB5",
       "lastDate": "2026-07-23",
       "lastPrice": 1000,
+      "previousClose": null,
       "changePct": null,
       "volume": 503000,
       "value": 503000000,
@@ -177,6 +182,7 @@
       "code": "GOVTB6",
       "lastDate": "2026-07-23",
       "lastPrice": 1000,
+      "previousClose": null,
       "changePct": null,
       "volume": 309000,
       "value": 309000000,
@@ -186,6 +192,7 @@
       "code": "GOVTB7",
       "lastDate": "2026-07-23",
       "lastPrice": 1000,
+      "previousClose": null,
       "changePct": null,
       "volume": 300000,
       "value": 300000000,
