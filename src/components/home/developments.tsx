@@ -13,63 +13,68 @@ import {
 import { formatDate } from "@/lib/format";
 import type { ViewingMode } from "@/lib/types";
 
-export function LatestDevelopments({ mode }: { mode: ViewingMode }) {
-  const items = getDisclosures(8);
+export function LatestDevelopments({ mode: _mode }: { mode?: ViewingMode }) {
+  const items = getDisclosures(7);
   const stats = getDisclosureStats();
 
   return (
-    <section className="overflow-hidden rounded-md border border-line bg-surface" aria-labelledby="developments-heading">
-      <div className="flex flex-wrap items-start justify-between gap-3 border-b border-line px-4 py-3">
+    <section className="surface-panel overflow-hidden" aria-labelledby="developments-heading">
+      <div className="flex flex-wrap items-start justify-between gap-3 border-b border-line px-4 py-3.5">
         <div>
-          <p className="mono-label mb-1">Latest developments</p>
-          <h2 id="developments-heading" className="text-lg font-semibold tracking-[-0.015em] text-ink">
-            Official disclosures, in order
+          <p className="mono-label mb-1">Corporate Stream</p>
+          <h2 id="developments-heading" className="text-[15px] font-semibold tracking-[-0.015em] text-ink">
+            Latest Official Disclosures
           </h2>
-          <p className="mt-1 text-[11px] leading-5 text-muted">
-            Company announcements, reports and meetings published through CMDA InformInvestor.
+          <p className="mt-0.5 text-[11.5px] leading-5 text-muted">
+            Audited filings, notices, and governance announcements via CMDA InformInvestor.
           </p>
         </div>
         <Link href="/disclosures" className="inline-flex items-center gap-1 text-[11px] font-medium text-accent hover:underline">
-          All {stats.total} disclosures <ArrowUpRight className="h-3 w-3" />
+          All {stats.total} filings <ArrowUpRight className="h-3 w-3" />
         </Link>
       </div>
 
-      <div className="divide-y divide-line">
+      <div className="divide-y divide-line/70">
         {items.map((item) => {
           const monogram = getCompanyMonogramForDisclosure(item);
           return (
-            <article key={item.id} className="grid gap-2 px-4 py-3.5 transition-colors hover:bg-surface-2/35 sm:grid-cols-[74px_1fr] sm:gap-4">
+            <article
+              key={item.id}
+              className="group grid gap-2 px-4 py-3 transition-colors hover:bg-surface-2/40 sm:grid-cols-[78px_1fr] sm:gap-4"
+            >
               <div className="flex items-center gap-2 sm:block">
-                <span className="num font-mono text-[10px] text-muted">{formatDate(item.publishedAt, "short")}</span>
-                <span className="font-mono text-[9px] text-faint sm:mt-0.5 sm:block">{item.publishedAt.slice(0, 4)}</span>
+                <span className="num font-mono text-[10px] font-medium text-muted">
+                  {formatDate(item.publishedAt, "short")}
+                </span>
+                <span className="font-mono text-[9px] text-faint sm:mt-0.5 sm:block">
+                  #{item.id}
+                </span>
               </div>
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-1.5">
-                  <CompanyMark monogram={monogram} size="xs" />
-                  <span className="text-[11px] font-medium text-ink">{item.company}</span>
+                  <CompanyMark code={item.code ?? undefined} monogram={monogram} size="xs" />
+                  <span className="text-[11.5px] font-medium text-ink">{item.company}</span>
                   <Badge variant={disclosureTypeTone(item.type)}>{item.type}</Badge>
-                  <span className="advanced-only font-mono text-[9px] text-faint">#{item.id}</span>
                 </div>
-                <h3 className="mt-1.5 text-[12.5px] font-medium leading-[18px] text-ink">
-                  <Link href={`/disclosures/${item.id}`} className="hover:text-accent">
+                <h3 className="mt-1 text-[12.5px] font-medium leading-[18px] text-ink group-hover:text-accent transition-colors">
+                  <Link href={`/disclosures/${item.id}`}>
                     {item.title}
                   </Link>
                 </h3>
-                <p className="simple-only mt-1 text-[11px] leading-[17px] text-muted">{plainLanguageDisclosure(item)}</p>
-                <p className="advanced-only mt-1 text-[11px] leading-[17px] text-muted">
-                  {item.type} published on {formatDate(item.publishedAt, "long")}. Official document metadata only; figures have not been extracted by Maldex.
+                <p className="simple-only mt-1 text-[11px] leading-[17px] text-muted">
+                  {plainLanguageDisclosure(item)}
                 </p>
                 <div className="mt-1.5 flex flex-wrap items-center gap-3">
                   <a
                     href={item.sourceUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 font-mono text-[9px] uppercase tracking-[0.07em] text-muted transition-colors hover:text-ink"
+                    className="inline-flex items-center gap-1 font-mono text-[9.5px] uppercase tracking-[0.06em] text-muted transition-colors hover:text-ink"
                   >
-                    Official document <ExternalLink className="h-2.5 w-2.5" />
+                    Official PDF <ExternalLink className="h-2.5 w-2.5" />
                   </a>
-                  <Link href={`/disclosures/${item.id}`} className="text-[10px] font-medium text-accent hover:underline">
-                    Details
+                  <Link href={`/disclosures/${item.id}`} className="text-[10.5px] font-medium text-accent hover:underline">
+                    Filing summary →
                   </Link>
                 </div>
               </div>
@@ -78,8 +83,8 @@ export function LatestDevelopments({ mode }: { mode: ViewingMode }) {
         })}
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-line bg-surface-2/40 px-4 py-2.5">
-        <span className="text-[10px] text-faint">Headlines and document links indexed from CMDA · contents not verified by Maldex</span>
+      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-line bg-surface-2/35 px-4 py-2.5">
+        <span className="text-[10px] text-faint">Direct regulatory links indexed from CMDA InformInvestor</span>
         <SourceLabel sourceId="cmda-disclosures" />
       </div>
     </section>

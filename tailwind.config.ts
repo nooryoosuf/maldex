@@ -24,6 +24,12 @@ const config: Config = {
         positive: "rgb(var(--positive) / <alpha-value>)",
         negative: "rgb(var(--negative) / <alpha-value>)",
         warning: "rgb(var(--warning) / <alpha-value>)",
+        "chart-1": "rgb(var(--chart-1) / <alpha-value>)",
+        "chart-2": "rgb(var(--chart-2) / <alpha-value>)",
+        "chart-3": "rgb(var(--chart-3) / <alpha-value>)",
+        "chart-4": "rgb(var(--chart-4) / <alpha-value>)",
+        "chart-5": "rgb(var(--chart-5) / <alpha-value>)",
+        "chart-6": "rgb(var(--chart-6) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["Inter Variable", "Inter", "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
@@ -54,8 +60,8 @@ const config: Config = {
         xl: "10px",
       },
       boxShadow: {
-        pop: "0 10px 40px -12px rgb(15 23 30 / 0.18), 0 2px 8px -4px rgb(15 23 30 / 0.08)",
-        "pop-dark": "0 16px 48px -12px rgb(0 0 0 / 0.6)",
+        pop: "0 12px 36px -10px rgb(15 23 32 / 0.16), 0 2px 8px -3px rgb(15 23 32 / 0.08)",
+        "pop-dark": "0 18px 48px -12px rgb(0 0 0 / 0.65), inset 0 1px 0 0 rgb(255 255 255 / 0.05)",
       },
       keyframes: {
         "fade-in": {

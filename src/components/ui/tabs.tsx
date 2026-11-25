@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
+import { motion } from "motion/react";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { cn } from "@/lib/cn";
 
 export interface TabItem {
   id: string;
-  label: string;
+  label: React.ReactNode;
   count?: number;
   content: React.ReactNode;
 }
@@ -24,6 +26,8 @@ export function Tabs({
   ariaLabel?: string;
 }) {
   const [active, setActive] = useState(defaultId ?? items[0]?.id);
+  const tabGroupId = useId();
+  const reduced = useReducedMotion();
   const activeItem = items.find((item) => item.id === active) ?? items[0];
 
   return (
@@ -33,7 +37,7 @@ export function Tabs({
         aria-label={ariaLabel}
         className={cn(
           "flex items-center gap-1 overflow-x-auto no-scrollbar",
-          variant === "underline" ? "border-b border-line" : "",
+          variant === "underline" ? "border-b border-line" : "rounded-md border border-line bg-surface-2/60 p-1 w-fit max-w-full",
         )}
       >
         {items.map((item) => {
@@ -42,9 +46,9 @@ export function Tabs({
             <button
               key={item.id}
               role="tab"
-              id={`tab-${item.id}`}
+              id={`tab-${tabGroupId}-${item.id}`}
               aria-selected={selected}
-              aria-controls={`panel-${item.id}`}
+              aria-controls={`panel-${tabGroupId}-${item.id}`}
               tabIndex={selected ? 0 : -1}
               onClick={() => setActive(item.id)}
               onKeyDown={(event) => {
@@ -53,40 +57,63 @@ export function Tabs({
                 const index = items.findIndex((entry) => entry.id === active);
                 const next = event.key === "ArrowRight" ? (index + 1) % items.length : (index - 1 + items.length) % items.length;
                 setActive(items[next].id);
-                document.getElementById(`tab-${items[next].id}`)?.focus();
+                document.getElementById(`tab-${tabGroupId}-${items[next].id}`)?.focus();
               }}
               className={cn(
-                "relative flex shrink-0 items-center gap-1.5 whitespace-nowrap px-3 text-xs font-medium transition-colors",
+                "relative z-0 flex shrink-0 items-center gap-1.5 whitespace-nowrap px-3.5 text-xs font-medium transition-colors",
                 variant === "underline"
                   ? cn(
-                      "h-9 border-b-2 -mb-px",
-                      selected
-                        ? "border-accent text-ink"
-                        : "border-transparent text-muted hover:border-line-strong hover:text-ink",
+                      "h-10",
+                      selected ? "text-ink" : "text-muted hover:text-ink",
                     )
                   : cn(
                       "h-8 rounded-sm",
-                      selected ? "bg-surface text-ink ring-1 ring-line" : "text-muted hover:bg-surface-2 hover:text-ink",
+                      selected ? "text-ink" : "text-muted hover:text-ink",
                     ),
               )}
             >
-              {item.label}
+              {selected && variant === "underline" ? (
+                <motion.span
+                  layoutId={reduced ? undefined : `tab-line-${tabGroupId}`}
+                  transition={{ type: "spring", stiffness: 500, damping: 38 }}
+                  className="pointer-events-none absolute inset-x-0 -bottom-px h-[2px] bg-accent"
+                />
+              ) : null}
+              {selected && variant === "pills" ? (
+                <motion.span
+                  layoutId={reduced ? undefined : `tab-pill-${tabGroupId}`}
+                  transition={{ type: "spring", stiffness: 500, damping: 38 }}
+                  className="pointer-events-none absolute inset-0 -z-10 rounded-sm bg-surface shadow-sm ring-1 ring-line"
+                />
+              ) : null}
+              <span>{item.label}</span>
               {typeof item.count === "number" ? (
-                <span className={cn("font-mono text-[10px]", selected ? "text-accent" : "text-faint")}>{item.count}</span>
+                <span
+                  className={cn(
+                    "rounded-xs px-1.5 py-0.2 font-mono text-[10px]",
+                    selected ? "bg-accent-soft text-accent" : "bg-surface-2 text-faint",
+                  )}
+                >
+                  {item.count}
+                </span>
               ) : null}
             </button>
           );
         })}
       </div>
       {activeItem ? (
-        <div
+        <motion.div
+          key={activeItem.id}
           role="tabpanel"
-          id={`panel-${activeItem.id}`}
-          aria-labelledby={`tab-${activeItem.id}`}
-          className="animate-fade-in pt-5"
+          id={`panel-${tabGroupId}-${activeItem.id}`}
+          aria-labelledby={`tab-${tabGroupId}-${activeItem.id}`}
+          initial={reduced ? false : { opacity: 0, y: 3 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.16, ease: "easeOut" }}
+          className="pt-5"
         >
           {activeItem.content}
-        </div>
+        </motion.div>
       ) : null}
     </div>
   );

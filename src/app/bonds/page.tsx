@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, CalendarRange, ShieldCheck } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
 import { PageContainer } from "@/components/ui/page-container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Badge } from "@/components/ui/badge";
-import { DataBadge } from "@/components/ui/data-badge";
-import { Notice } from "@/components/ui/notice";
 import { SourceLabel } from "@/components/ui/source-label";
 import { Stat, StatGrid } from "@/components/ui/stat";
 import { Tabs } from "@/components/ui/tabs";
 import { DataTable } from "@/components/ui/data-table";
+import { ChartCard } from "@/components/charts/chart-card";
+import { TimeSeriesChart } from "@/components/charts/time-series-chart";
+import { DonutChart } from "@/components/charts/donut-chart";
+import { MaturityTimeline } from "@/components/charts/maturity-timeline";
 import { BondCalculator } from "@/components/bonds/bond-calculator";
+import { WhatDoesThisMean } from "@/components/ui/disclosure-panel";
 import {
   BONDS,
   getMaturityCalendar,
@@ -23,7 +26,7 @@ import { formatDate, formatMvr, formatNumber, formatPercent } from "@/lib/format
 export const metadata: Metadata = {
   title: "Bonds & Sukuk",
   description:
-    "Published terms for bonds and Sukuk listed on the Maldives Stock Exchange: rates, maturity calendar, nominal values and a cash-flow calculator.",
+    "Published terms for bonds and Sukuk listed on the Maldives Stock Exchange: maturity timeline, coupon rates, nominal values and a cash-flow calculator.",
 };
 
 export default function BondsPage() {
@@ -36,6 +39,33 @@ export default function BondsPage() {
     withRate.length > 0 ? withRate.reduce((sum, bond) => sum + (bond.returnRate ?? 0), 0) / withRate.length : null;
   const sukuk = BONDS.filter((bond) => bond.instrumentType === "Sukuk").length;
   const government = BONDS.filter((bond) => bond.issuerShort === "Government").length;
+
+  const issuerTypeSlices = [
+    {
+      name: "Government Bonds",
+      value: BONDS.filter((b) => b.issuerShort === "Government").reduce((s, b) => s + nominalIssueValue(b), 0),
+      color: "rgb(var(--chart-1))",
+    },
+    {
+      name: "Corporate Bonds",
+      value: BONDS.filter((b) => b.issuerShort !== "Government" && b.instrumentType !== "Sukuk").reduce(
+        (s, b) => s + nominalIssueValue(b),
+        0,
+      ),
+      color: "rgb(var(--chart-2))",
+    },
+    {
+      name: "Listed Sukuk",
+      value: BONDS.filter((b) => b.instrumentType === "Sukuk").reduce((s, b) => s + nominalIssueValue(b), 0),
+      color: "rgb(var(--chart-3))",
+    },
+  ];
+
+  const couponChartRows = returns.map((bond) => ({
+    code: bond.code,
+    issuer: bond.issuerShort,
+    rate: bond.returnRate ?? 0,
+  }));
 
   const maturityRows = calendar.map((year) => ({
     year: year.year,
@@ -84,129 +114,190 @@ export default function BondsPage() {
         title="Fixed-income instruments, in their own terms"
         description={
           <>
-            Published terms for {BONDS.length} bonds and Sukuk listed on the Maldives Stock Exchange. These are
-            contractual terms, not market prices: Maldex does not currently connect a live bond-price series, so every
-            figure here is an official published term or a clearly labelled calculation from it.
+            Published contractual terms for {BONDS.length} sovereign bonds, corporate bonds, and Sukuk listed on the
+            Maldives Stock Exchange—featuring interactive maturity timelines, coupon comparisons, and cash-flow modelling.
           </>
         }
         actions={
           <Link
             href="/data-explorer?dataset=bonds"
-            className="inline-flex h-9 items-center gap-2 rounded border border-line bg-surface px-3 text-xs font-medium text-ink transition-colors hover:bg-surface-2"
+            className="inline-flex h-9 items-center gap-2 rounded-md border border-line bg-surface px-3 text-xs font-medium text-ink transition-colors hover:bg-surface-2"
           >
-            Bond dataset
+            Bond dataset <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         }
         meta={
           <>
             <SourceLabel sourceId="mse-listed" />
             <span className="h-3 w-px bg-line-strong" />
-            <Badge variant="outline">{BONDS.length} instruments</Badge>
+            <Badge variant="outline">{BONDS.length} listed instruments</Badge>
             <span className="h-3 w-px bg-line-strong" />
-            <span>Terms retrieved 24 Nov 2026</span>
+            <span>Contractual terms · Nominal values calculated</span>
           </>
         }
       />
 
+      {/* Level 1 — Key Fixed-Income Metrics */}
       <div className="mt-6">
         <StatGrid columns="grid-cols-2 md:grid-cols-3 xl:grid-cols-6">
           <Stat
             label="Instruments"
             value={formatNumber(BONDS.length)}
-            sub={`${government} government · ${sukuk} Sukuk`}
+            sub={`${government} sovereign · ${sukuk} Sukuk`}
             badge={<ShieldCheck className="h-3 w-3 text-faint" />}
           />
           <Stat
-            label="Nominal value"
+            label="Nominal issued"
             value={formatMvr(totalNominal, { compact: true })}
-            sub="Sum of units × face value"
-            trendLabel="Calculated, not market value"
+            sub="Units × face value"
+            trendLabel="Contractual par value"
           />
           <Stat
-            label="With published rate"
+            label="Published rates"
             value={formatNumber(withRate.length)}
-            sub={`${formatNumber(BONDS.length - withRate.length)} rate not published`}
-            trendLabel="Coupon-paying instruments"
+            sub={`${formatNumber(BONDS.length - withRate.length)} unrated in directory`}
           />
           <Stat
             label="Average coupon"
             value={formatPercent(averageRate, 2)}
-            sub="Among coupon-paying instruments"
-            trendLabel="Simple average, not weighted"
+            sub="Simple mean of published rates"
           />
           <Stat
             label="Earliest maturity"
             value={formatDate(BONDS.map((bond) => bond.maturityDate).sort()[0])}
-            sub="Among all instruments"
+            sub="Nearest redemption"
           />
           <Stat
-            label="Latest maturity"
+            label="Longest maturity"
             value={formatDate(BONDS.map((bond) => bond.maturityDate).sort().at(-1) ?? "")}
-            sub="Among all instruments"
+            sub="Longest listed tenor"
           />
         </StatGrid>
-        <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
-          <SourceLabel sourceId="mse-listed" />
-          <span className="text-[10px] text-faint">
-            Nominal value is a Maldex calculation of units × face value. It is not a market price and may differ from
-            trading value.
-          </span>
-        </div>
       </div>
 
-      <div className="mt-8">
-        <Notice variant="warning" title="No live bond-price series is connected yet">
-          The exchange publishes bond terms and occasional trade summaries, but Maldex does not yet integrate a live or
-          historical bond-price series. Treat the rates and maturities below as contractual terms, not valuations.
-        </Notice>
-      </div>
+      {/* Level 2 — Interactive Maturity Timeline (2027–2035) */}
+      <section id="maturities" className="mt-8 scroll-mt-20">
+        <ChartCard
+          variant="featured"
+          eyebrow="Redemption Wall · 2027–2035"
+          title="Bonds & Sukuk Maturity Timeline"
+          description="Stacked nominal principal coming due by calendar year across Sovereign bonds, Corporate bonds, and Sukuk. Select any year below to inspect the maturing instruments."
+          explanation="A maturity timeline shows when issuers must repay principal to bondholders. Large clusters in a single year represent refinancing milestones for government and corporate borrowers."
+          tableData={maturityRows as unknown as Record<string, unknown>[]}
+          tableColumns={[
+            { key: "year", label: "Year" },
+            { key: "count", label: "Instruments", format: "number", digits: 0 },
+            { key: "nominalValue", label: "Nominal Value (MVR)", format: "compactCurrency" },
+          ]}
+          csvFilename="maldex-bond-maturity-timeline.csv"
+          expandable
+          footer={
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <span className="font-mono text-[10px] text-faint">{upcoming.length} instruments mature within 30 months</span>
+              <SourceLabel sourceId="mse-listed" />
+            </div>
+          }
+        >
+          <MaturityTimeline bonds={BONDS} />
+        </ChartCard>
+      </section>
 
-      <div className="mt-8">
-        <BondCalculator />
-      </div>
+      {/* Level 2 — Coupon Rate Comparison & Issuer Composition */}
+      <section className="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
+        <ChartCard
+          eyebrow="Coupon Rates"
+          title="Published Return Rates by Instrument"
+          description="Annualised contractual coupon / profit rate (%) across listed instruments with a published rate."
+          explanation="Published coupon rates reflect what the issuer pays on nominal face value—not secondary-market yield-to-maturity, because Maldex does not yet connect a live bond price feed."
+          tableData={couponChartRows as unknown as Record<string, unknown>[]}
+          tableColumns={[
+            { key: "code", label: "Instrument" },
+            { key: "issuer", label: "Issuer" },
+            { key: "rate", label: "Rate (%)", format: "percent", digits: 2 },
+          ]}
+          csvFilename="maldex-bond-coupon-rates.csv"
+          expandable
+        >
+          <TimeSeriesChart
+            data={couponChartRows as unknown as Record<string, unknown>[]}
+            xKey="code"
+            series={[{ key: "rate", label: "Published Rate (% p.a.)", color: "rgb(var(--chart-2))" }]}
+            kind="bar"
+            format="percent"
+            labelType="category"
+            height={230}
+            yWidth={44}
+            digits={2}
+            showLegend={false}
+          />
+        </ChartCard>
 
+        <ChartCard
+          eyebrow="Nominal Mix"
+          title="Issuance by Instrument Category"
+          description="Share of total nominal listed fixed-income value across Sovereign debt, Corporate bonds, and Sukuk."
+        >
+          <DonutChart
+            data={issuerTypeSlices}
+            format="compactCurrency"
+            centerLabel="Nominal"
+            height={220}
+          />
+        </ChartCard>
+      </section>
+
+      {/* Interactive Cash-Flow Calculator */}
       <section className="mt-8">
+        <BondCalculator />
+      </section>
+
+      {/* Level 3 — Reference Tables */}
+      <section className="mt-10">
         <div className="mb-3 flex flex-wrap items-end justify-between gap-2">
           <div>
-            <p className="mono-label mb-1">Maturity calendar</p>
-            <h2 className="text-lg font-semibold tracking-[-0.015em] text-ink">When instruments come due</h2>
-            <p className="mt-1 text-[11px] leading-5 text-muted">
-              Grouped by maturity year. Nominal value is units × face value.
-            </p>
+            <p className="mono-label mb-1">Reference Directory</p>
+            <h2 className="text-lg font-semibold tracking-[-0.015em] text-ink">Full terms & schedules</h2>
           </div>
-          <span className="text-[10px] text-faint">{upcoming.length} instruments mature within 30 months</span>
+          <WhatDoesThisMean title="Why coupon rate differs from investor yield" compact>
+            A bond’s published rate tells you what the issuer pays on par value. Actual investor return depends on purchase price in secondary trading, which is not connected here.
+          </WhatDoesThisMean>
         </div>
 
         <Tabs
           ariaLabel="Bond tables"
           items={[
             {
-              id: "calendar",
-              label: "Maturity calendar",
-              count: calendar.length,
+              id: "all",
+              label: "All instruments",
+              count: BONDS.length,
               content: (
                 <DataTable
-                  data={maturityRows as unknown as Record<string, unknown>[]}
-                  idKey="year"
-                  initialSort={{ key: "year", direction: "asc" }}
+                  data={instrumentRows as unknown as Record<string, unknown>[]}
+                  idKey="code"
+                  initialSort={{ key: "nominalValue", direction: "desc" }}
                   columns={[
-                    { key: "year", header: "Maturity year", type: "mono" },
-                    { key: "count", header: "Instruments", type: "number", align: "right" },
+                    { key: "code", header: "Code", type: "mono" },
+                    { key: "issuer", header: "Issuer" },
+                    { key: "type", header: "Type", hideBelow: "md" },
+                    { key: "rate", header: "Rate", type: "percent", align: "right", digits: 2 },
+                    { key: "frequency", header: "Frequency", hideBelow: "lg" },
+                    { key: "faceValue", header: "Face value", type: "currency", align: "right", digits: 0, hideBelow: "md" },
+                    { key: "units", header: "Units", type: "number", align: "right", hideBelow: "lg" },
                     { key: "nominalValue", header: "Nominal value", type: "currency", align: "right", compact: true },
-                    { key: "issuers", header: "Issuers", hideBelow: "md" },
-                    { key: "earliest", header: "Earliest date", type: "date", align: "right", hideBelow: "lg" },
+                    { key: "issued", header: "Issued", type: "date", align: "right", hideBelow: "lg" },
+                    { key: "maturity", header: "Maturity", type: "date", align: "right" },
                   ]}
-                  searchKeys={["issuers"]}
-                  searchPlaceholder="Search issuer"
-                  csvFilename="maldex-bond-maturity-calendar.csv"
-                  caption="Bond and Sukuk maturities grouped by year."
-                  pageSize={10}
+                  searchKeys={["code", "issuer", "type"]}
+                  searchPlaceholder="Search code, issuer or type"
+                  csvFilename="maldex-bonds-terms.csv"
+                  caption="Published terms from the MSE listed-securities directory."
+                  pageSize={12}
                 />
               ),
             },
             {
               id: "upcoming",
-              label: "Upcoming",
+              label: "Upcoming (30m)",
               count: upcoming.length,
               content: (
                 <DataTable
@@ -224,7 +315,7 @@ export default function BondsPage() {
                   searchKeys={["code", "issuer"]}
                   searchPlaceholder="Search instrument or issuer"
                   csvFilename="maldex-upcoming-maturities.csv"
-                  caption="Instruments maturing within 30 months of the snapshot date."
+                  caption="Instruments maturing within 30 months."
                   pageSize={12}
                 />
               ),
@@ -256,51 +347,31 @@ export default function BondsPage() {
               ),
             },
             {
-              id: "all",
-              label: "All instruments",
-              count: BONDS.length,
+              id: "calendar",
+              label: "By year",
+              count: calendar.length,
               content: (
                 <DataTable
-                  data={instrumentRows as unknown as Record<string, unknown>[]}
-                  idKey="code"
-                  initialSort={{ key: "issuer", direction: "asc" }}
+                  data={maturityRows as unknown as Record<string, unknown>[]}
+                  idKey="year"
+                  initialSort={{ key: "year", direction: "asc" }}
                   columns={[
-                    { key: "code", header: "Code", type: "mono" },
-                    { key: "issuer", header: "Issuer" },
-                    { key: "type", header: "Type", hideBelow: "md" },
-                    { key: "rate", header: "Rate", type: "percent", align: "right", digits: 2 },
-                    { key: "frequency", header: "Frequency", hideBelow: "lg" },
-                    { key: "faceValue", header: "Face value", type: "currency", align: "right", digits: 0, hideBelow: "md" },
-                    { key: "units", header: "Units", type: "number", align: "right", hideBelow: "lg" },
+                    { key: "year", header: "Maturity year", type: "mono" },
+                    { key: "count", header: "Instruments", type: "number", align: "right" },
                     { key: "nominalValue", header: "Nominal value", type: "currency", align: "right", compact: true },
-                    { key: "issued", header: "Issued", type: "date", align: "right", hideBelow: "lg" },
-                    { key: "maturity", header: "Maturity", type: "date", align: "right" },
+                    { key: "issuers", header: "Issuers", hideBelow: "md" },
+                    { key: "earliest", header: "Earliest date", type: "date", align: "right", hideBelow: "lg" },
                   ]}
-                  searchKeys={["code", "issuer", "type"]}
-                  searchPlaceholder="Search code, issuer or type"
-                  csvFilename="maldex-bonds-terms.csv"
-                  caption="Published terms from the MSE listed-securities directory."
-                  pageSize={12}
+                  searchKeys={["issuers"]}
+                  searchPlaceholder="Search issuer"
+                  csvFilename="maldex-bond-maturity-calendar.csv"
+                  caption="Bond and Sukuk maturities grouped by year."
+                  pageSize={10}
                 />
               ),
             },
           ]}
         />
-      </section>
-
-      <section className="mt-8 grid gap-4 rounded-md border border-line bg-surface p-5 md:grid-cols-[1fr_auto] md:items-center">
-        <div>
-          <p className="mono-label mb-1">Understanding</p>
-          <h2 className="text-sm font-semibold tracking-[-0.01em] text-ink">A bond’s rate is not its return</h2>
-          <p className="mt-1 max-w-2xl text-xs leading-5 text-muted">
-            The published rate tells you what the issuer pays on face value. What an investor actually earns depends on
-            the price paid, which is not connected here. Sukuk returns are structured rather than interest-based, but are
-            shown with the same rate and frequency convention.
-          </p>
-        </div>
-        <Link href="/sources" className="inline-flex items-center gap-1 text-xs font-medium text-accent hover:underline">
-          Methodology <ArrowRight className="h-3 w-3" />
-        </Link>
       </section>
     </PageContainer>
   );

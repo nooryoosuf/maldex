@@ -4,42 +4,54 @@
 
 @layer base {
   :root {
-    --bg: 250 250 248;
+    --bg: 249 250 249;
     --surface: 255 255 255;
-    --surface-2: 245 246 243;
-    --surface-3: 238 240 236;
-    --text: 24 28 27;
-    --muted: 102 110 106;
-    --faint: 139 147 142;
-    --border: 226 229 224;
-    --border-strong: 203 208 202;
-    --accent: 32 78 205;
-    --accent-soft: 235 241 255;
-    --positive: 12 114 74;
-    --negative: 178 48 48;
-    --warning: 148 99 7;
-    --chart-grid: 232 234 230;
-    --chart-axis: 130 138 133;
+    --surface-2: 243 245 244;
+    --surface-3: 235 238 237;
+    --text: 17 22 25;
+    --muted: 92 103 110;
+    --faint: 134 144 150;
+    --border: 226 230 229;
+    --border-strong: 199 206 205;
+    --accent: 29 78 216;
+    --accent-soft: 235 242 255;
+    --positive: 10 123 80;
+    --negative: 190 44 52;
+    --warning: 161 102 7;
+    --chart-grid: 233 236 235;
+    --chart-axis: 124 134 140;
+    --chart-1: 29 78 216;
+    --chart-2: 10 135 96;
+    --chart-3: 217 119 6;
+    --chart-4: 124 58 237;
+    --chart-5: 14 116 144;
+    --chart-6: 190 44 52;
     color-scheme: light;
   }
 
   .dark {
-    --bg: 9 14 19;
-    --surface: 14 20 27;
-    --surface-2: 18 26 34;
-    --surface-3: 23 32 41;
-    --text: 231 237 242;
-    --muted: 143 156 168;
-    --faint: 107 121 133;
-    --border: 30 42 53;
-    --border-strong: 46 61 75;
-    --accent: 130 163 255;
-    --accent-soft: 22 36 66;
-    --positive: 74 190 139;
-    --negative: 241 120 120;
-    --warning: 224 175 80;
-    --chart-grid: 29 41 52;
-    --chart-axis: 132 147 160;
+    --bg: 9 14 20;
+    --surface: 14 21 29;
+    --surface-2: 19 28 38;
+    --surface-3: 25 36 49;
+    --text: 234 240 246;
+    --muted: 144 158 172;
+    --faint: 103 118 133;
+    --border: 29 42 56;
+    --border-strong: 45 63 82;
+    --accent: 116 162 255;
+    --accent-soft: 20 35 66;
+    --positive: 58 201 142;
+    --negative: 244 114 118;
+    --warning: 234 179 76;
+    --chart-grid: 26 38 51;
+    --chart-axis: 126 142 158;
+    --chart-1: 116 162 255;
+    --chart-2: 58 201 142;
+    --chart-3: 234 179 76;
+    --chart-4: 167 139 250;
+    --chart-5: 56 189 248;
+    --chart-6: 244 114 118;
     color-scheme: dark;
   }
 
@@ -99,16 +111,24 @@
     font-feature-settings: "tnum", "zero";
   }
 
+  .surface-panel {
+    @apply rounded-lg border border-line bg-surface shadow-[0_1px_2px_rgba(15,23,32,0.03)] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.035)];
+  }
+
+  .surface-interactive {
+    @apply rounded-lg border border-line bg-surface transition-all duration-150 hover:border-line-strong hover:bg-surface-2/40 dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.035)];
+  }
+
   .hairline-grid {
     background-image:
-      linear-gradient(to right, rgb(var(--border) / 0.65) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(var(--border) / 0.65) 1px, transparent 1px);
+      linear-gradient(to right, rgb(var(--border) / 0.55) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--border) / 0.55) 1px, transparent 1px);
     background-size: 32px 32px;
   }
 
   .dot-grid {
-    background-image: radial-gradient(circle at 1px 1px, rgb(var(--border-strong) / 0.55) 1px, transparent 0);
-    background-size: 22px 22px;
+    background-image: radial-gradient(circle at 1px 1px, rgb(var(--border-strong) / 0.5) 1px, transparent 0);
+    background-size: 20px 20px;
   }
 
   .skeleton {
@@ -135,8 +155,8 @@
     scrollbar-color: rgb(var(--border-strong)) transparent;
   }
   .scrollbar-thin::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
   }
   .scrollbar-thin::-webkit-scrollbar-thumb {
     background: rgb(var(--border-strong));

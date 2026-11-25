@@ -7,12 +7,12 @@ import { SourceLabel } from "@/components/ui/source-label";
 import { CompareTool } from "@/components/companies/compare-tool";
 import { COMPANIES } from "@/lib/data/companies";
 import { getCompanyComparison } from "@/lib/data/financials";
-import { getCompanyMarketRows } from "@/lib/data/market";
+import { getCompanyMarketRows, getCompanyPriceSeries } from "@/lib/data/market";
 
 export const metadata: Metadata = {
   title: "Compare companies",
   description:
-    "Compare listed Maldivian companies side by side: official market capitalization, share prices, traded volume, turnover, and CMDA corporate disclosures.",
+    "Compare listed Maldivian companies side by side: relative price performance, official market capitalization, traded volume, turnover, and CMDA corporate disclosures.",
 };
 
 export default function ComparePage() {
@@ -29,6 +29,14 @@ export default function ComparePage() {
     };
   });
 
+  const priceSeriesByCode = Object.fromEntries(
+    COMPANIES.map((company) => [
+      company.code,
+      getCompanyPriceSeries(company.code, "1Y")
+        .filter((pt): pt is { date: string; value: number } => pt.value !== null && pt.value > 0),
+    ]),
+  );
+
   return (
     <PageContainer>
       <div className="pt-4">
@@ -39,10 +47,10 @@ export default function ComparePage() {
 
       <PageHeader
         eyebrow="Companies · Comparison"
-        title="Compare listed issuers on the same basis"
+        title="Compare listed issuers side by side"
         description={
           <>
-            Select up to four listed companies to compare official market capitalisation, trade pricing, trading liquidity, and corporate reporting history side by side.
+            Select up to four listed companies to overlay relative 12-month price performance and compare market capitalisation, trading liquidity, and regulatory reporting history.
           </>
         }
         meta={
@@ -57,14 +65,14 @@ export default function ComparePage() {
       />
 
       <div className="mt-6">
-        <CompareTool companies={companies} />
+        <CompareTool companies={companies} priceSeriesByCode={priceSeriesByCode} />
       </div>
 
-      <div className="mt-8 flex flex-wrap items-center justify-between gap-3 rounded-md border border-line bg-surface px-4 py-3">
-        <span className="inline-flex items-center gap-2 text-[11px] text-muted">
+      <div className="mt-8 flex flex-wrap items-center justify-between gap-3 surface-panel px-4 py-3">
+        <span className="inline-flex items-center gap-2 text-[11.5px] text-muted">
           <Scale className="h-3.5 w-3.5 text-accent" /> Compare listed equity issuers using official regulatory and market parameters.
         </span>
-        <Link href="/sources" className="text-[11px] font-medium text-accent hover:underline">
+        <Link href="/sources" className="text-xs font-medium text-accent hover:underline">
           Sources & methodology →
         </Link>
       </div>

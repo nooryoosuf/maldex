@@ -76,7 +76,7 @@ export default async function DisclosureDetailPage({ params }: { params: Promise
           <>
             {company ? (
               <>
-                <CompanyMark monogram={company.monogram} size="xs" />
+                <CompanyMark code={company.code} monogram={company.monogram} size="xs" />
                 <span className="font-mono text-[10px] uppercase tracking-[0.08em]">{company.code}</span>
                 <span className="h-3 w-px bg-line-strong" />
               </>
@@ -180,10 +180,10 @@ export default async function DisclosureDetailPage({ params }: { params: Promise
           </section>
 
           {company ? (
-            <section className="rounded-md border border-line bg-surface p-4">
+            <section className="surface-panel p-4">
               <p className="mono-label mb-2">Issuer</p>
               <Link href={`/companies/${company.slug}`} className="flex items-center gap-3 hover:text-accent">
-                <CompanyMark monogram={company.monogram} size="sm" />
+                <CompanyMark code={company.code} monogram={company.monogram} size="sm" />
                 <span>
                   <span className="block text-[12px] font-medium text-ink">{company.name}</span>
                   <span className="block font-mono text-[9px] uppercase tracking-[0.08em] text-faint">{company.code} · {company.sector}</span>

@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowDownRight, ArrowRight, ArrowUpRight, BookOpen, Info } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BookOpen } from "lucide-react";
 import { PageContainer } from "@/components/ui/page-container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Badge } from "@/components/ui/badge";
-import { Notice } from "@/components/ui/notice";
 import { SourceLabel } from "@/components/ui/source-label";
 import { Stat, StatGrid } from "@/components/ui/stat";
 import { Tabs } from "@/components/ui/tabs";
 import { DataTable } from "@/components/ui/data-table";
 import { CompanyMark } from "@/components/ui/company-mark";
 import { Trend } from "@/components/ui/trend";
+import { WhatDoesThisMean } from "@/components/ui/disclosure-panel";
 import { MarketActivity } from "@/components/home/market-activity";
+import { MarketComposition } from "@/components/market/market-composition";
 import {
-  DAILY_TURNOVER,
   MASIX_SERIES,
   TIME_RANGES,
   getCompanyMarketRows,
@@ -23,15 +23,15 @@ import {
   getIndexSeries,
   getIndexSparkline,
   getMarketCapSeries,
+  getMarketCapSparkline,
   getMarketSnapshot,
   getMostActiveEquity,
   getOrderBookFor,
   getRecentTrades,
   getTurnoverSeries,
 } from "@/lib/data/market";
-import { getCompanyByCode } from "@/lib/data/companies";
-import { formatDate, formatMvr, formatNumber, formatPercent } from "@/lib/format";
-import { cn } from "@/lib/cn";
+import { COMPANIES, getCompanyByCode } from "@/lib/data/companies";
+import { formatDate, formatMvr, formatNumber } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Market",
@@ -82,6 +82,28 @@ export default function MarketPage() {
     ]),
   );
 
+  const treemapItems = rows
+    .filter((r) => (r.marketCap ?? 0) > 0)
+    .map((r) => ({
+      code: r.code,
+      name: r.company,
+      sector: r.sector,
+      slug: r.slug,
+      marketCap: r.marketCap ?? 0,
+      price: r.price,
+      changePct: r.changePct,
+    }));
+
+  const sectorTotals = COMPANIES.reduce<Record<string, number>>((acc, company) => {
+    const row = rows.find((entry) => entry.code === company.code);
+    acc[company.sectorGroup] = (acc[company.sectorGroup] ?? 0) + (row?.marketCap ?? 0);
+    return acc;
+  }, {});
+  const sectorSlices = Object.entries(sectorTotals)
+    .filter(([, val]) => val > 0)
+    .sort((a, b) => b[1] - a[1])
+    .map(([name, value]) => ({ name, value }));
+
   const equityRows = rows.map((row) => ({
     ...row,
     trend: row.sparkline,
@@ -119,16 +141,16 @@ export default function MarketPage() {
         title="The Maldives Stock Exchange, explained"
         description={
           <>
-            The exchange is small, thinly traded and dominated by a handful of large companies. This page separates the
-            official snapshot from interpretation, so you can see what actually traded — and what did not.
+            The exchange is compact, thinly traded, and anchored by flagship financial and telecom issuers. Explore official
+            MASIX index levels, issuer market-cap concentration, session movers, and order-book depth.
           </>
         }
         actions={
           <Link
             href="/data-explorer?dataset=masix-index"
-            className="inline-flex h-9 items-center gap-2 rounded border border-line bg-surface px-3 text-xs font-medium text-ink transition-colors hover:bg-surface-2"
+            className="inline-flex h-9 items-center gap-2 rounded-md border border-line bg-surface px-3 text-xs font-medium text-ink transition-colors hover:bg-surface-2"
           >
-            <BookOpen className="h-3.5 w-3.5" /> Open market datasets
+            <BookOpen className="h-3.5 w-3.5" /> Market datasets
           </Link>
         }
         meta={
@@ -139,62 +161,65 @@ export default function MarketPage() {
             <span className="h-3 w-px bg-line-strong" />
             <SourceLabel sourceId="mse-market" />
             <span className="h-3 w-px bg-line-strong" />
-            <span>Prices are not a live feed</span>
+            <span>Official exchange export</span>
           </>
         }
       />
 
+      {/* Level 1 — Key Exchange Metrics */}
       <div className="mt-6">
         <StatGrid columns="grid-cols-2 md:grid-cols-3 xl:grid-cols-6">
           <Stat
             label="MASIX"
             value={formatNumber(snapshot.index, 2)}
             trend={snapshot.indexChangePct}
-            trendLabel="Latest session"
-            sub="Index level"
+            sub="Closing index"
             sparkline={getIndexSparkline(30)}
           />
           <Stat
             label="Market cap"
             value={formatMvr(snapshot.marketCap, { compact: true })}
             trend={snapshot.marketCapChangePct}
-            trendLabel="Latest session"
             sub="All listed equities"
+            sparkline={getMarketCapSparkline(30)}
           />
           <Stat
-            label="Turnover"
+            label="Session turnover"
             value={formatMvr(snapshot.sessionValue, { compact: true })}
             sub={`${formatNumber(snapshot.sessionTrades)} trades · ${formatNumber(snapshot.sessionVolume)} units`}
-            trendLabel="Latest trading session"
           />
           <Stat
-            label="Advancers / decliners"
-            value={`${gainers.length} / ${losers.length}`}
-            sub={`${unchanged} unchanged · latest available trade`}
-            trendLabel="Per security, not the index"
+            label="Breadth"
+            value={`${gainers.length} ↑ · ${losers.length} ↓`}
+            sub={`${unchanged} unchanged`}
+            trendLabel="Latest trade vs prior close"
           />
           <Stat
-            label="52-week high"
-            value={formatNumber(range?.high ?? null, 2)}
-            sub={range ? `Since ${formatDate(range.start)}` : "—"}
-            trendLabel="MASIX intraday closes"
+            label="52-week range"
+            value={range ? `${formatNumber(range.low, 0)}–${formatNumber(range.high, 0)}` : "—"}
+            rangeBar={
+              range && snapshot.index !== null
+                ? {
+                    min: range.low,
+                    max: range.high,
+                    current: snapshot.index,
+                    lowLabel: `L ${formatNumber(range.low, 1)}`,
+                    highLabel: `H ${formatNumber(range.high, 1)}`,
+                  }
+                : undefined
+            }
           />
           <Stat
-            label="52-week low"
-            value={formatNumber(range?.low ?? null, 2)}
-            sub={range ? `Since ${formatDate(range.start)}` : "—"}
-            trendLabel="MASIX intraday closes"
+            label="Most active"
+            value={active?.code ?? "—"}
+            trend={active?.changePct ?? null}
+            sub={active ? `${formatMvr(active.value, { compact: true })} traded` : "No session trades"}
+            href={active ? `/companies/${active.slug}` : undefined}
           />
         </StatGrid>
-        <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
-          <SourceLabel sourceId="mse-market" />
-          <span className="text-[10px] text-faint">
-            Advancers and decliners compare the latest published price with the prior close for each security. Trading
-            days differ by security.
-          </span>
-        </div>
       </div>
 
+      {/* Level 2 — Interactive Market Workbench */}
       <div className="mt-8">
         <MarketActivity
           seriesByRange={seriesByRange}
@@ -203,110 +228,114 @@ export default function MarketPage() {
         />
       </div>
 
-      <section className="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
-        <div className="overflow-hidden rounded-md border border-line bg-surface">
-          <div className="flex items-center justify-between border-b border-line px-4 py-3">
-            <div>
-              <p className="mono-label mb-1">Movers</p>
-              <h2 className="text-sm font-semibold tracking-[-0.01em] text-ink">Largest moves in the latest trade</h2>
-            </div>
-            <Badge variant="outline">Per security</Badge>
-          </div>
-          <div className="grid gap-px bg-line sm:grid-cols-2">
-            <div className="bg-surface p-4">
-              <p className="mono-label mb-2 text-positive">Largest gains</p>
-              {gainers.length ? (
-                <div className="divide-y divide-line">
-                  {gainers.slice(0, 4).map((row) => {
-                    const company = getCompanyByCode(row.code);
-                    return (
-                      <Link key={row.code} href={`/companies/${row.slug}`} className="flex items-center gap-2.5 py-2 first:pt-0 last:pb-0 group">
-                        <CompanyMark code={row.code} monogram={company?.monogram ?? row.code.slice(0, 2)} size="xs" />
-                        <span className="min-w-0 flex-1">
-                          <span className="block truncate text-[12px] font-medium text-ink group-hover:text-accent">{company?.shortName ?? row.code}</span>
-                          <span className="block font-mono text-[9px] text-faint">{row.code} · {formatDate(row.lastDate)}</span>
-                        </span>
-                        <span className="text-right">
-                          <Trend value={row.changePct} size="sm" />
-                          <span className="mt-0.5 block font-mono text-[10px] text-muted">{formatNumber(row.price, 2)}</span>
-                        </span>
-                      </Link>
-                    );
-                  })}
-                </div>
-              ) : (
-                <p className="text-[11px] leading-5 text-muted">No security traded above its prior close in the latest summary.</p>
-              )}
-            </div>
-            <div className="bg-surface p-4">
-              <p className="mono-label mb-2 text-negative">Largest declines</p>
-              {losers.length ? (
-                <div className="divide-y divide-line">
-                  {losers.slice(0, 4).map((row) => {
-                    const company = getCompanyByCode(row.code);
-                    return (
-                      <Link key={row.code} href={`/companies/${row.slug}`} className="flex items-center gap-2.5 py-2 first:pt-0 last:pb-0 group">
-                        <CompanyMark code={row.code} monogram={company?.monogram ?? row.code.slice(0, 2)} size="xs" />
-                        <span className="min-w-0 flex-1">
-                          <span className="block truncate text-[12px] font-medium text-ink group-hover:text-accent">{company?.shortName ?? row.code}</span>
-                          <span className="block font-mono text-[9px] text-faint">{row.code} · {formatDate(row.lastDate)}</span>
-                        </span>
-                        <span className="text-right">
-                          <Trend value={row.changePct} size="sm" />
-                          <span className="mt-0.5 block font-mono text-[10px] text-muted">{formatNumber(row.price, 2)}</span>
-                        </span>
-                      </Link>
-                    );
-                  })}
-                </div>
-              ) : (
-                <p className="text-[11px] leading-5 text-muted">No security traded below its prior close in the latest summary.</p>
-              )}
-            </div>
-          </div>
-          <div className="border-t border-line bg-surface-2/40 px-4 py-2.5 text-[10px] leading-4 text-faint">
-            A large percentage move can reflect a very small number of units traded. Check turnover before drawing
-            conclusions.
-          </div>
-        </div>
+      {/* Level 2 — Market Composition Map + Session Movers */}
+      <section className="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
+        <MarketComposition items={treemapItems} sectorSlices={sectorSlices} />
 
         <div className="space-y-5">
-          <div className="overflow-hidden rounded-md border border-line bg-surface">
-            <div className="border-b border-line px-4 py-3">
-              <p className="mono-label mb-1">By value</p>
-              <h2 className="text-sm font-semibold tracking-[-0.01em] text-ink">Where the money traded</h2>
+          <div className="surface-panel overflow-hidden">
+            <div className="flex items-center justify-between border-b border-line px-4 py-3">
+              <div>
+                <p className="mono-label mb-0.5">Session Movers</p>
+                <h2 className="text-sm font-semibold tracking-[-0.01em] text-ink">Advances & Declines</h2>
+              </div>
+              <Badge variant="outline">Per security</Badge>
             </div>
-            <div className="divide-y divide-line">
+            <div className="grid gap-px bg-line sm:grid-cols-2">
+              <div className="bg-surface p-3.5">
+                <p className="mono-label mb-2 text-positive">Advances</p>
+                {gainers.length ? (
+                  <div className="divide-y divide-line/60">
+                    {gainers.slice(0, 4).map((row) => {
+                      const company = getCompanyByCode(row.code);
+                      return (
+                        <Link key={row.code} href={`/companies/${row.slug}`} className="group flex items-center gap-2 py-2 first:pt-0 last:pb-0">
+                          <CompanyMark code={row.code} monogram={company?.monogram ?? row.code.slice(0, 2)} size="xs" />
+                          <span className="min-w-0 flex-1">
+                            <span className="block truncate text-xs font-medium text-ink group-hover:text-accent">{company?.shortName ?? row.code}</span>
+                            <span className="block font-mono text-[9px] text-faint">{formatDate(row.lastDate)}</span>
+                          </span>
+                          <span className="text-right">
+                            <Trend value={row.changePct} size="sm" />
+                            <span className="num block font-mono text-[10px] text-muted">{formatNumber(row.price, 2)}</span>
+                          </span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <p className="text-[11px] leading-5 text-muted">No security closed higher in its latest trade.</p>
+                )}
+              </div>
+              <div className="bg-surface p-3.5">
+                <p className="mono-label mb-2 text-negative">Declines</p>
+                {losers.length ? (
+                  <div className="divide-y divide-line/60">
+                    {losers.slice(0, 4).map((row) => {
+                      const company = getCompanyByCode(row.code);
+                      return (
+                        <Link key={row.code} href={`/companies/${row.slug}`} className="group flex items-center gap-2 py-2 first:pt-0 last:pb-0">
+                          <CompanyMark code={row.code} monogram={company?.monogram ?? row.code.slice(0, 2)} size="xs" />
+                          <span className="min-w-0 flex-1">
+                            <span className="block truncate text-xs font-medium text-ink group-hover:text-accent">{company?.shortName ?? row.code}</span>
+                            <span className="block font-mono text-[9px] text-faint">{formatDate(row.lastDate)}</span>
+                          </span>
+                          <span className="text-right">
+                            <Trend value={row.changePct} size="sm" />
+                            <span className="num block font-mono text-[10px] text-muted">{formatNumber(row.price, 2)}</span>
+                          </span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <p className="text-[11px] leading-5 text-muted">No security closed lower in its latest trade.</p>
+                )}
+              </div>
+            </div>
+          </div>
+
+          <div className="surface-panel overflow-hidden">
+            <div className="border-b border-line px-4 py-3">
+              <p className="mono-label mb-0.5">Liquidity Leaders</p>
+              <h2 className="text-sm font-semibold tracking-[-0.01em] text-ink">Highest Traded Value</h2>
+            </div>
+            <div className="divide-y divide-line/70">
               {byValue.map((row, index) => (
-                <div key={row.code} className="flex items-center gap-3 px-4 py-2.5">
-                  <span className="w-4 font-mono text-[9px] text-faint">{String(index + 1).padStart(2, "0")}</span>
+                <Link
+                  key={row.code}
+                  href={`/companies/${row.slug}`}
+                  className="group flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-surface-2/40"
+                >
+                  <span className="w-4 font-mono text-[9.5px] text-faint">{String(index + 1).padStart(2, "0")}</span>
+                  <CompanyMark code={row.code} size="xs" />
                   <span className="min-w-0 flex-1">
-                    <span className="block truncate text-[12px] font-medium text-ink">{getCompanyByCode(row.code)?.shortName ?? row.code}</span>
+                    <span className="block truncate text-xs font-medium text-ink group-hover:text-accent">
+                      {getCompanyByCode(row.code)?.shortName ?? row.code}
+                    </span>
                     <span className="block font-mono text-[9px] text-faint">{row.code} · {formatDate(row.lastDate)}</span>
                   </span>
                   <span className="text-right">
-                    <span className="num block font-mono text-[12px] text-ink">{formatMvr(row.value, { compact: true })}</span>
-                    <span className="block font-mono text-[9px] text-faint">{formatNumber(row.volume)} units</span>
+                    <span className="num block font-mono text-xs font-medium text-ink">{formatMvr(row.value, { compact: true })}</span>
+                    <span className="num block font-mono text-[9.5px] text-faint">{formatNumber(row.volume)} units</span>
                   </span>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
-
-          <Notice variant="info" compact title="How to read the market">
-            The MASIX index summarises price movements; it does not show how much was traded. A flat index can hide large
-            moves in individual companies, and a big index move can come from very thin trading.
-          </Notice>
         </div>
       </section>
 
-      <section className="mt-8">
+      {/* Level 3 — Detailed Reference Tables */}
+      <section id="recent-trades" className="mt-10 scroll-mt-20">
         <div className="mb-3 flex flex-wrap items-end justify-between gap-2">
           <div>
-            <p className="mono-label mb-1">Reference data</p>
-            <h2 className="text-lg font-semibold tracking-[-0.015em] text-ink">Listed securities and trading detail</h2>
+            <p className="mono-label mb-1">Reference Tables</p>
+            <h2 className="text-lg font-semibold tracking-[-0.015em] text-ink">Listed securities, trades & order book</h2>
           </div>
-          <span className="text-[10px] text-faint">All figures from the latest official MSE snapshot</span>
+          <WhatDoesThisMean title="How thin trading affects prices" compact>
+            With few buyers and sellers on a given day, a large percentage move can come from a very small number of shares traded. Always inspect traded volume and order-book depth alongside last price.
+          </WhatDoesThisMean>
         </div>
 
         <Tabs
@@ -361,9 +390,9 @@ export default function MarketPage() {
                   searchKeys={["code", "company", "date"]}
                   searchPlaceholder="Search security or date"
                   csvFilename="maldex-recent-trades.csv"
-                  caption="A filtered extract of individual trade records from the official MSE trade history."
+                  caption="Individual trade records from the official MSE trade history."
                   pageSize={12}
-                  footerNote="Filtered extract · not the complete trade history"
+                  footerNote="Filtered extract from official MSE trade records"
                 />
               ),
             },
@@ -385,9 +414,9 @@ export default function MarketPage() {
                   searchKeys={["code", "side"]}
                   searchPlaceholder="Search security or side"
                   csvFilename="maldex-order-book.csv"
-                  caption="Published equity order book snapshot. Orders may have been amended or withdrawn since retrieval."
+                  caption="Published equity order book snapshot."
                   pageSize={12}
-                  footerNote="Snapshot, not a live order book"
+                  footerNote="Snapshot, not a live streaming order book"
                 />
               ),
             },
@@ -397,13 +426,13 @@ export default function MarketPage() {
               count: debtTrades.length,
               content: (
                 <div className="space-y-3">
-                  <div className="flex flex-wrap items-center justify-between gap-2 rounded-md border border-line bg-surface-2/40 px-4 py-2.5">
-                    <p className="text-[11px] text-muted">
-                      {debtSummary.instruments} debt instruments have a published trade summary. Latest trade{" "}
-                      {debtSummary.latestDate ? formatDate(debtSummary.latestDate) : "unavailable"}.
+                  <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-line bg-surface-2/40 px-4 py-2.5">
+                    <p className="text-xs text-muted">
+                      {debtSummary.instruments} debt instruments have a published trade summary (latest:{" "}
+                      {debtSummary.latestDate ? formatDate(debtSummary.latestDate) : "unavailable"}).
                     </p>
-                    <Link href="/bonds" className="inline-flex items-center gap-1 text-[11px] font-medium text-accent hover:underline">
-                      Bonds & Sukuk terms <ArrowUpRight className="h-3 w-3" />
+                    <Link href="/bonds" className="inline-flex items-center gap-1 text-xs font-medium text-accent hover:underline">
+                      Bonds & Sukuk schedule <ArrowUpRight className="h-3 w-3" />
                     </Link>
                   </div>
                   <DataTable
@@ -432,18 +461,16 @@ export default function MarketPage() {
         />
       </section>
 
-      <section className="mt-8 grid gap-4 rounded-md border border-line bg-surface p-5 md:grid-cols-[1fr_auto] md:items-center">
+      <section className="mt-10 grid gap-4 surface-panel p-5 md:grid-cols-[1fr_auto] md:items-center">
         <div>
-          <p className="mono-label mb-1">Understanding the numbers</p>
-          <h2 className="text-sm font-semibold tracking-[-0.01em] text-ink">Thin trading changes how you should read prices</h2>
+          <p className="mono-label mb-1">Methodology</p>
+          <h2 className="text-sm font-semibold tracking-[-0.01em] text-ink">Source traceability across every trade</h2>
           <p className="mt-1 max-w-2xl text-xs leading-5 text-muted">
-            With few buyers and sellers, the last traded price may not reflect the price at which a larger order could
-            trade. Market capitalisation uses published prices and shares outstanding, so it moves even when no shares
-            change hands.
+            Market capitalisation uses published MSE share prices and shares outstanding. Non-trading sessions are preserved honestly rather than interpolated.
           </p>
         </div>
         <Link href="/sources" className="inline-flex items-center gap-1 text-xs font-medium text-accent hover:underline">
-          Methodology <ArrowRight className="h-3 w-3" />
+          Sources & methodology <ArrowRight className="h-3 w-3" />
         </Link>
       </section>
     </PageContainer>
