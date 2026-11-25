@@ -2,17 +2,37 @@
  * Maldex — MSE public data collector.
  *
  * Retrieves the public CSV exports offered by the Maldives Stock Exchange
- * insights page. No authentication is used. Outputs are stored as JSON with
- * source + retrieval metadata so the UI can display provenance.
+ * insights page using dynamic rolling date windows, validates responses,
+ * and preserves existing snapshots if an upstream endpoint fails.
  *
  * Usage: node scripts/fetch-mse.mjs
  */
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const BASE = "https://stockexchange.mv";
 const OUT = path.join(process.cwd(), "src", "data", "mse");
-const RETRIEVED_AT = new Date().toISOString();
+const now = new Date();
+const RETRIEVED_AT = now.toISOString();
+const TODAY = RETRIEVED_AT.slice(0, 10);
+
+const twoYearsAgoDate = new Date(now);
+twoYearsAgoDate.setUTCFullYear(twoYearsAgoDate.getUTCFullYear() - 2);
+const TWO_YEARS_AGO = twoYearsAgoDate.toISOString().slice(0, 10);
+
+const HEADERS = {
+  "user-agent": "Mozilla/5.0 (compatible; MaldexBot/1.0; +https://maldex.nooryoosuf.com)",
+  accept: "text/html,application/xhtml+xml,text/csv,*/*",
+};
+
+async function readExistingJson(filename) {
+  try {
+    const raw = await readFile(path.join(OUT, filename), "utf8");
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
 
 function parseCsv(text) {
   const rows = [];
@@ -43,34 +63,35 @@ function parseCsv(text) {
     if (row.some((v) => v !== "")) rows.push(row);
   }
   const [header, ...body] = rows;
+  if (!header) return [];
   return body.map((cells) =>
     Object.fromEntries(header.map((h, i) => [h.trim(), cells[i]?.trim() ?? ""])),
   );
 }
 
 function toIso(date) {
-  // MSE uses DD-Mon-YYYY
   const months = {
     Jan: "01", Feb: "02", Mar: "03", Apr: "04", May: "05", Jun: "06",
     Jul: "07", Aug: "08", Sep: "09", Oct: "10", Nov: "11", Dec: "12",
   };
-  const m = date.match(/^(\d{2})-([A-Za-z]{3})-(\d{4})$/);
+  const m = date?.match(/^(\d{2})-([A-Za-z]{3})-(\d{4})$/);
   if (!m) return date;
   return `${m[3]}-${months[m[2]] ?? "01"}-${m[1]}`;
 }
 
 async function getToken() {
   const res = await fetch(`${BASE}/insights`, {
-    headers: { "user-agent": "Maldex data collector (research preview)" },
+    headers: HEADERS,
+    signal: AbortSignal.timeout(30_000),
   });
-  if (!res.ok) throw new Error(`Insights page ${res.status}`);
+  if (!res.ok) throw new Error(`Insights page HTTP ${res.status}`);
   const html = await res.text();
-  const token = html.match(/name="_token" value="([^"]+)"/)?.[1];
-  if (!token) throw new Error("Could not locate form token");
+  const token = html.match(/name="_token"\s+value="([^"]+)"/)?.[1];
+  if (!token) throw new Error("Could not locate MSE CSRF form token");
   const cookies = (res.headers.getSetCookie?.() ?? [])
     .map((c) => c.split(";")[0])
     .join("; ");
-  return { token, cookies };
+  return { token, cookies, html };
 }
 
 async function exportCsv({ token, cookies }, data, stock, from, to) {
@@ -78,15 +99,16 @@ async function exportCsv({ token, cookies }, data, stock, from, to) {
   const res = await fetch(`${BASE}/insights/export`, {
     method: "POST",
     headers: {
+      ...HEADERS,
       "content-type": "application/x-www-form-urlencoded",
       cookie: cookies,
-      "user-agent": "Maldex data collector (research preview)",
     },
     body,
+    signal: AbortSignal.timeout(45_000),
   });
-  if (!res.ok) throw new Error(`Export ${data} ${stock} failed: ${res.status}`);
+  if (!res.ok) throw new Error(`Export ${data} ${stock} failed: HTTP ${res.status}`);
   const text = await res.text();
-  if (!text.includes(",")) throw new Error(`Export ${data} returned no CSV`);
+  if (!text.includes(",")) throw new Error(`Export ${data} returned non-CSV body`);
   return text;
 }
 
@@ -99,38 +121,60 @@ const meta = {
     "Published by MSE. Historical series are official exchange data retrieved via the public CSV export. Re-verify against the source before use in decisions.",
 };
 
-const auth = await getToken();
 await mkdir(OUT, { recursive: true });
+const auth = await getToken();
 
-// 1. MASIX index — full available history
-const masixCsv = await exportCsv(auth, "masix", "*", "2006-11-14", "2026-11-24");
-const masix = parseCsv(masixCsv)
+// 1. MASIX index — full available history through today
+const masixCsv = await exportCsv(auth, "masix", "*", "2006-11-14", TODAY);
+const masixFetched = parseCsv(masixCsv)
   .map((r) => ({ date: toIso(r.Date), value: Number(r.Index) }))
-  .filter((r) => r.date && Number.isFinite(r.value));
+  .filter((r) => /^\d{4}-\d{2}-\d{2}$/.test(r.date) && Number.isFinite(r.value) && r.value > 0);
+
+const existingMasix = await readExistingJson("masix.json");
+const mergedMasix = [...new Map([
+  ...(existingMasix?.observations ?? []).map((o) => [o.date, o]),
+  ...masixFetched.map((o) => [o.date, o]),
+]).values()].sort((a, b) => a.date.localeCompare(b.date));
+
+if (mergedMasix.length < 100) {
+  throw new Error(`MASIX sanity check failed (${mergedMasix.length} rows)`);
+}
 await writeFile(
   path.join(OUT, "masix.json"),
-  JSON.stringify({ meta: { ...meta, dataset: "MASIX index", unit: "index points" }, observations: masix }, null, 2),
+  JSON.stringify({ meta: { ...meta, dataset: "MASIX index", unit: "index points" }, observations: mergedMasix }, null, 2),
 );
-console.log(`MASIX: ${masix.length} observations`);
+console.log(`MASIX: ${mergedMasix.length} observations (latest ${mergedMasix.at(-1)?.date})`);
 
-// 2. Market capitalisation — full available history
-const capCsv = await exportCsv(auth, "market-cap", "*", "2006-11-14", "2026-11-24");
+// 2. Market capitalisation — full available history through today
+const capCsv = await exportCsv(auth, "market-cap", "*", "2006-11-14", TODAY);
 const capRows = parseCsv(capCsv);
 const capCodes = Object.keys(capRows[0] ?? {}).filter((k) => k !== "Date");
-const cap = capRows.map((r) => ({
-  date: toIso(r.Date),
-  total: Number(r.Total),
-  bySecurity: Object.fromEntries(capCodes.filter((c) => c !== "Total").map((c) => [c, Number(r[c])])),
-}));
+const capFetched = capRows
+  .map((r) => ({
+    date: toIso(r.Date),
+    total: Number(r.Total),
+    bySecurity: Object.fromEntries(capCodes.filter((c) => c !== "Total").map((c) => [c, Number(r[c])])),
+  }))
+  .filter((r) => /^\d{4}-\d{2}-\d{2}$/.test(r.date) && Number.isFinite(r.total) && r.total > 0);
+
+const existingCap = await readExistingJson("market-cap.json");
+const mergedCap = [...new Map([
+  ...(existingCap?.observations ?? []).map((o) => [o.date, o]),
+  ...capFetched.map((o) => [o.date, o]),
+]).values()].sort((a, b) => a.date.localeCompare(b.date));
+
+if (mergedCap.length < 100) {
+  throw new Error(`Market cap sanity check failed (${mergedCap.length} rows)`);
+}
 await writeFile(
   path.join(OUT, "market-cap.json"),
-  JSON.stringify({ meta: { ...meta, dataset: "Market capitalisation", unit: "MVR" }, observations: cap }, null, 2),
+  JSON.stringify({ meta: { ...meta, dataset: "Market capitalisation", unit: "MVR" }, observations: mergedCap }, null, 2),
 );
-console.log(`Market cap: ${cap.length} observations`);
+console.log(`Market cap: ${mergedCap.length} observations (latest ${mergedCap.at(-1)?.date})`);
 
-// 3. Trade history (two years) — used for daily OHLC, volume and latest trades
-const tradesCsv = await exportCsv(auth, "trades", "*", "2024-11-24", "2026-11-24");
-const trades = parseCsv(tradesCsv)
+// 3. Trade history (rolling 2-year window merged with recent trades)
+const tradesCsv = await exportCsv(auth, "trades", "*", TWO_YEARS_AGO, TODAY);
+const fetchedTrades = parseCsv(tradesCsv)
   .map((r) => ({
     date: toIso(r.Date),
     code: r.Stock,
@@ -138,14 +182,26 @@ const trades = parseCsv(tradesCsv)
     price: Number(r["Price per Share (MVR)"]),
     value: Number(r["Value (MVR)"]),
   }))
-  .filter((t) => t.date && t.code && Number.isFinite(t.price));
+  .filter((t) => /^\d{4}-\d{2}-\d{2}$/.test(t.date) && t.code && Number.isFinite(t.price));
+
+const existingTrades = await readExistingJson("trades.json");
+// Keep existing dates outside fetched window (within 2 years) + replace fetched dates cleanly
+const fetchedDates = new Set(fetchedTrades.map((t) => t.date));
+const retainedTrades = (existingTrades?.trades ?? []).filter(
+  (t) => t.date >= TWO_YEARS_AGO && !fetchedDates.has(t.date),
+);
+const trades = [...retainedTrades, ...fetchedTrades].sort((a, b) => a.date.localeCompare(b.date));
+
+if (trades.length < 20) {
+  throw new Error(`Trades sanity check failed (${trades.length} rows)`);
+}
 await writeFile(
   path.join(OUT, "trades.json"),
-  JSON.stringify({ meta: { ...meta, dataset: "Trade history", period: "2024-11-24 to 2026-11-24" }, trades }, null, 2),
+  JSON.stringify({ meta: { ...meta, dataset: "Trade history", period: `${TWO_YEARS_AGO} to ${TODAY}` }, trades }, null, 2),
 );
-console.log(`Trades: ${trades.length} rows`);
+console.log(`Trades: ${trades.length} rows (latest ${trades.at(-1)?.date})`);
 
-// 4. Derive daily bars + summary per security (still official inputs)
+// 4. Derive daily bars + summary per security
 const barsByCode = {};
 for (const t of trades) {
   const code = t.code;
@@ -185,8 +241,8 @@ const summary = Object.entries(bars).map(([code, b]) => {
     code,
     lastDate: last?.date,
     lastPrice: last?.close,
-    previousClose: prev?.close,
-    changePct: prev ? ((last.close - prev.close) / prev.close) * 100 : null,
+    previousClose: prev?.close ?? null,
+    changePct: prev && prev.close > 0 ? ((last.close - prev.close) / prev.close) * 100 : null,
     volume: last?.volume ?? 0,
     value: last?.value ?? 0,
     trades: last?.trades ?? 0,
@@ -197,11 +253,8 @@ await writeFile(
   JSON.stringify({ meta: { ...meta, dataset: "Latest daily trade summary" }, summary }, null, 2),
 );
 
-// 5. Equity order book snapshot (scraped from public insights table)
-const page = await fetch(`${BASE}/insights`, {
-  headers: { "user-agent": "Maldex data collector (research preview)" },
-}).then((r) => r.text());
-const orderBookSection = page.split('id="EquityOrderBook"')[1]?.split('id="BondOrderBook"')[0] ?? "";
+// 5. Equity order book snapshot
+const orderBookSection = auth.html.split('id="EquityOrderBook"')[1]?.split('id="BondOrderBook"')[0] ?? "";
 const orderBook = [...orderBookSection.matchAll(/<tr[^>]*class="record[^"]*"[\s\S]*?<\/tr>/g)]
   .map((m) => {
     const cells = [...m[0].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map((c) =>
@@ -216,10 +269,13 @@ const orderBook = [...orderBookSection.matchAll(/<tr[^>]*class="record[^"]*"[\s\
     };
   })
   .filter((o) => o && o.code && Number.isFinite(o.price));
-await writeFile(
-  path.join(OUT, "order-book.json"),
-  JSON.stringify({ meta: { ...meta, dataset: "Equity order book snapshot" }, orders: orderBook }, null, 2),
-);
-console.log(`Order book: ${orderBook.length} rows`);
 
-console.log(`Saved to ${OUT}`);
+if (orderBook.length > 0) {
+  await writeFile(
+    path.join(OUT, "order-book.json"),
+    JSON.stringify({ meta: { ...meta, dataset: "Equity order book snapshot" }, orders: orderBook }, null, 2),
+  );
+  console.log(`Order book: ${orderBook.length} rows`);
+} else {
+  console.log("Order book: 0 rows parsed, keeping existing snapshot");
+}

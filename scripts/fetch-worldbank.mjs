@@ -1,15 +1,17 @@
 /**
  * Maldex — World Bank Open Data collector.
  *
- * Pulls annual Maldives indicators from the public World Bank API.
- * Outputs a single provenance-tagged dataset consumed by the Economy page.
+ * Pulls annual Maldives indicators from the public World Bank API, falling
+ * back per-indicator to the previous verified snapshot if a single endpoint
+ * times out.
  *
  * Usage: node scripts/fetch-worldbank.mjs
  */
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const OUT = path.join(process.cwd(), "src", "data", "worldbank");
+const FILE = path.join(OUT, "indicators.json");
 const RETRIEVED_AT = new Date().toISOString();
 
 const INDICATORS = [
@@ -36,28 +38,52 @@ const INDICATORS = [
   { id: "SP.DYN.LE00.IN", key: "lifeExpectancy", name: "Life expectancy at birth", unit: "years", category: "social", description: "Number of years a newborn would live if prevailing patterns stayed constant." },
 ];
 
+let existingByKey = new Map();
+try {
+  const prev = JSON.parse(await readFile(FILE, "utf8"));
+  existingByKey = new Map((prev.indicators ?? []).map((ind) => [ind.key, ind]));
+} catch {
+  existingByKey = new Map();
+}
+
 async function fetchIndicator(ind) {
   const url = `https://api.worldbank.org/v2/country/MDV/indicator/${ind.id}?format=json&per_page=200`;
-  const res = await fetch(url, { headers: { "user-agent": "Maldex data collector (research preview)" } });
+  const res = await fetch(url, {
+    headers: { "user-agent": "Mozilla/5.0 (compatible; MaldexBot/1.0; +https://maldex.nooryoosuf.com)" },
+    signal: AbortSignal.timeout(20_000),
+  });
   if (!res.ok) throw new Error(`${ind.id}: HTTP ${res.status}`);
   const json = await res.json();
   const observations = (json[1] ?? [])
-    .filter((row) => row.value !== null)
-    .map((row) => ({ period: row.date, value: Number(row.value) }))
+    .filter((row) => row.value !== null && Number.isFinite(Number(row.value)))
+    .map((row) => ({ period: String(row.date), value: Number(row.value) }))
     .sort((a, b) => a.period.localeCompare(b.period));
+  if (observations.length === 0) throw new Error(`${ind.id}: empty observations`);
   return { ...ind, observations, latest: observations.at(-1) ?? null };
 }
 
 await mkdir(OUT, { recursive: true });
 const results = [];
+let fetchedCount = 0;
+
 for (const ind of INDICATORS) {
   try {
     const data = await fetchIndicator(ind);
     results.push(data);
-    console.log(`${ind.key}: ${data.observations.length} obs, latest ${data.latest?.period ?? "—"}`);
+    fetchedCount++;
   } catch (err) {
-    console.error(`${ind.key}: ${err.message}`);
+    const fallback = existingByKey.get(ind.key);
+    if (fallback) {
+      console.warn(`World Bank fallback for ${ind.key}: ${err.message}`);
+      results.push(fallback);
+    } else {
+      console.error(`World Bank failed for ${ind.key}: ${err.message}`);
+    }
   }
+}
+
+if (fetchedCount === 0) {
+  throw new Error("World Bank API returned 0 live indicators; keeping existing file");
 }
 
 const payload = {
@@ -72,5 +98,5 @@ const payload = {
   },
   indicators: results,
 };
-await writeFile(path.join(OUT, "indicators.json"), JSON.stringify(payload, null, 2));
-console.log(`Saved ${results.length} indicators to ${OUT}`);
+await writeFile(FILE, JSON.stringify(payload, null, 2));
+console.log(`World Bank: ${results.length} indicators (${fetchedCount} refreshed live)`);

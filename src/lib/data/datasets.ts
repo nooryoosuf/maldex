@@ -26,8 +26,16 @@ const cmdaSource = getSource("cmda-disclosures");
 const mseListedSource = getSource("mse-listed");
 const mmaSource = getSource("mma-statistics");
 
-const MARKET_CUTOFF = "2021-11-24";
-const TRADE_CUTOFF = "2026-08-26";
+function shiftDaysIso(isoDate: string, days: number): string {
+  const d = new Date(`${isoDate.slice(0, 10)}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+
+const latestMasixDate = MASIX_SERIES.at(-1)?.date ?? new Date().toISOString().slice(0, 10);
+const latestTradeDate = TRADES.at(-1)?.date ?? latestMasixDate;
+const MARKET_CUTOFF = shiftDaysIso(latestMasixDate, -365 * 5);
+const TRADE_CUTOFF = shiftDaysIso(latestTradeDate, -90);
 
 const masixRows = MASIX_SERIES.filter((row) => row.date >= MARKET_CUTOFF).map((row) => ({
   date: row.date,

@@ -9,7 +9,11 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "fetch:mse": "node scripts/fetch-mse.mjs"
+    "sync:data": "node scripts/sync-all.mjs",
+    "fetch:mse": "node scripts/fetch-mse.mjs",
+    "fetch:disclosures": "node scripts/fetch-disclosures.mjs",
+    "fetch:mma": "node scripts/fetch-mma.mjs",
+    "fetch:worldbank": "node scripts/fetch-worldbank.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",

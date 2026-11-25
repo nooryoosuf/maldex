@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function BondsPage() {
   const calendar = getMaturityCalendar();
-  const upcoming = getUpcomingMaturities("2026-11-24", 30);
+  const upcoming = getUpcomingMaturities(undefined, 30);
   const returns = getReturnComparison();
   const totalNominal = BONDS.reduce((sum, bond) => sum + nominalIssueValue(bond), 0);
   const withRate = BONDS.filter((bond) => bond.returnRate !== null);

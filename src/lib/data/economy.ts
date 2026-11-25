@@ -143,7 +143,7 @@ export type Freshness = "fresh" | "lagging" | "stale";
 
 export function getFreshness(indicator: EconomicIndicator): Freshness {
   const year = Number(indicator.latest?.period?.slice(0, 4) ?? 0);
-  const currentYear = 2026;
+  const currentYear = new Date().getUTCFullYear();
   if (!year) return "stale";
   if (currentYear - year <= 2) return "fresh";
   if (currentYear - year <= 3) return "lagging";

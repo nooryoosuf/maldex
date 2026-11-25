@@ -69,7 +69,10 @@ export function getMaturityCalendar(): MaturityYear[] {
     .sort((a, b) => a.year - b.year);
 }
 
-export function getUpcomingMaturities(fromDate = "2026-11-24", months = 30): BondInstrument[] {
+export function getUpcomingMaturities(
+  fromDate = new Date().toISOString().slice(0, 10),
+  months = 30,
+): BondInstrument[] {
   const end = new Date(`${fromDate}T00:00:00Z`);
   end.setUTCMonth(end.getUTCMonth() + months);
   return BONDS.filter(
@@ -117,7 +120,8 @@ export function estimateCashflows(
   input: { units?: number; investment?: number; settlementDate?: string },
 ): CashflowEstimate {
   const frequency = paymentsPerYear(bond);
-  const settlement = new Date(`${input.settlementDate ?? "2026-11-24"}T00:00:00Z`);
+  const todayIso = new Date().toISOString().slice(0, 10);
+  const settlement = new Date(`${input.settlementDate ?? todayIso}T00:00:00Z`);
   const maturity = new Date(`${bond.maturityDate}T00:00:00Z`);
 
   const units =

@@ -16,7 +16,7 @@ export function BondCalculator() {
   const [mode, setMode] = useState<"units" | "investment">("units");
   const [unitsInput, setUnitsInput] = useState("100");
   const [investmentInput, setInvestmentInput] = useState("");
-  const [settlement, setSettlement] = useState("2026-11-24");
+  const [settlement, setSettlement] = useState(() => new Date().toISOString().slice(0, 10));
   const [scheduleView, setScheduleView] = useState<"chart" | "table">("chart");
 
   const bond = getBondById(bondId)!;
