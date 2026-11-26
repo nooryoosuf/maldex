@@ -2,7 +2,7 @@
   "meta": {
     "source": "Maldives Stock Exchange — Insights",
     "sourceUrl": "https://stockexchange.mv/insights",
-    "retrievedAt": "2026-11-25T21:00:57.283Z",
+    "retrievedAt": "2026-11-26T20:53:39.649Z",
     "verification": "official-reported",
     "note": "Published by MSE. Historical series are official exchange data retrieved via the public CSV export. Re-verify against the source before use in decisions.",
     "dataset": "Market capitalisation",
@@ -109713,6 +109713,21 @@
         "CPLC": 603614315.64,
         "DHR": 9424000000,
         "MIB": 3211222230,
+        "MTCC": 530571811.49,
+        "MTDC": 443135602,
+        "OMPL": 11602331478.5,
+        "STO": 2901793250
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "total": 42146787682.63,
+      "bySecurity": {
+        "ATM": 1589766375,
+        "BML": 11100210000,
+        "CPLC": 603614315.64,
+        "DHR": 10260000000,
+        "MIB": 3115364850,
         "MTCC": 530571811.49,
         "MTDC": 443135602,
         "OMPL": 11602331478.5,

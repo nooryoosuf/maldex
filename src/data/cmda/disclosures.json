@@ -2,11 +2,21 @@
   "meta": {
     "source": "CMDA InformInvestor",
     "sourceUrl": "https://informinvestor.cmda.gov.mv/disclosures",
-    "retrievedAt": "2026-11-25T21:01:03.631Z",
+    "retrievedAt": "2026-11-26T20:53:45.046Z",
     "verification": "official-reported",
     "note": "Headline metadata and official detail links from the CMDA public disclosure listing. Document contents have not been extracted or verified by Maldex."
   },
   "disclosures": [
+    {
+      "id": "1231",
+      "title": "Delay in publication of Q1, Q2 & Q3 Reports",
+      "company": "Maldives Transport & Contracting Company",
+      "code": "MTCC",
+      "type": "General disclosure",
+      "publishedAt": "2026-11-26",
+      "sourceUrl": "https://informinvestor.cmda.gov.mv/disclosures/1231",
+      "sourcePage": "https://informinvestor.cmda.gov.mv/disclosures"
+    },
     {
       "id": "1230",
       "title": "Retirement of Non-Executive Director Representing the Majority Shareholder",
