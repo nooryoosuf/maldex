@@ -4,7 +4,7 @@
     "organisation": "Maldives Monetary Authority",
     "sourceUrl": "https://www.mma.gov.mv/",
     "portalUrl": "https://statistics.mma.gov.mv/",
-    "retrievedAt": "2026-11-26T20:53:48.547Z",
+    "retrievedAt": "2026-11-27T20:39:17.085Z",
     "verification": "official-reported",
     "note": "Official monthly and annual monetary, reserve, exchange rate and liquidity indicators compiled from MMA Monthly Statistics and the MMA Statistical Database."
   },
@@ -89,35 +89,35 @@
     {
       "currency": "EUR",
       "name": "Euro",
-      "rate": 16.906,
+      "rate": 16.9206,
       "regime": "Floating market reference",
       "unit": "MVR per EUR"
     },
     {
       "currency": "GBP",
       "name": "British Pound",
-      "rate": 20.1993,
+      "rate": 20.2089,
       "regime": "Floating market reference",
       "unit": "MVR per GBP"
     },
     {
       "currency": "SGD",
       "name": "Singapore Dollar",
-      "rate": 11.9452,
+      "rate": 11.9517,
       "regime": "Floating market reference",
       "unit": "MVR per SGD"
     },
     {
       "currency": "INR",
       "name": "Indian Rupee",
-      "rate": 0.167,
+      "rate": 0.1667,
       "regime": "Floating market reference",
       "unit": "MVR per INR"
     },
     {
       "currency": "JPY",
       "name": "Japanese Yen (100)",
-      "rate": 9.6874,
+      "rate": 9.6812,
       "regime": "Floating market reference",
       "unit": "MVR per 100 JPY"
     },

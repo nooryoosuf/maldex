@@ -3,7 +3,7 @@
     "source": "World Bank Open Data",
     "sourceUrl": "https://data.worldbank.org/country/maldives",
     "apiUrl": "https://api.worldbank.org/v2/country/MDV/indicator",
-    "retrievedAt": "2026-11-26T20:53:49.067Z",
+    "retrievedAt": "2026-11-27T20:39:17.589Z",
     "verification": "official-reported",
     "note": "Annual indicators published by the World Bank. Values may lag current conditions; the latest available period is shown. Not a live or monthly series."
   },

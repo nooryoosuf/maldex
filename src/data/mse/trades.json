@@ -2,41 +2,13 @@
   "meta": {
     "source": "Maldives Stock Exchange — Insights",
     "sourceUrl": "https://stockexchange.mv/insights",
-    "retrievedAt": "2026-11-26T20:53:39.649Z",
+    "retrievedAt": "2026-11-27T20:39:07.926Z",
     "verification": "official-reported",
     "note": "Published by MSE. Historical series are official exchange data retrieved via the public CSV export. Re-verify against the source before use in decisions.",
     "dataset": "Trade history",
-    "period": "2024-11-26 to 2026-11-26"
+    "period": "2024-11-27 to 2026-11-27"
   },
   "trades": [
-    {
-      "date": "2024-11-26",
-      "code": "MIB",
-      "quantity": 1,
-      "price": 100,
-      "value": 100
-    },
-    {
-      "date": "2024-11-26",
-      "code": "OMPL",
-      "quantity": 5,
-      "price": 80,
-      "value": 400
-    },
-    {
-      "date": "2024-11-26",
-      "code": "DHR",
-      "quantity": 16,
-      "price": 166,
-      "value": 2656
-    },
-    {
-      "date": "2024-11-26",
-      "code": "MIB",
-      "quantity": 25,
-      "price": 100,
-      "value": 2500
-    },
     {
       "date": "2024-11-27",
       "code": "MIB",

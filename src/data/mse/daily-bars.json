@@ -2,23 +2,13 @@
   "meta": {
     "source": "Maldives Stock Exchange — Insights",
     "sourceUrl": "https://stockexchange.mv/insights",
-    "retrievedAt": "2026-11-26T20:53:39.649Z",
+    "retrievedAt": "2026-11-27T20:39:07.926Z",
     "verification": "official-reported",
     "note": "Published by MSE. Historical series are official exchange data retrieved via the public CSV export. Re-verify against the source before use in decisions.",
     "dataset": "Daily bars derived from trade history"
   },
   "bars": {
     "MIB": [
-      {
-        "date": "2024-11-26",
-        "open": 100,
-        "high": 100,
-        "low": 100,
-        "close": 100,
-        "volume": 26,
-        "value": 2600,
-        "trades": 2
-      },
       {
         "date": "2024-11-27",
         "open": 100,
@@ -3930,3629 +3920,7 @@
         "trades": 4
       }
     ],
-    "OMPL": [
-      {
-        "date": "2024-11-26",
-        "open": 80,
-        "high": 80,
-        "low": 80,
-        "close": 80,
-        "volume": 5,
-        "value": 400,
-        "trades": 1
-      },
-      {
-        "date": "2024-12-01",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 10,
-        "value": 850,
-        "trades": 1
-      },
-      {
-        "date": "2024-12-02",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 300,
-        "value": 25500,
-        "trades": 1
-      },
-      {
-        "date": "2024-12-05",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 39,
-        "value": 3315,
-        "trades": 1
-      },
-      {
-        "date": "2024-12-10",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 21,
-        "value": 1785,
-        "trades": 1
-      },
-      {
-        "date": "2024-12-19",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 1,
-        "value": 85,
-        "trades": 1
-      },
-      {
-        "date": "2024-12-23",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 299,
-        "value": 25415,
-        "trades": 1
-      },
-      {
-        "date": "2024-12-24",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 10,
-        "value": 850,
-        "trades": 1
-      },
-      {
-        "date": "2024-12-26",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 100,
-        "value": 8500,
-        "trades": 1
-      },
-      {
-        "date": "2024-12-29",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 20,
-        "value": 1700,
-        "trades": 2
-      },
-      {
-        "date": "2024-12-30",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 40,
-        "value": 3400,
-        "trades": 1
-      },
-      {
-        "date": "2025-01-05",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 96,
-        "value": 8160,
-        "trades": 3
-      },
-      {
-        "date": "2025-01-06",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 42,
-        "value": 3570,
-        "trades": 1
-      },
-      {
-        "date": "2025-01-07",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 50,
-        "value": 4250,
-        "trades": 1
-      },
-      {
-        "date": "2025-01-09",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 19,
-        "value": 1615,
-        "trades": 2
-      },
-      {
-        "date": "2025-01-12",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 1,
-        "value": 85,
-        "trades": 1
-      },
-      {
-        "date": "2025-01-13",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 32,
-        "value": 2720,
-        "trades": 2
-      },
-      {
-        "date": "2025-01-15",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 6,
-        "value": 510,
-        "trades": 1
-      },
-      {
-        "date": "2025-01-19",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 11,
-        "value": 935,
-        "trades": 2
-      },
-      {
-        "date": "2025-01-20",
-        "open": 84,
-        "high": 85,
-        "low": 84,
-        "close": 85,
-        "volume": 101,
-        "value": 8485,
-        "trades": 2
-      },
-      {
-        "date": "2025-01-21",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 1,
-        "value": 85,
-        "trades": 1
-      },
-      {
-        "date": "2025-01-23",
-        "open": 83,
-        "high": 85,
-        "low": 83,
-        "close": 85,
-        "volume": 111,
-        "value": 9335,
-        "trades": 4
-      },
-      {
-        "date": "2025-01-26",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 73,
-        "value": 6205,
-        "trades": 3
-      },
-      {
-        "date": "2025-01-27",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 25,
-        "value": 2125,
-        "trades": 2
-      },
-      {
-        "date": "2025-01-28",
-        "open": 85,
-        "high": 85,
-        "low": 84,
-        "close": 84,
-        "volume": 115,
-        "value": 9673,
-        "trades": 7
-      },
-      {
-        "date": "2025-01-29",
-        "open": 84,
-        "high": 89,
-        "low": 84,
-        "close": 89,
-        "volume": 100,
-        "value": 8410,
-        "trades": 4
-      },
-      {
-        "date": "2025-01-30",
-        "open": 84.5,
-        "high": 84.5,
-        "low": 84.5,
-        "close": 84.5,
-        "volume": 100,
-        "value": 8450,
-        "trades": 3
-      },
-      {
-        "date": "2025-02-03",
-        "open": 88.99,
-        "high": 88.99,
-        "low": 88.99,
-        "close": 88.99,
-        "volume": 3,
-        "value": 266.96999999999997,
-        "trades": 2
-      },
-      {
-        "date": "2025-02-05",
-        "open": 88.49,
-        "high": 88.49,
-        "low": 88.49,
-        "close": 88.49,
-        "volume": 5,
-        "value": 442.45,
-        "trades": 2
-      },
-      {
-        "date": "2025-02-09",
-        "open": 88.5,
-        "high": 88.5,
-        "low": 85,
-        "close": 85,
-        "volume": 102,
-        "value": 8705,
-        "trades": 5
-      },
-      {
-        "date": "2025-02-10",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 968,
-        "value": 82280,
-        "trades": 2
-      },
-      {
-        "date": "2025-02-11",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 300,
-        "value": 25500,
-        "trades": 3
-      },
-      {
-        "date": "2025-02-16",
-        "open": 86,
-        "high": 86,
-        "low": 85,
-        "close": 85,
-        "volume": 202,
-        "value": 17190,
-        "trades": 2
-      },
-      {
-        "date": "2025-02-18",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 105,
-        "value": 8925,
-        "trades": 2
-      },
-      {
-        "date": "2025-02-24",
-        "open": 84.51,
-        "high": 84.51,
-        "low": 83,
-        "close": 83,
-        "volume": 41,
-        "value": 3441.55,
-        "trades": 6
-      },
-      {
-        "date": "2025-02-25",
-        "open": 84,
-        "high": 84,
-        "low": 83.99,
-        "close": 83.99,
-        "volume": 2,
-        "value": 167.99,
-        "trades": 2
-      },
-      {
-        "date": "2025-02-26",
-        "open": 81,
-        "high": 81,
-        "low": 80,
-        "close": 80,
-        "volume": 8,
-        "value": 646,
-        "trades": 2
-      },
-      {
-        "date": "2025-03-03",
-        "open": 83.99,
-        "high": 84,
-        "low": 83.99,
-        "close": 84,
-        "volume": 98,
-        "value": 8231.61,
-        "trades": 3
-      },
-      {
-        "date": "2025-03-04",
-        "open": 80,
-        "high": 80,
-        "low": 80,
-        "close": 80,
-        "volume": 20,
-        "value": 1600,
-        "trades": 2
-      },
-      {
-        "date": "2025-03-05",
-        "open": 84,
-        "high": 84,
-        "low": 84,
-        "close": 84,
-        "volume": 26,
-        "value": 2184,
-        "trades": 3
-      },
-      {
-        "date": "2025-03-06",
-        "open": 84,
-        "high": 84,
-        "low": 80,
-        "close": 80,
-        "volume": 20,
-        "value": 1640,
-        "trades": 2
-      },
-      {
-        "date": "2025-03-09",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 18,
-        "value": 1529.82,
-        "trades": 2
-      },
-      {
-        "date": "2025-03-10",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 80,
-        "close": 80,
-        "volume": 69,
-        "value": 5569.9,
-        "trades": 2
-      },
-      {
-        "date": "2025-03-13",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 30,
-        "value": 2549.7,
-        "trades": 2
-      },
-      {
-        "date": "2025-03-16",
-        "open": 81,
-        "high": 81,
-        "low": 78,
-        "close": 78,
-        "volume": 10,
-        "value": 791,
-        "trades": 3
-      },
-      {
-        "date": "2025-03-19",
-        "open": 78,
-        "high": 78,
-        "low": 78,
-        "close": 78,
-        "volume": 10,
-        "value": 780,
-        "trades": 3
-      },
-      {
-        "date": "2025-04-06",
-        "open": 80,
-        "high": 80,
-        "low": 77,
-        "close": 77,
-        "volume": 468,
-        "value": 36070,
-        "trades": 9
-      },
-      {
-        "date": "2025-04-07",
-        "open": 77,
-        "high": 85.8,
-        "low": 77,
-        "close": 77,
-        "volume": 603,
-        "value": 47047,
-        "trades": 3
-      },
-      {
-        "date": "2025-04-09",
-        "open": 84.1,
-        "high": 84.1,
-        "low": 77.01,
-        "close": 84.1,
-        "volume": 21,
-        "value": 1688.1100000000001,
-        "trades": 4
-      },
-      {
-        "date": "2025-04-10",
-        "open": 82,
-        "high": 82,
-        "low": 82,
-        "close": 82,
-        "volume": 5,
-        "value": 410,
-        "trades": 1
-      },
-      {
-        "date": "2025-04-13",
-        "open": 77.02,
-        "high": 77.02,
-        "low": 77,
-        "close": 77,
-        "volume": 413,
-        "value": 31801.79,
-        "trades": 3
-      },
-      {
-        "date": "2025-04-14",
-        "open": 84.69,
-        "high": 84.69,
-        "low": 84.67,
-        "close": 84.68,
-        "volume": 11,
-        "value": 931.4000000000001,
-        "trades": 3
-      },
-      {
-        "date": "2025-04-15",
-        "open": 80,
-        "high": 80,
-        "low": 80,
-        "close": 80,
-        "volume": 205,
-        "value": 16400,
-        "trades": 4
-      },
-      {
-        "date": "2025-04-17",
-        "open": 80,
-        "high": 82,
-        "low": 79,
-        "close": 79,
-        "volume": 35,
-        "value": 2815,
-        "trades": 4
-      },
-      {
-        "date": "2025-04-21",
-        "open": 80,
-        "high": 83,
-        "low": 80,
-        "close": 83,
-        "volume": 290,
-        "value": 24055,
-        "trades": 2
-      },
-      {
-        "date": "2025-04-22",
-        "open": 83,
-        "high": 83,
-        "low": 80,
-        "close": 83,
-        "volume": 40,
-        "value": 3305,
-        "trades": 3
-      },
-      {
-        "date": "2025-04-24",
-        "open": 84.68,
-        "high": 84.68,
-        "low": 84.68,
-        "close": 84.68,
-        "volume": 4,
-        "value": 338.72,
-        "trades": 1
-      },
-      {
-        "date": "2025-04-29",
-        "open": 80,
-        "high": 80,
-        "low": 80,
-        "close": 80,
-        "volume": 1000,
-        "value": 80000,
-        "trades": 2
-      },
-      {
-        "date": "2025-05-04",
-        "open": 80,
-        "high": 80,
-        "low": 80,
-        "close": 80,
-        "volume": 1,
-        "value": 80,
-        "trades": 1
-      },
-      {
-        "date": "2025-05-05",
-        "open": 80,
-        "high": 80,
-        "low": 80,
-        "close": 80,
-        "volume": 20,
-        "value": 1600,
-        "trades": 2
-      },
-      {
-        "date": "2025-05-13",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 38,
-        "value": 3230,
-        "trades": 1
-      },
-      {
-        "date": "2025-05-14",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 6,
-        "value": 510,
-        "trades": 2
-      },
-      {
-        "date": "2025-05-18",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 31,
-        "value": 2635,
-        "trades": 2
-      },
-      {
-        "date": "2025-05-19",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 68,
-        "value": 5780,
-        "trades": 6
-      },
-      {
-        "date": "2025-05-20",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 28,
-        "value": 2380,
-        "trades": 1
-      },
-      {
-        "date": "2025-05-21",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 22,
-        "value": 1870,
-        "trades": 1
-      },
-      {
-        "date": "2025-05-22",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 70,
-        "value": 5950,
-        "trades": 3
-      },
-      {
-        "date": "2025-05-25",
-        "open": 82,
-        "high": 85,
-        "low": 82,
-        "close": 85,
-        "volume": 123,
-        "value": 10180,
-        "trades": 4
-      },
-      {
-        "date": "2025-05-26",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 89,
-        "value": 7565,
-        "trades": 4
-      },
-      {
-        "date": "2025-05-27",
-        "open": 84,
-        "high": 84,
-        "low": 80.02,
-        "close": 80.02,
-        "volume": 15,
-        "value": 1220.2,
-        "trades": 2
-      },
-      {
-        "date": "2025-05-28",
-        "open": 82.99,
-        "high": 82.99,
-        "low": 82.99,
-        "close": 82.99,
-        "volume": 60,
-        "value": 4979.4,
-        "trades": 2
-      },
-      {
-        "date": "2025-05-29",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 225,
-        "value": 19125,
-        "trades": 6
-      },
-      {
-        "date": "2025-06-01",
-        "open": 90,
-        "high": 90,
-        "low": 90,
-        "close": 90,
-        "volume": 6,
-        "value": 540,
-        "trades": 1
-      },
-      {
-        "date": "2025-06-03",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 15,
-        "value": 1275,
-        "trades": 2
-      },
-      {
-        "date": "2025-06-04",
-        "open": 85,
-        "high": 85,
-        "low": 80.55,
-        "close": 80.55,
-        "volume": 120,
-        "value": 9685.95,
-        "trades": 4
-      },
-      {
-        "date": "2025-06-15",
-        "open": 80.57,
-        "high": 80.57,
-        "low": 80.56,
-        "close": 80.56,
-        "volume": 49,
-        "value": 3947.49,
-        "trades": 2
-      },
-      {
-        "date": "2025-06-16",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 9,
-        "value": 765,
-        "trades": 1
-      },
-      {
-        "date": "2025-06-17",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 1,
-        "value": 85,
-        "trades": 1
-      },
-      {
-        "date": "2025-06-18",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 20,
-        "value": 1700,
-        "trades": 1
-      },
-      {
-        "date": "2025-06-19",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 35,
-        "value": 2975,
-        "trades": 2
-      },
-      {
-        "date": "2025-06-22",
-        "open": 82,
-        "high": 82,
-        "low": 82,
-        "close": 82,
-        "volume": 150,
-        "value": 12300,
-        "trades": 2
-      },
-      {
-        "date": "2025-06-23",
-        "open": 82,
-        "high": 82,
-        "low": 82,
-        "close": 82,
-        "volume": 10,
-        "value": 820,
-        "trades": 1
-      },
-      {
-        "date": "2025-06-24",
-        "open": 85,
-        "high": 85,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 35,
-        "value": 2974.75,
-        "trades": 2
-      },
-      {
-        "date": "2025-06-25",
-        "open": 82.5,
-        "high": 84.99,
-        "low": 82.5,
-        "close": 82.5,
-        "volume": 75,
-        "value": 6212.4,
-        "trades": 3
-      },
-      {
-        "date": "2025-06-29",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 16,
-        "value": 1359.84,
-        "trades": 1
-      },
-      {
-        "date": "2025-06-30",
-        "open": 84.99,
-        "high": 85,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 21,
-        "value": 1784.83,
-        "trades": 4
-      },
-      {
-        "date": "2025-07-01",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 80.56,
-        "close": 80.56,
-        "volume": 122,
-        "value": 9991.13,
-        "trades": 8
-      },
-      {
-        "date": "2025-07-02",
-        "open": 81,
-        "high": 85,
-        "low": 81,
-        "close": 85,
-        "volume": 13,
-        "value": 1065,
-        "trades": 2
-      },
-      {
-        "date": "2025-07-03",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 82,
-        "close": 82,
-        "volume": 301,
-        "value": 24684.989999999998,
-        "trades": 4
-      },
-      {
-        "date": "2025-07-06",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 80,
-        "close": 84,
-        "volume": 515,
-        "value": 41346.08,
-        "trades": 10
-      },
-      {
-        "date": "2025-07-10",
-        "open": 82.2,
-        "high": 82.2,
-        "low": 82.2,
-        "close": 82.2,
-        "volume": 230,
-        "value": 18906,
-        "trades": 1
-      },
-      {
-        "date": "2025-07-13",
-        "open": 81.03,
-        "high": 81.03,
-        "low": 81.03,
-        "close": 81.03,
-        "volume": 30,
-        "value": 2430.9,
-        "trades": 1
-      },
-      {
-        "date": "2025-07-15",
-        "open": 83.22,
-        "high": 83.22,
-        "low": 83.22,
-        "close": 83.22,
-        "volume": 60,
-        "value": 4993.2,
-        "trades": 1
-      },
-      {
-        "date": "2025-07-16",
-        "open": 83,
-        "high": 83,
-        "low": 82,
-        "close": 82,
-        "volume": 50,
-        "value": 4101,
-        "trades": 3
-      },
-      {
-        "date": "2025-07-17",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 423,
-        "value": 35955,
-        "trades": 1
-      },
-      {
-        "date": "2025-07-20",
-        "open": 85,
-        "high": 88,
-        "low": 85,
-        "close": 88,
-        "volume": 41,
-        "value": 3503,
-        "trades": 5
-      },
-      {
-        "date": "2025-07-21",
-        "open": 89.97,
-        "high": 89.97,
-        "low": 89.97,
-        "close": 89.97,
-        "volume": 15,
-        "value": 1349.55,
-        "trades": 1
-      },
-      {
-        "date": "2025-07-22",
-        "open": 89,
-        "high": 89.89,
-        "low": 89,
-        "close": 89.89,
-        "volume": 23,
-        "value": 2064.8,
-        "trades": 2
-      },
-      {
-        "date": "2025-07-24",
-        "open": 89.87,
-        "high": 89.87,
-        "low": 89.87,
-        "close": 89.87,
-        "volume": 5,
-        "value": 449.35,
-        "trades": 1
-      },
-      {
-        "date": "2025-07-29",
-        "open": 89.87,
-        "high": 89.87,
-        "low": 89.87,
-        "close": 89.87,
-        "volume": 30,
-        "value": 2696.1,
-        "trades": 1
-      },
-      {
-        "date": "2025-08-03",
-        "open": 89.39,
-        "high": 89.39,
-        "low": 88.4,
-        "close": 88.4,
-        "volume": 7,
-        "value": 620.78,
-        "trades": 2
-      },
-      {
-        "date": "2025-08-05",
-        "open": 89.39,
-        "high": 89.39,
-        "low": 89.39,
-        "close": 89.39,
-        "volume": 25,
-        "value": 2234.75,
-        "trades": 1
-      },
-      {
-        "date": "2025-08-06",
-        "open": 86,
-        "high": 86,
-        "low": 84,
-        "close": 85,
-        "volume": 220,
-        "value": 18648.489999999998,
-        "trades": 8
-      },
-      {
-        "date": "2025-08-07",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 84,
-        "close": 84,
-        "volume": 230,
-        "value": 19349.7,
-        "trades": 7
-      },
-      {
-        "date": "2025-08-10",
-        "open": 83,
-        "high": 84,
-        "low": 83,
-        "close": 84,
-        "volume": 51,
-        "value": 4283,
-        "trades": 2
-      },
-      {
-        "date": "2025-08-12",
-        "open": 83,
-        "high": 83,
-        "low": 83,
-        "close": 83,
-        "volume": 1,
-        "value": 83,
-        "trades": 1
-      },
-      {
-        "date": "2025-08-13",
-        "open": 83,
-        "high": 85,
-        "low": 82.13,
-        "close": 85,
-        "volume": 205,
-        "value": 16851.870000000003,
-        "trades": 3
-      },
-      {
-        "date": "2025-08-14",
-        "open": 82.11,
-        "high": 82.11,
-        "low": 82.1,
-        "close": 82.1,
-        "volume": 100,
-        "value": 8210.39,
-        "trades": 2
-      },
-      {
-        "date": "2025-08-19",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 10,
-        "value": 849.9,
-        "trades": 1
-      },
-      {
-        "date": "2025-08-20",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 83.5,
-        "close": 83.5,
-        "volume": 45,
-        "value": 3772.4,
-        "trades": 2
-      },
-      {
-        "date": "2025-08-21",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 15,
-        "value": 1274.85,
-        "trades": 2
-      },
-      {
-        "date": "2025-08-25",
-        "open": 82.51,
-        "high": 84.99,
-        "low": 80,
-        "close": 84.99,
-        "volume": 1010,
-        "value": 81052.13999999998,
-        "trades": 18
-      },
-      {
-        "date": "2025-08-26",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 30,
-        "value": 2550,
-        "trades": 1
-      },
-      {
-        "date": "2025-08-28",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 1,
-        "value": 84.99,
-        "trades": 1
-      },
-      {
-        "date": "2025-08-31",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 8,
-        "value": 679.92,
-        "trades": 1
-      },
-      {
-        "date": "2025-09-01",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 19,
-        "value": 1614.81,
-        "trades": 3
-      },
-      {
-        "date": "2025-09-02",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 20,
-        "value": 1699.8,
-        "trades": 1
-      },
-      {
-        "date": "2025-09-03",
-        "open": 81,
-        "high": 81,
-        "low": 80.02,
-        "close": 80.02,
-        "volume": 5,
-        "value": 401.08,
-        "trades": 2
-      },
-      {
-        "date": "2025-09-07",
-        "open": 80.03,
-        "high": 84.99,
-        "low": 80,
-        "close": 84.99,
-        "volume": 737,
-        "value": 59122.97,
-        "trades": 15
-      },
-      {
-        "date": "2025-09-09",
-        "open": 88.99,
-        "high": 88.99,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 109,
-        "value": 9303.91,
-        "trades": 2
-      },
-      {
-        "date": "2025-09-10",
-        "open": 84.99,
-        "high": 88.49,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 131,
-        "value": 11273.69,
-        "trades": 3
-      },
-      {
-        "date": "2025-09-11",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 1,
-        "value": 84.99,
-        "trades": 1
-      },
-      {
-        "date": "2025-09-14",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 1,
-        "value": 84.99,
-        "trades": 1
-      },
-      {
-        "date": "2025-09-15",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 80,
-        "close": 80,
-        "volume": 100,
-        "value": 8040.12,
-        "trades": 4
-      },
-      {
-        "date": "2025-09-18",
-        "open": 84,
-        "high": 84,
-        "low": 82,
-        "close": 82,
-        "volume": 247,
-        "value": 20460,
-        "trades": 8
-      },
-      {
-        "date": "2025-09-21",
-        "open": 82,
-        "high": 88.35,
-        "low": 82,
-        "close": 88.35,
-        "volume": 370,
-        "value": 31082.17,
-        "trades": 7
-      },
-      {
-        "date": "2025-09-23",
-        "open": 81.51,
-        "high": 88,
-        "low": 81.51,
-        "close": 87.99,
-        "volume": 107,
-        "value": 8773.42,
-        "trades": 3
-      },
-      {
-        "date": "2025-09-25",
-        "open": 81.51,
-        "high": 87.75,
-        "low": 80,
-        "close": 87.75,
-        "volume": 1001,
-        "value": 80417.63,
-        "trades": 23
-      },
-      {
-        "date": "2025-09-28",
-        "open": 83.5,
-        "high": 83.5,
-        "low": 81,
-        "close": 81,
-        "volume": 922,
-        "value": 75102,
-        "trades": 10
-      },
-      {
-        "date": "2025-09-29",
-        "open": 81,
-        "high": 87.73,
-        "low": 81,
-        "close": 87.68,
-        "volume": 84,
-        "value": 6844.129999999999,
-        "trades": 3
-      },
-      {
-        "date": "2025-09-30",
-        "open": 85,
-        "high": 85,
-        "low": 85,
-        "close": 85,
-        "volume": 3,
-        "value": 255,
-        "trades": 1
-      },
-      {
-        "date": "2025-10-05",
-        "open": 85,
-        "high": 85,
-        "low": 84.99,
-        "close": 84.99,
-        "volume": 4,
-        "value": 339.98,
-        "trades": 3
-      },
-      {
-        "date": "2025-10-06",
-        "open": 83.5,
-        "high": 83.5,
-        "low": 83.5,
-        "close": 83.5,
-        "volume": 45,
-        "value": 3757.5,
-        "trades": 1
-      },
-      {
-        "date": "2025-10-07",
-        "open": 87.31,
-        "high": 87.31,
-        "low": 87.31,
-        "close": 87.31,
-        "volume": 5,
-        "value": 436.55,
-        "trades": 1
-      },
-      {
-        "date": "2025-10-08",
-        "open": 85,
-        "high": 87.14,
-        "low": 82,
-        "close": 87.14,
-        "volume": 129,
-        "value": 10747.06,
-        "trades": 4
-      },
-      {
-        "date": "2025-10-09",
-        "open": 87.12,
-        "high": 87.12,
-        "low": 87.12,
-        "close": 87.12,
-        "volume": 11,
-        "value": 958.32,
-        "trades": 2
-      },
-      {
-        "date": "2025-10-13",
-        "open": 84.5,
-        "high": 84.5,
-        "low": 81.25,
-        "close": 81.25,
-        "volume": 35,
-        "value": 2885,
-        "trades": 4
-      },
-      {
-        "date": "2025-10-14",
-        "open": 81.16,
-        "high": 81.16,
-        "low": 81.16,
-        "close": 81.16,
-        "volume": 50,
-        "value": 4058,
-        "trades": 1
-      },
-      {
-        "date": "2025-10-15",
-        "open": 87.71,
-        "high": 87.71,
-        "low": 85.1,
-        "close": 85.1,
-        "volume": 13,
-        "value": 1137.28,
-        "trades": 3
-      },
-      {
-        "date": "2025-10-16",
-        "open": 87.34,
-        "high": 87.34,
-        "low": 87.34,
-        "close": 87.34,
-        "volume": 4,
-        "value": 349.36,
-        "trades": 2
-      },
-      {
-        "date": "2025-10-19",
-        "open": 87.11,
-        "high": 87.11,
-        "low": 87.11,
-        "close": 87.11,
-        "volume": 1,
-        "value": 87.11,
-        "trades": 1
-      },
-      {
-        "date": "2025-10-20",
-        "open": 87.07,
-        "high": 87.07,
-        "low": 86.97,
-        "close": 86.98,
-        "volume": 16,
-        "value": 1392.07,
-        "trades": 4
-      },
-      {
-        "date": "2025-10-22",
-        "open": 82.06,
-        "high": 87,
-        "low": 82,
-        "close": 87,
-        "volume": 101,
-        "value": 8291.34,
-        "trades": 4
-      },
-      {
-        "date": "2025-10-23",
-        "open": 86.97,
-        "high": 86.97,
-        "low": 86.97,
-        "close": 86.97,
-        "volume": 14,
-        "value": 1217.58,
-        "trades": 1
-      },
-      {
-        "date": "2025-10-26",
-        "open": 82.01,
-        "high": 82.01,
-        "low": 82.01,
-        "close": 82.01,
-        "volume": 4,
-        "value": 328.04,
-        "trades": 1
-      },
-      {
-        "date": "2025-10-27",
-        "open": 86.97,
-        "high": 86.97,
-        "low": 86.97,
-        "close": 86.97,
-        "volume": 1,
-        "value": 86.97,
-        "trades": 1
-      },
-      {
-        "date": "2025-10-28",
-        "open": 86.97,
-        "high": 86.97,
-        "low": 86.97,
-        "close": 86.97,
-        "volume": 3,
-        "value": 260.90999999999997,
-        "trades": 2
-      },
-      {
-        "date": "2025-11-04",
-        "open": 86,
-        "high": 86,
-        "low": 82.01,
-        "close": 85,
-        "volume": 77,
-        "value": 6419.639999999999,
-        "trades": 7
-      },
-      {
-        "date": "2025-11-05",
-        "open": 85.99,
-        "high": 85.99,
-        "low": 85,
-        "close": 85,
-        "volume": 70,
-        "value": 5969.8,
-        "trades": 2
-      },
-      {
-        "date": "2025-11-06",
-        "open": 85.99,
-        "high": 85.99,
-        "low": 85.99,
-        "close": 85.99,
-        "volume": 1,
-        "value": 85.99,
-        "trades": 1
-      },
-      {
-        "date": "2025-11-09",
-        "open": 85.99,
-        "high": 86,
-        "low": 82.05,
-        "close": 86,
-        "volume": 262,
-        "value": 22326.75,
-        "trades": 8
-      },
-      {
-        "date": "2025-11-12",
-        "open": 85.99,
-        "high": 85.99,
-        "low": 85.99,
-        "close": 85.99,
-        "volume": 1,
-        "value": 85.99,
-        "trades": 1
-      },
-      {
-        "date": "2025-11-13",
-        "open": 85.99,
-        "high": 85.99,
-        "low": 85.99,
-        "close": 85.99,
-        "volume": 5,
-        "value": 429.95,
-        "trades": 1
-      },
-      {
-        "date": "2025-11-16",
-        "open": 85,
-        "high": 85,
-        "low": 82.07,
-        "close": 82.07,
-        "volume": 33,
-        "value": 2715.89,
-        "trades": 3
-      },
-      {
-        "date": "2025-11-18",
-        "open": 84.5,
-        "high": 84.5,
-        "low": 84.5,
-        "close": 84.5,
-        "volume": 1,
-        "value": 84.5,
-        "trades": 1
-      },
-      {
-        "date": "2025-11-19",
-        "open": 84.45,
-        "high": 84.49,
-        "low": 84.45,
-        "close": 84.49,
-        "volume": 27,
-        "value": 2280.55,
-        "trades": 2
-      },
-      {
-        "date": "2025-11-20",
-        "open": 82.08,
-        "high": 84.49,
-        "low": 82.04,
-        "close": 84.49,
-        "volume": 502,
-        "value": 41190.270000000004,
-        "trades": 7
-      },
-      {
-        "date": "2025-11-23",
-        "open": 83,
-        "high": 83,
-        "low": 83,
-        "close": 83,
-        "volume": 505,
-        "value": 41915,
-        "trades": 3
-      },
-      {
-        "date": "2025-11-24",
-        "open": 82.6,
-        "high": 82.6,
-        "low": 82.05,
-        "close": 82.05,
-        "volume": 121,
-        "value": 9975.85,
-        "trades": 5
-      },
-      {
-        "date": "2025-11-25",
-        "open": 84.5,
-        "high": 84.5,
-        "low": 84.5,
-        "close": 84.5,
-        "volume": 1,
-        "value": 84.5,
-        "trades": 1
-      },
-      {
-        "date": "2025-11-26",
-        "open": 84.49,
-        "high": 84.49,
-        "low": 84.49,
-        "close": 84.49,
-        "volume": 3,
-        "value": 253.46999999999997,
-        "trades": 3
-      },
-      {
-        "date": "2025-11-27",
-        "open": 82.05,
-        "high": 82.05,
-        "low": 82.02,
-        "close": 82.02,
-        "volume": 128,
-        "value": 10500.72,
-        "trades": 4
-      },
-      {
-        "date": "2025-11-30",
-        "open": 80.01,
-        "high": 82,
-        "low": 76.5,
-        "close": 82,
-        "volume": 335,
-        "value": 26816.989999999998,
-        "trades": 6
-      },
-      {
-        "date": "2025-12-01",
-        "open": 82,
-        "high": 82,
-        "low": 76.1,
-        "close": 76.1,
-        "volume": 201,
-        "value": 16393.5,
-        "trades": 4
-      },
-      {
-        "date": "2025-12-02",
-        "open": 82,
-        "high": 82,
-        "low": 82,
-        "close": 82,
-        "volume": 82,
-        "value": 6724,
-        "trades": 4
-      },
-      {
-        "date": "2025-12-04",
-        "open": 82,
-        "high": 82,
-        "low": 82,
-        "close": 82,
-        "volume": 79,
-        "value": 6478,
-        "trades": 4
-      },
-      {
-        "date": "2025-12-07",
-        "open": 82,
-        "high": 82,
-        "low": 80.5,
-        "close": 80.5,
-        "volume": 72,
-        "value": 5816.48,
-        "trades": 3
-      },
-      {
-        "date": "2025-12-08",
-        "open": 81.99,
-        "high": 81.99,
-        "low": 80,
-        "close": 81.99,
-        "volume": 164,
-        "value": 13257.43,
-        "trades": 6
-      },
-      {
-        "date": "2025-12-09",
-        "open": 79.85,
-        "high": 79.85,
-        "low": 79.85,
-        "close": 79.85,
-        "volume": 500,
-        "value": 39925,
-        "trades": 5
-      },
-      {
-        "date": "2025-12-10",
-        "open": 79.85,
-        "high": 79.85,
-        "low": 79.85,
-        "close": 79.85,
-        "volume": 289,
-        "value": 23076.65,
-        "trades": 6
-      },
-      {
-        "date": "2025-12-11",
-        "open": 79.85,
-        "high": 79.85,
-        "low": 79.85,
-        "close": 79.85,
-        "volume": 82,
-        "value": 6547.7,
-        "trades": 3
-      },
-      {
-        "date": "2025-12-14",
-        "open": 79.85,
-        "high": 79.85,
-        "low": 79.85,
-        "close": 79.85,
-        "volume": 90,
-        "value": 7186.5,
-        "trades": 2
-      },
-      {
-        "date": "2025-12-15",
-        "open": 79.85,
-        "high": 79.85,
-        "low": 79.6,
-        "close": 79.6,
-        "volume": 12,
-        "value": 955.7,
-        "trades": 2
-      },
-      {
-        "date": "2025-12-16",
-        "open": 79.85,
-        "high": 79.85,
-        "low": 79.85,
-        "close": 79.85,
-        "volume": 100,
-        "value": 7985,
-        "trades": 3
-      },
-      {
-        "date": "2025-12-17",
-        "open": 79.6,
-        "high": 79.84,
-        "low": 79.55,
-        "close": 79.84,
-        "volume": 83,
-        "value": 6626.1900000000005,
-        "trades": 6
-      },
-      {
-        "date": "2025-12-21",
-        "open": 79.66,
-        "high": 79.84,
-        "low": 79.66,
-        "close": 79.66,
-        "volume": 60,
-        "value": 4784.84,
-        "trades": 5
-      },
-      {
-        "date": "2025-12-22",
-        "open": 79.84,
-        "high": 79.84,
-        "low": 79.84,
-        "close": 79.84,
-        "volume": 79,
-        "value": 6307.36,
-        "trades": 3
-      },
-      {
-        "date": "2025-12-23",
-        "open": 79.65,
-        "high": 79.65,
-        "low": 77.05,
-        "close": 77.05,
-        "volume": 511,
-        "value": 40007.9,
-        "trades": 11
-      },
-      {
-        "date": "2025-12-24",
-        "open": 77,
-        "high": 77,
-        "low": 69.35,
-        "close": 75,
-        "volume": 300,
-        "value": 22285.18,
-        "trades": 13
-      },
-      {
-        "date": "2025-12-25",
-        "open": 75,
-        "high": 75,
-        "low": 73.01,
-        "close": 73.03,
-        "volume": 845,
-        "value": 62005.65,
-        "trades": 5
-      },
-      {
-        "date": "2025-12-28",
-        "open": 75,
-        "high": 75,
-        "low": 75,
-        "close": 75,
-        "volume": 40,
-        "value": 3000,
-        "trades": 2
-      },
-      {
-        "date": "2025-12-29",
-        "open": 75,
-        "high": 75,
-        "low": 74,
-        "close": 74,
-        "volume": 356,
-        "value": 26487,
-        "trades": 13
-      },
-      {
-        "date": "2025-12-30",
-        "open": 74,
-        "high": 75,
-        "low": 74,
-        "close": 74,
-        "volume": 180,
-        "value": 13400,
-        "trades": 6
-      },
-      {
-        "date": "2026-01-04",
-        "open": 75,
-        "high": 75,
-        "low": 72,
-        "close": 72,
-        "volume": 281,
-        "value": 20537.989999999998,
-        "trades": 18
-      },
-      {
-        "date": "2026-01-05",
-        "open": 72,
-        "high": 72,
-        "low": 72,
-        "close": 72,
-        "volume": 14,
-        "value": 1008,
-        "trades": 1
-      },
-      {
-        "date": "2026-01-06",
-        "open": 73.5,
-        "high": 73.5,
-        "low": 73.5,
-        "close": 73.5,
-        "volume": 215,
-        "value": 15802.5,
-        "trades": 2
-      },
-      {
-        "date": "2026-01-07",
-        "open": 73.5,
-        "high": 73.5,
-        "low": 73.5,
-        "close": 73.5,
-        "volume": 6,
-        "value": 441,
-        "trades": 4
-      },
-      {
-        "date": "2026-01-08",
-        "open": 73.5,
-        "high": 73.5,
-        "low": 73.5,
-        "close": 73.5,
-        "volume": 50,
-        "value": 3675,
-        "trades": 1
-      },
-      {
-        "date": "2026-01-11",
-        "open": 73.5,
-        "high": 73.5,
-        "low": 72,
-        "close": 72,
-        "volume": 205,
-        "value": 15037.88,
-        "trades": 10
-      },
-      {
-        "date": "2026-01-12",
-        "open": 72,
-        "high": 72,
-        "low": 70,
-        "close": 70,
-        "volume": 380,
-        "value": 27153.19,
-        "trades": 6
-      },
-      {
-        "date": "2026-01-13",
-        "open": 70,
-        "high": 73.5,
-        "low": 70,
-        "close": 73.5,
-        "volume": 485,
-        "value": 34422.5,
-        "trades": 5
-      },
-      {
-        "date": "2026-01-15",
-        "open": 72.99,
-        "high": 73.5,
-        "low": 72.99,
-        "close": 73.5,
-        "volume": 284,
-        "value": 20872.98,
-        "trades": 7
-      },
-      {
-        "date": "2026-01-19",
-        "open": 70,
-        "high": 70,
-        "low": 69,
-        "close": 69,
-        "volume": 240,
-        "value": 16647.64,
-        "trades": 5
-      },
-      {
-        "date": "2026-01-20",
-        "open": 68.8,
-        "high": 68.8,
-        "low": 68.8,
-        "close": 68.8,
-        "volume": 1,
-        "value": 68.8,
-        "trades": 1
-      },
-      {
-        "date": "2026-01-21",
-        "open": 69,
-        "high": 73.49,
-        "low": 69,
-        "close": 73.49,
-        "volume": 34,
-        "value": 2408.8599999999997,
-        "trades": 2
-      },
-      {
-        "date": "2026-01-26",
-        "open": 70,
-        "high": 70,
-        "low": 70,
-        "close": 70,
-        "volume": 322,
-        "value": 22540,
-        "trades": 6
-      },
-      {
-        "date": "2026-01-28",
-        "open": 70,
-        "high": 70,
-        "low": 62.02,
-        "close": 62.02,
-        "volume": 338,
-        "value": 23369.020000000004,
-        "trades": 12
-      },
-      {
-        "date": "2026-02-04",
-        "open": 67.5,
-        "high": 74.2,
-        "low": 67.5,
-        "close": 70,
-        "volume": 503,
-        "value": 35209.7,
-        "trades": 5
-      },
-      {
-        "date": "2026-02-08",
-        "open": 77,
-        "high": 84.7,
-        "low": 77,
-        "close": 84.7,
-        "volume": 14,
-        "value": 1108.8000000000002,
-        "trades": 6
-      },
-      {
-        "date": "2026-02-09",
-        "open": 90,
-        "high": 90,
-        "low": 89.99,
-        "close": 89.99,
-        "volume": 2,
-        "value": 179.99,
-        "trades": 2
-      },
-      {
-        "date": "2026-02-10",
-        "open": 84.99,
-        "high": 84.99,
-        "low": 78.5,
-        "close": 78.5,
-        "volume": 29,
-        "value": 2360.87,
-        "trades": 3
-      },
-      {
-        "date": "2026-02-11",
-        "open": 84.97,
-        "high": 84.97,
-        "low": 84.97,
-        "close": 84.97,
-        "volume": 2,
-        "value": 169.94,
-        "trades": 1
-      },
-      {
-        "date": "2026-02-12",
-        "open": 84.85,
-        "high": 84.85,
-        "low": 80,
-        "close": 80,
-        "volume": 35,
-        "value": 2921.25,
-        "trades": 2
-      },
-      {
-        "date": "2026-02-17",
-        "open": 74.99,
-        "high": 74.99,
-        "low": 74.99,
-        "close": 74.99,
-        "volume": 85,
-        "value": 6374.15,
-        "trades": 6
-      },
-      {
-        "date": "2026-02-19",
-        "open": 74.99,
-        "high": 74.99,
-        "low": 74.99,
-        "close": 74.99,
-        "volume": 45,
-        "value": 3374.55,
-        "trades": 2
-      },
-      {
-        "date": "2026-02-22",
-        "open": 74.99,
-        "high": 74.99,
-        "low": 74.99,
-        "close": 74.99,
-        "volume": 64,
-        "value": 4799.36,
-        "trades": 3
-      },
-      {
-        "date": "2026-02-23",
-        "open": 74.99,
-        "high": 74.99,
-        "low": 73,
-        "close": 73,
-        "volume": 635,
-        "value": 46375.95,
-        "trades": 5
-      },
-      {
-        "date": "2026-02-24",
-        "open": 73,
-        "high": 73,
-        "low": 73,
-        "close": 73,
-        "volume": 80,
-        "value": 5840,
-        "trades": 2
-      },
-      {
-        "date": "2026-02-25",
-        "open": 73,
-        "high": 73,
-        "low": 72,
-        "close": 72.55,
-        "volume": 157,
-        "value": 11442.55,
-        "trades": 8
-      },
-      {
-        "date": "2026-02-26",
-        "open": 72.99,
-        "high": 72.99,
-        "low": 70,
-        "close": 70,
-        "volume": 79,
-        "value": 5606.91,
-        "trades": 4
-      },
-      {
-        "date": "2026-03-01",
-        "open": 69,
-        "high": 72.99,
-        "low": 68,
-        "close": 72.99,
-        "volume": 57,
-        "value": 3935.93,
-        "trades": 4
-      },
-      {
-        "date": "2026-03-02",
-        "open": 72.99,
-        "high": 73,
-        "low": 72.99,
-        "close": 73,
-        "volume": 34,
-        "value": 2481.71,
-        "trades": 4
-      },
-      {
-        "date": "2026-03-03",
-        "open": 73,
-        "high": 73,
-        "low": 72,
-        "close": 72,
-        "volume": 30,
-        "value": 2170,
-        "trades": 2
-      },
-      {
-        "date": "2026-03-04",
-        "open": 73,
-        "high": 73,
-        "low": 72.99,
-        "close": 72.99,
-        "volume": 49,
-        "value": 3576.5600000000004,
-        "trades": 3
-      },
-      {
-        "date": "2026-03-05",
-        "open": 72.99,
-        "high": 72.99,
-        "low": 72.99,
-        "close": 72.99,
-        "volume": 100,
-        "value": 7298.999999999999,
-        "trades": 6
-      },
-      {
-        "date": "2026-03-08",
-        "open": 73,
-        "high": 73,
-        "low": 71,
-        "close": 73,
-        "volume": 380,
-        "value": 27530.05,
-        "trades": 6
-      },
-      {
-        "date": "2026-03-09",
-        "open": 73,
-        "high": 93.17,
-        "low": 71,
-        "close": 71,
-        "volume": 1002,
-        "value": 71173.39,
-        "trades": 10
-      },
-      {
-        "date": "2026-03-12",
-        "open": 74,
-        "high": 74,
-        "low": 74,
-        "close": 74,
-        "volume": 1,
-        "value": 74,
-        "trades": 1
-      },
-      {
-        "date": "2026-03-15",
-        "open": 75,
-        "high": 75,
-        "low": 75,
-        "close": 75,
-        "volume": 1,
-        "value": 75,
-        "trades": 1
-      },
-      {
-        "date": "2026-03-16",
-        "open": 75,
-        "high": 75,
-        "low": 75,
-        "close": 75,
-        "volume": 10,
-        "value": 750,
-        "trades": 1
-      },
-      {
-        "date": "2026-03-17",
-        "open": 82.5,
-        "high": 82.5,
-        "low": 74,
-        "close": 74,
-        "volume": 143,
-        "value": 10719,
-        "trades": 7
-      },
-      {
-        "date": "2026-03-18",
-        "open": 74,
-        "high": 81.4,
-        "low": 74,
-        "close": 81.4,
-        "volume": 76,
-        "value": 5675.8,
-        "trades": 3
-      },
-      {
-        "date": "2026-03-23",
-        "open": 81.4,
-        "high": 81.4,
-        "low": 75,
-        "close": 75,
-        "volume": 70,
-        "value": 5634,
-        "trades": 3
-      },
-      {
-        "date": "2026-03-24",
-        "open": 75,
-        "high": 75,
-        "low": 75,
-        "close": 75,
-        "volume": 60,
-        "value": 4500,
-        "trades": 2
-      },
-      {
-        "date": "2026-03-25",
-        "open": 72.01,
-        "high": 82.49,
-        "low": 72.01,
-        "close": 82.49,
-        "volume": 182,
-        "value": 13979.28,
-        "trades": 5
-      },
-      {
-        "date": "2026-03-26",
-        "open": 75,
-        "high": 75,
-        "low": 75,
-        "close": 75,
-        "volume": 80,
-        "value": 6000,
-        "trades": 1
-      },
-      {
-        "date": "2026-03-30",
-        "open": 82.48,
-        "high": 82.48,
-        "low": 82.48,
-        "close": 82.48,
-        "volume": 25,
-        "value": 2062,
-        "trades": 1
-      },
-      {
-        "date": "2026-03-31",
-        "open": 75.01,
-        "high": 82.43,
-        "low": 75,
-        "close": 75.1,
-        "volume": 383,
-        "value": 28769.93,
-        "trades": 7
-      },
-      {
-        "date": "2026-04-01",
-        "open": 75,
-        "high": 75,
-        "low": 75,
-        "close": 75,
-        "volume": 500,
-        "value": 37500,
-        "trades": 3
-      },
-      {
-        "date": "2026-04-02",
-        "open": 75,
-        "high": 81.96,
-        "low": 75,
-        "close": 81.96,
-        "volume": 312,
-        "value": 23483.52,
-        "trades": 5
-      },
-      {
-        "date": "2026-04-06",
-        "open": 81.92,
-        "high": 81.92,
-        "low": 80.76,
-        "close": 81.89,
-        "volume": 12,
-        "value": 971.41,
-        "trades": 3
-      },
-      {
-        "date": "2026-04-07",
-        "open": 75,
-        "high": 81.84,
-        "low": 75,
-        "close": 75,
-        "volume": 1010,
-        "value": 75818.4,
-        "trades": 11
-      },
-      {
-        "date": "2026-04-09",
-        "open": 79,
-        "high": 81.65,
-        "low": 76.98,
-        "close": 81.6,
-        "volume": 22,
-        "value": 1781.27,
-        "trades": 6
-      },
-      {
-        "date": "2026-04-12",
-        "open": 81.54,
-        "high": 81.54,
-        "low": 75,
-        "close": 75,
-        "volume": 217,
-        "value": 16411.85,
-        "trades": 11
-      },
-      {
-        "date": "2026-04-13",
-        "open": 78.96,
-        "high": 81.5,
-        "low": 74.99,
-        "close": 74.99,
-        "volume": 302,
-        "value": 23949.02,
-        "trades": 7
-      },
-      {
-        "date": "2026-04-14",
-        "open": 81.47,
-        "high": 81.47,
-        "low": 80.5,
-        "close": 80.5,
-        "volume": 21,
-        "value": 1691.47,
-        "trades": 2
-      },
-      {
-        "date": "2026-04-16",
-        "open": 81.27,
-        "high": 81.27,
-        "low": 81.27,
-        "close": 81.27,
-        "volume": 1,
-        "value": 81.27,
-        "trades": 1
-      },
-      {
-        "date": "2026-04-19",
-        "open": 81.25,
-        "high": 81.25,
-        "low": 77.5,
-        "close": 77.5,
-        "volume": 107,
-        "value": 8312.4,
-        "trades": 3
-      },
-      {
-        "date": "2026-04-20",
-        "open": 79.99,
-        "high": 80.99,
-        "low": 72.5,
-        "close": 72.5,
-        "volume": 580,
-        "value": 42516.03,
-        "trades": 17
-      },
-      {
-        "date": "2026-04-21",
-        "open": 78,
-        "high": 78,
-        "low": 78,
-        "close": 78,
-        "volume": 20,
-        "value": 1560,
-        "trades": 1
-      },
-      {
-        "date": "2026-04-22",
-        "open": 79.74,
-        "high": 79.74,
-        "low": 79.73,
-        "close": 79.73,
-        "volume": 60,
-        "value": 4784.3,
-        "trades": 2
-      },
-      {
-        "date": "2026-04-23",
-        "open": 78,
-        "high": 78,
-        "low": 74.5,
-        "close": 75,
-        "volume": 85,
-        "value": 6379.5,
-        "trades": 5
-      },
-      {
-        "date": "2026-04-26",
-        "open": 75,
-        "high": 75,
-        "low": 72,
-        "close": 72,
-        "volume": 783,
-        "value": 56446.7,
-        "trades": 4
-      },
-      {
-        "date": "2026-04-27",
-        "open": 72,
-        "high": 72,
-        "low": 72,
-        "close": 72,
-        "volume": 1,
-        "value": 72,
-        "trades": 1
-      },
-      {
-        "date": "2026-04-28",
-        "open": 72,
-        "high": 72,
-        "low": 72,
-        "close": 72,
-        "volume": 300,
-        "value": 21600,
-        "trades": 3
-      },
-      {
-        "date": "2026-04-29",
-        "open": 72.55,
-        "high": 72.55,
-        "low": 72.55,
-        "close": 72.55,
-        "volume": 500,
-        "value": 36275,
-        "trades": 2
-      },
-      {
-        "date": "2026-04-30",
-        "open": 74,
-        "high": 74,
-        "low": 72,
-        "close": 72.5,
-        "volume": 700,
-        "value": 50678.64,
-        "trades": 12
-      },
-      {
-        "date": "2026-05-03",
-        "open": 74.8,
-        "high": 75,
-        "low": 74.8,
-        "close": 75,
-        "volume": 9,
-        "value": 674.8,
-        "trades": 2
-      },
-      {
-        "date": "2026-05-04",
-        "open": 75,
-        "high": 75,
-        "low": 72.5,
-        "close": 72.51,
-        "volume": 623,
-        "value": 45198.3,
-        "trades": 12
-      },
-      {
-        "date": "2026-05-06",
-        "open": 74.99,
-        "high": 75,
-        "low": 72.5,
-        "close": 72.5,
-        "volume": 464,
-        "value": 33693.75,
-        "trades": 12
-      },
-      {
-        "date": "2026-05-10",
-        "open": 72,
-        "high": 72,
-        "low": 68,
-        "close": 68,
-        "volume": 3330,
-        "value": 228680.13,
-        "trades": 16
-      },
-      {
-        "date": "2026-05-11",
-        "open": 74.8,
-        "high": 74.9,
-        "low": 74.8,
-        "close": 74.8,
-        "volume": 52,
-        "value": 3894.6000000000004,
-        "trades": 3
-      },
-      {
-        "date": "2026-05-12",
-        "open": 72,
-        "high": 74.95,
-        "low": 69,
-        "close": 69,
-        "volume": 4,
-        "value": 287.95,
-        "trades": 3
-      },
-      {
-        "date": "2026-05-13",
-        "open": 69.01,
-        "high": 74,
-        "low": 69.01,
-        "close": 71,
-        "volume": 121,
-        "value": 8599.119999999999,
-        "trades": 4
-      },
-      {
-        "date": "2026-05-14",
-        "open": 70,
-        "high": 70,
-        "low": 69,
-        "close": 69,
-        "volume": 250,
-        "value": 17303.98,
-        "trades": 7
-      },
-      {
-        "date": "2026-05-18",
-        "open": 70,
-        "high": 74.97,
-        "low": 68,
-        "close": 74.97,
-        "volume": 1505,
-        "value": 103487.78,
-        "trades": 26
-      },
-      {
-        "date": "2026-05-20",
-        "open": 70,
-        "high": 70,
-        "low": 70,
-        "close": 70,
-        "volume": 1,
-        "value": 70,
-        "trades": 1
-      },
-      {
-        "date": "2026-05-21",
-        "open": 74.94,
-        "high": 74.95,
-        "low": 74.81,
-        "close": 74.81,
-        "volume": 57,
-        "value": 4270.3,
-        "trades": 6
-      },
-      {
-        "date": "2026-05-31",
-        "open": 74.84,
-        "high": 74.84,
-        "low": 74.84,
-        "close": 74.84,
-        "volume": 1,
-        "value": 74.84,
-        "trades": 1
-      },
-      {
-        "date": "2026-06-01",
-        "open": 74.83,
-        "high": 74.83,
-        "low": 74.81,
-        "close": 74.81,
-        "volume": 22,
-        "value": 1646.02,
-        "trades": 4
-      },
-      {
-        "date": "2026-06-02",
-        "open": 74.81,
-        "high": 74.82,
-        "low": 70,
-        "close": 74,
-        "volume": 99,
-        "value": 7200.0199999999995,
-        "trades": 9
-      },
-      {
-        "date": "2026-06-04",
-        "open": 72.6,
-        "high": 74.82,
-        "low": 72.6,
-        "close": 74.82,
-        "volume": 51,
-        "value": 3704.82,
-        "trades": 2
-      },
-      {
-        "date": "2026-06-07",
-        "open": 74.79,
-        "high": 74.8,
-        "low": 74.79,
-        "close": 74.79,
-        "volume": 58,
-        "value": 4338.03,
-        "trades": 5
-      },
-      {
-        "date": "2026-06-08",
-        "open": 72,
-        "high": 72,
-        "low": 70,
-        "close": 70,
-        "volume": 262,
-        "value": 18385,
-        "trades": 6
-      },
-      {
-        "date": "2026-06-09",
-        "open": 73,
-        "high": 74.74,
-        "low": 73,
-        "close": 74.5,
-        "volume": 181,
-        "value": 13428.16,
-        "trades": 7
-      },
-      {
-        "date": "2026-06-10",
-        "open": 74.49,
-        "high": 74.49,
-        "low": 74.49,
-        "close": 74.49,
-        "volume": 75,
-        "value": 5586.75,
-        "trades": 5
-      },
-      {
-        "date": "2026-06-11",
-        "open": 74.47,
-        "high": 74.47,
-        "low": 74.47,
-        "close": 74.47,
-        "volume": 10,
-        "value": 744.7,
-        "trades": 1
-      },
-      {
-        "date": "2026-06-14",
-        "open": 74.48,
-        "high": 74.48,
-        "low": 70,
-        "close": 70,
-        "volume": 18,
-        "value": 1274.48,
-        "trades": 3
-      },
-      {
-        "date": "2026-06-15",
-        "open": 74.47,
-        "high": 74.85,
-        "low": 72,
-        "close": 74.85,
-        "volume": 563,
-        "value": 41909.53,
-        "trades": 7
-      },
-      {
-        "date": "2026-06-17",
-        "open": 82.29,
-        "high": 82.29,
-        "low": 74.85,
-        "close": 74.85,
-        "volume": 55,
-        "value": 4124.19,
-        "trades": 3
-      },
-      {
-        "date": "2026-06-18",
-        "open": 70.01,
-        "high": 81.96,
-        "low": 70.01,
-        "close": 74,
-        "volume": 7,
-        "value": 506.01,
-        "trades": 3
-      },
-      {
-        "date": "2026-06-21",
-        "open": 74,
-        "high": 80,
-        "low": 70.03,
-        "close": 79.99,
-        "volume": 82,
-        "value": 6369.530000000001,
-        "trades": 4
-      },
-      {
-        "date": "2026-06-22",
-        "open": 79.97,
-        "high": 79.97,
-        "low": 79.97,
-        "close": 79.97,
-        "volume": 3,
-        "value": 239.91,
-        "trades": 2
-      },
-      {
-        "date": "2026-06-25",
-        "open": 78.88,
-        "high": 78.88,
-        "low": 78.88,
-        "close": 78.88,
-        "volume": 15,
-        "value": 1183.1999999999998,
-        "trades": 2
-      },
-      {
-        "date": "2026-06-28",
-        "open": 75.99,
-        "high": 75.99,
-        "low": 75.99,
-        "close": 75.99,
-        "volume": 19,
-        "value": 1443.81,
-        "trades": 2
-      },
-      {
-        "date": "2026-06-29",
-        "open": 77.74,
-        "high": 77.74,
-        "low": 74.6,
-        "close": 77.69,
-        "volume": 16,
-        "value": 1228.0900000000001,
-        "trades": 3
-      },
-      {
-        "date": "2026-06-30",
-        "open": 77.68,
-        "high": 77.68,
-        "low": 75,
-        "close": 75,
-        "volume": 34,
-        "value": 2586.8,
-        "trades": 3
-      },
-      {
-        "date": "2026-07-01",
-        "open": 75,
-        "high": 75,
-        "low": 75,
-        "close": 75,
-        "volume": 24,
-        "value": 1800,
-        "trades": 1
-      },
-      {
-        "date": "2026-07-02",
-        "open": 77.49,
-        "high": 77.49,
-        "low": 77.49,
-        "close": 77.49,
-        "volume": 15,
-        "value": 1162.35,
-        "trades": 2
-      },
-      {
-        "date": "2026-07-05",
-        "open": 76,
-        "high": 76,
-        "low": 76,
-        "close": 76,
-        "volume": 113,
-        "value": 8588,
-        "trades": 3
-      },
-      {
-        "date": "2026-07-06",
-        "open": 75,
-        "high": 75,
-        "low": 72.7,
-        "close": 72.7,
-        "volume": 500,
-        "value": 36352.899999999994,
-        "trades": 4
-      },
-      {
-        "date": "2026-07-08",
-        "open": 76.62,
-        "high": 76.62,
-        "low": 76.62,
-        "close": 76.62,
-        "volume": 1,
-        "value": 76.62,
-        "trades": 1
-      },
-      {
-        "date": "2026-07-09",
-        "open": 73,
-        "high": 76.55,
-        "low": 73,
-        "close": 76.55,
-        "volume": 22,
-        "value": 1613.1,
-        "trades": 2
-      },
-      {
-        "date": "2026-07-12",
-        "open": 76.55,
-        "high": 76.55,
-        "low": 76.53,
-        "close": 76.53,
-        "volume": 25,
-        "value": 1913.35,
-        "trades": 2
-      },
-      {
-        "date": "2026-07-13",
-        "open": 72.7,
-        "high": 72.7,
-        "low": 72,
-        "close": 72.7,
-        "volume": 708,
-        "value": 51466,
-        "trades": 10
-      },
-      {
-        "date": "2026-07-14",
-        "open": 76.59,
-        "high": 76.62,
-        "low": 76.59,
-        "close": 76.62,
-        "volume": 40,
-        "value": 3064.2,
-        "trades": 4
-      },
-      {
-        "date": "2026-07-15",
-        "open": 72.8,
-        "high": 76.58,
-        "low": 72.8,
-        "close": 76.58,
-        "volume": 6,
-        "value": 440.58,
-        "trades": 2
-      },
-      {
-        "date": "2026-07-16",
-        "open": 76.57,
-        "high": 76.62,
-        "low": 76.57,
-        "close": 76.6,
-        "volume": 219,
-        "value": 16772.71,
-        "trades": 5
-      },
-      {
-        "date": "2026-07-19",
-        "open": 75,
-        "high": 75,
-        "low": 75,
-        "close": 75,
-        "volume": 1,
-        "value": 75,
-        "trades": 1
-      },
-      {
-        "date": "2026-07-22",
-        "open": 76.57,
-        "high": 76.57,
-        "low": 75,
-        "close": 75,
-        "volume": 38,
-        "value": 2904.7,
-        "trades": 5
-      },
-      {
-        "date": "2026-07-23",
-        "open": 76.56,
-        "high": 76.56,
-        "low": 76.53,
-        "close": 76.53,
-        "volume": 14,
-        "value": 1071.72,
-        "trades": 2
-      },
-      {
-        "date": "2026-07-28",
-        "open": 73.5,
-        "high": 73.5,
-        "low": 73.5,
-        "close": 73.5,
-        "volume": 35,
-        "value": 2572.5,
-        "trades": 3
-      },
-      {
-        "date": "2026-07-29",
-        "open": 73.5,
-        "high": 73.5,
-        "low": 73.5,
-        "close": 73.5,
-        "volume": 10,
-        "value": 735,
-        "trades": 1
-      },
-      {
-        "date": "2026-07-30",
-        "open": 73.5,
-        "high": 76.54,
-        "low": 72.8,
-        "close": 72.8,
-        "volume": 126,
-        "value": 9225.04,
-        "trades": 5
-      },
-      {
-        "date": "2026-08-02",
-        "open": 76.51,
-        "high": 76.51,
-        "low": 76.51,
-        "close": 76.51,
-        "volume": 550,
-        "value": 42080.5,
-        "trades": 3
-      },
-      {
-        "date": "2026-08-03",
-        "open": 73,
-        "high": 73,
-        "low": 72.7,
-        "close": 72.7,
-        "volume": 22,
-        "value": 1600.7199999999998,
-        "trades": 4
-      },
-      {
-        "date": "2026-08-04",
-        "open": 72.7,
-        "high": 72.7,
-        "low": 72.7,
-        "close": 72.7,
-        "volume": 40,
-        "value": 2908,
-        "trades": 3
-      },
-      {
-        "date": "2026-08-05",
-        "open": 73.25,
-        "high": 73.25,
-        "low": 70.07,
-        "close": 73.24,
-        "volume": 132,
-        "value": 9356.289999999999,
-        "trades": 6
-      },
-      {
-        "date": "2026-08-06",
-        "open": 73.24,
-        "high": 73.25,
-        "low": 73.24,
-        "close": 73.25,
-        "volume": 26,
-        "value": 1904.26,
-        "trades": 2
-      },
-      {
-        "date": "2026-08-09",
-        "open": 73.25,
-        "high": 73.25,
-        "low": 73.25,
-        "close": 73.25,
-        "volume": 15,
-        "value": 1098.75,
-        "trades": 2
-      },
-      {
-        "date": "2026-08-10",
-        "open": 73.1,
-        "high": 73.1,
-        "low": 73.1,
-        "close": 73.1,
-        "volume": 26,
-        "value": 1900.6,
-        "trades": 1
-      },
-      {
-        "date": "2026-08-11",
-        "open": 73.1,
-        "high": 73.1,
-        "low": 73.1,
-        "close": 73.1,
-        "volume": 34,
-        "value": 2485.4,
-        "trades": 2
-      },
-      {
-        "date": "2026-08-12",
-        "open": 72,
-        "high": 72,
-        "low": 72,
-        "close": 72,
-        "volume": 75,
-        "value": 5400,
-        "trades": 3
-      },
-      {
-        "date": "2026-08-16",
-        "open": 73.1,
-        "high": 73.1,
-        "low": 72,
-        "close": 73.1,
-        "volume": 20,
-        "value": 1451,
-        "trades": 4
-      },
-      {
-        "date": "2026-08-17",
-        "open": 73.1,
-        "high": 73.25,
-        "low": 73.1,
-        "close": 73.25,
-        "volume": 8,
-        "value": 585.1,
-        "trades": 3
-      },
-      {
-        "date": "2026-08-18",
-        "open": 73.25,
-        "high": 73.25,
-        "low": 73.25,
-        "close": 73.25,
-        "volume": 21,
-        "value": 1538.25,
-        "trades": 3
-      },
-      {
-        "date": "2026-08-19",
-        "open": 73.1,
-        "high": 73.25,
-        "low": 70,
-        "close": 73.25,
-        "volume": 320,
-        "value": 22700.1,
-        "trades": 9
-      },
-      {
-        "date": "2026-08-20",
-        "open": 73.25,
-        "high": 73.25,
-        "low": 73.25,
-        "close": 73.25,
-        "volume": 1,
-        "value": 73.25,
-        "trades": 1
-      },
-      {
-        "date": "2026-08-23",
-        "open": 73.25,
-        "high": 73.25,
-        "low": 73.25,
-        "close": 73.25,
-        "volume": 3,
-        "value": 219.75,
-        "trades": 1
-      },
-      {
-        "date": "2026-08-24",
-        "open": 71,
-        "high": 71,
-        "low": 70.51,
-        "close": 70.51,
-        "volume": 8,
-        "value": 565.06,
-        "trades": 2
-      },
-      {
-        "date": "2026-08-26",
-        "open": 71,
-        "high": 71,
-        "low": 70.51,
-        "close": 70.51,
-        "volume": 41,
-        "value": 2896.71,
-        "trades": 4
-      },
-      {
-        "date": "2026-08-27",
-        "open": 73.25,
-        "high": 73.25,
-        "low": 73.25,
-        "close": 73.25,
-        "volume": 10,
-        "value": 732.5,
-        "trades": 1
-      },
-      {
-        "date": "2026-08-30",
-        "open": 73.25,
-        "high": 73.25,
-        "low": 73.25,
-        "close": 73.25,
-        "volume": 150,
-        "value": 10987.5,
-        "trades": 1
-      },
-      {
-        "date": "2026-08-31",
-        "open": 73.25,
-        "high": 73.25,
-        "low": 73.25,
-        "close": 73.25,
-        "volume": 40,
-        "value": 2930,
-        "trades": 3
-      },
-      {
-        "date": "2026-09-01",
-        "open": 73.25,
-        "high": 73.25,
-        "low": 73.25,
-        "close": 73.25,
-        "volume": 8,
-        "value": 586,
-        "trades": 3
-      },
-      {
-        "date": "2026-09-02",
-        "open": 73.25,
-        "high": 73.25,
-        "low": 73.25,
-        "close": 73.25,
-        "volume": 7,
-        "value": 512.75,
-        "trades": 1
-      },
-      {
-        "date": "2026-09-03",
-        "open": 73.25,
-        "high": 87.92,
-        "low": 73.25,
-        "close": 87.92,
-        "volume": 454,
-        "value": 33364.35,
-        "trades": 10
-      },
-      {
-        "date": "2026-09-06",
-        "open": 87.87,
-        "high": 87.87,
-        "low": 85,
-        "close": 85,
-        "volume": 237,
-        "value": 20251.19,
-        "trades": 5
-      },
-      {
-        "date": "2026-09-07",
-        "open": 85,
-        "high": 87.84,
-        "low": 79.13,
-        "close": 87.72,
-        "volume": 19,
-        "value": 1613.95,
-        "trades": 5
-      },
-      {
-        "date": "2026-09-08",
-        "open": 86.49,
-        "high": 86.49,
-        "low": 86.49,
-        "close": 86.49,
-        "volume": 11,
-        "value": 951.39,
-        "trades": 1
-      },
-      {
-        "date": "2026-09-09",
-        "open": 86.47,
-        "high": 86.47,
-        "low": 79.13,
-        "close": 86.39,
-        "volume": 22,
-        "value": 1828.1399999999999,
-        "trades": 3
-      },
-      {
-        "date": "2026-09-10",
-        "open": 79,
-        "high": 79,
-        "low": 79,
-        "close": 79,
-        "volume": 8,
-        "value": 632,
-        "trades": 2
-      },
-      {
-        "date": "2026-09-14",
-        "open": 78.99,
-        "high": 79,
-        "low": 78.95,
-        "close": 78.95,
-        "volume": 51,
-        "value": 4027.7300000000005,
-        "trades": 5
-      },
-      {
-        "date": "2026-09-16",
-        "open": 75.06,
-        "high": 75.06,
-        "low": 75.06,
-        "close": 75.06,
-        "volume": 14,
-        "value": 1050.84,
-        "trades": 1
-      },
-      {
-        "date": "2026-09-17",
-        "open": 75.06,
-        "high": 75.06,
-        "low": 75.06,
-        "close": 75.06,
-        "volume": 1,
-        "value": 75.06,
-        "trades": 1
-      },
-      {
-        "date": "2026-09-20",
-        "open": 78.89,
-        "high": 78.89,
-        "low": 78.89,
-        "close": 78.89,
-        "volume": 1,
-        "value": 78.89,
-        "trades": 1
-      },
-      {
-        "date": "2026-09-21",
-        "open": 78,
-        "high": 78,
-        "low": 78,
-        "close": 78,
-        "volume": 1,
-        "value": 78,
-        "trades": 1
-      },
-      {
-        "date": "2026-09-22",
-        "open": 78,
-        "high": 78,
-        "low": 73,
-        "close": 73,
-        "volume": 66,
-        "value": 5143,
-        "trades": 2
-      },
-      {
-        "date": "2026-09-27",
-        "open": 73,
-        "high": 73,
-        "low": 73,
-        "close": 73,
-        "volume": 8,
-        "value": 584,
-        "trades": 2
-      },
-      {
-        "date": "2026-09-28",
-        "open": 75,
-        "high": 75,
-        "low": 75,
-        "close": 75,
-        "volume": 19,
-        "value": 1425,
-        "trades": 1
-      },
-      {
-        "date": "2026-09-29",
-        "open": 78.89,
-        "high": 78.89,
-        "low": 78.89,
-        "close": 78.89,
-        "volume": 9,
-        "value": 710.01,
-        "trades": 1
-      },
-      {
-        "date": "2026-09-30",
-        "open": 78.89,
-        "high": 78.89,
-        "low": 75,
-        "close": 78.89,
-        "volume": 155,
-        "value": 11731.789999999999,
-        "trades": 7
-      },
-      {
-        "date": "2026-10-01",
-        "open": 78.89,
-        "high": 78.89,
-        "low": 78.87,
-        "close": 78.87,
-        "volume": 18,
-        "value": 1420,
-        "trades": 5
-      },
-      {
-        "date": "2026-10-04",
-        "open": 78.49,
-        "high": 78.5,
-        "low": 78.49,
-        "close": 78.5,
-        "volume": 55,
-        "value": 4317.12,
-        "trades": 3
-      },
-      {
-        "date": "2026-10-05",
-        "open": 78.5,
-        "high": 78.5,
-        "low": 78.5,
-        "close": 78.5,
-        "volume": 7,
-        "value": 549.5,
-        "trades": 2
-      },
-      {
-        "date": "2026-10-06",
-        "open": 78.5,
-        "high": 78.5,
-        "low": 78,
-        "close": 78,
-        "volume": 18,
-        "value": 1405.5,
-        "trades": 4
-      },
-      {
-        "date": "2026-10-08",
-        "open": 78,
-        "high": 78.4,
-        "low": 78,
-        "close": 78.4,
-        "volume": 73,
-        "value": 5718,
-        "trades": 4
-      },
-      {
-        "date": "2026-10-11",
-        "open": 78.39,
-        "high": 78.39,
-        "low": 78.39,
-        "close": 78.39,
-        "volume": 1,
-        "value": 78.39,
-        "trades": 1
-      },
-      {
-        "date": "2026-10-13",
-        "open": 78.39,
-        "high": 78.39,
-        "low": 78.39,
-        "close": 78.39,
-        "volume": 25,
-        "value": 1959.75,
-        "trades": 1
-      },
-      {
-        "date": "2026-10-14",
-        "open": 78.39,
-        "high": 78.39,
-        "low": 78.39,
-        "close": 78.39,
-        "volume": 21,
-        "value": 1646.19,
-        "trades": 2
-      },
-      {
-        "date": "2026-10-18",
-        "open": 78,
-        "high": 78.39,
-        "low": 77,
-        "close": 78,
-        "volume": 27,
-        "value": 2104.7799999999997,
-        "trades": 7
-      },
-      {
-        "date": "2026-10-19",
-        "open": 78,
-        "high": 78,
-        "low": 78,
-        "close": 78,
-        "volume": 13,
-        "value": 1014,
-        "trades": 3
-      },
-      {
-        "date": "2026-10-20",
-        "open": 78,
-        "high": 78,
-        "low": 78,
-        "close": 78,
-        "volume": 50,
-        "value": 3900,
-        "trades": 2
-      },
-      {
-        "date": "2026-10-21",
-        "open": 78.39,
-        "high": 78.39,
-        "low": 76,
-        "close": 76,
-        "volume": 212,
-        "value": 16271.59,
-        "trades": 11
-      },
-      {
-        "date": "2026-10-22",
-        "open": 76,
-        "high": 76,
-        "low": 76,
-        "close": 76,
-        "volume": 1,
-        "value": 76,
-        "trades": 1
-      },
-      {
-        "date": "2026-10-25",
-        "open": 78.39,
-        "high": 78.4,
-        "low": 78.39,
-        "close": 78.4,
-        "volume": 239,
-        "value": 18736.61,
-        "trades": 2
-      },
-      {
-        "date": "2026-10-26",
-        "open": 86.22,
-        "high": 86.23,
-        "low": 86,
-        "close": 86,
-        "volume": 60,
-        "value": 5162.21,
-        "trades": 3
-      },
-      {
-        "date": "2026-10-29",
-        "open": 84,
-        "high": 84,
-        "low": 84,
-        "close": 84,
-        "volume": 6,
-        "value": 504,
-        "trades": 1
-      },
-      {
-        "date": "2026-11-01",
-        "open": 84,
-        "high": 84,
-        "low": 78,
-        "close": 78,
-        "volume": 71,
-        "value": 5844.5,
-        "trades": 4
-      },
-      {
-        "date": "2026-11-02",
-        "open": 84,
-        "high": 84,
-        "low": 82.89,
-        "close": 82.89,
-        "volume": 32,
-        "value": 2654.18,
-        "trades": 4
-      },
-      {
-        "date": "2026-11-04",
-        "open": 82.89,
-        "high": 82.89,
-        "low": 82.48,
-        "close": 82.48,
-        "volume": 4,
-        "value": 330.33,
-        "trades": 2
-      },
-      {
-        "date": "2026-11-05",
-        "open": 78.99,
-        "high": 79,
-        "low": 78.99,
-        "close": 79,
-        "volume": 10,
-        "value": 789.99,
-        "trades": 4
-      },
-      {
-        "date": "2026-11-08",
-        "open": 79,
-        "high": 80,
-        "low": 79,
-        "close": 80,
-        "volume": 291,
-        "value": 23089,
-        "trades": 6
-      },
-      {
-        "date": "2026-11-09",
-        "open": 80,
-        "high": 84.83,
-        "low": 78,
-        "close": 84.79,
-        "volume": 61,
-        "value": 4912.03,
-        "trades": 9
-      },
-      {
-        "date": "2026-11-10",
-        "open": 84.79,
-        "high": 84.79,
-        "low": 84.38,
-        "close": 84.38,
-        "volume": 24,
-        "value": 2031.85,
-        "trades": 3
-      },
-      {
-        "date": "2026-11-15",
-        "open": 84.38,
-        "high": 84.5,
-        "low": 78,
-        "close": 78,
-        "volume": 312,
-        "value": 25624,
-        "trades": 9
-      },
-      {
-        "date": "2026-11-16",
-        "open": 80,
-        "high": 84.5,
-        "low": 80,
-        "close": 84.5,
-        "volume": 210,
-        "value": 16844.96,
-        "trades": 3
-      },
-      {
-        "date": "2026-11-18",
-        "open": 84.37,
-        "high": 84.48,
-        "low": 84.37,
-        "close": 84.48,
-        "volume": 103,
-        "value": 8700.140000000001,
-        "trades": 4
-      },
-      {
-        "date": "2026-11-22",
-        "open": 78.5,
-        "high": 78.5,
-        "low": 78.5,
-        "close": 78.5,
-        "volume": 24,
-        "value": 1884,
-        "trades": 2
-      },
-      {
-        "date": "2026-11-23",
-        "open": 78.5,
-        "high": 78.5,
-        "low": 78.5,
-        "close": 78.5,
-        "volume": 1,
-        "value": 78.5,
-        "trades": 1
-      },
-      {
-        "date": "2026-11-26",
-        "open": 78.5,
-        "high": 78.5,
-        "low": 78.5,
-        "close": 78.5,
-        "volume": 1,
-        "value": 78.5,
-        "trades": 1
-      }
-    ],
     "DHR": [
-      {
-        "date": "2024-11-26",
-        "open": 166,
-        "high": 166,
-        "low": 166,
-        "close": 166,
-        "volume": 16,
-        "value": 2656,
-        "trades": 1
-      },
       {
         "date": "2024-11-27",
         "open": 166,
@@ -18356,6 +14724,3608 @@
         "volume": 21,
         "value": 273,
         "trades": 2
+      }
+    ],
+    "OMPL": [
+      {
+        "date": "2024-12-01",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 10,
+        "value": 850,
+        "trades": 1
+      },
+      {
+        "date": "2024-12-02",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 300,
+        "value": 25500,
+        "trades": 1
+      },
+      {
+        "date": "2024-12-05",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 39,
+        "value": 3315,
+        "trades": 1
+      },
+      {
+        "date": "2024-12-10",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 21,
+        "value": 1785,
+        "trades": 1
+      },
+      {
+        "date": "2024-12-19",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 1,
+        "value": 85,
+        "trades": 1
+      },
+      {
+        "date": "2024-12-23",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 299,
+        "value": 25415,
+        "trades": 1
+      },
+      {
+        "date": "2024-12-24",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 10,
+        "value": 850,
+        "trades": 1
+      },
+      {
+        "date": "2024-12-26",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 100,
+        "value": 8500,
+        "trades": 1
+      },
+      {
+        "date": "2024-12-29",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 20,
+        "value": 1700,
+        "trades": 2
+      },
+      {
+        "date": "2024-12-30",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 40,
+        "value": 3400,
+        "trades": 1
+      },
+      {
+        "date": "2025-01-05",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 96,
+        "value": 8160,
+        "trades": 3
+      },
+      {
+        "date": "2025-01-06",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 42,
+        "value": 3570,
+        "trades": 1
+      },
+      {
+        "date": "2025-01-07",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 50,
+        "value": 4250,
+        "trades": 1
+      },
+      {
+        "date": "2025-01-09",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 19,
+        "value": 1615,
+        "trades": 2
+      },
+      {
+        "date": "2025-01-12",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 1,
+        "value": 85,
+        "trades": 1
+      },
+      {
+        "date": "2025-01-13",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 32,
+        "value": 2720,
+        "trades": 2
+      },
+      {
+        "date": "2025-01-15",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 6,
+        "value": 510,
+        "trades": 1
+      },
+      {
+        "date": "2025-01-19",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 11,
+        "value": 935,
+        "trades": 2
+      },
+      {
+        "date": "2025-01-20",
+        "open": 84,
+        "high": 85,
+        "low": 84,
+        "close": 85,
+        "volume": 101,
+        "value": 8485,
+        "trades": 2
+      },
+      {
+        "date": "2025-01-21",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 1,
+        "value": 85,
+        "trades": 1
+      },
+      {
+        "date": "2025-01-23",
+        "open": 83,
+        "high": 85,
+        "low": 83,
+        "close": 85,
+        "volume": 111,
+        "value": 9335,
+        "trades": 4
+      },
+      {
+        "date": "2025-01-26",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 73,
+        "value": 6205,
+        "trades": 3
+      },
+      {
+        "date": "2025-01-27",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 25,
+        "value": 2125,
+        "trades": 2
+      },
+      {
+        "date": "2025-01-28",
+        "open": 85,
+        "high": 85,
+        "low": 84,
+        "close": 84,
+        "volume": 115,
+        "value": 9673,
+        "trades": 7
+      },
+      {
+        "date": "2025-01-29",
+        "open": 84,
+        "high": 89,
+        "low": 84,
+        "close": 89,
+        "volume": 100,
+        "value": 8410,
+        "trades": 4
+      },
+      {
+        "date": "2025-01-30",
+        "open": 84.5,
+        "high": 84.5,
+        "low": 84.5,
+        "close": 84.5,
+        "volume": 100,
+        "value": 8450,
+        "trades": 3
+      },
+      {
+        "date": "2025-02-03",
+        "open": 88.99,
+        "high": 88.99,
+        "low": 88.99,
+        "close": 88.99,
+        "volume": 3,
+        "value": 266.96999999999997,
+        "trades": 2
+      },
+      {
+        "date": "2025-02-05",
+        "open": 88.49,
+        "high": 88.49,
+        "low": 88.49,
+        "close": 88.49,
+        "volume": 5,
+        "value": 442.45,
+        "trades": 2
+      },
+      {
+        "date": "2025-02-09",
+        "open": 88.5,
+        "high": 88.5,
+        "low": 85,
+        "close": 85,
+        "volume": 102,
+        "value": 8705,
+        "trades": 5
+      },
+      {
+        "date": "2025-02-10",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 968,
+        "value": 82280,
+        "trades": 2
+      },
+      {
+        "date": "2025-02-11",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 300,
+        "value": 25500,
+        "trades": 3
+      },
+      {
+        "date": "2025-02-16",
+        "open": 86,
+        "high": 86,
+        "low": 85,
+        "close": 85,
+        "volume": 202,
+        "value": 17190,
+        "trades": 2
+      },
+      {
+        "date": "2025-02-18",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 105,
+        "value": 8925,
+        "trades": 2
+      },
+      {
+        "date": "2025-02-24",
+        "open": 84.51,
+        "high": 84.51,
+        "low": 83,
+        "close": 83,
+        "volume": 41,
+        "value": 3441.55,
+        "trades": 6
+      },
+      {
+        "date": "2025-02-25",
+        "open": 84,
+        "high": 84,
+        "low": 83.99,
+        "close": 83.99,
+        "volume": 2,
+        "value": 167.99,
+        "trades": 2
+      },
+      {
+        "date": "2025-02-26",
+        "open": 81,
+        "high": 81,
+        "low": 80,
+        "close": 80,
+        "volume": 8,
+        "value": 646,
+        "trades": 2
+      },
+      {
+        "date": "2025-03-03",
+        "open": 83.99,
+        "high": 84,
+        "low": 83.99,
+        "close": 84,
+        "volume": 98,
+        "value": 8231.61,
+        "trades": 3
+      },
+      {
+        "date": "2025-03-04",
+        "open": 80,
+        "high": 80,
+        "low": 80,
+        "close": 80,
+        "volume": 20,
+        "value": 1600,
+        "trades": 2
+      },
+      {
+        "date": "2025-03-05",
+        "open": 84,
+        "high": 84,
+        "low": 84,
+        "close": 84,
+        "volume": 26,
+        "value": 2184,
+        "trades": 3
+      },
+      {
+        "date": "2025-03-06",
+        "open": 84,
+        "high": 84,
+        "low": 80,
+        "close": 80,
+        "volume": 20,
+        "value": 1640,
+        "trades": 2
+      },
+      {
+        "date": "2025-03-09",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 18,
+        "value": 1529.82,
+        "trades": 2
+      },
+      {
+        "date": "2025-03-10",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 80,
+        "close": 80,
+        "volume": 69,
+        "value": 5569.9,
+        "trades": 2
+      },
+      {
+        "date": "2025-03-13",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 30,
+        "value": 2549.7,
+        "trades": 2
+      },
+      {
+        "date": "2025-03-16",
+        "open": 81,
+        "high": 81,
+        "low": 78,
+        "close": 78,
+        "volume": 10,
+        "value": 791,
+        "trades": 3
+      },
+      {
+        "date": "2025-03-19",
+        "open": 78,
+        "high": 78,
+        "low": 78,
+        "close": 78,
+        "volume": 10,
+        "value": 780,
+        "trades": 3
+      },
+      {
+        "date": "2025-04-06",
+        "open": 80,
+        "high": 80,
+        "low": 77,
+        "close": 77,
+        "volume": 468,
+        "value": 36070,
+        "trades": 9
+      },
+      {
+        "date": "2025-04-07",
+        "open": 77,
+        "high": 85.8,
+        "low": 77,
+        "close": 77,
+        "volume": 603,
+        "value": 47047,
+        "trades": 3
+      },
+      {
+        "date": "2025-04-09",
+        "open": 84.1,
+        "high": 84.1,
+        "low": 77.01,
+        "close": 84.1,
+        "volume": 21,
+        "value": 1688.1100000000001,
+        "trades": 4
+      },
+      {
+        "date": "2025-04-10",
+        "open": 82,
+        "high": 82,
+        "low": 82,
+        "close": 82,
+        "volume": 5,
+        "value": 410,
+        "trades": 1
+      },
+      {
+        "date": "2025-04-13",
+        "open": 77.02,
+        "high": 77.02,
+        "low": 77,
+        "close": 77,
+        "volume": 413,
+        "value": 31801.79,
+        "trades": 3
+      },
+      {
+        "date": "2025-04-14",
+        "open": 84.69,
+        "high": 84.69,
+        "low": 84.67,
+        "close": 84.68,
+        "volume": 11,
+        "value": 931.4000000000001,
+        "trades": 3
+      },
+      {
+        "date": "2025-04-15",
+        "open": 80,
+        "high": 80,
+        "low": 80,
+        "close": 80,
+        "volume": 205,
+        "value": 16400,
+        "trades": 4
+      },
+      {
+        "date": "2025-04-17",
+        "open": 80,
+        "high": 82,
+        "low": 79,
+        "close": 79,
+        "volume": 35,
+        "value": 2815,
+        "trades": 4
+      },
+      {
+        "date": "2025-04-21",
+        "open": 80,
+        "high": 83,
+        "low": 80,
+        "close": 83,
+        "volume": 290,
+        "value": 24055,
+        "trades": 2
+      },
+      {
+        "date": "2025-04-22",
+        "open": 83,
+        "high": 83,
+        "low": 80,
+        "close": 83,
+        "volume": 40,
+        "value": 3305,
+        "trades": 3
+      },
+      {
+        "date": "2025-04-24",
+        "open": 84.68,
+        "high": 84.68,
+        "low": 84.68,
+        "close": 84.68,
+        "volume": 4,
+        "value": 338.72,
+        "trades": 1
+      },
+      {
+        "date": "2025-04-29",
+        "open": 80,
+        "high": 80,
+        "low": 80,
+        "close": 80,
+        "volume": 1000,
+        "value": 80000,
+        "trades": 2
+      },
+      {
+        "date": "2025-05-04",
+        "open": 80,
+        "high": 80,
+        "low": 80,
+        "close": 80,
+        "volume": 1,
+        "value": 80,
+        "trades": 1
+      },
+      {
+        "date": "2025-05-05",
+        "open": 80,
+        "high": 80,
+        "low": 80,
+        "close": 80,
+        "volume": 20,
+        "value": 1600,
+        "trades": 2
+      },
+      {
+        "date": "2025-05-13",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 38,
+        "value": 3230,
+        "trades": 1
+      },
+      {
+        "date": "2025-05-14",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 6,
+        "value": 510,
+        "trades": 2
+      },
+      {
+        "date": "2025-05-18",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 31,
+        "value": 2635,
+        "trades": 2
+      },
+      {
+        "date": "2025-05-19",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 68,
+        "value": 5780,
+        "trades": 6
+      },
+      {
+        "date": "2025-05-20",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 28,
+        "value": 2380,
+        "trades": 1
+      },
+      {
+        "date": "2025-05-21",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 22,
+        "value": 1870,
+        "trades": 1
+      },
+      {
+        "date": "2025-05-22",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 70,
+        "value": 5950,
+        "trades": 3
+      },
+      {
+        "date": "2025-05-25",
+        "open": 82,
+        "high": 85,
+        "low": 82,
+        "close": 85,
+        "volume": 123,
+        "value": 10180,
+        "trades": 4
+      },
+      {
+        "date": "2025-05-26",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 89,
+        "value": 7565,
+        "trades": 4
+      },
+      {
+        "date": "2025-05-27",
+        "open": 84,
+        "high": 84,
+        "low": 80.02,
+        "close": 80.02,
+        "volume": 15,
+        "value": 1220.2,
+        "trades": 2
+      },
+      {
+        "date": "2025-05-28",
+        "open": 82.99,
+        "high": 82.99,
+        "low": 82.99,
+        "close": 82.99,
+        "volume": 60,
+        "value": 4979.4,
+        "trades": 2
+      },
+      {
+        "date": "2025-05-29",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 225,
+        "value": 19125,
+        "trades": 6
+      },
+      {
+        "date": "2025-06-01",
+        "open": 90,
+        "high": 90,
+        "low": 90,
+        "close": 90,
+        "volume": 6,
+        "value": 540,
+        "trades": 1
+      },
+      {
+        "date": "2025-06-03",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 15,
+        "value": 1275,
+        "trades": 2
+      },
+      {
+        "date": "2025-06-04",
+        "open": 85,
+        "high": 85,
+        "low": 80.55,
+        "close": 80.55,
+        "volume": 120,
+        "value": 9685.95,
+        "trades": 4
+      },
+      {
+        "date": "2025-06-15",
+        "open": 80.57,
+        "high": 80.57,
+        "low": 80.56,
+        "close": 80.56,
+        "volume": 49,
+        "value": 3947.49,
+        "trades": 2
+      },
+      {
+        "date": "2025-06-16",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 9,
+        "value": 765,
+        "trades": 1
+      },
+      {
+        "date": "2025-06-17",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 1,
+        "value": 85,
+        "trades": 1
+      },
+      {
+        "date": "2025-06-18",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 20,
+        "value": 1700,
+        "trades": 1
+      },
+      {
+        "date": "2025-06-19",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 35,
+        "value": 2975,
+        "trades": 2
+      },
+      {
+        "date": "2025-06-22",
+        "open": 82,
+        "high": 82,
+        "low": 82,
+        "close": 82,
+        "volume": 150,
+        "value": 12300,
+        "trades": 2
+      },
+      {
+        "date": "2025-06-23",
+        "open": 82,
+        "high": 82,
+        "low": 82,
+        "close": 82,
+        "volume": 10,
+        "value": 820,
+        "trades": 1
+      },
+      {
+        "date": "2025-06-24",
+        "open": 85,
+        "high": 85,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 35,
+        "value": 2974.75,
+        "trades": 2
+      },
+      {
+        "date": "2025-06-25",
+        "open": 82.5,
+        "high": 84.99,
+        "low": 82.5,
+        "close": 82.5,
+        "volume": 75,
+        "value": 6212.4,
+        "trades": 3
+      },
+      {
+        "date": "2025-06-29",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 16,
+        "value": 1359.84,
+        "trades": 1
+      },
+      {
+        "date": "2025-06-30",
+        "open": 84.99,
+        "high": 85,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 21,
+        "value": 1784.83,
+        "trades": 4
+      },
+      {
+        "date": "2025-07-01",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 80.56,
+        "close": 80.56,
+        "volume": 122,
+        "value": 9991.13,
+        "trades": 8
+      },
+      {
+        "date": "2025-07-02",
+        "open": 81,
+        "high": 85,
+        "low": 81,
+        "close": 85,
+        "volume": 13,
+        "value": 1065,
+        "trades": 2
+      },
+      {
+        "date": "2025-07-03",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 82,
+        "close": 82,
+        "volume": 301,
+        "value": 24684.989999999998,
+        "trades": 4
+      },
+      {
+        "date": "2025-07-06",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 80,
+        "close": 84,
+        "volume": 515,
+        "value": 41346.08,
+        "trades": 10
+      },
+      {
+        "date": "2025-07-10",
+        "open": 82.2,
+        "high": 82.2,
+        "low": 82.2,
+        "close": 82.2,
+        "volume": 230,
+        "value": 18906,
+        "trades": 1
+      },
+      {
+        "date": "2025-07-13",
+        "open": 81.03,
+        "high": 81.03,
+        "low": 81.03,
+        "close": 81.03,
+        "volume": 30,
+        "value": 2430.9,
+        "trades": 1
+      },
+      {
+        "date": "2025-07-15",
+        "open": 83.22,
+        "high": 83.22,
+        "low": 83.22,
+        "close": 83.22,
+        "volume": 60,
+        "value": 4993.2,
+        "trades": 1
+      },
+      {
+        "date": "2025-07-16",
+        "open": 83,
+        "high": 83,
+        "low": 82,
+        "close": 82,
+        "volume": 50,
+        "value": 4101,
+        "trades": 3
+      },
+      {
+        "date": "2025-07-17",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 423,
+        "value": 35955,
+        "trades": 1
+      },
+      {
+        "date": "2025-07-20",
+        "open": 85,
+        "high": 88,
+        "low": 85,
+        "close": 88,
+        "volume": 41,
+        "value": 3503,
+        "trades": 5
+      },
+      {
+        "date": "2025-07-21",
+        "open": 89.97,
+        "high": 89.97,
+        "low": 89.97,
+        "close": 89.97,
+        "volume": 15,
+        "value": 1349.55,
+        "trades": 1
+      },
+      {
+        "date": "2025-07-22",
+        "open": 89,
+        "high": 89.89,
+        "low": 89,
+        "close": 89.89,
+        "volume": 23,
+        "value": 2064.8,
+        "trades": 2
+      },
+      {
+        "date": "2025-07-24",
+        "open": 89.87,
+        "high": 89.87,
+        "low": 89.87,
+        "close": 89.87,
+        "volume": 5,
+        "value": 449.35,
+        "trades": 1
+      },
+      {
+        "date": "2025-07-29",
+        "open": 89.87,
+        "high": 89.87,
+        "low": 89.87,
+        "close": 89.87,
+        "volume": 30,
+        "value": 2696.1,
+        "trades": 1
+      },
+      {
+        "date": "2025-08-03",
+        "open": 89.39,
+        "high": 89.39,
+        "low": 88.4,
+        "close": 88.4,
+        "volume": 7,
+        "value": 620.78,
+        "trades": 2
+      },
+      {
+        "date": "2025-08-05",
+        "open": 89.39,
+        "high": 89.39,
+        "low": 89.39,
+        "close": 89.39,
+        "volume": 25,
+        "value": 2234.75,
+        "trades": 1
+      },
+      {
+        "date": "2025-08-06",
+        "open": 86,
+        "high": 86,
+        "low": 84,
+        "close": 85,
+        "volume": 220,
+        "value": 18648.489999999998,
+        "trades": 8
+      },
+      {
+        "date": "2025-08-07",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 84,
+        "close": 84,
+        "volume": 230,
+        "value": 19349.7,
+        "trades": 7
+      },
+      {
+        "date": "2025-08-10",
+        "open": 83,
+        "high": 84,
+        "low": 83,
+        "close": 84,
+        "volume": 51,
+        "value": 4283,
+        "trades": 2
+      },
+      {
+        "date": "2025-08-12",
+        "open": 83,
+        "high": 83,
+        "low": 83,
+        "close": 83,
+        "volume": 1,
+        "value": 83,
+        "trades": 1
+      },
+      {
+        "date": "2025-08-13",
+        "open": 83,
+        "high": 85,
+        "low": 82.13,
+        "close": 85,
+        "volume": 205,
+        "value": 16851.870000000003,
+        "trades": 3
+      },
+      {
+        "date": "2025-08-14",
+        "open": 82.11,
+        "high": 82.11,
+        "low": 82.1,
+        "close": 82.1,
+        "volume": 100,
+        "value": 8210.39,
+        "trades": 2
+      },
+      {
+        "date": "2025-08-19",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 10,
+        "value": 849.9,
+        "trades": 1
+      },
+      {
+        "date": "2025-08-20",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 83.5,
+        "close": 83.5,
+        "volume": 45,
+        "value": 3772.4,
+        "trades": 2
+      },
+      {
+        "date": "2025-08-21",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 15,
+        "value": 1274.85,
+        "trades": 2
+      },
+      {
+        "date": "2025-08-25",
+        "open": 82.51,
+        "high": 84.99,
+        "low": 80,
+        "close": 84.99,
+        "volume": 1010,
+        "value": 81052.13999999998,
+        "trades": 18
+      },
+      {
+        "date": "2025-08-26",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 30,
+        "value": 2550,
+        "trades": 1
+      },
+      {
+        "date": "2025-08-28",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 1,
+        "value": 84.99,
+        "trades": 1
+      },
+      {
+        "date": "2025-08-31",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 8,
+        "value": 679.92,
+        "trades": 1
+      },
+      {
+        "date": "2025-09-01",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 19,
+        "value": 1614.81,
+        "trades": 3
+      },
+      {
+        "date": "2025-09-02",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 20,
+        "value": 1699.8,
+        "trades": 1
+      },
+      {
+        "date": "2025-09-03",
+        "open": 81,
+        "high": 81,
+        "low": 80.02,
+        "close": 80.02,
+        "volume": 5,
+        "value": 401.08,
+        "trades": 2
+      },
+      {
+        "date": "2025-09-07",
+        "open": 80.03,
+        "high": 84.99,
+        "low": 80,
+        "close": 84.99,
+        "volume": 737,
+        "value": 59122.97,
+        "trades": 15
+      },
+      {
+        "date": "2025-09-09",
+        "open": 88.99,
+        "high": 88.99,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 109,
+        "value": 9303.91,
+        "trades": 2
+      },
+      {
+        "date": "2025-09-10",
+        "open": 84.99,
+        "high": 88.49,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 131,
+        "value": 11273.69,
+        "trades": 3
+      },
+      {
+        "date": "2025-09-11",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 1,
+        "value": 84.99,
+        "trades": 1
+      },
+      {
+        "date": "2025-09-14",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 1,
+        "value": 84.99,
+        "trades": 1
+      },
+      {
+        "date": "2025-09-15",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 80,
+        "close": 80,
+        "volume": 100,
+        "value": 8040.12,
+        "trades": 4
+      },
+      {
+        "date": "2025-09-18",
+        "open": 84,
+        "high": 84,
+        "low": 82,
+        "close": 82,
+        "volume": 247,
+        "value": 20460,
+        "trades": 8
+      },
+      {
+        "date": "2025-09-21",
+        "open": 82,
+        "high": 88.35,
+        "low": 82,
+        "close": 88.35,
+        "volume": 370,
+        "value": 31082.17,
+        "trades": 7
+      },
+      {
+        "date": "2025-09-23",
+        "open": 81.51,
+        "high": 88,
+        "low": 81.51,
+        "close": 87.99,
+        "volume": 107,
+        "value": 8773.42,
+        "trades": 3
+      },
+      {
+        "date": "2025-09-25",
+        "open": 81.51,
+        "high": 87.75,
+        "low": 80,
+        "close": 87.75,
+        "volume": 1001,
+        "value": 80417.63,
+        "trades": 23
+      },
+      {
+        "date": "2025-09-28",
+        "open": 83.5,
+        "high": 83.5,
+        "low": 81,
+        "close": 81,
+        "volume": 922,
+        "value": 75102,
+        "trades": 10
+      },
+      {
+        "date": "2025-09-29",
+        "open": 81,
+        "high": 87.73,
+        "low": 81,
+        "close": 87.68,
+        "volume": 84,
+        "value": 6844.129999999999,
+        "trades": 3
+      },
+      {
+        "date": "2025-09-30",
+        "open": 85,
+        "high": 85,
+        "low": 85,
+        "close": 85,
+        "volume": 3,
+        "value": 255,
+        "trades": 1
+      },
+      {
+        "date": "2025-10-05",
+        "open": 85,
+        "high": 85,
+        "low": 84.99,
+        "close": 84.99,
+        "volume": 4,
+        "value": 339.98,
+        "trades": 3
+      },
+      {
+        "date": "2025-10-06",
+        "open": 83.5,
+        "high": 83.5,
+        "low": 83.5,
+        "close": 83.5,
+        "volume": 45,
+        "value": 3757.5,
+        "trades": 1
+      },
+      {
+        "date": "2025-10-07",
+        "open": 87.31,
+        "high": 87.31,
+        "low": 87.31,
+        "close": 87.31,
+        "volume": 5,
+        "value": 436.55,
+        "trades": 1
+      },
+      {
+        "date": "2025-10-08",
+        "open": 85,
+        "high": 87.14,
+        "low": 82,
+        "close": 87.14,
+        "volume": 129,
+        "value": 10747.06,
+        "trades": 4
+      },
+      {
+        "date": "2025-10-09",
+        "open": 87.12,
+        "high": 87.12,
+        "low": 87.12,
+        "close": 87.12,
+        "volume": 11,
+        "value": 958.32,
+        "trades": 2
+      },
+      {
+        "date": "2025-10-13",
+        "open": 84.5,
+        "high": 84.5,
+        "low": 81.25,
+        "close": 81.25,
+        "volume": 35,
+        "value": 2885,
+        "trades": 4
+      },
+      {
+        "date": "2025-10-14",
+        "open": 81.16,
+        "high": 81.16,
+        "low": 81.16,
+        "close": 81.16,
+        "volume": 50,
+        "value": 4058,
+        "trades": 1
+      },
+      {
+        "date": "2025-10-15",
+        "open": 87.71,
+        "high": 87.71,
+        "low": 85.1,
+        "close": 85.1,
+        "volume": 13,
+        "value": 1137.28,
+        "trades": 3
+      },
+      {
+        "date": "2025-10-16",
+        "open": 87.34,
+        "high": 87.34,
+        "low": 87.34,
+        "close": 87.34,
+        "volume": 4,
+        "value": 349.36,
+        "trades": 2
+      },
+      {
+        "date": "2025-10-19",
+        "open": 87.11,
+        "high": 87.11,
+        "low": 87.11,
+        "close": 87.11,
+        "volume": 1,
+        "value": 87.11,
+        "trades": 1
+      },
+      {
+        "date": "2025-10-20",
+        "open": 87.07,
+        "high": 87.07,
+        "low": 86.97,
+        "close": 86.98,
+        "volume": 16,
+        "value": 1392.07,
+        "trades": 4
+      },
+      {
+        "date": "2025-10-22",
+        "open": 82.06,
+        "high": 87,
+        "low": 82,
+        "close": 87,
+        "volume": 101,
+        "value": 8291.34,
+        "trades": 4
+      },
+      {
+        "date": "2025-10-23",
+        "open": 86.97,
+        "high": 86.97,
+        "low": 86.97,
+        "close": 86.97,
+        "volume": 14,
+        "value": 1217.58,
+        "trades": 1
+      },
+      {
+        "date": "2025-10-26",
+        "open": 82.01,
+        "high": 82.01,
+        "low": 82.01,
+        "close": 82.01,
+        "volume": 4,
+        "value": 328.04,
+        "trades": 1
+      },
+      {
+        "date": "2025-10-27",
+        "open": 86.97,
+        "high": 86.97,
+        "low": 86.97,
+        "close": 86.97,
+        "volume": 1,
+        "value": 86.97,
+        "trades": 1
+      },
+      {
+        "date": "2025-10-28",
+        "open": 86.97,
+        "high": 86.97,
+        "low": 86.97,
+        "close": 86.97,
+        "volume": 3,
+        "value": 260.90999999999997,
+        "trades": 2
+      },
+      {
+        "date": "2025-11-04",
+        "open": 86,
+        "high": 86,
+        "low": 82.01,
+        "close": 85,
+        "volume": 77,
+        "value": 6419.639999999999,
+        "trades": 7
+      },
+      {
+        "date": "2025-11-05",
+        "open": 85.99,
+        "high": 85.99,
+        "low": 85,
+        "close": 85,
+        "volume": 70,
+        "value": 5969.8,
+        "trades": 2
+      },
+      {
+        "date": "2025-11-06",
+        "open": 85.99,
+        "high": 85.99,
+        "low": 85.99,
+        "close": 85.99,
+        "volume": 1,
+        "value": 85.99,
+        "trades": 1
+      },
+      {
+        "date": "2025-11-09",
+        "open": 85.99,
+        "high": 86,
+        "low": 82.05,
+        "close": 86,
+        "volume": 262,
+        "value": 22326.75,
+        "trades": 8
+      },
+      {
+        "date": "2025-11-12",
+        "open": 85.99,
+        "high": 85.99,
+        "low": 85.99,
+        "close": 85.99,
+        "volume": 1,
+        "value": 85.99,
+        "trades": 1
+      },
+      {
+        "date": "2025-11-13",
+        "open": 85.99,
+        "high": 85.99,
+        "low": 85.99,
+        "close": 85.99,
+        "volume": 5,
+        "value": 429.95,
+        "trades": 1
+      },
+      {
+        "date": "2025-11-16",
+        "open": 85,
+        "high": 85,
+        "low": 82.07,
+        "close": 82.07,
+        "volume": 33,
+        "value": 2715.89,
+        "trades": 3
+      },
+      {
+        "date": "2025-11-18",
+        "open": 84.5,
+        "high": 84.5,
+        "low": 84.5,
+        "close": 84.5,
+        "volume": 1,
+        "value": 84.5,
+        "trades": 1
+      },
+      {
+        "date": "2025-11-19",
+        "open": 84.45,
+        "high": 84.49,
+        "low": 84.45,
+        "close": 84.49,
+        "volume": 27,
+        "value": 2280.55,
+        "trades": 2
+      },
+      {
+        "date": "2025-11-20",
+        "open": 82.08,
+        "high": 84.49,
+        "low": 82.04,
+        "close": 84.49,
+        "volume": 502,
+        "value": 41190.270000000004,
+        "trades": 7
+      },
+      {
+        "date": "2025-11-23",
+        "open": 83,
+        "high": 83,
+        "low": 83,
+        "close": 83,
+        "volume": 505,
+        "value": 41915,
+        "trades": 3
+      },
+      {
+        "date": "2025-11-24",
+        "open": 82.6,
+        "high": 82.6,
+        "low": 82.05,
+        "close": 82.05,
+        "volume": 121,
+        "value": 9975.85,
+        "trades": 5
+      },
+      {
+        "date": "2025-11-25",
+        "open": 84.5,
+        "high": 84.5,
+        "low": 84.5,
+        "close": 84.5,
+        "volume": 1,
+        "value": 84.5,
+        "trades": 1
+      },
+      {
+        "date": "2025-11-26",
+        "open": 84.49,
+        "high": 84.49,
+        "low": 84.49,
+        "close": 84.49,
+        "volume": 3,
+        "value": 253.46999999999997,
+        "trades": 3
+      },
+      {
+        "date": "2025-11-27",
+        "open": 82.05,
+        "high": 82.05,
+        "low": 82.02,
+        "close": 82.02,
+        "volume": 128,
+        "value": 10500.72,
+        "trades": 4
+      },
+      {
+        "date": "2025-11-30",
+        "open": 80.01,
+        "high": 82,
+        "low": 76.5,
+        "close": 82,
+        "volume": 335,
+        "value": 26816.989999999998,
+        "trades": 6
+      },
+      {
+        "date": "2025-12-01",
+        "open": 82,
+        "high": 82,
+        "low": 76.1,
+        "close": 76.1,
+        "volume": 201,
+        "value": 16393.5,
+        "trades": 4
+      },
+      {
+        "date": "2025-12-02",
+        "open": 82,
+        "high": 82,
+        "low": 82,
+        "close": 82,
+        "volume": 82,
+        "value": 6724,
+        "trades": 4
+      },
+      {
+        "date": "2025-12-04",
+        "open": 82,
+        "high": 82,
+        "low": 82,
+        "close": 82,
+        "volume": 79,
+        "value": 6478,
+        "trades": 4
+      },
+      {
+        "date": "2025-12-07",
+        "open": 82,
+        "high": 82,
+        "low": 80.5,
+        "close": 80.5,
+        "volume": 72,
+        "value": 5816.48,
+        "trades": 3
+      },
+      {
+        "date": "2025-12-08",
+        "open": 81.99,
+        "high": 81.99,
+        "low": 80,
+        "close": 81.99,
+        "volume": 164,
+        "value": 13257.43,
+        "trades": 6
+      },
+      {
+        "date": "2025-12-09",
+        "open": 79.85,
+        "high": 79.85,
+        "low": 79.85,
+        "close": 79.85,
+        "volume": 500,
+        "value": 39925,
+        "trades": 5
+      },
+      {
+        "date": "2025-12-10",
+        "open": 79.85,
+        "high": 79.85,
+        "low": 79.85,
+        "close": 79.85,
+        "volume": 289,
+        "value": 23076.65,
+        "trades": 6
+      },
+      {
+        "date": "2025-12-11",
+        "open": 79.85,
+        "high": 79.85,
+        "low": 79.85,
+        "close": 79.85,
+        "volume": 82,
+        "value": 6547.7,
+        "trades": 3
+      },
+      {
+        "date": "2025-12-14",
+        "open": 79.85,
+        "high": 79.85,
+        "low": 79.85,
+        "close": 79.85,
+        "volume": 90,
+        "value": 7186.5,
+        "trades": 2
+      },
+      {
+        "date": "2025-12-15",
+        "open": 79.85,
+        "high": 79.85,
+        "low": 79.6,
+        "close": 79.6,
+        "volume": 12,
+        "value": 955.7,
+        "trades": 2
+      },
+      {
+        "date": "2025-12-16",
+        "open": 79.85,
+        "high": 79.85,
+        "low": 79.85,
+        "close": 79.85,
+        "volume": 100,
+        "value": 7985,
+        "trades": 3
+      },
+      {
+        "date": "2025-12-17",
+        "open": 79.6,
+        "high": 79.84,
+        "low": 79.55,
+        "close": 79.84,
+        "volume": 83,
+        "value": 6626.1900000000005,
+        "trades": 6
+      },
+      {
+        "date": "2025-12-21",
+        "open": 79.66,
+        "high": 79.84,
+        "low": 79.66,
+        "close": 79.66,
+        "volume": 60,
+        "value": 4784.84,
+        "trades": 5
+      },
+      {
+        "date": "2025-12-22",
+        "open": 79.84,
+        "high": 79.84,
+        "low": 79.84,
+        "close": 79.84,
+        "volume": 79,
+        "value": 6307.36,
+        "trades": 3
+      },
+      {
+        "date": "2025-12-23",
+        "open": 79.65,
+        "high": 79.65,
+        "low": 77.05,
+        "close": 77.05,
+        "volume": 511,
+        "value": 40007.9,
+        "trades": 11
+      },
+      {
+        "date": "2025-12-24",
+        "open": 77,
+        "high": 77,
+        "low": 69.35,
+        "close": 75,
+        "volume": 300,
+        "value": 22285.18,
+        "trades": 13
+      },
+      {
+        "date": "2025-12-25",
+        "open": 75,
+        "high": 75,
+        "low": 73.01,
+        "close": 73.03,
+        "volume": 845,
+        "value": 62005.65,
+        "trades": 5
+      },
+      {
+        "date": "2025-12-28",
+        "open": 75,
+        "high": 75,
+        "low": 75,
+        "close": 75,
+        "volume": 40,
+        "value": 3000,
+        "trades": 2
+      },
+      {
+        "date": "2025-12-29",
+        "open": 75,
+        "high": 75,
+        "low": 74,
+        "close": 74,
+        "volume": 356,
+        "value": 26487,
+        "trades": 13
+      },
+      {
+        "date": "2025-12-30",
+        "open": 74,
+        "high": 75,
+        "low": 74,
+        "close": 74,
+        "volume": 180,
+        "value": 13400,
+        "trades": 6
+      },
+      {
+        "date": "2026-01-04",
+        "open": 75,
+        "high": 75,
+        "low": 72,
+        "close": 72,
+        "volume": 281,
+        "value": 20537.989999999998,
+        "trades": 18
+      },
+      {
+        "date": "2026-01-05",
+        "open": 72,
+        "high": 72,
+        "low": 72,
+        "close": 72,
+        "volume": 14,
+        "value": 1008,
+        "trades": 1
+      },
+      {
+        "date": "2026-01-06",
+        "open": 73.5,
+        "high": 73.5,
+        "low": 73.5,
+        "close": 73.5,
+        "volume": 215,
+        "value": 15802.5,
+        "trades": 2
+      },
+      {
+        "date": "2026-01-07",
+        "open": 73.5,
+        "high": 73.5,
+        "low": 73.5,
+        "close": 73.5,
+        "volume": 6,
+        "value": 441,
+        "trades": 4
+      },
+      {
+        "date": "2026-01-08",
+        "open": 73.5,
+        "high": 73.5,
+        "low": 73.5,
+        "close": 73.5,
+        "volume": 50,
+        "value": 3675,
+        "trades": 1
+      },
+      {
+        "date": "2026-01-11",
+        "open": 73.5,
+        "high": 73.5,
+        "low": 72,
+        "close": 72,
+        "volume": 205,
+        "value": 15037.88,
+        "trades": 10
+      },
+      {
+        "date": "2026-01-12",
+        "open": 72,
+        "high": 72,
+        "low": 70,
+        "close": 70,
+        "volume": 380,
+        "value": 27153.19,
+        "trades": 6
+      },
+      {
+        "date": "2026-01-13",
+        "open": 70,
+        "high": 73.5,
+        "low": 70,
+        "close": 73.5,
+        "volume": 485,
+        "value": 34422.5,
+        "trades": 5
+      },
+      {
+        "date": "2026-01-15",
+        "open": 72.99,
+        "high": 73.5,
+        "low": 72.99,
+        "close": 73.5,
+        "volume": 284,
+        "value": 20872.98,
+        "trades": 7
+      },
+      {
+        "date": "2026-01-19",
+        "open": 70,
+        "high": 70,
+        "low": 69,
+        "close": 69,
+        "volume": 240,
+        "value": 16647.64,
+        "trades": 5
+      },
+      {
+        "date": "2026-01-20",
+        "open": 68.8,
+        "high": 68.8,
+        "low": 68.8,
+        "close": 68.8,
+        "volume": 1,
+        "value": 68.8,
+        "trades": 1
+      },
+      {
+        "date": "2026-01-21",
+        "open": 69,
+        "high": 73.49,
+        "low": 69,
+        "close": 73.49,
+        "volume": 34,
+        "value": 2408.8599999999997,
+        "trades": 2
+      },
+      {
+        "date": "2026-01-26",
+        "open": 70,
+        "high": 70,
+        "low": 70,
+        "close": 70,
+        "volume": 322,
+        "value": 22540,
+        "trades": 6
+      },
+      {
+        "date": "2026-01-28",
+        "open": 70,
+        "high": 70,
+        "low": 62.02,
+        "close": 62.02,
+        "volume": 338,
+        "value": 23369.020000000004,
+        "trades": 12
+      },
+      {
+        "date": "2026-02-04",
+        "open": 67.5,
+        "high": 74.2,
+        "low": 67.5,
+        "close": 70,
+        "volume": 503,
+        "value": 35209.7,
+        "trades": 5
+      },
+      {
+        "date": "2026-02-08",
+        "open": 77,
+        "high": 84.7,
+        "low": 77,
+        "close": 84.7,
+        "volume": 14,
+        "value": 1108.8000000000002,
+        "trades": 6
+      },
+      {
+        "date": "2026-02-09",
+        "open": 90,
+        "high": 90,
+        "low": 89.99,
+        "close": 89.99,
+        "volume": 2,
+        "value": 179.99,
+        "trades": 2
+      },
+      {
+        "date": "2026-02-10",
+        "open": 84.99,
+        "high": 84.99,
+        "low": 78.5,
+        "close": 78.5,
+        "volume": 29,
+        "value": 2360.87,
+        "trades": 3
+      },
+      {
+        "date": "2026-02-11",
+        "open": 84.97,
+        "high": 84.97,
+        "low": 84.97,
+        "close": 84.97,
+        "volume": 2,
+        "value": 169.94,
+        "trades": 1
+      },
+      {
+        "date": "2026-02-12",
+        "open": 84.85,
+        "high": 84.85,
+        "low": 80,
+        "close": 80,
+        "volume": 35,
+        "value": 2921.25,
+        "trades": 2
+      },
+      {
+        "date": "2026-02-17",
+        "open": 74.99,
+        "high": 74.99,
+        "low": 74.99,
+        "close": 74.99,
+        "volume": 85,
+        "value": 6374.15,
+        "trades": 6
+      },
+      {
+        "date": "2026-02-19",
+        "open": 74.99,
+        "high": 74.99,
+        "low": 74.99,
+        "close": 74.99,
+        "volume": 45,
+        "value": 3374.55,
+        "trades": 2
+      },
+      {
+        "date": "2026-02-22",
+        "open": 74.99,
+        "high": 74.99,
+        "low": 74.99,
+        "close": 74.99,
+        "volume": 64,
+        "value": 4799.36,
+        "trades": 3
+      },
+      {
+        "date": "2026-02-23",
+        "open": 74.99,
+        "high": 74.99,
+        "low": 73,
+        "close": 73,
+        "volume": 635,
+        "value": 46375.95,
+        "trades": 5
+      },
+      {
+        "date": "2026-02-24",
+        "open": 73,
+        "high": 73,
+        "low": 73,
+        "close": 73,
+        "volume": 80,
+        "value": 5840,
+        "trades": 2
+      },
+      {
+        "date": "2026-02-25",
+        "open": 73,
+        "high": 73,
+        "low": 72,
+        "close": 72.55,
+        "volume": 157,
+        "value": 11442.55,
+        "trades": 8
+      },
+      {
+        "date": "2026-02-26",
+        "open": 72.99,
+        "high": 72.99,
+        "low": 70,
+        "close": 70,
+        "volume": 79,
+        "value": 5606.91,
+        "trades": 4
+      },
+      {
+        "date": "2026-03-01",
+        "open": 69,
+        "high": 72.99,
+        "low": 68,
+        "close": 72.99,
+        "volume": 57,
+        "value": 3935.93,
+        "trades": 4
+      },
+      {
+        "date": "2026-03-02",
+        "open": 72.99,
+        "high": 73,
+        "low": 72.99,
+        "close": 73,
+        "volume": 34,
+        "value": 2481.71,
+        "trades": 4
+      },
+      {
+        "date": "2026-03-03",
+        "open": 73,
+        "high": 73,
+        "low": 72,
+        "close": 72,
+        "volume": 30,
+        "value": 2170,
+        "trades": 2
+      },
+      {
+        "date": "2026-03-04",
+        "open": 73,
+        "high": 73,
+        "low": 72.99,
+        "close": 72.99,
+        "volume": 49,
+        "value": 3576.5600000000004,
+        "trades": 3
+      },
+      {
+        "date": "2026-03-05",
+        "open": 72.99,
+        "high": 72.99,
+        "low": 72.99,
+        "close": 72.99,
+        "volume": 100,
+        "value": 7298.999999999999,
+        "trades": 6
+      },
+      {
+        "date": "2026-03-08",
+        "open": 73,
+        "high": 73,
+        "low": 71,
+        "close": 73,
+        "volume": 380,
+        "value": 27530.05,
+        "trades": 6
+      },
+      {
+        "date": "2026-03-09",
+        "open": 73,
+        "high": 93.17,
+        "low": 71,
+        "close": 71,
+        "volume": 1002,
+        "value": 71173.39,
+        "trades": 10
+      },
+      {
+        "date": "2026-03-12",
+        "open": 74,
+        "high": 74,
+        "low": 74,
+        "close": 74,
+        "volume": 1,
+        "value": 74,
+        "trades": 1
+      },
+      {
+        "date": "2026-03-15",
+        "open": 75,
+        "high": 75,
+        "low": 75,
+        "close": 75,
+        "volume": 1,
+        "value": 75,
+        "trades": 1
+      },
+      {
+        "date": "2026-03-16",
+        "open": 75,
+        "high": 75,
+        "low": 75,
+        "close": 75,
+        "volume": 10,
+        "value": 750,
+        "trades": 1
+      },
+      {
+        "date": "2026-03-17",
+        "open": 82.5,
+        "high": 82.5,
+        "low": 74,
+        "close": 74,
+        "volume": 143,
+        "value": 10719,
+        "trades": 7
+      },
+      {
+        "date": "2026-03-18",
+        "open": 74,
+        "high": 81.4,
+        "low": 74,
+        "close": 81.4,
+        "volume": 76,
+        "value": 5675.8,
+        "trades": 3
+      },
+      {
+        "date": "2026-03-23",
+        "open": 81.4,
+        "high": 81.4,
+        "low": 75,
+        "close": 75,
+        "volume": 70,
+        "value": 5634,
+        "trades": 3
+      },
+      {
+        "date": "2026-03-24",
+        "open": 75,
+        "high": 75,
+        "low": 75,
+        "close": 75,
+        "volume": 60,
+        "value": 4500,
+        "trades": 2
+      },
+      {
+        "date": "2026-03-25",
+        "open": 72.01,
+        "high": 82.49,
+        "low": 72.01,
+        "close": 82.49,
+        "volume": 182,
+        "value": 13979.28,
+        "trades": 5
+      },
+      {
+        "date": "2026-03-26",
+        "open": 75,
+        "high": 75,
+        "low": 75,
+        "close": 75,
+        "volume": 80,
+        "value": 6000,
+        "trades": 1
+      },
+      {
+        "date": "2026-03-30",
+        "open": 82.48,
+        "high": 82.48,
+        "low": 82.48,
+        "close": 82.48,
+        "volume": 25,
+        "value": 2062,
+        "trades": 1
+      },
+      {
+        "date": "2026-03-31",
+        "open": 75.01,
+        "high": 82.43,
+        "low": 75,
+        "close": 75.1,
+        "volume": 383,
+        "value": 28769.93,
+        "trades": 7
+      },
+      {
+        "date": "2026-04-01",
+        "open": 75,
+        "high": 75,
+        "low": 75,
+        "close": 75,
+        "volume": 500,
+        "value": 37500,
+        "trades": 3
+      },
+      {
+        "date": "2026-04-02",
+        "open": 75,
+        "high": 81.96,
+        "low": 75,
+        "close": 81.96,
+        "volume": 312,
+        "value": 23483.52,
+        "trades": 5
+      },
+      {
+        "date": "2026-04-06",
+        "open": 81.92,
+        "high": 81.92,
+        "low": 80.76,
+        "close": 81.89,
+        "volume": 12,
+        "value": 971.41,
+        "trades": 3
+      },
+      {
+        "date": "2026-04-07",
+        "open": 75,
+        "high": 81.84,
+        "low": 75,
+        "close": 75,
+        "volume": 1010,
+        "value": 75818.4,
+        "trades": 11
+      },
+      {
+        "date": "2026-04-09",
+        "open": 79,
+        "high": 81.65,
+        "low": 76.98,
+        "close": 81.6,
+        "volume": 22,
+        "value": 1781.27,
+        "trades": 6
+      },
+      {
+        "date": "2026-04-12",
+        "open": 81.54,
+        "high": 81.54,
+        "low": 75,
+        "close": 75,
+        "volume": 217,
+        "value": 16411.85,
+        "trades": 11
+      },
+      {
+        "date": "2026-04-13",
+        "open": 78.96,
+        "high": 81.5,
+        "low": 74.99,
+        "close": 74.99,
+        "volume": 302,
+        "value": 23949.02,
+        "trades": 7
+      },
+      {
+        "date": "2026-04-14",
+        "open": 81.47,
+        "high": 81.47,
+        "low": 80.5,
+        "close": 80.5,
+        "volume": 21,
+        "value": 1691.47,
+        "trades": 2
+      },
+      {
+        "date": "2026-04-16",
+        "open": 81.27,
+        "high": 81.27,
+        "low": 81.27,
+        "close": 81.27,
+        "volume": 1,
+        "value": 81.27,
+        "trades": 1
+      },
+      {
+        "date": "2026-04-19",
+        "open": 81.25,
+        "high": 81.25,
+        "low": 77.5,
+        "close": 77.5,
+        "volume": 107,
+        "value": 8312.4,
+        "trades": 3
+      },
+      {
+        "date": "2026-04-20",
+        "open": 79.99,
+        "high": 80.99,
+        "low": 72.5,
+        "close": 72.5,
+        "volume": 580,
+        "value": 42516.03,
+        "trades": 17
+      },
+      {
+        "date": "2026-04-21",
+        "open": 78,
+        "high": 78,
+        "low": 78,
+        "close": 78,
+        "volume": 20,
+        "value": 1560,
+        "trades": 1
+      },
+      {
+        "date": "2026-04-22",
+        "open": 79.74,
+        "high": 79.74,
+        "low": 79.73,
+        "close": 79.73,
+        "volume": 60,
+        "value": 4784.3,
+        "trades": 2
+      },
+      {
+        "date": "2026-04-23",
+        "open": 78,
+        "high": 78,
+        "low": 74.5,
+        "close": 75,
+        "volume": 85,
+        "value": 6379.5,
+        "trades": 5
+      },
+      {
+        "date": "2026-04-26",
+        "open": 75,
+        "high": 75,
+        "low": 72,
+        "close": 72,
+        "volume": 783,
+        "value": 56446.7,
+        "trades": 4
+      },
+      {
+        "date": "2026-04-27",
+        "open": 72,
+        "high": 72,
+        "low": 72,
+        "close": 72,
+        "volume": 1,
+        "value": 72,
+        "trades": 1
+      },
+      {
+        "date": "2026-04-28",
+        "open": 72,
+        "high": 72,
+        "low": 72,
+        "close": 72,
+        "volume": 300,
+        "value": 21600,
+        "trades": 3
+      },
+      {
+        "date": "2026-04-29",
+        "open": 72.55,
+        "high": 72.55,
+        "low": 72.55,
+        "close": 72.55,
+        "volume": 500,
+        "value": 36275,
+        "trades": 2
+      },
+      {
+        "date": "2026-04-30",
+        "open": 74,
+        "high": 74,
+        "low": 72,
+        "close": 72.5,
+        "volume": 700,
+        "value": 50678.64,
+        "trades": 12
+      },
+      {
+        "date": "2026-05-03",
+        "open": 74.8,
+        "high": 75,
+        "low": 74.8,
+        "close": 75,
+        "volume": 9,
+        "value": 674.8,
+        "trades": 2
+      },
+      {
+        "date": "2026-05-04",
+        "open": 75,
+        "high": 75,
+        "low": 72.5,
+        "close": 72.51,
+        "volume": 623,
+        "value": 45198.3,
+        "trades": 12
+      },
+      {
+        "date": "2026-05-06",
+        "open": 74.99,
+        "high": 75,
+        "low": 72.5,
+        "close": 72.5,
+        "volume": 464,
+        "value": 33693.75,
+        "trades": 12
+      },
+      {
+        "date": "2026-05-10",
+        "open": 72,
+        "high": 72,
+        "low": 68,
+        "close": 68,
+        "volume": 3330,
+        "value": 228680.13,
+        "trades": 16
+      },
+      {
+        "date": "2026-05-11",
+        "open": 74.8,
+        "high": 74.9,
+        "low": 74.8,
+        "close": 74.8,
+        "volume": 52,
+        "value": 3894.6000000000004,
+        "trades": 3
+      },
+      {
+        "date": "2026-05-12",
+        "open": 72,
+        "high": 74.95,
+        "low": 69,
+        "close": 69,
+        "volume": 4,
+        "value": 287.95,
+        "trades": 3
+      },
+      {
+        "date": "2026-05-13",
+        "open": 69.01,
+        "high": 74,
+        "low": 69.01,
+        "close": 71,
+        "volume": 121,
+        "value": 8599.119999999999,
+        "trades": 4
+      },
+      {
+        "date": "2026-05-14",
+        "open": 70,
+        "high": 70,
+        "low": 69,
+        "close": 69,
+        "volume": 250,
+        "value": 17303.98,
+        "trades": 7
+      },
+      {
+        "date": "2026-05-18",
+        "open": 70,
+        "high": 74.97,
+        "low": 68,
+        "close": 74.97,
+        "volume": 1505,
+        "value": 103487.78,
+        "trades": 26
+      },
+      {
+        "date": "2026-05-20",
+        "open": 70,
+        "high": 70,
+        "low": 70,
+        "close": 70,
+        "volume": 1,
+        "value": 70,
+        "trades": 1
+      },
+      {
+        "date": "2026-05-21",
+        "open": 74.94,
+        "high": 74.95,
+        "low": 74.81,
+        "close": 74.81,
+        "volume": 57,
+        "value": 4270.3,
+        "trades": 6
+      },
+      {
+        "date": "2026-05-31",
+        "open": 74.84,
+        "high": 74.84,
+        "low": 74.84,
+        "close": 74.84,
+        "volume": 1,
+        "value": 74.84,
+        "trades": 1
+      },
+      {
+        "date": "2026-06-01",
+        "open": 74.83,
+        "high": 74.83,
+        "low": 74.81,
+        "close": 74.81,
+        "volume": 22,
+        "value": 1646.02,
+        "trades": 4
+      },
+      {
+        "date": "2026-06-02",
+        "open": 74.81,
+        "high": 74.82,
+        "low": 70,
+        "close": 74,
+        "volume": 99,
+        "value": 7200.0199999999995,
+        "trades": 9
+      },
+      {
+        "date": "2026-06-04",
+        "open": 72.6,
+        "high": 74.82,
+        "low": 72.6,
+        "close": 74.82,
+        "volume": 51,
+        "value": 3704.82,
+        "trades": 2
+      },
+      {
+        "date": "2026-06-07",
+        "open": 74.79,
+        "high": 74.8,
+        "low": 74.79,
+        "close": 74.79,
+        "volume": 58,
+        "value": 4338.03,
+        "trades": 5
+      },
+      {
+        "date": "2026-06-08",
+        "open": 72,
+        "high": 72,
+        "low": 70,
+        "close": 70,
+        "volume": 262,
+        "value": 18385,
+        "trades": 6
+      },
+      {
+        "date": "2026-06-09",
+        "open": 73,
+        "high": 74.74,
+        "low": 73,
+        "close": 74.5,
+        "volume": 181,
+        "value": 13428.16,
+        "trades": 7
+      },
+      {
+        "date": "2026-06-10",
+        "open": 74.49,
+        "high": 74.49,
+        "low": 74.49,
+        "close": 74.49,
+        "volume": 75,
+        "value": 5586.75,
+        "trades": 5
+      },
+      {
+        "date": "2026-06-11",
+        "open": 74.47,
+        "high": 74.47,
+        "low": 74.47,
+        "close": 74.47,
+        "volume": 10,
+        "value": 744.7,
+        "trades": 1
+      },
+      {
+        "date": "2026-06-14",
+        "open": 74.48,
+        "high": 74.48,
+        "low": 70,
+        "close": 70,
+        "volume": 18,
+        "value": 1274.48,
+        "trades": 3
+      },
+      {
+        "date": "2026-06-15",
+        "open": 74.47,
+        "high": 74.85,
+        "low": 72,
+        "close": 74.85,
+        "volume": 563,
+        "value": 41909.53,
+        "trades": 7
+      },
+      {
+        "date": "2026-06-17",
+        "open": 82.29,
+        "high": 82.29,
+        "low": 74.85,
+        "close": 74.85,
+        "volume": 55,
+        "value": 4124.19,
+        "trades": 3
+      },
+      {
+        "date": "2026-06-18",
+        "open": 70.01,
+        "high": 81.96,
+        "low": 70.01,
+        "close": 74,
+        "volume": 7,
+        "value": 506.01,
+        "trades": 3
+      },
+      {
+        "date": "2026-06-21",
+        "open": 74,
+        "high": 80,
+        "low": 70.03,
+        "close": 79.99,
+        "volume": 82,
+        "value": 6369.530000000001,
+        "trades": 4
+      },
+      {
+        "date": "2026-06-22",
+        "open": 79.97,
+        "high": 79.97,
+        "low": 79.97,
+        "close": 79.97,
+        "volume": 3,
+        "value": 239.91,
+        "trades": 2
+      },
+      {
+        "date": "2026-06-25",
+        "open": 78.88,
+        "high": 78.88,
+        "low": 78.88,
+        "close": 78.88,
+        "volume": 15,
+        "value": 1183.1999999999998,
+        "trades": 2
+      },
+      {
+        "date": "2026-06-28",
+        "open": 75.99,
+        "high": 75.99,
+        "low": 75.99,
+        "close": 75.99,
+        "volume": 19,
+        "value": 1443.81,
+        "trades": 2
+      },
+      {
+        "date": "2026-06-29",
+        "open": 77.74,
+        "high": 77.74,
+        "low": 74.6,
+        "close": 77.69,
+        "volume": 16,
+        "value": 1228.0900000000001,
+        "trades": 3
+      },
+      {
+        "date": "2026-06-30",
+        "open": 77.68,
+        "high": 77.68,
+        "low": 75,
+        "close": 75,
+        "volume": 34,
+        "value": 2586.8,
+        "trades": 3
+      },
+      {
+        "date": "2026-07-01",
+        "open": 75,
+        "high": 75,
+        "low": 75,
+        "close": 75,
+        "volume": 24,
+        "value": 1800,
+        "trades": 1
+      },
+      {
+        "date": "2026-07-02",
+        "open": 77.49,
+        "high": 77.49,
+        "low": 77.49,
+        "close": 77.49,
+        "volume": 15,
+        "value": 1162.35,
+        "trades": 2
+      },
+      {
+        "date": "2026-07-05",
+        "open": 76,
+        "high": 76,
+        "low": 76,
+        "close": 76,
+        "volume": 113,
+        "value": 8588,
+        "trades": 3
+      },
+      {
+        "date": "2026-07-06",
+        "open": 75,
+        "high": 75,
+        "low": 72.7,
+        "close": 72.7,
+        "volume": 500,
+        "value": 36352.899999999994,
+        "trades": 4
+      },
+      {
+        "date": "2026-07-08",
+        "open": 76.62,
+        "high": 76.62,
+        "low": 76.62,
+        "close": 76.62,
+        "volume": 1,
+        "value": 76.62,
+        "trades": 1
+      },
+      {
+        "date": "2026-07-09",
+        "open": 73,
+        "high": 76.55,
+        "low": 73,
+        "close": 76.55,
+        "volume": 22,
+        "value": 1613.1,
+        "trades": 2
+      },
+      {
+        "date": "2026-07-12",
+        "open": 76.55,
+        "high": 76.55,
+        "low": 76.53,
+        "close": 76.53,
+        "volume": 25,
+        "value": 1913.35,
+        "trades": 2
+      },
+      {
+        "date": "2026-07-13",
+        "open": 72.7,
+        "high": 72.7,
+        "low": 72,
+        "close": 72.7,
+        "volume": 708,
+        "value": 51466,
+        "trades": 10
+      },
+      {
+        "date": "2026-07-14",
+        "open": 76.59,
+        "high": 76.62,
+        "low": 76.59,
+        "close": 76.62,
+        "volume": 40,
+        "value": 3064.2,
+        "trades": 4
+      },
+      {
+        "date": "2026-07-15",
+        "open": 72.8,
+        "high": 76.58,
+        "low": 72.8,
+        "close": 76.58,
+        "volume": 6,
+        "value": 440.58,
+        "trades": 2
+      },
+      {
+        "date": "2026-07-16",
+        "open": 76.57,
+        "high": 76.62,
+        "low": 76.57,
+        "close": 76.6,
+        "volume": 219,
+        "value": 16772.71,
+        "trades": 5
+      },
+      {
+        "date": "2026-07-19",
+        "open": 75,
+        "high": 75,
+        "low": 75,
+        "close": 75,
+        "volume": 1,
+        "value": 75,
+        "trades": 1
+      },
+      {
+        "date": "2026-07-22",
+        "open": 76.57,
+        "high": 76.57,
+        "low": 75,
+        "close": 75,
+        "volume": 38,
+        "value": 2904.7,
+        "trades": 5
+      },
+      {
+        "date": "2026-07-23",
+        "open": 76.56,
+        "high": 76.56,
+        "low": 76.53,
+        "close": 76.53,
+        "volume": 14,
+        "value": 1071.72,
+        "trades": 2
+      },
+      {
+        "date": "2026-07-28",
+        "open": 73.5,
+        "high": 73.5,
+        "low": 73.5,
+        "close": 73.5,
+        "volume": 35,
+        "value": 2572.5,
+        "trades": 3
+      },
+      {
+        "date": "2026-07-29",
+        "open": 73.5,
+        "high": 73.5,
+        "low": 73.5,
+        "close": 73.5,
+        "volume": 10,
+        "value": 735,
+        "trades": 1
+      },
+      {
+        "date": "2026-07-30",
+        "open": 73.5,
+        "high": 76.54,
+        "low": 72.8,
+        "close": 72.8,
+        "volume": 126,
+        "value": 9225.04,
+        "trades": 5
+      },
+      {
+        "date": "2026-08-02",
+        "open": 76.51,
+        "high": 76.51,
+        "low": 76.51,
+        "close": 76.51,
+        "volume": 550,
+        "value": 42080.5,
+        "trades": 3
+      },
+      {
+        "date": "2026-08-03",
+        "open": 73,
+        "high": 73,
+        "low": 72.7,
+        "close": 72.7,
+        "volume": 22,
+        "value": 1600.7199999999998,
+        "trades": 4
+      },
+      {
+        "date": "2026-08-04",
+        "open": 72.7,
+        "high": 72.7,
+        "low": 72.7,
+        "close": 72.7,
+        "volume": 40,
+        "value": 2908,
+        "trades": 3
+      },
+      {
+        "date": "2026-08-05",
+        "open": 73.25,
+        "high": 73.25,
+        "low": 70.07,
+        "close": 73.24,
+        "volume": 132,
+        "value": 9356.289999999999,
+        "trades": 6
+      },
+      {
+        "date": "2026-08-06",
+        "open": 73.24,
+        "high": 73.25,
+        "low": 73.24,
+        "close": 73.25,
+        "volume": 26,
+        "value": 1904.26,
+        "trades": 2
+      },
+      {
+        "date": "2026-08-09",
+        "open": 73.25,
+        "high": 73.25,
+        "low": 73.25,
+        "close": 73.25,
+        "volume": 15,
+        "value": 1098.75,
+        "trades": 2
+      },
+      {
+        "date": "2026-08-10",
+        "open": 73.1,
+        "high": 73.1,
+        "low": 73.1,
+        "close": 73.1,
+        "volume": 26,
+        "value": 1900.6,
+        "trades": 1
+      },
+      {
+        "date": "2026-08-11",
+        "open": 73.1,
+        "high": 73.1,
+        "low": 73.1,
+        "close": 73.1,
+        "volume": 34,
+        "value": 2485.4,
+        "trades": 2
+      },
+      {
+        "date": "2026-08-12",
+        "open": 72,
+        "high": 72,
+        "low": 72,
+        "close": 72,
+        "volume": 75,
+        "value": 5400,
+        "trades": 3
+      },
+      {
+        "date": "2026-08-16",
+        "open": 73.1,
+        "high": 73.1,
+        "low": 72,
+        "close": 73.1,
+        "volume": 20,
+        "value": 1451,
+        "trades": 4
+      },
+      {
+        "date": "2026-08-17",
+        "open": 73.1,
+        "high": 73.25,
+        "low": 73.1,
+        "close": 73.25,
+        "volume": 8,
+        "value": 585.1,
+        "trades": 3
+      },
+      {
+        "date": "2026-08-18",
+        "open": 73.25,
+        "high": 73.25,
+        "low": 73.25,
+        "close": 73.25,
+        "volume": 21,
+        "value": 1538.25,
+        "trades": 3
+      },
+      {
+        "date": "2026-08-19",
+        "open": 73.1,
+        "high": 73.25,
+        "low": 70,
+        "close": 73.25,
+        "volume": 320,
+        "value": 22700.1,
+        "trades": 9
+      },
+      {
+        "date": "2026-08-20",
+        "open": 73.25,
+        "high": 73.25,
+        "low": 73.25,
+        "close": 73.25,
+        "volume": 1,
+        "value": 73.25,
+        "trades": 1
+      },
+      {
+        "date": "2026-08-23",
+        "open": 73.25,
+        "high": 73.25,
+        "low": 73.25,
+        "close": 73.25,
+        "volume": 3,
+        "value": 219.75,
+        "trades": 1
+      },
+      {
+        "date": "2026-08-24",
+        "open": 71,
+        "high": 71,
+        "low": 70.51,
+        "close": 70.51,
+        "volume": 8,
+        "value": 565.06,
+        "trades": 2
+      },
+      {
+        "date": "2026-08-26",
+        "open": 71,
+        "high": 71,
+        "low": 70.51,
+        "close": 70.51,
+        "volume": 41,
+        "value": 2896.71,
+        "trades": 4
+      },
+      {
+        "date": "2026-08-27",
+        "open": 73.25,
+        "high": 73.25,
+        "low": 73.25,
+        "close": 73.25,
+        "volume": 10,
+        "value": 732.5,
+        "trades": 1
+      },
+      {
+        "date": "2026-08-30",
+        "open": 73.25,
+        "high": 73.25,
+        "low": 73.25,
+        "close": 73.25,
+        "volume": 150,
+        "value": 10987.5,
+        "trades": 1
+      },
+      {
+        "date": "2026-08-31",
+        "open": 73.25,
+        "high": 73.25,
+        "low": 73.25,
+        "close": 73.25,
+        "volume": 40,
+        "value": 2930,
+        "trades": 3
+      },
+      {
+        "date": "2026-09-01",
+        "open": 73.25,
+        "high": 73.25,
+        "low": 73.25,
+        "close": 73.25,
+        "volume": 8,
+        "value": 586,
+        "trades": 3
+      },
+      {
+        "date": "2026-09-02",
+        "open": 73.25,
+        "high": 73.25,
+        "low": 73.25,
+        "close": 73.25,
+        "volume": 7,
+        "value": 512.75,
+        "trades": 1
+      },
+      {
+        "date": "2026-09-03",
+        "open": 73.25,
+        "high": 87.92,
+        "low": 73.25,
+        "close": 87.92,
+        "volume": 454,
+        "value": 33364.35,
+        "trades": 10
+      },
+      {
+        "date": "2026-09-06",
+        "open": 87.87,
+        "high": 87.87,
+        "low": 85,
+        "close": 85,
+        "volume": 237,
+        "value": 20251.19,
+        "trades": 5
+      },
+      {
+        "date": "2026-09-07",
+        "open": 85,
+        "high": 87.84,
+        "low": 79.13,
+        "close": 87.72,
+        "volume": 19,
+        "value": 1613.95,
+        "trades": 5
+      },
+      {
+        "date": "2026-09-08",
+        "open": 86.49,
+        "high": 86.49,
+        "low": 86.49,
+        "close": 86.49,
+        "volume": 11,
+        "value": 951.39,
+        "trades": 1
+      },
+      {
+        "date": "2026-09-09",
+        "open": 86.47,
+        "high": 86.47,
+        "low": 79.13,
+        "close": 86.39,
+        "volume": 22,
+        "value": 1828.1399999999999,
+        "trades": 3
+      },
+      {
+        "date": "2026-09-10",
+        "open": 79,
+        "high": 79,
+        "low": 79,
+        "close": 79,
+        "volume": 8,
+        "value": 632,
+        "trades": 2
+      },
+      {
+        "date": "2026-09-14",
+        "open": 78.99,
+        "high": 79,
+        "low": 78.95,
+        "close": 78.95,
+        "volume": 51,
+        "value": 4027.7300000000005,
+        "trades": 5
+      },
+      {
+        "date": "2026-09-16",
+        "open": 75.06,
+        "high": 75.06,
+        "low": 75.06,
+        "close": 75.06,
+        "volume": 14,
+        "value": 1050.84,
+        "trades": 1
+      },
+      {
+        "date": "2026-09-17",
+        "open": 75.06,
+        "high": 75.06,
+        "low": 75.06,
+        "close": 75.06,
+        "volume": 1,
+        "value": 75.06,
+        "trades": 1
+      },
+      {
+        "date": "2026-09-20",
+        "open": 78.89,
+        "high": 78.89,
+        "low": 78.89,
+        "close": 78.89,
+        "volume": 1,
+        "value": 78.89,
+        "trades": 1
+      },
+      {
+        "date": "2026-09-21",
+        "open": 78,
+        "high": 78,
+        "low": 78,
+        "close": 78,
+        "volume": 1,
+        "value": 78,
+        "trades": 1
+      },
+      {
+        "date": "2026-09-22",
+        "open": 78,
+        "high": 78,
+        "low": 73,
+        "close": 73,
+        "volume": 66,
+        "value": 5143,
+        "trades": 2
+      },
+      {
+        "date": "2026-09-27",
+        "open": 73,
+        "high": 73,
+        "low": 73,
+        "close": 73,
+        "volume": 8,
+        "value": 584,
+        "trades": 2
+      },
+      {
+        "date": "2026-09-28",
+        "open": 75,
+        "high": 75,
+        "low": 75,
+        "close": 75,
+        "volume": 19,
+        "value": 1425,
+        "trades": 1
+      },
+      {
+        "date": "2026-09-29",
+        "open": 78.89,
+        "high": 78.89,
+        "low": 78.89,
+        "close": 78.89,
+        "volume": 9,
+        "value": 710.01,
+        "trades": 1
+      },
+      {
+        "date": "2026-09-30",
+        "open": 78.89,
+        "high": 78.89,
+        "low": 75,
+        "close": 78.89,
+        "volume": 155,
+        "value": 11731.789999999999,
+        "trades": 7
+      },
+      {
+        "date": "2026-10-01",
+        "open": 78.89,
+        "high": 78.89,
+        "low": 78.87,
+        "close": 78.87,
+        "volume": 18,
+        "value": 1420,
+        "trades": 5
+      },
+      {
+        "date": "2026-10-04",
+        "open": 78.49,
+        "high": 78.5,
+        "low": 78.49,
+        "close": 78.5,
+        "volume": 55,
+        "value": 4317.12,
+        "trades": 3
+      },
+      {
+        "date": "2026-10-05",
+        "open": 78.5,
+        "high": 78.5,
+        "low": 78.5,
+        "close": 78.5,
+        "volume": 7,
+        "value": 549.5,
+        "trades": 2
+      },
+      {
+        "date": "2026-10-06",
+        "open": 78.5,
+        "high": 78.5,
+        "low": 78,
+        "close": 78,
+        "volume": 18,
+        "value": 1405.5,
+        "trades": 4
+      },
+      {
+        "date": "2026-10-08",
+        "open": 78,
+        "high": 78.4,
+        "low": 78,
+        "close": 78.4,
+        "volume": 73,
+        "value": 5718,
+        "trades": 4
+      },
+      {
+        "date": "2026-10-11",
+        "open": 78.39,
+        "high": 78.39,
+        "low": 78.39,
+        "close": 78.39,
+        "volume": 1,
+        "value": 78.39,
+        "trades": 1
+      },
+      {
+        "date": "2026-10-13",
+        "open": 78.39,
+        "high": 78.39,
+        "low": 78.39,
+        "close": 78.39,
+        "volume": 25,
+        "value": 1959.75,
+        "trades": 1
+      },
+      {
+        "date": "2026-10-14",
+        "open": 78.39,
+        "high": 78.39,
+        "low": 78.39,
+        "close": 78.39,
+        "volume": 21,
+        "value": 1646.19,
+        "trades": 2
+      },
+      {
+        "date": "2026-10-18",
+        "open": 78,
+        "high": 78.39,
+        "low": 77,
+        "close": 78,
+        "volume": 27,
+        "value": 2104.7799999999997,
+        "trades": 7
+      },
+      {
+        "date": "2026-10-19",
+        "open": 78,
+        "high": 78,
+        "low": 78,
+        "close": 78,
+        "volume": 13,
+        "value": 1014,
+        "trades": 3
+      },
+      {
+        "date": "2026-10-20",
+        "open": 78,
+        "high": 78,
+        "low": 78,
+        "close": 78,
+        "volume": 50,
+        "value": 3900,
+        "trades": 2
+      },
+      {
+        "date": "2026-10-21",
+        "open": 78.39,
+        "high": 78.39,
+        "low": 76,
+        "close": 76,
+        "volume": 212,
+        "value": 16271.59,
+        "trades": 11
+      },
+      {
+        "date": "2026-10-22",
+        "open": 76,
+        "high": 76,
+        "low": 76,
+        "close": 76,
+        "volume": 1,
+        "value": 76,
+        "trades": 1
+      },
+      {
+        "date": "2026-10-25",
+        "open": 78.39,
+        "high": 78.4,
+        "low": 78.39,
+        "close": 78.4,
+        "volume": 239,
+        "value": 18736.61,
+        "trades": 2
+      },
+      {
+        "date": "2026-10-26",
+        "open": 86.22,
+        "high": 86.23,
+        "low": 86,
+        "close": 86,
+        "volume": 60,
+        "value": 5162.21,
+        "trades": 3
+      },
+      {
+        "date": "2026-10-29",
+        "open": 84,
+        "high": 84,
+        "low": 84,
+        "close": 84,
+        "volume": 6,
+        "value": 504,
+        "trades": 1
+      },
+      {
+        "date": "2026-11-01",
+        "open": 84,
+        "high": 84,
+        "low": 78,
+        "close": 78,
+        "volume": 71,
+        "value": 5844.5,
+        "trades": 4
+      },
+      {
+        "date": "2026-11-02",
+        "open": 84,
+        "high": 84,
+        "low": 82.89,
+        "close": 82.89,
+        "volume": 32,
+        "value": 2654.18,
+        "trades": 4
+      },
+      {
+        "date": "2026-11-04",
+        "open": 82.89,
+        "high": 82.89,
+        "low": 82.48,
+        "close": 82.48,
+        "volume": 4,
+        "value": 330.33,
+        "trades": 2
+      },
+      {
+        "date": "2026-11-05",
+        "open": 78.99,
+        "high": 79,
+        "low": 78.99,
+        "close": 79,
+        "volume": 10,
+        "value": 789.99,
+        "trades": 4
+      },
+      {
+        "date": "2026-11-08",
+        "open": 79,
+        "high": 80,
+        "low": 79,
+        "close": 80,
+        "volume": 291,
+        "value": 23089,
+        "trades": 6
+      },
+      {
+        "date": "2026-11-09",
+        "open": 80,
+        "high": 84.83,
+        "low": 78,
+        "close": 84.79,
+        "volume": 61,
+        "value": 4912.03,
+        "trades": 9
+      },
+      {
+        "date": "2026-11-10",
+        "open": 84.79,
+        "high": 84.79,
+        "low": 84.38,
+        "close": 84.38,
+        "volume": 24,
+        "value": 2031.85,
+        "trades": 3
+      },
+      {
+        "date": "2026-11-15",
+        "open": 84.38,
+        "high": 84.5,
+        "low": 78,
+        "close": 78,
+        "volume": 312,
+        "value": 25624,
+        "trades": 9
+      },
+      {
+        "date": "2026-11-16",
+        "open": 80,
+        "high": 84.5,
+        "low": 80,
+        "close": 84.5,
+        "volume": 210,
+        "value": 16844.96,
+        "trades": 3
+      },
+      {
+        "date": "2026-11-18",
+        "open": 84.37,
+        "high": 84.48,
+        "low": 84.37,
+        "close": 84.48,
+        "volume": 103,
+        "value": 8700.140000000001,
+        "trades": 4
+      },
+      {
+        "date": "2026-11-22",
+        "open": 78.5,
+        "high": 78.5,
+        "low": 78.5,
+        "close": 78.5,
+        "volume": 24,
+        "value": 1884,
+        "trades": 2
+      },
+      {
+        "date": "2026-11-23",
+        "open": 78.5,
+        "high": 78.5,
+        "low": 78.5,
+        "close": 78.5,
+        "volume": 1,
+        "value": 78.5,
+        "trades": 1
+      },
+      {
+        "date": "2026-11-26",
+        "open": 78.5,
+        "high": 78.5,
+        "low": 78.5,
+        "close": 78.5,
+        "volume": 1,
+        "value": 78.5,
+        "trades": 1
       }
     ],
     "MTCC": [
